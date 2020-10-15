@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meus Pets-->
         <scene sceneID="vHU-Q8-Dkt">
             <objects>
-                <viewController id="mmI-A6-73y" sceneMemberID="viewController">
+                <viewController title="Meus Pets" id="mmI-A6-73y" customClass="MeusPetsListaViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rRL-WT-wVt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,18 +33,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SoV-Tv-z4z"/>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Meus Pets"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shv-Fr-Hk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-108" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalhes do Pet-->
         <scene sceneID="kK3-c5-UCO">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" sceneMemberID="viewController">
+                <viewController title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" customClass="MeusPetsDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3M-y7-K8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

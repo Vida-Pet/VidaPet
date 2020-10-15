@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */; };
 		3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B695D072537E71300CE15AF /* AppDelegate.swift */; };
 		3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B695D092537E71300CE15AF /* SceneDelegate.swift */; };
 		3B695D0C2537E71300CE15AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B695D0B2537E71300CE15AF /* ViewController.swift */; };
-		3B695D0F2537E71300CE15AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D0D2537E71300CE15AF /* Main.storyboard */; };
 		3B695D112537E71500CE15AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D102537E71500CE15AF /* Assets.xcassets */; };
 		3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D122537E71500CE15AF /* LaunchScreen.storyboard */; };
+		3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D1F2537E8A500CE15AF /* MeusPets.storyboard */; };
+		3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D212537E8CF00CE15AF /* RecemChegados.storyboard */; };
+		3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D232537E8DB00CE15AF /* Adote.storyboard */; };
+		3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D252537E8E900CE15AF /* Perfil.storyboard */; };
+		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		3B695D042537E71300CE15AF /* Vida Pet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vida Pet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B695D072537E71300CE15AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B695D092537E71300CE15AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B695D0B2537E71300CE15AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3B695D0E2537E71300CE15AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B695D102537E71500CE15AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B695D132537E71500CE15AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B695D152537E71500CE15AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B695D1F2537E8A500CE15AF /* MeusPets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeusPets.storyboard; sourceTree = "<group>"; };
+		3B695D212537E8CF00CE15AF /* RecemChegados.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecemChegados.storyboard; sourceTree = "<group>"; };
+		3B695D232537E8DB00CE15AF /* Adote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Adote.storyboard; sourceTree = "<group>"; };
+		3B695D252537E8E900CE15AF /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
+		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
 		BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,8 +58,31 @@
 				BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */,
 				BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B265D932537EFE3009F1EE9 /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */,
+			);
+			path = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		3B265D942537FF9D009F1EE9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D072537E71300CE15AF /* AppDelegate.swift */,
+				3B695D092537E71300CE15AF /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3B265D952537FFB4009F1EE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3B695CFB2537E71300CE15AF = {
@@ -73,15 +106,92 @@
 		3B695D062537E71300CE15AF /* Vida Pet */ = {
 			isa = PBXGroup;
 			children = (
-				3B695D072537E71300CE15AF /* AppDelegate.swift */,
-				3B695D092537E71300CE15AF /* SceneDelegate.swift */,
-				3B695D0B2537E71300CE15AF /* ViewController.swift */,
-				3B695D0D2537E71300CE15AF /* Main.storyboard */,
-				3B695D102537E71500CE15AF /* Assets.xcassets */,
-				3B695D122537E71500CE15AF /* LaunchScreen.storyboard */,
-				3B695D152537E71500CE15AF /* Info.plist */,
+				3B265D942537FF9D009F1EE9 /* Application */,
+				3B695D1B2537E84600CE15AF /* Model */,
+				3B695D1C2537E86000CE15AF /* View */,
+				3B695D1D2537E86400CE15AF /* Controller */,
+				3B265D952537FFB4009F1EE9 /* Extensions */,
+				3B695D1E2537E87500CE15AF /* Supporting Files */,
 			);
 			path = "Vida Pet";
+			sourceTree = "<group>";
+		};
+		3B695D1B2537E84600CE15AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B695D1C2537E86000CE15AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D122537E71500CE15AF /* LaunchScreen.storyboard */,
+				3B695D2D2537E92200CE15AF /* Login */,
+				3B265D932537EFE3009F1EE9 /* Navigation Bar */,
+				3B695D272537E8EE00CE15AF /* Meus Pets */,
+				3B695D2A2537E91000CE15AF /* RecemChegados */,
+				3B695D282537E90700CE15AF /* Adote */,
+				3B695D292537E90B00CE15AF /* Perfil */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B695D1D2537E86400CE15AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D0B2537E71300CE15AF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B695D1E2537E87500CE15AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D152537E71500CE15AF /* Info.plist */,
+				3B695D102537E71500CE15AF /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B695D272537E8EE00CE15AF /* Meus Pets */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D1F2537E8A500CE15AF /* MeusPets.storyboard */,
+			);
+			path = "Meus Pets";
+			sourceTree = "<group>";
+		};
+		3B695D282537E90700CE15AF /* Adote */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D232537E8DB00CE15AF /* Adote.storyboard */,
+			);
+			path = Adote;
+			sourceTree = "<group>";
+		};
+		3B695D292537E90B00CE15AF /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D252537E8E900CE15AF /* Perfil.storyboard */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
+		3B695D2A2537E91000CE15AF /* RecemChegados */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D212537E8CF00CE15AF /* RecemChegados.storyboard */,
+			);
+			path = RecemChegados;
+			sourceTree = "<group>";
+		};
+		3B695D2D2537E92200CE15AF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B695D2B2537E91F00CE15AF /* Login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		833A3938CBE84F0E11351D7C /* Frameworks */ = {
@@ -151,9 +261,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */,
+				3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */,
 				3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */,
+				3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */,
+				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
-				3B695D0F2537E71300CE15AF /* Main.storyboard in Resources */,
+				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
+				3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,14 +313,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3B695D0D2537E71300CE15AF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B695D0E2537E71300CE15AF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B695D122537E71500CE15AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6MTQAAFW5T;
-				INFOPLIST_FILE = "Vida Pet/Info.plist";
+				INFOPLIST_FILE = "Vida Pet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6MTQAAFW5T;
-				INFOPLIST_FILE = "Vida Pet/Info.plist";
+				INFOPLIST_FILE = "Vida Pet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

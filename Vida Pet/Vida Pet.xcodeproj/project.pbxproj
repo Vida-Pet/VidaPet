@@ -13,9 +13,11 @@
 		3B695D0F2537E71300CE15AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D0D2537E71300CE15AF /* Main.storyboard */; };
 		3B695D112537E71500CE15AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D102537E71500CE15AF /* Assets.xcassets */; };
 		3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D122537E71500CE15AF /* LaunchScreen.storyboard */; };
+		81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B695D042537E71300CE15AF /* Vida Pet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vida Pet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B695D072537E71300CE15AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B695D092537E71300CE15AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		3B695D102537E71500CE15AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B695D132537E71500CE15AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B695D152537E71500CE15AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
+		BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A78D3C9317B40A7F94596B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */,
+				BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3B695CFB2537E71300CE15AF = {
 			isa = PBXGroup;
 			children = (
 				3B695D062537E71300CE15AF /* Vida Pet */,
 				3B695D052537E71300CE15AF /* Products */,
+				0A78D3C9317B40A7F94596B8 /* Pods */,
+				833A3938CBE84F0E11351D7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Vida Pet";
 			sourceTree = "<group>";
 		};
+		833A3938CBE84F0E11351D7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B695D182537E71500CE15AF /* Build configuration list for PBXNativeTarget "Vida Pet" */;
 			buildPhases = (
+				5662C0CC8B74F1377963322F /* [CP] Check Pods Manifest.lock */,
 				3B695D002537E71300CE15AF /* Sources */,
 				3B695D012537E71300CE15AF /* Frameworks */,
 				3B695D022537E71300CE15AF /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5662C0CC8B74F1377963322F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vida Pet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B695D002537E71300CE15AF /* Sources */ = {
@@ -282,6 +333,7 @@
 		};
 		3B695D192537E71500CE15AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +352,7 @@
 		};
 		3B695D1A2537E71500CE15AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

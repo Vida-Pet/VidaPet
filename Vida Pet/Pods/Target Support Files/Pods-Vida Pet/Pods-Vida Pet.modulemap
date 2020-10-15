@@ -1,0 +1,6 @@
+framework module Pods_Vida_Pet {
+  umbrella header "Pods-Vida Pet-umbrella.h"
+
+  export *
+  module * { export * }
+}

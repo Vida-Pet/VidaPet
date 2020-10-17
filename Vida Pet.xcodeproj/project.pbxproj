@@ -181,6 +181,11 @@
 		3B695D1B2537E84600CE15AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BD59FE9253B7188005A5BB2 /* Login */,
+				3BD59FEA253B7198005A5BB2 /* Meus Pets */,
+				3BD59FEB253B719E005A5BB2 /* Recem Chegados */,
+				3BD59FEC253B71A5005A5BB2 /* Adote */,
+				3BD59FED253B71AA005A5BB2 /* Perfil */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +264,41 @@
 				3B695D2B2537E91F00CE15AF /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3BD59FE9253B7188005A5BB2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3BD59FEA253B7198005A5BB2 /* Meus Pets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Meus Pets";
+			sourceTree = "<group>";
+		};
+		3BD59FEB253B719E005A5BB2 /* Recem Chegados */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Recem Chegados";
+			sourceTree = "<group>";
+		};
+		3BD59FEC253B71A5005A5BB2 /* Adote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adote;
+			sourceTree = "<group>";
+		};
+		3BD59FED253B71AA005A5BB2 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Perfil;
 			sourceTree = "<group>";
 		};
 		833A3938CBE84F0E11351D7C /* Frameworks */ = {

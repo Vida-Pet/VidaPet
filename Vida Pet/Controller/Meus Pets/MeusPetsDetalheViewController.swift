@@ -9,11 +9,23 @@
 import UIKit
 
 class MeusPetsDetalheViewController: VidaPetMainViewController {
-
+    
+    @IBOutlet weak var lblNome: UILabel!
+    @IBOutlet weak var lblDescricao: UILabel!
+    @IBOutlet weak var imgPet: UIImageView!
+    @IBOutlet weak var viewHeader: UIView!
+    
+    
+    var imgPetData: UIImage?
+    var lblNomeData: String?
+    var lblDescricaoData: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imgPet.image = imgPetData
+        lblNome.text = lblNomeData
+        lblDescricao.text = lblDescricaoData
     }
     
 

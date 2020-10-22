@@ -27,11 +27,15 @@
 		3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D232537E8DB00CE15AF /* Adote.storyboard */; };
 		3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D252537E8E900CE15AF /* Perfil.storyboard */; };
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
-		81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */; };
+		4878F543389DC4BA40416A3E /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */; };
+		FECCE06D2542294000E0934F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE06C2542294000E0934F /* Utilities.swift */; };
+		FECCE07125422F2300E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE07025422F2300E0934F /* WelcomeViewController.swift */; };
+		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E10F23128B42AE65528271 /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
+		3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaViewController.swift; sourceTree = "<group>"; };
 		3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsDetalheViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +58,10 @@
 		3B695D232537E8DB00CE15AF /* Adote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Adote.storyboard; sourceTree = "<group>"; };
 		3B695D252537E8E900CE15AF /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
-		BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
+		594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
+		FECCE06C2542294000E0934F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Login/Utilities.swift; sourceTree = SOURCE_ROOT; };
+		FECCE07025422F2300E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */,
+				4878F543389DC4BA40416A3E /* Pods_Vida_Pet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +79,8 @@
 		0A78D3C9317B40A7F94596B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */,
-				BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */,
+				594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */,
+				15E10F23128B42AE65528271 /* Pods-Vida Pet.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,6 +114,7 @@
 			children = (
 				3B584BD6253812900090A779 /* LoginViewController.swift */,
 				3B584BD82538129A0090A779 /* RegisterViewController.swift */,
+				FECCE07025422F2300E0934F /* WelcomeViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -153,7 +160,7 @@
 				3B695D062537E71300CE15AF /* Vida Pet */,
 				3B695D052537E71300CE15AF /* Products */,
 				0A78D3C9317B40A7F94596B8 /* Pods */,
-				833A3938CBE84F0E11351D7C /* Frameworks */,
+				7AFBEED4946C7351A870DCCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,6 +276,8 @@
 		3BD59FE9253B7188005A5BB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FECCE06C2542294000E0934F /* Utilities.swift */,
+				FECCE0732542335200E0934F /* ValidateFields.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -301,10 +310,10 @@
 			path = Perfil;
 			sourceTree = "<group>";
 		};
-		833A3938CBE84F0E11351D7C /* Frameworks */ = {
+		7AFBEED4946C7351A870DCCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */,
+				3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,7 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B695D182537E71500CE15AF /* Build configuration list for PBXNativeTarget "Vida Pet" */;
 			buildPhases = (
-				5662C0CC8B74F1377963322F /* [CP] Check Pods Manifest.lock */,
+				C3451A1CD747F8DEFBDEDA00 /* [CP] Check Pods Manifest.lock */,
 				3B695D002537E71300CE15AF /* Sources */,
 				3B695D012537E71300CE15AF /* Frameworks */,
 				3B695D022537E71300CE15AF /* Resources */,
@@ -382,7 +391,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5662C0CC8B74F1377963322F /* [CP] Check Pods Manifest.lock */ = {
+		C3451A1CD747F8DEFBDEDA00 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,16 +422,19 @@
 			files = (
 				3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */,
 				3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */,
+				FECCE06D2542294000E0934F /* Utilities.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
 				3B584BCB253811CF0090A779 /* RecemChegadosDetalheViewController.swift in Sources */,
+				FECCE0742542335200E0934F /* ValidateFields.swift in Sources */,
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
 				3B584BD7253812900090A779 /* LoginViewController.swift in Sources */,
+				FECCE07125422F2300E0934F /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,11 +568,11 @@
 		};
 		3B695D192537E71500CE15AF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */;
+			baseConfigurationReference = 594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MTQAAFW5T;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Vida Pet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,11 +587,11 @@
 		};
 		3B695D1A2537E71500CE15AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */;
+			baseConfigurationReference = 15E10F23128B42AE65528271 /* Pods-Vida Pet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MTQAAFW5T;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Vida Pet/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

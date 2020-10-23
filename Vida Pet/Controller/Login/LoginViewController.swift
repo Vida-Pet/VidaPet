@@ -18,11 +18,6 @@ class LoginViewController: VidaPetMainViewController {
     @IBOutlet weak var googleButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
-    
-
-        var isRegisterValid: Bool = false
-        
-        
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -51,20 +46,38 @@ class LoginViewController: VidaPetMainViewController {
         }
         
     
-    
         
-        @IBAction func loginPressed(_ sender: UIButton) {
-            //validar os campos
+        @IBAction func loginPressed(_ sender: Any) {
+            let error = ValidateFields.validateFieldsLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
             
-            //criar um user
-            
-            //transicao para home screen
+            if error != nil {
+                showError(message: error!)
+            } else {
+                self.performSegue(withIdentifier: "WelcomeVC", sender: self)
+            }
+          
+           
+
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if segue.identifier == "WelcomeVC"{
+            let destinationVC = segue.destination
+        }
+    }
+    
+    
+    func showError( message: String){
+        errorLabel.text = message
+        errorLabel.isHidden = false
+    }
+    
+    
     }
 
     extension LoginViewController: UITextFieldDelegate {
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            
             textField.resignFirstResponder()
             return true
         }

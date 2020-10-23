@@ -8,13 +8,16 @@
 
 import UIKit
 
-class WelcomeViewController: VidaPetMainViewController{
-    
-    
+class WelcomeViewController: UIViewController {
+
     @IBOutlet weak var userNameLabel: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
+    
+
+   
+
 }

@@ -24,7 +24,7 @@ class RegisterViewController: VidaPetMainViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
-        self.errorLabel.isHidden = true
+        errorLabel.text = ""
         
         configureTapGesture()
         configureTextFields()
@@ -43,7 +43,34 @@ class RegisterViewController: VidaPetMainViewController {
         
     }
 
+    
+    @IBAction func registerPressed(_ sender: Any) {
+        let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
+        
+        if error != nil {
+            showError(message: error!)
+        } else {
+            self.performSegue(withIdentifier: "RegisterWelcomeVC", sender: self)
+        }
+    }
+    
 
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if segue.identifier == "RegisterWelcomeVC"{
+            let destinationVC = segue.destination
+        }
+    }
+    
+    func showError( message: String){
+        errorLabel.text = message
+        errorLabel.isHidden = false
+    }
+    
 }
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -57,9 +84,12 @@ extension RegisterViewController: UITextFieldDelegate {
             self.confirmPasswordTextField.becomeFirstResponder()
         default:
             self.confirmPasswordTextField.resignFirstResponder()
+            
         }
         return true
     }
+    
+    
     }
     
 

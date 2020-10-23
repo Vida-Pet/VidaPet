@@ -29,8 +29,8 @@
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		4878F543389DC4BA40416A3E /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */; };
 		FECCE06D2542294000E0934F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE06C2542294000E0934F /* Utilities.swift */; };
-		FECCE07125422F2300E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE07025422F2300E0934F /* WelcomeViewController.swift */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
+		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 		FECCE06C2542294000E0934F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Login/Utilities.swift; sourceTree = SOURCE_ROOT; };
-		FECCE07025422F2300E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
+		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 			children = (
 				3B584BD6253812900090A779 /* LoginViewController.swift */,
 				3B584BD82538129A0090A779 /* RegisterViewController.swift */,
-				FECCE07025422F2300E0934F /* WelcomeViewController.swift */,
+				FECCE077254268A200E0934F /* WelcomeViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -426,6 +426,7 @@
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
+				FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
 				3B584BCB253811CF0090A779 /* RecemChegadosDetalheViewController.swift in Sources */,
@@ -434,7 +435,6 @@
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
 				3B584BD7253812900090A779 /* LoginViewController.swift in Sources */,
-				FECCE07125422F2300E0934F /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

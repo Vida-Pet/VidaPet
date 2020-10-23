@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dtX-bL-Pw0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7WN-jy-XWH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,7 +18,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdh-jp-oUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="338"/>
+            <point key="canvasLocation" x="4554" y="-29"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JXY-Qm-dj3">
@@ -85,6 +85,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="7WN-jy-XWH" eventType="touchUpInside" id="uoq-8W-SDW"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJi-C1-hxZ">
                                         <rect key="frame" x="108" y="361.5" width="198.5" height="34"/>
@@ -100,7 +103,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Começar"/>
                                                 <connections>
-                                                    <segue destination="0ZK-al-Uu8" kind="show" id="VXM-BO-kio"/>
+                                                    <segue destination="0ZK-al-Uu8" kind="show" id="vZd-02-2fg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -161,6 +164,7 @@
                         <outlet property="googleButton" destination="R56-0S-MUm" id="Kzz-CA-U01"/>
                         <outlet property="loginButton" destination="5DF-RO-13B" id="sM7-Ok-2Ta"/>
                         <outlet property="passwordTextField" destination="pwo-YG-WqN" id="QPf-yB-AUx"/>
+                        <segue destination="q5f-d0-Aey" kind="presentation" identifier="WelcomeVC" modalPresentationStyle="fullScreen" id="L3b-lm-adn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQN-hy-scp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,7 +224,7 @@
                                                 <rect key="frame" x="0.0" y="140" width="374" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" name="Vida Pet: Blue"/>
@@ -231,7 +235,7 @@
                                                 <rect key="frame" x="0.0" y="210" width="374" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" name="Vida Pet: Blue"/>
@@ -257,6 +261,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="0ZK-al-Uu8" eventType="touchUpInside" id="f5O-6D-1s2"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-LL-SaQ">
                                         <rect key="frame" x="104" y="426.5" width="206" height="124"/>
@@ -272,7 +279,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title=" Entrar"/>
                                                 <connections>
-                                                    <segue destination="7WN-jy-XWH" kind="show" id="2ca-qi-3RD"/>
+                                                    <segue destination="7WN-jy-XWH" kind="show" id="bz7-nh-pFQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -307,16 +314,17 @@
                         <outlet property="loginButton" destination="dml-ah-WaA" id="kbe-gf-1kB"/>
                         <outlet property="nameTextField" destination="wbD-my-Cyy" id="kp6-3y-FT5"/>
                         <outlet property="passwordTextField" destination="PsQ-vg-LjK" id="39v-z2-AbH"/>
+                        <segue destination="q5f-d0-Aey" kind="presentation" identifier="RegisterWelcomeVC" modalPresentationStyle="fullScreen" id="EjG-29-Rxv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnG-yV-xKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3164" y="-29.23538230884558"/>
+            <point key="canvasLocation" x="3216" y="-521"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="RTI-o7-ZBD">
             <objects>
-                <viewController id="q5f-d0-Aey" customClass="WelcomeViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" id="q5f-d0-Aey" customClass="WelcomeViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zyW-kB-9bT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,34 +360,18 @@
                             <constraint firstItem="LXG-vm-2q2" firstAttribute="centerX" secondItem="zyW-kB-9bT" secondAttribute="centerX" id="zJO-OW-PyU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wPe-AO-WI8"/>
                     <connections>
-                        <outlet property="userNameLabel" destination="OwI-Zb-LBV" id="l4r-AT-pYD"/>
+                        <outlet property="userNameLabel" destination="OwI-Zb-LBV" id="qc0-jQ-5g0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gm6-UW-qCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4013.5999999999999" y="-29.23538230884558"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="udm-zp-uK1">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dtX-bL-Pw0" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vgp-vw-5hy">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7WN-jy-XWH" kind="relationship" relationship="rootViewController" id="CNP-AL-KPR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HDe-NF-cGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1308" y="-28.335832083958024"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2ca-qi-3RD"/>
+        <segue reference="EjG-29-Rxv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="facebookLogo" width="30" height="30"/>

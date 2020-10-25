@@ -32,6 +32,7 @@
 		4878F543389DC4BA40416A3E /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
+		FED16A2325461D3D00552870 /* ToggleEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED16A2225461D3C00552870 /* ToggleEye.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FED16A2225461D3C00552870 /* ToggleEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEye.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				3B581AF3254518B9003E2A68 /* UIButton.swift */,
 				3B581AF7254518C3003E2A68 /* Textfield.swift */,
+				FED16A2225461D3C00552870 /* ToggleEye.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
+				FED16A2325461D3D00552870 /* ToggleEye.swift in Sources */,
 				3B584BD7253812900090A779 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

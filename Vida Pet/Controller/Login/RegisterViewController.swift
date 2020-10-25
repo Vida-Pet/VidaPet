@@ -14,6 +14,7 @@ class RegisterViewController: VidaPetMainViewController {
 
     // MARK: IBOutlets
     
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,13 +28,13 @@ class RegisterViewController: VidaPetMainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(loginButton)
         errorLabel.text = ""
         
         configureTapGesture()
         configureTextFields()
+        setUpElements()
+        passwordTextField.enablePasswordToggle()
+        confirmPasswordTextField.enablePasswordToggle()
     }
     
     
@@ -50,6 +51,11 @@ class RegisterViewController: VidaPetMainViewController {
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         
+    }
+    
+    func setUpElements(){
+        loginButton.setStyleRounded(withRadius: 5)
+        self.errorLabel.isHidden = true
     }
 
     
@@ -101,6 +107,15 @@ extension RegisterViewController: UITextFieldDelegate {
         default:
             self.confirmPasswordTextField.resignFirstResponder()
         }
+        return true
+    }
+    //disable the strong password (autofill)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField == self.passwordTextField
+            && !self.passwordTextField.isSecureTextEntry) {
+            self.passwordTextField.isSecureTextEntry = true
+        }
+        
         return true
     }
 }

@@ -14,7 +14,8 @@ enum Errors: String {
         invalidNameEmpty = "Favor preencher o Nome",
         invalidEmailEmpty = "Favor preencher o Email",
         invalidPasswordSize = "Favor insira uma senha com no mínimo 6 caracteres",
-        invalidPasswordFormat = "Sua senha deve ter... bla bla bla" // exemplo okay? não chequei o que o isPasswordFormatValid está checando no momento.. pode mudar esses textos se quiser, é só pra pegar a ideia! :)
+        invalidPasswordFormat = "Sua senha deve ter pelo menos 1 caracter especial",
+        invalidConfirmPassword = "Confirmacao de senha deve ser igual a senha"
 }
 
 class ValidateFields {
@@ -48,7 +49,7 @@ class ValidateFields {
         let cleanedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)
-        let cleanedConfirmaPassword = confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let cleanedConfirmPassword = confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if let nameError = validateName(cleanedName) {
             return nameError
@@ -59,7 +60,7 @@ class ValidateFields {
         } else if let passwordError = validatePassword(cleanedPassword) {
             return passwordError
             
-        } else if let confirmPasswordError = validatePassword(cleanedConfirmaPassword) {
+        } else if let confirmPasswordError = validateConfirmPassword(cleanedPassword, confirmPassword) {
             return confirmPasswordError
             
         } else {
@@ -104,13 +105,23 @@ class ValidateFields {
     
         }
     }
+
+    fileprivate static func validateConfirmPassword(_ password: String, _ confirmPassword: String) -> String? {
+        
+        if(password != confirmPassword ) {
+            return Errors.invalidConfirmPassword.rawValue
+        } else {
+            return nil
+        }
+    
+    }
     
     fileprivate static func isPasswordSizeValid(_ password: String) -> Bool {
         return !(password.count < 6)
     }
 
     fileprivate static func isPasswordFormatValid(_ password : String) -> Bool {
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{6,}")
         return passwordTest.evaluate(with: password)
     }
 }

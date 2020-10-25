@@ -11,7 +11,7 @@ import UIKit
 // MARK: - VidaPetMainViewController
 
 class LoginViewController: VidaPetMainViewController {
-
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,7 +20,9 @@ class LoginViewController: VidaPetMainViewController {
     @IBOutlet weak var facebookButton: UIStackView!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-        
+    
+    let eyeButton = UIButton(type: .custom)
+    
     // MARK: Life Cicle
     
     override func viewDidLoad() {
@@ -29,6 +31,8 @@ class LoginViewController: VidaPetMainViewController {
         setUpElements()
         configureTapGesture()
         configureTextFields()
+        passwordTextField.enablePasswordToggle()
+        
     }
     
     
@@ -51,6 +55,19 @@ class LoginViewController: VidaPetMainViewController {
         passwordTextField.delegate = self
     }
     
+//    //isso deveria estar em outro arquivo??
+//    private func configureToggle(){
+//        passwordTextField.rightViewMode = .unlessEditing
+//        eyeButton.setImage(UIImage(named: "eyeclosed.png"), for: .normal)
+//        eyeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: -24, bottom: 5, right: 15)
+//        eyeButton.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(15), height: CGFloat(25))
+//        eyeButton.addTarget(self, action: #selector(self.btnPasswordVisiblityClicked), for: .touchUpInside)
+//        passwordTextField.rightView = eyeButton
+//        passwordTextField.rightViewMode = .always
+//    }
+    
+    
+    
     
     // MARK: IBActions
     
@@ -63,6 +80,8 @@ class LoginViewController: VidaPetMainViewController {
             self.performSegue(withIdentifier: "WelcomeVC", sender: self)
         }
     }
+    
+   
     
     
     // MARK: Navigation
@@ -82,8 +101,8 @@ class LoginViewController: VidaPetMainViewController {
         errorLabel.isHidden = false
     }
 }
-    
-    
+
+
 // MARK: - UITextFieldDelegate
 
 extension LoginViewController: UITextFieldDelegate {
@@ -93,4 +112,17 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
+    //disable the strong password (autofill)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField == self.passwordTextField
+                && !self.passwordTextField.isSecureTextEntry) {
+            self.passwordTextField.isSecureTextEntry = true
+        }
+        
+        return true
+    }
+    
+    
 }
+
+

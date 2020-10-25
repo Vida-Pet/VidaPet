@@ -6,50 +6,111 @@
 //  Copyright © 2020 João Pedro Giarrante. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct ValidateFields {
+enum Errors: String {
+    case
+        fufillAllFields = "Favor preencher todos os campos",
+        invalidNameEmpty = "Favor preencher o Nome",
+        invalidEmailEmpty = "Favor preencher o Email",
+        invalidPasswordSize = "Favor insira uma senha com no mínimo 6 caracteres",
+        invalidPasswordFormat = "Sua senha deve ter... bla bla bla" // exemplo okay? não chequei o que o isPasswordFormatValid está checando no momento.. pode mudar esses textos se quiser, é só pra pegar a ideia! :)
+}
+
+class ValidateFields {
+    
+    // MARK: - Properties
+    
+    static let EMPTY_STRING = ""
+    
+    
+    // MARK: - External Methods
     
     static func validateFieldsLogin(email: String, password: String) -> String? {
-        if email.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            password.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return "Favor preencher todos os campos"
-        }
         
+        let cleanedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        //valida uma senha
-        if cleanedPassword.count < 6 {
-            return "Favor insira uma senha valida com 6 caracteres"
+        if let emailError = validateEmail(cleanedEmail) {
+            return emailError
+            
+        } else if let passwordError = validatePassword(cleanedPassword) {
+            return passwordError
+            
+        } else {
+            return nil
+            
         }
-        
-        return nil
     }
     
     static func validateFieldsRegister(name: String, email:String, password: String, confirmPassword: String) -> String? {
         
-    
-        if name.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            email.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-            {
-            return "Favor preencher todos os campos"
-        }
-        
+        let cleanedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedConfirmaPassword = confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        
-        if cleanedPassword.count < 6 {
-            return "Favor insira uma senha valida com 6 caracteres"
+        if let nameError = validateName(cleanedName) {
+            return nameError
+            
+        } else if let emailError = validateEmail(cleanedEmail) {
+            return emailError
+            
+        } else if let passwordError = validatePassword(cleanedPassword) {
+            return passwordError
+            
+        } else if let confirmPasswordError = validatePassword(cleanedConfirmaPassword) {
+            return confirmPasswordError
+            
+        } else {
+            return nil
+            
         }
+    }
+    
+    
+    // MARK: - Internal Methods
+    
+    fileprivate static func validateName(_ name: String) -> String? {
+        if (name == EMPTY_STRING) {
+            return Errors.invalidNameEmpty.rawValue
+            
+        } else {
+            return nil
+            
+        }
+    }
+    
+    fileprivate static func validateEmail(_ email: String) -> String? {
+        if (email == EMPTY_STRING) {
+            return Errors.invalidEmailEmpty.rawValue
+            
+        } else {
+            return nil
+            
+        }
+    }
+    
+    fileprivate static func validatePassword(_ password: String) -> String? {
         
-        return nil
+        if(!isPasswordSizeValid(password)) {
+            return Errors.invalidPasswordSize.rawValue
+        
+        } else if(!isPasswordFormatValid(password)) {
+            return Errors.invalidPasswordFormat.rawValue
+            
+        } else {
+            return nil
+    
+        }
+    }
+    
+    fileprivate static func isPasswordSizeValid(_ password: String) -> Bool {
+        return !(password.count < 6)
     }
 
-//    static func isPasswordValid(_ password : String) -> Bool {
-//
-//    let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-//    return passwordTest.evaluate(with: password)
-//}
-    
-   }
+    fileprivate static func isPasswordFormatValid(_ password : String) -> Bool {
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
+}

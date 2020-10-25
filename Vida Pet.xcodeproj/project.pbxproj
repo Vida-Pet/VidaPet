@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */; };
+		3B581AF4254518B9003E2A68 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581AF3254518B9003E2A68 /* UIButton.swift */; };
+		3B581AF8254518C3003E2A68 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581AF7254518C3003E2A68 /* Textfield.swift */; };
 		3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */; };
 		3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */; };
 		3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC8253811C20090A779 /* RecemChegadosListaViewController.swift */; };
@@ -28,7 +30,6 @@
 		3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D252537E8E900CE15AF /* Perfil.storyboard */; };
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		4878F543389DC4BA40416A3E /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */; };
-		FECCE06D2542294000E0934F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE06C2542294000E0934F /* Utilities.swift */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,8 @@
 		15E10F23128B42AE65528271 /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
 		3058A0C46EA3036DBE8E9812 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		3B581AF3254518B9003E2A68 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		3B581AF7254518C3003E2A68 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaViewController.swift; sourceTree = "<group>"; };
 		3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsDetalheViewController.swift; sourceTree = "<group>"; };
 		3B584BC8253811C20090A779 /* RecemChegadosListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosListaViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		3B695D252537E8E900CE15AF /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		594A203E4A14A9DE726019C1 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
-		FECCE06C2542294000E0934F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Login/Utilities.swift; sourceTree = SOURCE_ROOT; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,9 +104,11 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		3B265D952537FFB4009F1EE9 /* Extensions */ = {
+		3B581AF22545189B003E2A68 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3B581AF3254518B9003E2A68 /* UIButton.swift */,
+				3B581AF7254518C3003E2A68 /* Textfield.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,7 +183,7 @@
 				3B695D1B2537E84600CE15AF /* Model */,
 				3B695D1C2537E86000CE15AF /* View */,
 				3B695D1D2537E86400CE15AF /* Controller */,
-				3B265D952537FFB4009F1EE9 /* Extensions */,
+				3B581AF22545189B003E2A68 /* Extensions */,
 				3B695D1E2537E87500CE15AF /* Supporting Files */,
 			);
 			path = "Vida Pet";
@@ -276,7 +280,6 @@
 		3BD59FE9253B7188005A5BB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FECCE06C2542294000E0934F /* Utilities.swift */,
 				FECCE0732542335200E0934F /* ValidateFields.swift */,
 			);
 			path = Login;
@@ -422,7 +425,7 @@
 			files = (
 				3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */,
 				3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */,
-				FECCE06D2542294000E0934F /* Utilities.swift in Sources */,
+				3B581AF4254518B9003E2A68 /* UIButton.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
@@ -430,6 +433,7 @@
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
 				3B584BCB253811CF0090A779 /* RecemChegadosDetalheViewController.swift in Sources */,
+				3B581AF8254518C3003E2A68 /* Textfield.swift in Sources */,
 				FECCE0742542335200E0934F /* ValidateFields.swift in Sources */,
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,

@@ -8,8 +8,11 @@
 
 import UIKit
 
+// MARK: - VidaPetMainViewController
+
 class RegisterViewController: VidaPetMainViewController {
 
+    // MARK: IBOutlets
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -17,6 +20,9 @@ class RegisterViewController: VidaPetMainViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    
+    
+    // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,9 @@ class RegisterViewController: VidaPetMainViewController {
         configureTapGesture()
         configureTextFields()
     }
+    
+    
+    // MARK: Setup
     
     private func configureTapGesture(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -44,6 +53,8 @@ class RegisterViewController: VidaPetMainViewController {
     }
 
     
+    // MARK: IBActions
+    
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
@@ -54,17 +65,18 @@ class RegisterViewController: VidaPetMainViewController {
         }
     }
     
-
     
-    
-    
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == "RegisterWelcomeVC"{
-            let destinationVC = segue.destination
+            _ = segue.destination
         }
     }
+    
+    
+    // MARK: Alerts
     
     func showError( message: String){
         errorLabel.text = message
@@ -72,6 +84,10 @@ class RegisterViewController: VidaPetMainViewController {
     }
     
 }
+
+
+// MARK: UITextFieldDelegate
+
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -84,12 +100,9 @@ extension RegisterViewController: UITextFieldDelegate {
             self.confirmPasswordTextField.becomeFirstResponder()
         default:
             self.confirmPasswordTextField.resignFirstResponder()
-            
         }
         return true
     }
-    
-    
-    }
+}
     
 

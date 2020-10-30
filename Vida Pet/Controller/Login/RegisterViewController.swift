@@ -35,8 +35,11 @@ class RegisterViewController: VidaPetMainViewController {
         setUpElements()
         passwordTextField.enablePasswordToggle()
         confirmPasswordTextField.enablePasswordToggle()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
-    
     
     // MARK: Setup
     
@@ -57,6 +60,21 @@ class RegisterViewController: VidaPetMainViewController {
         loginButton.setStyleRounded(withRadius: 5)
         self.errorLabel.isHidden = true
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
 
     
     // MARK: IBActions

@@ -18,7 +18,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdh-jp-oUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4554" y="-29"/>
+            <point key="canvasLocation" x="4650" y="-29"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JXY-Qm-dj3">
@@ -367,6 +367,7 @@
                     <navigationItem key="navigationItem" id="wPe-AO-WI8"/>
                     <connections>
                         <outlet property="userNameLabel" destination="OwI-Zb-LBV" id="qc0-jQ-5g0"/>
+                        <segue destination="2Q0-OQ-eru" kind="show" identifier="goToNavigation" id="wby-Tw-1CH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gm6-UW-qCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

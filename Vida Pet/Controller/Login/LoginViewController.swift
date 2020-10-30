@@ -55,20 +55,7 @@ class LoginViewController: VidaPetMainViewController {
         passwordTextField.delegate = self
     }
     
-//    //isso deveria estar em outro arquivo??
-//    private func configureToggle(){
-//        passwordTextField.rightViewMode = .unlessEditing
-//        eyeButton.setImage(UIImage(named: "eyeclosed.png"), for: .normal)
-//        eyeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: -24, bottom: 5, right: 15)
-//        eyeButton.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(15), height: CGFloat(25))
-//        eyeButton.addTarget(self, action: #selector(self.btnPasswordVisiblityClicked), for: .touchUpInside)
-//        passwordTextField.rightView = eyeButton
-//        passwordTextField.rightViewMode = .always
-//    }
-    
-    
-    
-    
+
     // MARK: IBActions
     
     @IBAction func loginPressed(_ sender: Any) {

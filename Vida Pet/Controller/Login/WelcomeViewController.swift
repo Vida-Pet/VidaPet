@@ -11,10 +11,13 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-        // Do any additional setup after loading the view.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){ 
+          // redirect to next vc
+            VidaPetMainViewController()
+        }
     }
     
 

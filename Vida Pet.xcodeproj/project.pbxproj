@@ -137,8 +137,8 @@
 			children = (
 				3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */,
 				3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */,
-				3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */,
 				3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */,
+				3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */,
 			);
 			path = "Meus Pets";
 			sourceTree = "<group>";

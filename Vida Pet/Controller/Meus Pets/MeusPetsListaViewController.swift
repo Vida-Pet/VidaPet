@@ -10,22 +10,28 @@ import UIKit
 
 class MeusPetsListaViewController: VidaPetMainViewController {
 
+    // MARK: IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    // MARK: Variables
     
     let segueIdentifier = "MeusPetsListaToMeusPetsDetalhes"
     let cellIdentifier = "cell"
     let mockImages = ["pet1", "pet2", "pet3", "pet1", "pet2", "pet3", "pet1", "pet2", "pet3"]
     
+    
+    // MARK: LifeCicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
 
 
-    // MARK: - Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

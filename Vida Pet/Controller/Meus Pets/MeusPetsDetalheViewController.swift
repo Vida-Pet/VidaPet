@@ -10,33 +10,29 @@ import UIKit
 
 class MeusPetsDetalheViewController: VidaPetMainViewController {
     
+    
+    // MARK: IBOutlets
+    
     @IBOutlet weak var lblNome: UILabel!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var imgPet: UIImageView!
     @IBOutlet weak var viewHeader: UIView!
     
     
+    // MARK: Variables
+    
     var imgPetData: UIImage?
     var lblNomeData: String?
     var lblDescricaoData: String?
     
+    
+    // MARK: Life Cicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imgPet.image = imgPetData
-        lblNome.text = lblNomeData
-        lblDescricao.text = lblDescricaoData
+        imgPet?.image = imgPetData
+        lblNome?.text = lblNomeData
+        lblDescricao?.text = lblDescricaoData
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

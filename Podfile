@@ -6,5 +6,6 @@ target 'Vida Pet' do
   use_frameworks!
 
   # Pods for Vida Pet
+  pod ‘MaterialComponents/TextFields’
 
 end

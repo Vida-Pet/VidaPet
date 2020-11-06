@@ -12,11 +12,11 @@ import Foundation
 
 // MARK: - Pet
 struct Pet: Codable {
-    let id: Int
-    let image, name, petDescription: String
-    let adoption: Bool
-    let info: Info
-    let medicalData: MedicalData
+    var id: Int?
+    var image, name, petDescription: String?
+    var adoption: Bool?
+    var info: Info
+    var medicalData: MedicalData
 
     enum CodingKeys: String, CodingKey {
         case id, image, name
@@ -27,18 +27,24 @@ struct Pet: Codable {
 
 // MARK: - Info
 struct Info: Codable {
-    let coat, gender, weight, birth: String
-    let size, breed: String
+    var coat, gender, size, breed, birth: String?
+    var weight: Double?
 }
 
 // MARK: - MedicalData
 struct MedicalData: Codable {
-    let surgerys, vaccines: [Surgery]
+    var surgerys: [Surgery]
+    var vaccines: [Vaccine]
 }
 
 // MARK: - Surgery
 struct Surgery: Codable {
-    let nome, data: String
+    var nome, data: String?
+}
+
+// MARK: - Vaccine
+struct Vaccine: Codable {
+    var nome, data: String?
 }
 
 typealias Pets = [Pet]

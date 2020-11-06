@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
 
     override func viewDidLoad() {

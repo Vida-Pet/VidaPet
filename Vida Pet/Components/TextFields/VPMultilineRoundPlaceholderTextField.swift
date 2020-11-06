@@ -15,11 +15,11 @@ class VPMultilineRoundPlaceholderTextField: MDCMultilineTextField {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.textArea = MDCTextInputControllerOutlinedTextArea(textInput: self)
-        self.textArea.normalColor = UIColor.init(named: VPColors.gray.rawValue)
-        self.textArea.activeColor = UIColor.init(named: VPColors.blue.rawValue)
-        self.textArea.floatingPlaceholderActiveColor = UIColor.init(named: VPColors.blue.rawValue)
-        self.textArea.floatingPlaceholderNormalColor = UIColor.init(named: VPColors.gray.rawValue)
-        self.tintColor = UIColor.init(named: VPColors.blue.rawValue)
-        self.textColor = UIColor.init(named: VPColors.darkBlue.rawValue)
+        self.textArea.normalColor = R.color.vidaPetGray()
+        self.textArea.activeColor = R.color.vidaPetBlue()
+        self.textArea.floatingPlaceholderActiveColor = R.color.vidaPetBlue()
+        self.textArea.floatingPlaceholderNormalColor = R.color.vidaPetGray()
+        self.tintColor = R.color.vidaPetBlue()
+        self.textColor = R.color.vidaPetDarkBlue()
     }
 }

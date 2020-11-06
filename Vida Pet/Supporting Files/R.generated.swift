@@ -89,12 +89,40 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
-    /// This struct is generated for `MeusPetsListaViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `MeusPetsDetalheViewController`, and contains static references to 1 segues.
+    struct meusPetsDetalheViewController {
+      /// Segue identifier `MeusPetsDetalhesToMeusPetsCadastro`.
+      static let meusPetsDetalhesToMeusPetsCadastro: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MeusPetsDetalheViewController, Vida_Pet.MeusPetsCadastroViewController> = Rswift.StoryboardSegueIdentifier(identifier: "MeusPetsDetalhesToMeusPetsCadastro")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `MeusPetsDetalhesToMeusPetsCadastro`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func meusPetsDetalhesToMeusPetsCadastro(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeusPetsDetalheViewController, Vida_Pet.MeusPetsCadastroViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meusPetsDetalheViewController.meusPetsDetalhesToMeusPetsCadastro, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `MeusPetsListaViewController`, and contains static references to 2 segues.
     struct meusPetsListaViewController {
+      /// Segue identifier `MeusPetsListaToMeusPetsCadastro`.
+      static let meusPetsListaToMeusPetsCadastro: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MeusPetsListaViewController, Vida_Pet.MeusPetsCadastroViewController> = Rswift.StoryboardSegueIdentifier(identifier: "MeusPetsListaToMeusPetsCadastro")
       /// Segue identifier `MeusPetsListaToMeusPetsDetalhes`.
       static let meusPetsListaToMeusPetsDetalhes: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MeusPetsListaViewController, MeusPetsDetalheViewController> = Rswift.StoryboardSegueIdentifier(identifier: "MeusPetsListaToMeusPetsDetalhes")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `MeusPetsListaToMeusPetsCadastro`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func meusPetsListaToMeusPetsCadastro(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeusPetsListaViewController, Vida_Pet.MeusPetsCadastroViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro, segue: segue)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `MeusPetsListaToMeusPetsDetalhes`.

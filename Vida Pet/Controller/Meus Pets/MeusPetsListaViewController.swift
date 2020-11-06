@@ -17,7 +17,8 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     
     // MARK: Variables
     
-    let segueIdentifier = "MeusPetsListaToMeusPetsDetalhes"
+    let segueIdentifierDetalhes = "MeusPetsListaToMeusPetsDetalhes"
+    let segueIdentifierCadastro = "MeusPetsListaToMeusPetsCadastro"
     let cellIdentifier = "cell"
     let mockImages = ["pet1", "pet2", "pet3", "pet1", "pet2", "pet3", "pet1", "pet2", "pet3"]
     
@@ -28,21 +29,30 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        setupNavBar()
     }
 
+    fileprivate func setupNavBar() {
+        let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = addItem
+    }
+    
+    @objc fileprivate func addTapped() {
+        performSegue(withIdentifier: segueIdentifierCadastro, sender: self)
+    }
 
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case segueIdentifier:
+        case segueIdentifierDetalhes:
             if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let cell = sender as? MeusPetsListaCellTableViewCell{
                 destinationVC.imgPetData = cell.imgPet.image
                 destinationVC.lblNomeData = cell.lblNome.text
                 destinationVC.lblDescricaoData = cell.lblDescricao.text
             }
+        case segueIdentifierCadastro: break
         default: break
-            
         }
     }
 
@@ -76,7 +86,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
 extension MeusPetsListaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueIdentifier, sender: tableView.cellForRow(at: indexPath))
+        performSegue(withIdentifier: segueIdentifierDetalhes, sender: tableView.cellForRow(at: indexPath))
     }
 }
 

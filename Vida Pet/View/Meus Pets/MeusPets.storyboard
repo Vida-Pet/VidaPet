@@ -122,6 +122,7 @@
                     <connections>
                         <outlet property="tableView" destination="3Hy-zg-Oq8" id="OnN-st-AHc"/>
                         <segue destination="PDa-ey-lcH" kind="show" identifier="MeusPetsListaToMeusPetsDetalhes" id="fFA-rR-lVs"/>
+                        <segue destination="B1t-hP-TC1" kind="show" identifier="MeusPetsListaToMeusPetsCadastro" id="4zX-0o-e2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shv-Fr-Hk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -192,7 +193,7 @@
                                                                 <color key="tintColor" name="Vida Pet: Blue"/>
                                                                 <state key="normal" image="square.and.pencil" catalog="system"/>
                                                                 <connections>
-                                                                    <segue destination="B1t-hP-TC1" kind="show" id="2IY-sn-3lo"/>
+                                                                    <action selector="clickEdit:" destination="PDa-ey-lcH" eventType="touchUpInside" id="XMj-MH-bdN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -563,6 +564,7 @@
                         <outlet property="lblDescricao" destination="Ias-Uy-TEj" id="pfX-ml-Ci8"/>
                         <outlet property="lblNome" destination="akj-fq-EzS" id="vjw-Gv-IUs"/>
                         <outlet property="viewHeader" destination="14S-Zx-Tv0" id="m7z-NJ-3YX"/>
+                        <segue destination="B1t-hP-TC1" kind="show" identifier="MeusPetsDetalhesToMeusPetsCadastro" id="6SQ-XD-K7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBm-bX-LPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1082,9 +1084,12 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1628.985507246377" y="142.63392857142856"/>
+            <point key="canvasLocation" x="842" y="940"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6SQ-XD-K7f"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="Vida Pet: Blue"/>
     <resources>
         <image name="claw_icon" width="48" height="48"/>

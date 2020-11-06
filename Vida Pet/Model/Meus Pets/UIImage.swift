@@ -13,4 +13,9 @@ extension UIImage {
         let dataDecoded:NSData = NSData(base64Encoded: base64, options: NSData.Base64DecodingOptions(rawValue: 0))!
         return UIImage(data: dataDecoded as Data)!
     }
+    
+    func encodeImageToBase64() -> String {
+        let imageData:NSData = self.jpegData(compressionQuality: 0.50)! as NSData
+        return imageData.base64EncodedString()
+    }
 }

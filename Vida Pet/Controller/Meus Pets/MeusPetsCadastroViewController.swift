@@ -117,7 +117,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     birth: txtData.text,
                     weight: peso)
         pet = Pet(id: 1,
-                  image: "",
+                  image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
                   petDescription: txtDescription.text,
                   adoption: switchAdocao.isOn,

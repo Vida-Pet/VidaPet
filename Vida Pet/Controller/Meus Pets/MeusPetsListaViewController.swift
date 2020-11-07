@@ -21,8 +21,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     let segueIdentifierDetalhes = "MeusPetsListaToMeusPetsDetalhes"
     let segueIdentifierCadastro = "MeusPetsListaToMeusPetsCadastro"
     let cellIdentifier = "cell"
-    let mockImages = ["pet1", "pet2", "pet3", "pet1", "pet2", "pet3", "pet1", "pet2", "pet3"]
-    
+
     
     // MARK: LifeCicle
     
@@ -34,7 +33,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
 
@@ -54,6 +53,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         case segueIdentifierDetalhes:
             if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let indexPath = sender as? IndexPath{
                 destinationVC.pet = MeusPetsListaViewController.pets[indexPath.row]
+                destinationVC.selectedPetIndex = indexPath.row
             }
         case segueIdentifierCadastro: break
         default: break
@@ -89,7 +89,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
             }
         }
         cell.lblNome.text = MeusPetsListaViewController.pets[indexPath.row].name
-        cell.imgPet.image = UIImage(named: mockImages[indexPath.row])
+        cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()
         
         return cell
     }

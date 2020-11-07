@@ -1013,6 +1013,7 @@
                         <outlet property="segmentPelagem" destination="jkq-DD-6bZ" id="ORk-jJ-Vnz"/>
                         <outlet property="segmentPorte" destination="utn-tZ-OOj" id="IV9-hC-wQt"/>
                         <outlet property="segmentSexo" destination="SbB-FH-9wl" id="Ufq-6L-liQ"/>
+                        <outlet property="stepperPeso" destination="ZNa-6q-6Ki" id="Zhe-vQ-ZOd"/>
                         <outlet property="switchAdocao" destination="C7G-Fq-khc" id="9L2-da-lq3"/>
                         <outlet property="tableViewCirurgias" destination="b7n-TG-EYZ" id="jPN-h9-WIC"/>
                         <outlet property="tableViewVacinas" destination="c86-UZ-48M" id="SsA-Eg-Uzt"/>

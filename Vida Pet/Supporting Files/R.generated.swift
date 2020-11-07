@@ -285,14 +285,28 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `beagle`.
+    static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
+    /// Image `bullDog`.
+    static let bullDog = Rswift.ImageResource(bundle: R.hostingBundle, name: "bullDog")
     /// Image `claw_icon`.
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
-    /// Image `pet1`.
-    static let pet1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "pet1")
-    /// Image `pet2`.
-    static let pet2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "pet2")
-    /// Image `pet3`.
-    static let pet3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "pet3")
+    /// Image `gato`.
+    static let gato = Rswift.ImageResource(bundle: R.hostingBundle, name: "gato")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "beagle", bundle: ..., traitCollection: ...)`
+    static func beagle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.beagle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bullDog", bundle: ..., traitCollection: ...)`
+    static func bullDog(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bullDog, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "claw_icon", bundle: ..., traitCollection: ...)`
@@ -302,23 +316,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "pet1", bundle: ..., traitCollection: ...)`
-    static func pet1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pet1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "pet2", bundle: ..., traitCollection: ...)`
-    static func pet2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pet2, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "pet3", bundle: ..., traitCollection: ...)`
-    static func pet3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pet3, compatibleWith: traitCollection)
+    /// `UIImage(named: "gato", bundle: ..., traitCollection: ...)`
+    static func gato(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gato, compatibleWith: traitCollection)
     }
     #endif
 

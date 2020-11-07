@@ -22,6 +22,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     @IBOutlet weak var txtDescription: VPMultilineRoundPlaceholderTextField!
     @IBOutlet weak var txtRaca: VPRoundPlaceholderTextField!
     @IBOutlet weak var txtData: VPRoundPlaceholderTextField!
+    @IBOutlet weak var stepperPeso: UIStepper!
     @IBOutlet weak var txtPeso: VPRoundPlaceholderTextField!
     @IBOutlet weak var segmentPelagem: UISegmentedControl!
     @IBOutlet weak var segmentPorte: UISegmentedControl!
@@ -41,6 +42,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     final let TAG_NEW_SURGERY_DATA = 66
     let cellVacinasReuseIdentifier = "cell_vacinas"
     let cellCirurgiasReuseIdentifier = "cell_cirurgias"
+    let noPetImagePlaceholder = "plus.viewfinder"
     let defaultDateDivisor: Character = "/"
     var delegate: UIViewController?
     var editMode: Bool = false
@@ -58,8 +60,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     override func viewWillAppear(_ animated: Bool) {
         btnSalvar.layer.cornerRadius = btnSalvar.frame.height / 2
         imgView.layer.cornerRadius = imgView.frame.height / 4
-//        imgView.layer.borderWidth = 5
-//        imgView.layer.borderColor = R.color.vidaPetBlue()?.cgColor
     }
     
     override func viewDidLoad() {
@@ -71,6 +71,9 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         txtRaca.delegate = self
         txtData.delegate = self
         txtPeso.delegate = self
+        if editMode {
+            setupEditMode()
+        }
     }
     
     
@@ -122,7 +125,10 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         if let newPet = pet {
             if editMode {
                 if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
-                    petDetalhesVC.pet = pet
+                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
+                        petDetalhesVC.pet = safePet
+                        MeusPetsListaViewController.pets[safeIndex] = safePet
+                    }
                     showSuccessPetEdited()
                 }
             } else {
@@ -134,6 +140,25 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     
     // MARK: Methods
+    
+    
+    fileprivate func setupEditMode() {
+        txtName.text = pet?.name
+        txtDescription.text = pet?.petDescription
+        imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
+        txtRaca.text = pet?.info.breed
+        txtData.text = pet?.info.birth
+        txtPeso.text = pet?.info.weight != nil ? "\(String(pet!.info.weight!)) Kg" : ""
+        peso = pet?.info.weight
+        stepperPeso.value = pet?.info.weight ?? 0
+        segmentPelagem.selectSegment(thatMatches: pet?.info.coat)
+        segmentSexo.selectSegment(thatMatches: pet?.info.gender)
+        segmentPorte.selectSegment(thatMatches: pet?.info.size)
+        switchAdocao.isOn = pet?.adoption ?? false
+        medicalData = pet?.medicalData ?? MedicalData(surgerys: [], vaccines: [])
+        tableViewVacinas.reloadData()
+        tableViewCirurgias.reloadData()
+    }
     
     fileprivate func validateAllFields() -> Bool {
         // TODO: validar campos...

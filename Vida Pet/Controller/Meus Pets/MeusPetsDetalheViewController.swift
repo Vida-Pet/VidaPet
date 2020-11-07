@@ -20,6 +20,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     let emptyLinedField: String = " - "
     let defaultRowHeight: Int = 25
     let defaultTableViewMargin: CGFloat = 15
+    var selectedPetIndex: Int?
     var pet: Pet!
     
     // MARK: IBOutlets
@@ -53,11 +54,9 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         super.viewDidLoad()
         tableViewVacinas.dataSource = self
         tableViewCirurgias.dataSource = self
-        heightVacinas.constant = CGFloat((pet.medicalData.vaccines.count) * defaultRowHeight) + defaultTableViewMargin
-        heightCirurgias.constant = CGFloat((pet.medicalData.surgerys.count) * defaultRowHeight) + defaultTableViewMargin
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         setupFields()
     }
     
@@ -92,6 +91,10 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         }
         lblPelagem.text = pet.info.coat
         lblSexo.text = pet.info.gender
+        heightVacinas.constant = CGFloat((pet.medicalData.vaccines.count) * defaultRowHeight) + defaultTableViewMargin
+        heightCirurgias.constant = CGFloat((pet.medicalData.surgerys.count) * defaultRowHeight) + defaultTableViewMargin
+        tableViewVacinas.reloadData()
+        tableViewCirurgias.reloadData()
     }
     
     
@@ -104,6 +107,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
             if let cadastroVC = segue.destination as? MeusPetsCadastroViewController {
                 cadastroVC.editMode = true
                 cadastroVC.delegate = self
+                cadastroVC.pet = pet
             }
             break
         default:

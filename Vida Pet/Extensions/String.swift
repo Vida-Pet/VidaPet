@@ -20,9 +20,9 @@ public extension String {
         return lastIndex(of: char)?.utf16Offset(in: self)
     }
     
-    func decodeBase64ToImage() -> UIImage {
+    func decodeBase64ToImage() -> UIImage? {
         let dataDecoded:NSData = NSData(base64Encoded: self, options: NSData.Base64DecodingOptions(rawValue: 0))!
-        return UIImage(data: dataDecoded as Data)!
+        return UIImage(data: dataDecoded as Data)
     }
     
     func ageFromDate(withFormatter formatter: DateFormatter) -> Double {

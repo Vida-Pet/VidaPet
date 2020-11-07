@@ -41,16 +41,13 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     final let TAG_NEW_SURGERY_DATA = 66
     let cellVacinasReuseIdentifier = "cell_vacinas"
     let cellCirurgiasReuseIdentifier = "cell_cirurgias"
-    let defaultDateFormatter: DateFormatter = DateFormatter()
     let defaultDateDivisor: Character = "/"
-    
+    var delegate: UIViewController?
+    var editMode: Bool = false
     var pet: Pet?
     var peso: Double?
-    
     var info: Info = Info()
-    
     var medicalData: MedicalData = MedicalData(surgerys: [], vaccines: [])
-    
     enum MedicalDataType {
         case VACCINES
         case SURGERYS
@@ -67,7 +64,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultDateFormatter.dateFormat = R.string.meusPetsCadastro.default_date_formater()
         txtDescription.textView?.delegate = self
         tableViewCirurgias.dataSource = self
         tableViewVacinas.dataSource = self
@@ -122,6 +118,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                   petDescription: txtDescription.text,
                   adoption: switchAdocao.isOn,
                   info: info, medicalData: medicalData)
+
+        if let newPet = pet {
+            if editMode {
+                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
+                    petDetalhesVC.pet = pet
+                    showSuccessPetEdited()
+                }
+            } else {
+                MeusPetsCadastroViewController.pets.append(newPet)
+                showSuccessPetAdded()
+            }
+        }
     }
     
     
@@ -130,6 +138,26 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     fileprivate func validateAllFields() -> Bool {
         // TODO: validar campos...
         return true
+    }
+    
+    fileprivate func showSuccessPetAdded(){
+        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_add(), comment: ""), message: nil, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func showSuccessPetEdited(){
+        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_edit(), comment: ""), message: nil, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     fileprivate func showImageActionSheet(){

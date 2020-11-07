@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MeusPetsListaViewController: VidaPetMainViewController {
 
+class MeusPetsListaViewController: VidaPetMainViewController {
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +31,11 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setupNavBar()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     fileprivate func setupNavBar() {
@@ -46,10 +52,8 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case segueIdentifierDetalhes:
-            if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let cell = sender as? MeusPetsListaCellTableViewCell{
-                destinationVC.imgPetData = cell.imgPet.image
-                destinationVC.lblNomeData = cell.lblNome.text
-                destinationVC.lblDescricaoData = cell.lblDescricao.text
+            if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let indexPath = sender as? IndexPath{
+                destinationVC.pet = MeusPetsListaViewController.pets[indexPath.row]
             }
         case segueIdentifierCadastro: break
         default: break
@@ -65,7 +69,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mockImages.count
+        return MeusPetsListaViewController.pets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,6 +78,17 @@ extension MeusPetsListaViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        if var age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
+            if age > 1 {
+                let formattedAge = "\(Int(floor(age))) anos"
+                cell.lblDescricao.text = "\(breed), \(formattedAge)"
+            } else {
+                age *= 12
+                let formattedAge = "\(Int(floor(age))) meses"
+                cell.lblDescricao.text = "\(breed), \(formattedAge)"
+            }
+        }
+        cell.lblNome.text = MeusPetsListaViewController.pets[indexPath.row].name
         cell.imgPet.image = UIImage(named: mockImages[indexPath.row])
         
         return cell
@@ -86,7 +101,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
 extension MeusPetsListaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueIdentifierDetalhes, sender: tableView.cellForRow(at: indexPath))
+        performSegue(withIdentifier: segueIdentifierDetalhes, sender: indexPath)
     }
 }
 

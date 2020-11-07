@@ -22,7 +22,7 @@ extension UITextField {
             }
         }
         guard Int(string) != nil || string.isEmpty else { return false }
-        guard range.location <= dateFormatter.dateFormat.count-11 else { return false }
+        guard range.location <= dateFormatter.dateFormat.count-1 else { return false }
         if self.text?.count == dateFormatter.dateFormat.indexFirst(of: dateDivisor) || self.text?.count == dateFormatter.dateFormat.indexLast(of: dateDivisor) {
             if !(string.isEmpty) {
                 self.text?.append(dateDivisor)

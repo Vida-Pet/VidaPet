@@ -9,20 +9,18 @@
 "nova_vacina_titulo" = "Nova Vacina";
 "nova_vacina_mensagem" = "Preencha as informações abaixo";
 "nova_vacina_placeholder" = "Vacina";
-
 "nova_cirurgia_titulo" = "Nova Cirurgia";
 "nova_cirurgia_mensagem" = "Preencha as informações abaixo";
 "nova_cirurgia_placeholder" = "Cirurgia";
-
 "nova_cancelar" = "Cancelar";
 "nova_adicionar" = "Adicionar";
 "nova_data" = "Data";
-
 "image_selector_nova_imagem" = "Adicionar Imagem";
 "image_selector_cancelar" = "Cancelar";
 "image_selector_camera" = "Tirar Foto";
 "image_selector_galeria" = "Escolher da Galeria";
-
 "default_date_formater" = "dd/MM/yyyy";
-
 "error_wrong_date" = "Digite uma data válida";
+"success_alert_title_add" = "Pet foi adicionado com sucesso!";
+"success_alert_title_edit" = "Pet foi editado com sucesso!";
+"success_alert_button" = "OK";

@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jr6-Q2-wRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="890"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1070"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet3" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-pf-SC9" userLabel="ImgPrincipal">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -366,7 +366,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8T-tX-mUa" userLabel="ViewDadosMedicos">
-                                                <rect key="frame" x="15" y="659.5" width="384" height="190.5"/>
+                                                <rect key="frame" x="15" y="659.5" width="384" height="370.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Médicos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-Ej-6Ys">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="19.5"/>
@@ -375,130 +375,95 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6kV-Vc-vXp">
-                                                        <rect key="frame" x="0.0" y="29.5" width="384" height="161"/>
+                                                        <rect key="frame" x="0.0" y="29.5" width="384" height="341"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Fa-gj-iIe">
-                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="92.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qQQ-Co-Hy4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="341"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Vacinas:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xKZ-rq-Df7">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="14.5"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Vacinas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PnI-ml-YKE">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <color key="textColor" name="Vida Pet: Blue"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HsV-Mu-3ni">
-                                                                        <rect key="frame" x="0.0" y="19.5" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="V8/V10" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-WF-K3Y">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="janeiro, 2020" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="clZ-fg-5yB">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tyf-eD-TpM">
-                                                                        <rect key="frame" x="0.0" y="39" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Gripe canina" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7CS-rb-lpm">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="setembro, 2019" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-j5-zT8">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LZg-cj-9VO">
-                                                                        <rect key="frame" x="0.0" y="58.5" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Giárdia" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x90-bo-llN">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="dezembro, 2019" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xNB-sb-aIa">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f9Q-o7-M34">
-                                                                        <rect key="frame" x="0.0" y="78" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Raiva canina" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="04f-AM-xFW">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="fevereiro, 2020" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hvf-cM-7Rn">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qQQ-Co-Hy4">
-                                                                <rect key="frame" x="0.0" y="107.5" width="384" height="53.5"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Cirurgias:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PnI-ml-YKE">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="14.5"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-ty-yKn">
+                                                                        <rect key="frame" x="0.0" y="33" width="384" height="130"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="130" id="oZJ-DS-Vq0"/>
+                                                                        </constraints>
+                                                                        <color key="separatorColor" name="Vida Pet: Blue"/>
+                                                                        <color key="sectionIndexColor" name="Vida Pet: Blue"/>
+                                                                        <prototypes>
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cell_vacinas_detalhes" textLabel="ARz-p6-e68" detailTextLabel="vzt-4F-4yL" style="IBUITableViewCellStyleValue1" id="Kec-gQ-eih">
+                                                                                <rect key="frame" x="0.0" y="28" width="384" height="25"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kec-gQ-eih" id="UuB-Ls-ecB">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ARz-p6-e68">
+                                                                                            <rect key="frame" x="20" y="3" width="33" height="20.5"/>
+                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vzt-4F-4yL">
+                                                                                            <rect key="frame" x="273.5" y="3" width="58.5" height="20.5"/>
+                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </tableViewCellContentView>
+                                                                                <color key="backgroundColor" name="Vida Pet: White"/>
+                                                                            </tableViewCell>
+                                                                        </prototypes>
+                                                                    </tableView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Cirurgias" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XJf-KN-pCZ">
+                                                                        <rect key="frame" x="0.0" y="178" width="384" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <color key="textColor" name="Vida Pet: Blue"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="69U-2O-72a">
-                                                                        <rect key="frame" x="0.0" y="19.5" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Castração" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5uj-Wc-e9N">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="maio, 2014   " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kzq-fp-vXH">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="en5-Oh-dMF">
-                                                                        <rect key="frame" x="0.0" y="39" width="384" height="14.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Cateterismo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sZS-eL-oxg">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="agosto, 2016" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KAU-7O-h0M">
-                                                                                <rect key="frame" x="192" y="0.0" width="192" height="14.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                                <color key="textColor" name="Vida Pet: Blue"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-SP-zGf">
+                                                                        <rect key="frame" x="0.0" y="211" width="384" height="130"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="130" id="Y5R-HQ-mbv"/>
+                                                                        </constraints>
+                                                                        <color key="separatorColor" name="Vida Pet: Blue"/>
+                                                                        <color key="sectionIndexColor" name="Vida Pet: Blue"/>
+                                                                        <prototypes>
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cell_cirurgias_detalhes" textLabel="5WD-gN-CO1" detailTextLabel="nvt-4H-z7x" style="IBUITableViewCellStyleValue1" id="1kV-Wp-TeQ">
+                                                                                <rect key="frame" x="0.0" y="28" width="384" height="25"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kV-Wp-TeQ" id="2r6-ka-SnL">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5WD-gN-CO1">
+                                                                                            <rect key="frame" x="20" y="3" width="33" height="20.5"/>
+                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nvt-4H-z7x">
+                                                                                            <rect key="frame" x="273.5" y="3" width="58.5" height="20.5"/>
+                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </tableViewCellContentView>
+                                                                                <color key="backgroundColor" name="Vida Pet: White"/>
+                                                                            </tableViewCell>
+                                                                        </prototypes>
+                                                                    </tableView>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -560,10 +525,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="auG-4d-GdT"/>
                     <connections>
+                        <outlet property="heightCirurgias" destination="Y5R-HQ-mbv" id="SFY-FU-dKs"/>
+                        <outlet property="heightVacinas" destination="oZJ-DS-Vq0" id="mfr-H1-bx8"/>
                         <outlet property="imgPet" destination="dxh-pf-SC9" id="UfN-lN-x6s"/>
-                        <outlet property="lblDescricao" destination="Ias-Uy-TEj" id="pfX-ml-Ci8"/>
+                        <outlet property="lblDescricao" destination="Qmn-wn-PZh" id="3qK-ce-pAR"/>
+                        <outlet property="lblIdade" destination="ihC-0T-y0D" id="uaC-Lf-wHQ"/>
+                        <outlet property="lblMiniBio" destination="Ias-Uy-TEj" id="UdZ-1C-OWD"/>
                         <outlet property="lblNome" destination="akj-fq-EzS" id="vjw-Gv-IUs"/>
-                        <outlet property="viewHeader" destination="14S-Zx-Tv0" id="m7z-NJ-3YX"/>
+                        <outlet property="lblPelagem" destination="Kzb-KG-epC" id="NEk-Rh-Hz9"/>
+                        <outlet property="lblPeso" destination="beh-Es-9uL" id="G8t-5H-A1Z"/>
+                        <outlet property="lblPorte" destination="8A5-Uz-UeK" id="vwj-PA-5nf"/>
+                        <outlet property="lblRaca" destination="6GF-Sa-TY3" id="BNU-Sx-YgJ"/>
+                        <outlet property="lblSexo" destination="vRa-wM-I9D" id="0LK-76-Aep"/>
+                        <outlet property="tableViewCirurgias" destination="Trv-SP-zGf" id="YEP-Os-559"/>
+                        <outlet property="tableViewVacinas" destination="4Ld-ty-yKn" id="K7E-Yx-NuO"/>
                         <segue destination="B1t-hP-TC1" kind="show" identifier="MeusPetsDetalhesToMeusPetsCadastro" id="6SQ-XD-K7f"/>
                     </connections>
                 </viewController>

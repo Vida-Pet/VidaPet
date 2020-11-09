@@ -8,23 +8,101 @@
 
 import UIKit
 
-class MeusPetsListaViewController: VidaPetMainViewController {
 
+class MeusPetsListaViewController: VidaPetMainViewController {
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    // MARK: Variables
+    
+    let segueIdentifierDetalhes = "MeusPetsListaToMeusPetsDetalhes"
+    let segueIdentifierCadastro = "MeusPetsListaToMeusPetsCadastro"
+    let cellIdentifier = "cell"
+
+    
+    // MARK: LifeCicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        setupNavBar()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
-    */
+
+    fileprivate func setupNavBar() {
+        let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = addItem
+    }
+    
+    @objc fileprivate func addTapped() {
+        performSegue(withIdentifier: segueIdentifierCadastro, sender: self)
+    }
+
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case segueIdentifierDetalhes:
+            if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let indexPath = sender as? IndexPath{
+                destinationVC.pet = MeusPetsListaViewController.pets[indexPath.row]
+                destinationVC.selectedPetIndex = indexPath.row
+            }
+        case segueIdentifierCadastro: break
+        default: break
+        }
+    }
 
 }
+
+
+// MARK: - UITableViewDataSource
+
+extension MeusPetsListaViewController: UITableViewDataSource {
+    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MeusPetsListaViewController.pets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MeusPetsListaCellTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        if var age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
+            if age > 1 {
+                let formattedAge = "\(Int(floor(age))) anos"
+                cell.lblDescricao.text = "\(breed), \(formattedAge)"
+            } else {
+                age *= 12
+                let formattedAge = "\(Int(floor(age))) meses"
+                cell.lblDescricao.text = "\(breed), \(formattedAge)"
+            }
+        }
+        cell.lblNome.text = MeusPetsListaViewController.pets[indexPath.row].name
+        cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()
+        
+        return cell
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension MeusPetsListaViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifierDetalhes, sender: indexPath)
+    }
+}
+
+

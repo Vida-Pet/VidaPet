@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `MeusPetsDetalheViewController`, and contains static references to 1 segues.
     struct meusPetsDetalheViewController {
@@ -130,6 +130,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func meusPetsListaToMeusPetsDetalhes(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeusPetsListaViewController, MeusPetsDetalheViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `PerfilViewController`, and contains static references to 1 segues.
+    struct perfilViewController {
+      /// Segue identifier `fromPerfilToEdit`.
+      static let fromPerfilToEdit: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PerfilViewController, EditarPerfilViewController> = Rswift.StoryboardSegueIdentifier(identifier: "fromPerfilToEdit")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `fromPerfilToEdit`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func fromPerfilToEdit(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PerfilViewController, EditarPerfilViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.perfilViewController.fromPerfilToEdit, segue: segue)
       }
       #endif
 
@@ -283,7 +300,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `beagle`.
     static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
@@ -293,6 +310,8 @@ struct R: Rswift.Validatable {
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
     /// Image `gato`.
     static let gato = Rswift.ImageResource(bundle: R.hostingBundle, name: "gato")
+    /// Image `userImage`.
+    static let userImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "userImage")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "beagle", bundle: ..., traitCollection: ...)`
@@ -319,6 +338,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "gato", bundle: ..., traitCollection: ...)`
     static func gato(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.gato, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "userImage", bundle: ..., traitCollection: ...)`
+    static func userImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -803,7 +829,9 @@ struct _R: Rswift.Validatable {
       let name = "Perfil"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "userImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'userImage' is used in storyboard 'Perfil', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Perfil', but couldn't be loaded.") }
         }
       }
 

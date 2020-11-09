@@ -28,6 +28,9 @@
 		3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D252537E8E900CE15AF /* Perfil.storyboard */; };
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		81B657F7510D027CEF7FDA20 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164D47A29223E0675CED8E51 /* Pods_Vida_Pet.framework */; };
+		FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */; };
+		FE352AEB2554E49000D4E680 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352AEA2554E49000D4E680 /* UserData.swift */; };
+		FE82FC002555E940007B396E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE82FBFF2555E940007B396E /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BCB30705C6ADA505CE2C891D /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
 		BEB12592DBBEAE5332EB3D9B /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
+		FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
+		FE352AEA2554E49000D4E680 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Perfil/UserData.swift; sourceTree = SOURCE_ROOT; };
+		FE82FBFF2555E940007B396E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Perfil/UserModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3B584BD0253811EC0090A779 /* PerfilViewController.swift */,
+				FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -297,6 +304,8 @@
 		3BD59FED253B71AA005A5BB2 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				FE352AEA2554E49000D4E680 /* UserData.swift */,
+				FE82FBFF2555E940007B396E /* UserModel.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -414,7 +423,10 @@
 				3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */,
 				3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
+				FE82FC002555E940007B396E /* UserModel.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
+				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
+				FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,

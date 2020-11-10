@@ -9,7 +9,7 @@
 import UIKit
 
 class PerfilViewController: VidaPetMainViewController {
-
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var petsLabel: UILabel!
@@ -18,6 +18,7 @@ class PerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var bioLabel: UILabel!
     
     var userModel = UserModel()
+    final let segueIdentifierEdit = "fromPerfilToEdit"
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -26,28 +27,28 @@ class PerfilViewController: VidaPetMainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1842333972, green: 0.7304695249, blue: 0.7287064195, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,target: self,
                                                                  action: #selector(rightHandAction))
     }
     
     @objc
     func rightHandAction() {
-        print("right bar button action")
-        performSegue(withIdentifier: "fromPerfilToEdit", sender: self)
+        performSegue(withIdentifier: segueIdentifierEdit, sender: self)
     }
     
     func setupImage(){
         userImage.layer.cornerRadius = userImage.frame.width / 2
-                userImage.layer.borderColor = #colorLiteral(red: 0.1842333972, green: 0.7304695249, blue: 0.7287064195, alpha: 1)
-                userImage.layer.borderWidth = 2.0
-                userImage.clipsToBounds = true
+        userImage.layer.borderColor = R.color.vidaPetBlue()?.cgColor
+        // MARK: - TODO: guardar este valor como um let lá em cima -
+        userImage.layer.borderWidth = 2.0
+        userImage.clipsToBounds = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "fromPerfilToEdit" {
-            let destinationVC = segue.destination as! EditarPerfilViewController
-    
+        if segue.identifier == segueIdentifierEdit {
+            _ = segue.destination as! EditarPerfilViewController
+            
         }
     }
     

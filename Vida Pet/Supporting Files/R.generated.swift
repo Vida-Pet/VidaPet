@@ -398,8 +398,59 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
+    /// This `R.string.editarPerfil` struct is generated, and contains static references to 3 localization keys.
+    struct editarPerfil {
+      /// Value: Camera
+      static let image_option_camera = Rswift.StringResource(key: "image_option_camera", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Escolha a imagem
+      static let image_title = Rswift.StringResource(key: "image_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Galeria
+      static let image_option_galery = Rswift.StringResource(key: "image_option_galery", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Camera
+      static func image_option_camera(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("image_option_camera", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "image_option_camera"
+        }
+
+        return NSLocalizedString("image_option_camera", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Escolha a imagem
+      static func image_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "image_title"
+        }
+
+        return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Galeria
+      static func image_option_galery(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("image_option_galery", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "image_option_galery"
+        }
+
+        return NSLocalizedString("image_option_galery", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.string.meusPetsCadastro` struct is generated, and contains static references to 18 localization keys.
     struct meusPetsCadastro {
       /// Value: Adicionar

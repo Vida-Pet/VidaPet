@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -119,16 +119,13 @@
                                                     <constraint firstAttribute="height" constant="100" id="p8J-iI-wVL"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uts-KU-m76">
-                                                <rect key="frame" x="20" y="177" width="374" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="uAd-ta-O79"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uts-KU-m76" customClass="VPRoundPlaceholderTextField" customModule="Vida_Pet">
+                                                <rect key="frame" x="20" y="177" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Selecione o estado" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9B-fF-eDS">
-                                                <rect key="frame" x="20" y="227" width="374" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado Natal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9B-fF-eDS" customClass="VPRoundPlaceholderTextField" customModule="Vida_Pet" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="226" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -139,16 +136,8 @@
                                                     <action selector="imagePressed:" destination="K3p-2f-Eku" eventType="touchUpInside" id="gjb-mR-LbC"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxC-OI-LDB">
-                                                <rect key="frame" x="20" y="276" width="374" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="wmM-Sq-ScB"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-Uu-87y">
-                                                <rect key="frame" x="20" y="556" width="364" height="31"/>
+                                                <rect key="frame" x="20" y="555" width="364" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tornar perfil público" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-Ba-RdL">
                                                         <rect key="frame" x="0.0" y="0.0" width="192" height="31"/>
@@ -165,25 +154,35 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-32-PAg" customClass="VPMultilineRoundPlaceholderTextField" customModule="Vida_Pet" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="275" width="374" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Taj-sn-uHr"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descrição"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="bxC-OI-LDB" secondAttribute="trailing" constant="20" id="4Dn-2a-c3u"/>
                                             <constraint firstItem="Now-6U-eV3" firstAttribute="centerX" secondItem="pvb-5H-t7E" secondAttribute="centerX" id="7ru-Sh-R78"/>
                                             <constraint firstAttribute="trailing" secondItem="wQl-Uu-87y" secondAttribute="trailing" constant="30" id="AGe-Id-Y9B"/>
                                             <constraint firstItem="K9B-fF-eDS" firstAttribute="top" secondItem="Uts-KU-m76" secondAttribute="bottom" constant="15" id="BTq-ZE-lkr"/>
                                             <constraint firstItem="Now-6U-eV3" firstAttribute="top" secondItem="ExU-xe-d7L" secondAttribute="bottom" constant="7" id="CRu-N4-F96"/>
-                                            <constraint firstItem="bxC-OI-LDB" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="15" id="D6q-jg-ad4"/>
+                                            <constraint firstItem="4yy-32-PAg" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="15" id="EOB-1Z-qQv"/>
                                             <constraint firstAttribute="trailing" secondItem="Uts-KU-m76" secondAttribute="trailing" constant="20" id="IYQ-bp-Pd7"/>
+                                            <constraint firstItem="wQl-Uu-87y" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" constant="80" id="R2f-1N-VUq"/>
                                             <constraint firstItem="Uts-KU-m76" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="Rw3-Pr-uqZ"/>
                                             <constraint firstItem="Uts-KU-m76" firstAttribute="top" secondItem="Now-6U-eV3" secondAttribute="bottom" constant="15" id="Txw-hI-yRi"/>
                                             <constraint firstItem="K9B-fF-eDS" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="ZPO-kO-xra"/>
                                             <constraint firstAttribute="height" constant="1000" id="ZTh-qj-Mx5"/>
-                                            <constraint firstItem="wQl-Uu-87y" firstAttribute="top" secondItem="bxC-OI-LDB" secondAttribute="bottom" constant="80" id="j0U-AG-ASU"/>
+                                            <constraint firstAttribute="trailing" secondItem="4yy-32-PAg" secondAttribute="trailing" constant="20" id="hst-04-dnR"/>
                                             <constraint firstAttribute="trailing" secondItem="K9B-fF-eDS" secondAttribute="trailing" constant="20" id="kSG-gX-XcK"/>
-                                            <constraint firstItem="bxC-OI-LDB" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="s8w-xG-539"/>
                                             <constraint firstItem="wQl-Uu-87y" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="tXu-zE-J36"/>
                                             <constraint firstItem="ExU-xe-d7L" firstAttribute="top" secondItem="pvb-5H-t7E" secondAttribute="top" constant="25" id="u9L-tG-a9q"/>
+                                            <constraint firstItem="4yy-32-PAg" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="v0x-oC-P4v"/>
                                             <constraint firstItem="ExU-xe-d7L" firstAttribute="centerX" secondItem="pvb-5H-t7E" secondAttribute="centerX" id="vO8-x3-9cN"/>
                                         </constraints>
                                     </view>
@@ -208,7 +207,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="oOc-6o-ROK"/>
                     <connections>
-                        <outlet property="bio" destination="bxC-OI-LDB" id="dfh-JO-tQH"/>
                         <outlet property="estadoTextField" destination="K9B-fF-eDS" id="GmU-Dd-5gO"/>
                         <outlet property="userImage" destination="ExU-xe-d7L" id="86e-kp-Vic"/>
                         <outlet property="userNameTextField" destination="Uts-KU-m76" id="7Au-o2-KeG"/>

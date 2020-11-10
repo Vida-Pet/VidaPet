@@ -1,0 +1,11 @@
+/* 
+  Perfil.strings
+  Vida Pet
+
+  Created by João Pedro Giarrante on 09/11/20.
+  Copyright © 2020 João Pedro Giarrante. All rights reserved.
+*/
+
+"image_title" = "Escolha a imagem";
+"image_option_camera" = "Camera";
+"image_option_galery" = "Galeria";

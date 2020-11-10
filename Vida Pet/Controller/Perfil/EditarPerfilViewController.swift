@@ -24,7 +24,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
 
 
         userImage.layer.cornerRadius = userImage.frame.width / 2
-        userImage.layer.borderColor = #colorLiteral(red: 0.1842333972, green: 0.7304695249, blue: 0.7287064195, alpha: 1)
+        userImage.layer.borderColor = R.color.vidaPetBlue()?.cgColor
+        // MARK: - TODO: guardar este valor como um let lá em cima -
         userImage.layer.borderWidth = 2.0
         userImage.clipsToBounds = true
 
@@ -32,7 +33,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1842333972, green: 0.7304695249, blue: 0.7287064195, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done,target: self,
                                                                  action: #selector(rightHandAction))
     
@@ -42,26 +43,28 @@ class EditarPerfilViewController: VidaPetMainViewController {
 
     @objc
     func rightHandAction() {
+        // MARK: - TODO: retirar log depois -
         print("right bar button action")
     }
 
     
     @IBAction func perfilPublico(_ sender: Any) {
+        // MARK: - TODO: retirar log depois -
         print("pressed")
     }
     
     
     @IBAction func imagePressed(_ sender: UIButton) {
 
-        let alert = UIAlertController(title: "Escolha a imagem", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+        let alert = UIAlertController(title: R.string.editarPerfil.image_title(), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: R.string.editarPerfil.image_option_camera(), style: .default, handler: { _ in
             self.openCamera()
         }))
 
-        alert.addAction(UIAlertAction(title: "Galeria", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: R.string.editarPerfil.image_option_galery(), style: .default, handler: { _ in
             self.openGallery()
         }))
-
+        // MARK: - TODO: seguir os passos e adicionar nos strings -
         alert.addAction(UIAlertAction.init(title: "Cancelar", style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
@@ -78,6 +81,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
         else
         {
+            // MARK: - TODO: seguir os passos e adicionar nos strings -
             let alert  = UIAlertController(title: "Aviso", message: "Você não tem câmera", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -95,6 +99,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
         else
         {
+            // MARK: - TODO: seguir os passos e adicionar nos strings -
             let alert  = UIAlertController(title: "Aviso", message: "Você não tem acesso a galeria", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -113,6 +118,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
+        // MARK: - TODO: seguir os passos e adicionar nos strings -
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissAction))
         toolBar.setItems([button], animated: true)
         toolBar.isUserInteractionEnabled = true
@@ -135,7 +141,7 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
         }
         picker.dismiss(animated: true, completion: nil)
     }
-
+    // MARK: - TODO: ou usar ou apagar código comentado sempre -
     //    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     //        picker.dismiss(animated: true, completion: nil)
     //    }
@@ -143,9 +149,10 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
 
 
 //MARK: - Picker View
-
+\
 extension EditarPerfilViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        // MARK: - TODO: guardar como um let lá em cima -
         return 1
     }
     

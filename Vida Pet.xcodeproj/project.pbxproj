@@ -35,6 +35,7 @@
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */; };
 		3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */; };
+		3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B984344255A1440000DA748 /* EditarPerfil.strings */; };
 		3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */; };
 		3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */; };
 		3BD5A000253D445F005A5BB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FFF253D445F005A5BB2 /* UIView.swift */; };
@@ -78,6 +79,7 @@
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
 		3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPMultilineRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
+		3B984344255A1440000DA748 /* EditarPerfil.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EditarPerfil.strings; sourceTree = "<group>"; };
 		3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsCadastroViewController.swift; sourceTree = "<group>"; };
 		3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaCellTableViewCell.swift; sourceTree = "<group>"; };
 		3BD59FFF253D445F005A5BB2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = "Vida Pet/Controller/Meus Pets/UIView.swift"; sourceTree = SOURCE_ROOT; };
@@ -114,6 +116,7 @@
 		3B0B896B25543A1800033297 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				3B984343255A140A000DA748 /* Perfil */,
 				3B0B897025543A4D00033297 /* Meus Pets */,
 			);
 			path = Strings;
@@ -334,6 +337,14 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		3B984343255A140A000DA748 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				3B984344255A1440000DA748 /* EditarPerfil.strings */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		3BD59FE9253B7188005A5BB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +475,7 @@
 				3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */,
 				3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */,
 				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
+				3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
 				3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */,

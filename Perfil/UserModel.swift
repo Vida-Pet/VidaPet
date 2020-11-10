@@ -10,7 +10,7 @@ import Foundation
 
 struct UserModel{
     
-var user = UserData(name: "Felipe Miranda", bio: "Amo meus cachorrosbla bla bla bla bla bla bla bla bla bla", image: "userImage", date: "18/08/20")
+    var user = UserData(name: "Felipe Miranda", bio: "Amo meus pets, são a alegria da casa. Tenho dois cachorros e um gato, sou muito feliz...", image: "userImage", date: "Entrou em 18/08/20", numberOfPets: "2 cachorros e 1 gato", publicUser: true)
 
 let stateArray = ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"]
 }

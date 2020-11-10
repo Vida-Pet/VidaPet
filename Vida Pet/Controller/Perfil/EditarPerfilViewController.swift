@@ -15,38 +15,35 @@ class EditarPerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: UITextField!
     
-    
+    final let barButtonTitle = "Salvar"
+    let numberOfComponents = 1
     var selectedState: String?
-    var listOfStates = ["a", "b"]
+    var userModel =  UserModel()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
 
-        userImage.layer.cornerRadius = userImage.frame.width / 2
-        userImage.layer.borderColor = R.color.vidaPetBlue()?.cgColor
-        // MARK: - TODO: guardar este valor como um let lá em cima -
-        userImage.layer.borderWidth = 2.0
-        userImage.clipsToBounds = true
+        userImage.setupImage(image: userImage)
 
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done,target: self,
-                                                                 action: #selector(rightHandAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
     
         self.createAndSetupPickerView()
         self.dismissAndClosePickerView()
+  
     }
 
     @objc
     func rightHandAction() {
-        // MARK: - TODO: retirar log depois -
-        print("right bar button action")
+        _ = navigationController?.popViewController(animated: true)
     }
-
+            
+    
     
     @IBAction func perfilPublico(_ sender: Any) {
         // MARK: - TODO: retirar log depois -
@@ -64,8 +61,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
         alert.addAction(UIAlertAction(title: R.string.editarPerfil.image_option_galery(), style: .default, handler: { _ in
             self.openGallery()
         }))
-        // MARK: - TODO: seguir os passos e adicionar nos strings -
-        alert.addAction(UIAlertAction.init(title: "Cancelar", style: .cancel, handler: nil))
+       
+        alert.addAction(UIAlertAction.init(title: R.string.editarPerfil.cancel(), style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
     }
@@ -81,9 +78,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
         else
         {
-            // MARK: - TODO: seguir os passos e adicionar nos strings -
-            let alert  = UIAlertController(title: "Aviso", message: "Você não tem câmera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert  = UIAlertController(title: R.string.editarPerfil.warning(), message: R.string.editarPerfil.camera_access(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: R.string.editarPerfil.ok(), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -99,9 +95,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
         else
         {
-            // MARK: - TODO: seguir os passos e adicionar nos strings -
-            let alert  = UIAlertController(title: "Aviso", message: "Você não tem acesso a galeria", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert  = UIAlertController(title: R.string.editarPerfil.warning(), message: R.string.editarPerfil.galery_access(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: R.string.editarPerfil.ok(), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -117,9 +112,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
     func dismissAndClosePickerView() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        
-        // MARK: - TODO: seguir os passos e adicionar nos strings -
-        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dismissAction))
+
+        let button = UIBarButtonItem(title: R.string.editarPerfil.picker_state(), style: .plain, target: self, action: #selector(self.dismissAction))
         toolBar.setItems([button], animated: true)
         toolBar.isUserInteractionEnabled = true
         self.estadoTextField.inputAccessoryView = toolBar
@@ -141,32 +135,29 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
         }
         picker.dismiss(animated: true, completion: nil)
     }
-    // MARK: - TODO: ou usar ou apagar código comentado sempre -
-    //    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-    //        picker.dismiss(animated: true, completion: nil)
-    //    }
 }
 
 
 //MARK: - Picker View
-\
+
 extension EditarPerfilViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        // MARK: - TODO: guardar como um let lá em cima -
-        return 1
+        return numberOfComponents
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.listOfStates.count
+        return userModel.stateArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.listOfStates[row]
+        return userModel.stateArray[row]
     }
    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectedState = self.listOfStates[row]
+        self.selectedState = userModel.stateArray[row]
         self.estadoTextField.text = self.selectedState
+        
+        
     }
     
 }

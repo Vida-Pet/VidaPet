@@ -19,31 +19,29 @@ class PerfilViewController: VidaPetMainViewController {
     
     var userModel = UserModel()
     final let segueIdentifierEdit = "fromPerfilToEdit"
+    final let barButtonTitle = "Editar"
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupImage()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit,target: self,
-                                                                 action: #selector(rightHandAction))
-    }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
+ 
+        userImage.setupImage(image: userImage)
+        upDateUserInfo()
+            }
     
     @objc
     func rightHandAction() {
         performSegue(withIdentifier: segueIdentifierEdit, sender: self)
     }
     
-    func setupImage(){
-        userImage.layer.cornerRadius = userImage.frame.width / 2
-        userImage.layer.borderColor = R.color.vidaPetBlue()?.cgColor
-        // MARK: - TODO: guardar este valor como um let lá em cima -
-        userImage.layer.borderWidth = 2.0
-        userImage.clipsToBounds = true
-    }
+
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == segueIdentifierEdit {
@@ -55,6 +53,9 @@ class PerfilViewController: VidaPetMainViewController {
     func upDateUserInfo(){
         userNameLabel.text = userModel.user.name
         userImage.image = UIImage(named: userModel.user.image)
-        
+        bioLabel.text = userModel.user.bio
+        petsLabel.text = userModel.user.numberOfPets
+        dateLabel.text = userModel.user.date
+    
     }
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct UserData{
-    let name, bio, image, date: String
-
+    let name, bio, image, date, numberOfPets: String
+    let publicUser: Bool
 }
 
 

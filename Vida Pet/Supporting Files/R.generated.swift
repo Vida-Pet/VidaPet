@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `MeusPetsDetalheViewController`, and contains static references to 1 segues.
     struct meusPetsDetalheViewController {
@@ -130,6 +130,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func meusPetsListaToMeusPetsDetalhes(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeusPetsListaViewController, MeusPetsDetalheViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `RecemChegadosListaViewController`, and contains static references to 1 segues.
+    struct recemChegadosListaViewController {
+      /// Segue identifier `RecemChegadosListaToPetsDetalhes`.
+      static let recemChegadosListaToPetsDetalhes: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RecemChegadosListaViewController, RecemChegadosDetalheViewController> = Rswift.StoryboardSegueIdentifier(identifier: "RecemChegadosListaToPetsDetalhes")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `RecemChegadosListaToPetsDetalhes`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func recemChegadosListaToPetsDetalhes(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RecemChegadosListaViewController, RecemChegadosDetalheViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes, segue: segue)
       }
       #endif
 
@@ -356,7 +373,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `cell_cirurgias_detalhes`.
     static let cell_cirurgias_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias_detalhes")
@@ -368,6 +385,8 @@ struct R: Rswift.Validatable {
     static let cell_vacinas: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas")
     /// Reuse identifier `cell`.
     static let cell: Rswift.ReuseIdentifier<MeusPetsListaCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "cell")
+    /// Reuse identifier `recem_cell`.
+    static let recem_cell: Rswift.ReuseIdentifier<RecemChegadosTableViewCell> = Rswift.ReuseIdentifier(identifier: "recem_cell")
 
     fileprivate init() {}
   }
@@ -760,7 +779,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "pet3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pet3' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'MeusPets', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "plus.viewfinder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus.viewfinder' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "square.and.pencil", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.pencil' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'MeusPets', but couldn't be loaded.") }

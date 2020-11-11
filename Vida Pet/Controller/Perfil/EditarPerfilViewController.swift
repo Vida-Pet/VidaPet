@@ -15,8 +15,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: UITextField!
     
-    final let barButtonTitle = "Salvar"
-    let numberOfComponents = 1
+    final let numberOfComponents = 1
     var selectedState: String?
     var userModel =  UserModel()
     
@@ -31,7 +30,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
     
         self.createAndSetupPickerView()
         self.dismissAndClosePickerView()

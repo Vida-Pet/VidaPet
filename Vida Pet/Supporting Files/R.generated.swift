@@ -400,7 +400,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
-    /// This `R.string.editarPerfil` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.editarPerfil` struct is generated, and contains static references to 10 localization keys.
     struct editarPerfil {
       /// Value: Aviso
       static let warning = Rswift.StringResource(key: "warning", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -412,6 +412,8 @@ struct R: Rswift.Validatable {
       static let image_option_galery = Rswift.StringResource(key: "image_option_galery", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Salvar
+      static let bar_button_title = Rswift.StringResource(key: "bar_button_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Tirar foto
       static let image_option_camera = Rswift.StringResource(key: "image_option_camera", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Trocar a foto de perfil
@@ -484,6 +486,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ok", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Salvar
+      static func bar_button_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bar_button_title", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "bar_button_title"
+        }
+
+        return NSLocalizedString("bar_button_title", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
       /// Value: Tirar foto

@@ -18,7 +18,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdh-jp-oUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4650" y="-29"/>
+            <point key="canvasLocation" x="3378" y="820"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JXY-Qm-dj3">
@@ -121,7 +121,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="q5f-d0-Aey" kind="presentation" id="id6-S3-P2e"/>
+                                                    <segue destination="q5f-d0-Aey" kind="presentation" modalPresentationStyle="fullScreen" id="id6-S3-P2e"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R56-0S-MUm">
@@ -134,7 +134,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="q5f-d0-Aey" kind="presentation" id="h6p-gO-HUb"/>
+                                                    <segue destination="q5f-d0-Aey" kind="presentation" modalPresentationStyle="fullScreen" id="h6p-gO-HUb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnG-yV-xKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="-521"/>
+            <point key="canvasLocation" x="3073" y="-28"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="RTI-o7-ZBD">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gm6-UW-qCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4013.5999999999999" y="-29.23538230884558"/>
+            <point key="canvasLocation" x="2665" y="821"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

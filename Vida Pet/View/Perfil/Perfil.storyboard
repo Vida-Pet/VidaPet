@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -101,7 +101,7 @@
         <!--Editar Perfil View Controller-->
         <scene sceneID="Z6I-4g-nHs">
             <objects>
-                <viewController id="K3p-2f-Eku" customClass="EditarPerfilViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="K3p-2f-Eku" customClass="EditarPerfilViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4h-uc-utv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvb-5H-t7E">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="606.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-xe-d7L">
                                                 <rect key="frame" x="137.5" y="25" width="100" height="100"/>
@@ -138,8 +138,18 @@
                                                     <action selector="imagePressed:" destination="K3p-2f-Eku" eventType="touchUpInside" id="gjb-mR-LbC"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-32-PAg" customClass="VPMultilineRoundPlaceholderTextField" customModule="Vida_Pet">
+                                                <rect key="frame" x="20" y="275" width="335" height="250"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="bh9-Zc-MYc"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descrição"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-Uu-87y">
-                                                <rect key="frame" x="20" y="560" width="325" height="31"/>
+                                                <rect key="frame" x="20" y="550" width="325" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tornar perfil público" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-Ba-RdL">
                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="31"/>
@@ -156,16 +166,6 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-32-PAg" customClass="VPMultilineRoundPlaceholderTextField" customModule="Vida_Pet">
-                                                <rect key="frame" x="20" y="280" width="335" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="Taj-sn-uHr"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descrição"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -173,13 +173,13 @@
                                             <constraint firstAttribute="trailing" secondItem="wQl-Uu-87y" secondAttribute="trailing" constant="30" id="AGe-Id-Y9B"/>
                                             <constraint firstItem="K9B-fF-eDS" firstAttribute="top" secondItem="Uts-KU-m76" secondAttribute="bottom" constant="15" id="BTq-ZE-lkr"/>
                                             <constraint firstItem="Now-6U-eV3" firstAttribute="top" secondItem="ExU-xe-d7L" secondAttribute="bottom" constant="7" id="CRu-N4-F96"/>
-                                            <constraint firstItem="4yy-32-PAg" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="20" id="EOB-1Z-qQv"/>
+                                            <constraint firstItem="4yy-32-PAg" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="15" id="EOB-1Z-qQv"/>
                                             <constraint firstAttribute="trailing" secondItem="Uts-KU-m76" secondAttribute="trailing" constant="20" id="IYQ-bp-Pd7"/>
-                                            <constraint firstItem="wQl-Uu-87y" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" constant="80" id="R2f-1N-VUq"/>
+                                            <constraint firstItem="wQl-Uu-87y" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" priority="250" constant="25" id="R2f-1N-VUq"/>
                                             <constraint firstItem="Uts-KU-m76" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="Rw3-Pr-uqZ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wQl-Uu-87y" secondAttribute="bottom" id="SDV-xz-j2W"/>
                                             <constraint firstItem="Uts-KU-m76" firstAttribute="top" secondItem="Now-6U-eV3" secondAttribute="bottom" constant="15" id="Txw-hI-yRi"/>
                                             <constraint firstItem="K9B-fF-eDS" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="ZPO-kO-xra"/>
-                                            <constraint firstAttribute="height" constant="1000" id="ZTh-qj-Mx5"/>
                                             <constraint firstAttribute="trailing" secondItem="4yy-32-PAg" secondAttribute="trailing" constant="20" id="hst-04-dnR"/>
                                             <constraint firstAttribute="trailing" secondItem="K9B-fF-eDS" secondAttribute="trailing" constant="20" id="kSG-gX-XcK"/>
                                             <constraint firstItem="wQl-Uu-87y" firstAttribute="leading" secondItem="pvb-5H-t7E" secondAttribute="leading" constant="20" id="tXu-zE-J36"/>
@@ -190,11 +190,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pvb-5H-t7E" secondAttribute="trailing" id="DwK-Oc-3Y0"/>
-                                    <constraint firstItem="pvb-5H-t7E" firstAttribute="width" secondItem="gm9-7D-AMS" secondAttribute="width" id="OHw-nm-qof"/>
+                                    <constraint firstItem="pvb-5H-t7E" firstAttribute="height" secondItem="gm9-7D-AMS" secondAttribute="height" multiplier="0.937653" priority="250" id="Pd0-5n-jDh"/>
+                                    <constraint firstAttribute="bottom" secondItem="pvb-5H-t7E" secondAttribute="bottom" id="YYW-YE-UHD"/>
                                     <constraint firstItem="pvb-5H-t7E" firstAttribute="top" secondItem="gm9-7D-AMS" secondAttribute="top" id="bw3-UL-yOk"/>
-                                    <constraint firstAttribute="bottom" secondItem="pvb-5H-t7E" secondAttribute="bottom" id="c3P-Oe-vE2"/>
-                                    <constraint firstItem="pvb-5H-t7E" firstAttribute="leading" secondItem="gm9-7D-AMS" secondAttribute="leading" id="kAZ-59-cUH"/>
+                                    <constraint firstAttribute="trailing" secondItem="pvb-5H-t7E" secondAttribute="trailing" id="ddx-GM-UTP"/>
+                                    <constraint firstItem="pvb-5H-t7E" firstAttribute="leading" secondItem="gm9-7D-AMS" secondAttribute="leading" id="sBy-OB-SeG"/>
+                                    <constraint firstItem="pvb-5H-t7E" firstAttribute="top" secondItem="gm9-7D-AMS" secondAttribute="top" id="sks-6d-hF6"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -202,8 +203,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gm9-7D-AMS" firstAttribute="top" secondItem="8iS-Nt-WWf" secondAttribute="top" id="CR8-UW-uPs"/>
+                            <constraint firstItem="gm9-7D-AMS" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" id="O63-za-Pf9"/>
                             <constraint firstItem="gm9-7D-AMS" firstAttribute="trailing" secondItem="8iS-Nt-WWf" secondAttribute="trailing" id="asE-tb-q8G"/>
+                            <constraint firstItem="gm9-7D-AMS" firstAttribute="top" secondItem="8iS-Nt-WWf" secondAttribute="top" id="q3i-Ah-wf8"/>
+                            <constraint firstItem="gm9-7D-AMS" firstAttribute="bottom" secondItem="8iS-Nt-WWf" secondAttribute="bottom" id="stK-Ue-xkl"/>
                             <constraint firstItem="gm9-7D-AMS" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" id="tvF-Cq-6ib"/>
+                            <constraint firstItem="gm9-7D-AMS" firstAttribute="trailing" secondItem="8iS-Nt-WWf" secondAttribute="trailing" id="ve8-PL-dvJ"/>
                             <constraint firstItem="gm9-7D-AMS" firstAttribute="bottom" secondItem="8iS-Nt-WWf" secondAttribute="bottom" id="y4e-Lj-Xo9"/>
                         </constraints>
                     </view>

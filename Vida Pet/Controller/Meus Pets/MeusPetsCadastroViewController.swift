@@ -40,8 +40,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     final let TAG_NEW_VACCINE_DATA = 88
     final let TAG_NEW_SURGERY_NAME = 77
     final let TAG_NEW_SURGERY_DATA = 66
-    let cellVacinasReuseIdentifier = "cell_vacinas"
-    let cellCirurgiasReuseIdentifier = "cell_cirurgias"
     let noPetImagePlaceholder = "plus.viewfinder"
     let defaultDateDivisor: Character = "/"
     var delegate: UIViewController?
@@ -282,13 +280,13 @@ extension MeusPetsCadastroViewController: UITableViewDataSource {
         
         switch tableView {
         case tableViewVacinas:
-            guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellVacinasReuseIdentifier) as UITableViewCell? else { return UITableViewCell() }
+            guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas.identifier) else { return UITableViewCell() }
             cell.textLabel?.text = medicalData.vaccines[indexPath.row].nome
             cell.detailTextLabel?.text = medicalData.vaccines[indexPath.row].data
             return cell
             
         case tableViewCirurgias:
-            guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellCirurgiasReuseIdentifier) as UITableViewCell? else { return UITableViewCell() }
+            guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias.identifier) else { return UITableViewCell() }
             cell.textLabel?.text = medicalData.surgerys[indexPath.row].nome
             cell.detailTextLabel?.text = medicalData.surgerys[indexPath.row].data
             return cell

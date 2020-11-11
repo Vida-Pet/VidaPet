@@ -14,14 +14,13 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    // MARK: Variables
-    
-    let segueIdentifierDetalhes = "MeusPetsListaToMeusPetsDetalhes"
-    let segueIdentifierCadastro = "MeusPetsListaToMeusPetsCadastro"
-    let cellIdentifier = "cell"
 
+    
+    // MARK: Properties
+    
+    let twelveMonths: Double = 12
+    let oneYear: Double = 1
+    
     
     // MARK: LifeCicle
     
@@ -43,19 +42,19 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     }
     
     @objc fileprivate func addTapped() {
-        performSegue(withIdentifier: segueIdentifierCadastro, sender: self)
+        performSegue(withIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro, sender: self)
     }
 
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case segueIdentifierDetalhes:
+        case R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes.identifier:
             if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let indexPath = sender as? IndexPath{
                 destinationVC.pet = MeusPetsListaViewController.pets[indexPath.row]
                 destinationVC.selectedPetIndex = indexPath.row
             }
-        case segueIdentifierCadastro: break
+        case R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro.identifier: break
         default: break
         }
     }
@@ -74,16 +73,16 @@ extension MeusPetsListaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MeusPetsListaCellTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell, for: indexPath) else {
             return UITableViewCell()
         }
         
         if var age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
-            if age > 1 {
+            if age > oneYear {
                 let formattedAge = "\(Int(floor(age))) anos"
                 cell.lblDescricao.text = "\(breed), \(formattedAge)"
             } else {
-                age *= 12
+                age *= twelveMonths
                 let formattedAge = "\(Int(floor(age))) meses"
                 cell.lblDescricao.text = "\(breed), \(formattedAge)"
             }
@@ -101,7 +100,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
 extension MeusPetsListaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueIdentifierDetalhes, sender: indexPath)
+        performSegue(withIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes, sender: indexPath)
     }
 }
 

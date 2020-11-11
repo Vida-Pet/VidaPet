@@ -89,8 +89,25 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
   struct segue {
+    /// This struct is generated for `LoginViewController`, and contains static references to 1 segues.
+    struct loginViewController {
+      /// Segue identifier `WelcomeVC`.
+      static let welcomeVC: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, LoginViewController, WelcomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "WelcomeVC")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `WelcomeVC`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func welcomeVC(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, LoginViewController, WelcomeViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.loginViewController.welcomeVC, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This struct is generated for `MeusPetsDetalheViewController`, and contains static references to 1 segues.
     struct meusPetsDetalheViewController {
       /// Segue identifier `MeusPetsDetalhesToMeusPetsCadastro`.
@@ -130,6 +147,40 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func meusPetsListaToMeusPetsDetalhes(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeusPetsListaViewController, MeusPetsDetalheViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `RegisterViewController`, and contains static references to 1 segues.
+    struct registerViewController {
+      /// Segue identifier `RegisterWelcomeVC`.
+      static let registerWelcomeVC: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RegisterViewController, WelcomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "RegisterWelcomeVC")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `RegisterWelcomeVC`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func registerWelcomeVC(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RegisterViewController, WelcomeViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.registerViewController.registerWelcomeVC, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `WelcomeViewController`, and contains static references to 1 segues.
+    struct welcomeViewController {
+      /// Segue identifier `segueToNavigation`.
+      static let segueToNavigation: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, UIKit.UITabBarController> = Rswift.StoryboardSegueIdentifier(identifier: "segueToNavigation")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `segueToNavigation`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func segueToNavigation(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, UIKit.UITabBarController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.segueToNavigation, segue: segue)
       }
       #endif
 
@@ -283,7 +334,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `beagle`.
     static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
@@ -291,8 +342,20 @@ struct R: Rswift.Validatable {
     static let bullDog = Rswift.ImageResource(bundle: R.hostingBundle, name: "bullDog")
     /// Image `claw_icon`.
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
+    /// Image `eyeclosed`.
+    static let eyeclosed = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeclosed")
+    /// Image `eyeopen`.
+    static let eyeopen = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeopen")
+    /// Image `facebookLogo`.
+    static let facebookLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebookLogo")
     /// Image `gato`.
     static let gato = Rswift.ImageResource(bundle: R.hostingBundle, name: "gato")
+    /// Image `googleLogo`.
+    static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
+    /// Image `loginImage`.
+    static let loginImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "loginImage")
+    /// Image `userImage`.
+    static let userImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "userImage")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "beagle", bundle: ..., traitCollection: ...)`
@@ -316,9 +379,51 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "eyeclosed", bundle: ..., traitCollection: ...)`
+    static func eyeclosed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eyeclosed, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "eyeopen", bundle: ..., traitCollection: ...)`
+    static func eyeopen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eyeopen, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "facebookLogo", bundle: ..., traitCollection: ...)`
+    static func facebookLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.facebookLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "gato", bundle: ..., traitCollection: ...)`
     static func gato(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.gato, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "googleLogo", bundle: ..., traitCollection: ...)`
+    static func googleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.googleLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "loginImage", bundle: ..., traitCollection: ...)`
+    static func loginImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.loginImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "userImage", bundle: ..., traitCollection: ...)`
+    static func userImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -737,12 +842,22 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "Login"
+      let welcomeVC = StoryboardViewControllerResource<WelcomeViewController>(identifier: "WelcomeVC")
+
+      func welcomeVC(_: Void = ()) -> WelcomeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: welcomeVC)
+      }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "facebookLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'facebookLogo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "googleLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'googleLogo' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "loginImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loginImage' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Login', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Vida Pet: Dark Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Dark Blue' is used in storyboard 'Login', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Vida Pet: White", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: White' is used in storyboard 'Login', but couldn't be loaded.") }
         }
+        if _R.storyboard.login().welcomeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'welcomeVC' could not be loaded from storyboard 'Login' as 'WelcomeViewController'.") }
       }
 
       fileprivate init() {}

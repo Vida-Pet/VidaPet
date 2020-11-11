@@ -13,13 +13,13 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     
     // MARK: Properties
     
-    let segueIdentifierCadastro = "MeusPetsDetalhesToMeusPetsCadastro"
-    let cellVacinas = "cell_vacinas_detalhes"
-    let cellCirurgias = "cell_cirurgias_detalhes"
     let emptyField: String = ""
     let emptyLinedField: String = " - "
     let defaultRowHeight: Int = 25
     let defaultTableViewMargin: CGFloat = 15
+    let defaultFontSize: CGFloat = 14
+    let twelveMonths: Double = 12
+    let oneYear: Double = 1
     var selectedPetIndex: Int?
     var pet: Pet!
     
@@ -44,7 +44,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     // MARK: IBActions
     
     @IBAction func clickEdit(_ sender: UIButton) {
-        performSegue(withIdentifier: segueIdentifierCadastro, sender: self)
+        performSegue(withIdentifier: R.segue.meusPetsDetalheViewController.meusPetsDetalhesToMeusPetsCadastro, sender: self)
     }
     
     
@@ -67,12 +67,12 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         imgPet.image = pet.image?.decodeBase64ToImage()
         lblNome.text = pet.name
         if var age = pet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = pet.info.breed {
-            if age > 1 {
+            if age > oneYear {
                 let formattedAge = "\(Int(floor(age))) anos"
                 lblMiniBio.text = "\(breed), \(formattedAge)"
                 lblIdade.text = formattedAge
             } else {
-                age *= 12
+                age *= twelveMonths
                 let formattedAge = "\(Int(floor(age))) meses"
                 lblMiniBio.text = "\(breed), \(formattedAge)"
                 lblIdade.text = formattedAge
@@ -103,7 +103,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case segueIdentifierCadastro:
+        case R.segue.meusPetsDetalheViewController.meusPetsDetalhesToMeusPetsCadastro.identifier:
             if let cadastroVC = segue.destination as? MeusPetsCadastroViewController {
                 cadastroVC.editMode = true
                 cadastroVC.delegate = self
@@ -136,23 +136,23 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
         
         switch tableView {
         case tableViewVacinas:
-            guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellVacinas) as UITableViewCell? else { return UITableViewCell() }
+            guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas_detalhes.identifier) else { return UITableViewCell() }
             cell.textLabel?.text = pet.medicalData.vaccines[indexPath.row].nome
             cell.detailTextLabel?.text = pet.medicalData.vaccines[indexPath.row].data
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
-            cell.textLabel?.font = cell.textLabel?.font.withSize(14)
-            cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+            cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)
+            cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(defaultFontSize)
             return cell
             
         case tableViewCirurgias:
-            guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellCirurgias) as UITableViewCell? else { return UITableViewCell() }
+            guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias_detalhes.identifier) else { return UITableViewCell() }
             cell.textLabel?.text = pet.medicalData.surgerys[indexPath.row].nome
             cell.detailTextLabel?.text = pet.medicalData.surgerys[indexPath.row].data
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
-            cell.textLabel?.font = cell.textLabel?.font.withSize(14)
-            cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(14)
+            cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)
+            cell.detailTextLabel?.font = cell.detailTextLabel?.font.withSize(defaultFontSize)
             return cell
             
         default:

@@ -1,44 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fz2-V4-pkz">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7WN-jy-XWH">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="xLs-N5-GVP">
-            <objects>
-                <viewController id="Fz2-V4-pkz" customClass="LoginViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PpE-5I-BeD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoB-xN-uQw">
-                                <rect key="frame" x="145.5" y="418.5" width="123" height="59"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="39"/>
-                                <state key="normal" title="LOGIN"/>
-                                <connections>
-                                    <segue destination="2Q0-OQ-eru" kind="presentation" modalPresentationStyle="fullScreen" id="aBQ-ze-qJq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Kyh-9J-kUe"/>
-                        <color key="backgroundColor" name="Vida Pet: Blue"/>
-                        <color key="tintColor" name="Vida Pet: White"/>
-                        <constraints>
-                            <constraint firstItem="OoB-xN-uQw" firstAttribute="centerY" secondItem="PpE-5I-BeD" secondAttribute="centerY" id="d0s-oC-meo"/>
-                            <constraint firstItem="OoB-xN-uQw" firstAttribute="centerX" secondItem="PpE-5I-BeD" secondAttribute="centerX" id="ixG-jl-6xd"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xBa-kS-TEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="172.46376811594203" y="-28.125"/>
-        </scene>
         <!--Navigation-->
         <scene sceneID="Sh2-6l-xap">
             <objects>
@@ -47,15 +18,387 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdh-jp-oUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="-27"/>
+            <point key="canvasLocation" x="4650" y="-29"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="JXY-Qm-dj3">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="7WN-jy-XWH" customClass="LoginViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z5y-bD-dB8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginImage" translatesAutoresizingMaskIntoConstraints="NO" id="MCj-AD-lI6">
+                                <rect key="frame" x="89.5" y="61" width="196" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="A7F-d6-wV8"/>
+                                    <constraint firstAttribute="width" constant="196" id="Fh2-um-KU8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="62" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iS9-3T-amO">
+                                <rect key="frame" x="0.0" y="291" width="375" height="356"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sLA-Yk-fRt">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="120"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-1K-frk">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="yyu-9E-Q0c"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pwo-YG-WqN">
+                                                <rect key="frame" x="0.0" y="70" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-B3-Nue">
+                                        <rect key="frame" x="170.5" y="147.5" width="34" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-RO-13B">
+                                        <rect key="frame" x="121" y="184" width="133" height="50"/>
+                                        <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SN3-M6-9Oh"/>
+                                            <constraint firstAttribute="width" constant="133" id="zQt-dk-hJ2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="7WN-jy-XWH" eventType="touchUpInside" id="uoq-8W-SDW"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJi-C1-hxZ">
+                                        <rect key="frame" x="88.5" y="257" width="198.5" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novo por aqui? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngo-ZZ-Bbu">
+                                                <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIt-ju-aPH">
+                                                <rect key="frame" x="125.5" y="0.0" width="73" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Começar"/>
+                                                <connections>
+                                                    <segue destination="0ZK-al-Uu8" kind="show" id="vZd-02-2fg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-3p-Gzd">
+                                        <rect key="frame" x="40" y="316" width="295" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81U-nQ-PGH">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Kg2-PK-Ju4"/>
+                                                </constraints>
+                                                <state key="normal" title="  Facebook" image="facebookLogo">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="q5f-d0-Aey" kind="presentation" id="id6-S3-P2e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R56-0S-MUm">
+                                                <rect key="frame" x="160" y="0.0" width="135" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="jmZ-hp-fOg"/>
+                                                </constraints>
+                                                <state key="normal" title="  Google" image="googleLogo">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="q5f-d0-Aey" kind="presentation" id="h6p-gO-HUb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xAN-3p-Gzd" secondAttribute="bottom" id="4SV-Fl-QAG"/>
+                                    <constraint firstAttribute="trailing" secondItem="xAN-3p-Gzd" secondAttribute="trailing" constant="40" id="Ilp-LJ-wdc"/>
+                                    <constraint firstItem="xAN-3p-Gzd" firstAttribute="leading" secondItem="iS9-3T-amO" secondAttribute="leading" constant="40" id="Sn9-UM-fu0"/>
+                                    <constraint firstItem="sLA-Yk-fRt" firstAttribute="leading" secondItem="iS9-3T-amO" secondAttribute="leading" constant="20" id="Xsu-cN-oQ4"/>
+                                    <constraint firstItem="sLA-Yk-fRt" firstAttribute="top" secondItem="iS9-3T-amO" secondAttribute="top" id="YtJ-jV-JXP"/>
+                                    <constraint firstAttribute="trailing" secondItem="sLA-Yk-fRt" secondAttribute="trailing" constant="20" id="yfg-d0-UN6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0M0-tx-QZ3"/>
+                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                        <color key="tintColor" name="Vida Pet: White"/>
+                        <constraints>
+                            <constraint firstItem="iS9-3T-amO" firstAttribute="top" secondItem="MCj-AD-lI6" secondAttribute="bottom" constant="5" id="0mg-Ts-vjl"/>
+                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="iS9-3T-amO" secondAttribute="trailing" id="BQs-zl-H2U"/>
+                            <constraint firstItem="iS9-3T-amO" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" id="Tt3-w8-MqM"/>
+                            <constraint firstItem="MCj-AD-lI6" firstAttribute="centerY" secondItem="Z5y-bD-dB8" secondAttribute="centerY" multiplier="0.52" id="tX5-sA-oab"/>
+                            <constraint firstItem="MCj-AD-lI6" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="vR2-04-RQY"/>
+                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="bottom" secondItem="iS9-3T-amO" secondAttribute="bottom" constant="20" id="zmg-8E-5NQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bu4-vs-Wk1"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="bsA-1K-frk" id="FLv-LA-nIy"/>
+                        <outlet property="errorLabel" destination="qIe-B3-Nue" id="O8q-ld-yKj"/>
+                        <outlet property="facebookButton" destination="xAN-3p-Gzd" id="6gf-CU-NWd"/>
+                        <outlet property="googleButton" destination="R56-0S-MUm" id="Kzz-CA-U01"/>
+                        <outlet property="loginButton" destination="5DF-RO-13B" id="sM7-Ok-2Ta"/>
+                        <outlet property="passwordTextField" destination="pwo-YG-WqN" id="QPf-yB-AUx"/>
+                        <segue destination="q5f-d0-Aey" kind="presentation" identifier="WelcomeVC" modalPresentationStyle="fullScreen" id="L3b-lm-adn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQN-hy-scp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247.1999999999998" y="-28.335832083958024"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="3IE-MM-sgs">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="0ZK-al-Uu8" customClass="RegisterViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BWN-mC-KR8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginImage" translatesAutoresizingMaskIntoConstraints="NO" id="dw3-nD-anh">
+                                <rect key="frame" x="89.5" y="23.5" width="196" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="AuC-fp-mDG"/>
+                                    <constraint firstAttribute="height" constant="220" id="YnU-e4-llb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="63" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fq3-s3-iDj">
+                                <rect key="frame" x="0.0" y="243.5" width="375" height="403.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uNB-vZ-MoV">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="260"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbD-my-Cyy">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="RGY-bZ-a9Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fn4-8D-BrB">
+                                                <rect key="frame" x="0.0" y="70" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="o6N-tX-Meo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PsQ-vg-LjK">
+                                                <rect key="frame" x="0.0" y="140" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme a Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PiX-at-Vir">
+                                                <rect key="frame" x="0.0" y="210" width="335" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" name="Vida Pet: Blue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="vyM-p2-Egr">
+                                        <rect key="frame" x="84.5" y="288.5" width="206" height="115"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="zNn-Yt-Ca4">
+                                                <rect key="frame" x="86" y="0.0" width="34" height="17.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="1"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-ah-WaA">
+                                                <rect key="frame" x="36.5" y="30.5" width="133" height="50"/>
+                                                <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="9og-8M-MZg"/>
+                                                    <constraint firstAttribute="width" constant="133" id="jTw-pa-TlC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <state key="normal" title="Registrar">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="0ZK-al-Uu8" eventType="touchUpInside" id="f5O-6D-1s2"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-LL-SaQ">
+                                                <rect key="frame" x="0.0" y="93.5" width="206" height="21.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já tem uma conta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQw-wh-JDf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-Qo-2Af">
+                                                        <rect key="frame" x="152" y="0.0" width="54" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" Entrar"/>
+                                                        <connections>
+                                                            <segue destination="7WN-jy-XWH" kind="show" id="bz7-nh-pFQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uNB-vZ-MoV" firstAttribute="leading" secondItem="fq3-s3-iDj" secondAttribute="leading" constant="20" id="RfX-dj-sBH"/>
+                                    <constraint firstAttribute="trailing" secondItem="uNB-vZ-MoV" secondAttribute="trailing" constant="20" id="W1T-uy-95j"/>
+                                    <constraint firstItem="uNB-vZ-MoV" firstAttribute="top" secondItem="fq3-s3-iDj" secondAttribute="top" id="o2f-Kl-R8E"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bdo-qW-V0v"/>
+                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                        <color key="tintColor" name="Vida Pet: White"/>
+                        <constraints>
+                            <constraint firstItem="dw3-nD-anh" firstAttribute="centerX" secondItem="BWN-mC-KR8" secondAttribute="centerX" id="3uX-l2-uyO"/>
+                            <constraint firstItem="fq3-s3-iDj" firstAttribute="leading" secondItem="bdo-qW-V0v" secondAttribute="leading" id="d8a-Wh-4yQ"/>
+                            <constraint firstItem="fq3-s3-iDj" firstAttribute="top" secondItem="dw3-nD-anh" secondAttribute="bottom" id="eJR-zY-uzi"/>
+                            <constraint firstItem="bdo-qW-V0v" firstAttribute="trailing" secondItem="fq3-s3-iDj" secondAttribute="trailing" id="g7e-Df-Wpf"/>
+                            <constraint firstItem="dw3-nD-anh" firstAttribute="centerY" secondItem="BWN-mC-KR8" secondAttribute="centerY" multiplier="0.4" id="ont-Ya-voV"/>
+                            <constraint firstItem="bdo-qW-V0v" firstAttribute="bottom" secondItem="fq3-s3-iDj" secondAttribute="bottom" constant="20" id="vta-Ay-mXR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BIr-3y-uXs"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="PiX-at-Vir" id="vdH-2L-eXh"/>
+                        <outlet property="emailTextField" destination="Fn4-8D-BrB" id="BIx-nc-f3D"/>
+                        <outlet property="errorLabel" destination="zNn-Yt-Ca4" id="vFl-3l-bm8"/>
+                        <outlet property="loginButton" destination="dml-ah-WaA" id="kbe-gf-1kB"/>
+                        <outlet property="nameTextField" destination="wbD-my-Cyy" id="kp6-3y-FT5"/>
+                        <outlet property="passwordTextField" destination="PsQ-vg-LjK" id="39v-z2-AbH"/>
+                        <segue destination="q5f-d0-Aey" kind="presentation" identifier="RegisterWelcomeVC" modalPresentationStyle="fullScreen" id="EjG-29-Rxv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PnG-yV-xKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3216" y="-521"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="RTI-o7-ZBD">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" id="q5f-d0-Aey" customClass="WelcomeViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zyW-kB-9bT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginImage" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-vm-2q2">
+                                <rect key="frame" x="89.5" y="283" width="196" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="15E-ha-Z4U"/>
+                                    <constraint firstAttribute="width" constant="196" id="c8I-XQ-rkf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, João!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-Zb-LBV">
+                                <rect key="frame" x="40" y="180" width="170" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem vindo novamente!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEH-yu-WkX">
+                                <rect key="frame" x="40" y="238" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nZH-Gm-08T"/>
+                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                        <constraints>
+                            <constraint firstItem="OwI-Zb-LBV" firstAttribute="top" secondItem="nZH-Gm-08T" secondAttribute="top" constant="180" id="32e-yR-aZN"/>
+                            <constraint firstItem="JEH-yu-WkX" firstAttribute="top" secondItem="OwI-Zb-LBV" secondAttribute="bottom" constant="10" id="5wJ-2E-hXB"/>
+                            <constraint firstItem="JEH-yu-WkX" firstAttribute="leading" secondItem="nZH-Gm-08T" secondAttribute="leading" constant="40" id="P7H-Qg-9l1"/>
+                            <constraint firstItem="LXG-vm-2q2" firstAttribute="centerY" secondItem="zyW-kB-9bT" secondAttribute="centerY" multiplier="1.2" id="Z2T-5R-8nj"/>
+                            <constraint firstItem="OwI-Zb-LBV" firstAttribute="leading" secondItem="nZH-Gm-08T" secondAttribute="leading" constant="40" id="kWT-wh-fgG"/>
+                            <constraint firstItem="LXG-vm-2q2" firstAttribute="centerX" secondItem="zyW-kB-9bT" secondAttribute="centerX" id="zJO-OW-PyU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wPe-AO-WI8"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="OwI-Zb-LBV" id="qc0-jQ-5g0"/>
+                        <segue destination="2Q0-OQ-eru" kind="presentation" identifier="segueToNavigation" modalPresentationStyle="fullScreen" id="gnm-Fj-F48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gm6-UW-qCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4013.5999999999999" y="-29.23538230884558"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EjG-29-Rxv"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="facebookLogo" width="30" height="30"/>
+        <image name="googleLogo" width="30" height="30"/>
+        <image name="loginImage" width="402" height="364"/>
         <namedColor name="Vida Pet: Blue">
             <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Vida Pet: Dark Blue">
+            <color red="0.063000001013278961" green="0.17599999904632568" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Vida Pet: White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

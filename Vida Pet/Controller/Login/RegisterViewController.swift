@@ -11,10 +11,9 @@ import UIKit
 // MARK: - VidaPetMainViewController
 
 class RegisterViewController: VidaPetMainViewController {
-
+    
     // MARK: IBOutlets
     
-
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,23 +22,27 @@ class RegisterViewController: VidaPetMainViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
+    // MARK: Properties
+    
+    final let segueIdentifierRegisterWelcome = "RegisterWelcomeVC"
+    final let loginButtonCornerRadius: CGFloat = 5
+    
+    
     // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         errorLabel.text = ""
-        
         configureTapGesture()
         configureTextFields()
         setUpElements()
         passwordTextField.enablePasswordToggle()
         confirmPasswordTextField.enablePasswordToggle()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
+    
     
     // MARK: Setup
     
@@ -57,7 +60,7 @@ class RegisterViewController: VidaPetMainViewController {
     }
     
     func setUpElements(){
-        loginButton.setStyleRounded(withRadius: 5)
+        loginButton.setStyleRounded(withRadius: loginButtonCornerRadius)
         self.errorLabel.isHidden = true
     }
     
@@ -68,14 +71,13 @@ class RegisterViewController: VidaPetMainViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
     
-
     
     // MARK: IBActions
     
@@ -85,7 +87,7 @@ class RegisterViewController: VidaPetMainViewController {
         if error != nil {
             showError(message: error!)
         } else {
-            self.performSegue(withIdentifier: "RegisterWelcomeVC", sender: self)
+            self.performSegue(withIdentifier: segueIdentifierRegisterWelcome, sender: self)
         }
     }
     
@@ -94,7 +96,7 @@ class RegisterViewController: VidaPetMainViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        if segue.identifier == "RegisterWelcomeVC"{
+        if segue.identifier == segueIdentifierRegisterWelcome {
             _ = segue.destination
         }
     }
@@ -127,15 +129,16 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
+    
     //disable the strong password (autofill)
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if (textField == self.passwordTextField
-            && !self.passwordTextField.isSecureTextEntry) {
+                && !self.passwordTextField.isSecureTextEntry) {
             self.passwordTextField.isSecureTextEntry = true
         }
         
         return true
     }
 }
-    
+
 

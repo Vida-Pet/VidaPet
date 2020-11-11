@@ -21,13 +21,17 @@ class LoginViewController: VidaPetMainViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
-    let eyeButton = UIButton(type: .custom)
+    
+    // MARK: Properties
+    
+    final let eyeButton = UIButton(type: .custom)
+    final let defaultButtonCornerRadius: CGFloat = 5
+    final let segueIdentifierWelcome = "WelcomeVC"
     
     // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpElements()
         configureTapGesture()
         configureTextFields()
@@ -39,9 +43,9 @@ class LoginViewController: VidaPetMainViewController {
     // MARK: Setup
     
     func setUpElements(){
-        emailTextField.setStyleRounded(withRadius: 5)
-        passwordTextField.setStyleRounded(withRadius: 5)
-        loginButton.setStyleRounded(withRadius: 5)
+        emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        loginButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
         self.errorLabel.isHidden = true
     }
     
@@ -64,18 +68,16 @@ class LoginViewController: VidaPetMainViewController {
         if error != nil {
             showError(message: error!)
         } else {
-            self.performSegue(withIdentifier: "WelcomeVC", sender: self)
+            self.performSegue(withIdentifier: segueIdentifierWelcome, sender: self)
         }
     }
-    
-   
     
     
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        if segue.identifier == "WelcomeVC"{
+        if segue.identifier == segueIdentifierWelcome{
             _ = segue.destination
         }
     }

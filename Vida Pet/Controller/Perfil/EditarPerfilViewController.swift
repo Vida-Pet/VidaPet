@@ -46,8 +46,6 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     @IBAction func perfilPublico(_ sender: Any) {
-        // MARK: - TODO: retirar log depois -
-        print("pressed")
     }
     
     

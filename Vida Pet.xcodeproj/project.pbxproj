@@ -37,12 +37,17 @@
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */; };
 		3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */; };
+		3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B984344255A1440000DA748 /* EditarPerfil.strings */; };
 		3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */; };
 		3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */; };
 		3BD5A000253D445F005A5BB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FFF253D445F005A5BB2 /* UIView.swift */; };
 		3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */; };
 		3BFE13B3255622BA003627C3 /* UISegmentControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControll.swift */; };
 		E237AED5D53204CFAEC07D05 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52381B293275A0A2D8BC000 /* Pods_Vida_Pet.framework */; };
+		FE30F9BA255A307A00B59058 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30F9B9255A307A00B59058 /* AvatarImage.swift */; };
+		FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */; };
+		FE352AEB2554E49000D4E680 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352AEA2554E49000D4E680 /* UserData.swift */; };
+		FE82FC002555E940007B396E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE82FBFF2555E940007B396E /* UserModel.swift */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
 		FED16A2325461D3D00552870 /* ToggleEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED16A2225461D3C00552870 /* ToggleEye.swift */; };
@@ -81,6 +86,7 @@
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
 		3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPMultilineRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
+		3B984344255A1440000DA748 /* EditarPerfil.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EditarPerfil.strings; sourceTree = "<group>"; };
 		3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsCadastroViewController.swift; sourceTree = "<group>"; };
 		3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaCellTableViewCell.swift; sourceTree = "<group>"; };
 		3BD59FFF253D445F005A5BB2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = "Vida Pet/Controller/Meus Pets/UIView.swift"; sourceTree = SOURCE_ROOT; };
@@ -89,6 +95,10 @@
 		4A52007380BA753E3D55D609 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 		C52381B293275A0A2D8BC000 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CF9E881D33AA75AB75901D /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
+		FE30F9B9255A307A00B59058 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
+		FE352AEA2554E49000D4E680 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Perfil/UserData.swift; sourceTree = SOURCE_ROOT; };
+		FE82FBFF2555E940007B396E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Perfil/UserModel.swift; sourceTree = SOURCE_ROOT; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FED16A2225461D3C00552870 /* ToggleEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEye.swift; sourceTree = "<group>"; };
@@ -126,6 +136,7 @@
 		3B0B896B25543A1800033297 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				3B984343255A140A000DA748 /* Perfil */,
 				3B0B897025543A4D00033297 /* Meus Pets */,
 			);
 			path = Strings;
@@ -167,6 +178,7 @@
 				3B581AF3254518B9003E2A68 /* UIButton.swift */,
 				3B581AF7254518C3003E2A68 /* Textfield.swift */,
 				FED16A2225461D3C00552870 /* ToggleEye.swift */,
+				FE30F9B9255A307A00B59058 /* AvatarImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				3B584BD0253811EC0090A779 /* PerfilViewController.swift */,
+				FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -279,12 +292,12 @@
 		3B695D1D2537E86400CE15AF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3B584BD4253812720090A779 /* VidaPetMainViewController.swift */,
 				3B584BBF253811380090A779 /* Login */,
 				3B584BC02538114A0090A779 /* Meus Pets */,
 				3B584BC1253811550090A779 /* Recem Chegados */,
 				3B584BC22538116F0090A779 /* Adote */,
 				3B584BC3253811780090A779 /* Perfil */,
-				3B584BD4253812720090A779 /* VidaPetMainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -349,6 +362,14 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		3B984343255A140A000DA748 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				3B984344255A1440000DA748 /* EditarPerfil.strings */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		3BD59FE9253B7188005A5BB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +403,8 @@
 		3BD59FED253B71AA005A5BB2 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				FE352AEA2554E49000D4E680 /* UserData.swift */,
+				FE82FBFF2555E940007B396E /* UserModel.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -433,7 +456,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "João Pedro Giarrante";
 				TargetAttributes = {
 					3B695D032537E71300CE15AF = {
@@ -470,6 +493,7 @@
 				3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */,
 				3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */,
 				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
+				3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
 				3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */,
@@ -549,9 +573,12 @@
 				3B0B8A3D2554FF4A00033297 /* String.swift in Sources */,
 				3B581AF4254518B9003E2A68 /* UIButton.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
+				FE82FC002555E940007B396E /* UserModel.swift in Sources */,
 				3B0B8A2B2554FC8C00033297 /* UITextField.swift in Sources */,
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
+				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
+				FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
 				3BFE13B3255622BA003627C3 /* UISegmentControll.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
@@ -567,6 +594,7 @@
 				3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */,
 				3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */,
 				3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */,
+				FE30F9BA255A307A00B59058 /* AvatarImage.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
 				3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */,
@@ -616,6 +644,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -640,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -676,6 +705,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -694,7 +724,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

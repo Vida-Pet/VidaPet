@@ -1,0 +1,18 @@
+/* 
+  Perfil.strings
+  Vida Pet
+
+  Created by João Pedro Giarrante on 09/11/20.
+  Copyright © 2020 João Pedro Giarrante. All rights reserved.
+*/
+
+"image_title" = "Trocar a foto de perfil";
+"image_option_camera" = "Tirar foto";
+"image_option_galery" = "Galeria";
+"cancel" = "Cancelar";
+"warning" = "Aviso";
+"camera_access" = "Você não tem acesso a câmera";
+"ok" = "Ok";
+"galery_access" = "Você não tem acesso a galeria";
+"picker_state" = "Escolha seu estado";
+"bar_button_title" = "Salvar";

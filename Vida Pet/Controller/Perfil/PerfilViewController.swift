@@ -9,21 +9,52 @@
 import UIKit
 
 class PerfilViewController: VidaPetMainViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var petsLabel: UILabel!
+    @IBOutlet weak var regiaoLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    var userModel = UserModel()
+    final let barButtonTitle = "Editar"
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
+ 
+        userImage.setupImage(image: userImage)
+        upDateUserInfo()
+            }
+    
+    @objc
+    func rightHandAction() {
+        performSegue(withIdentifier: R.segue.perfilViewController.fromPerfilToEdit.identifier, sender: self)
     }
-    */
+    
 
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == R.segue.perfilViewController.fromPerfilToEdit.identifier {
+            _ = segue.destination as! EditarPerfilViewController
+            
+        }
+    }
+    
+    func upDateUserInfo(){
+        userNameLabel.text = userModel.user.name
+        userImage.image = UIImage(named: userModel.user.image)
+        bioLabel.text = userModel.user.bio
+        petsLabel.text = userModel.user.numberOfPets
+        dateLabel.text = userModel.user.date
+    
+    }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8E4C927B2E899954BC2FD3314BCA9DA"
-               BuildableName = "MDFTextAccessibility.framework"
-               BlueprintName = "MDFTextAccessibility"
+               BlueprintIdentifier = "E734BC0FE2A4C2A4898EBC60AA8371EF"
+               BuildableName = "Pods_Vida_Pet.framework"
+               BlueprintName = "Pods-Vida Pet"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

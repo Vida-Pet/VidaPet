@@ -40,6 +40,10 @@
 		3BD5A000253D445F005A5BB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FFF253D445F005A5BB2 /* UIView.swift */; };
 		3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */; };
 		3BFE13B3255622BA003627C3 /* UISegmentControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControll.swift */; };
+		7E0C593E255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */; };
+		7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C593F255D62B9009D68A1 /* GradientView.swift */; };
+		7E0C5942255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */; };
+		7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */; };
 		7E64FD93255AB80C009B2092 /* RandomPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E64FD92255AB80C009B2092 /* RandomPet.swift */; };
 		7E64FD95255AFB0D009B2092 /* RecemChegadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +84,10 @@
 		3BD59FFF253D445F005A5BB2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = "Vida Pet/Controller/Meus Pets/UIView.swift"; sourceTree = SOURCE_ROOT; };
 		3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3BFE13B2255622BA003627C3 /* UISegmentControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentControll.swift; sourceTree = "<group>"; };
+		7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecemChegadosTableViewCellv2.xib; sourceTree = "<group>"; };
+		7E0C593F255D62B9009D68A1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosTableViewCellv2.swift; sourceTree = "<group>"; };
+		7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		7E64FD92255AB80C009B2092 /* RandomPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPet.swift; sourceTree = "<group>"; };
 		7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +183,7 @@
 				3B584BCA253811CF0090A779 /* RecemChegadosDetalheViewController.swift */,
 				7E64FD92255AB80C009B2092 /* RandomPet.swift */,
 				7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */,
+				7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */,
 			);
 			path = "Recem Chegados";
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				3B695D212537E8CF00CE15AF /* RecemChegados.storyboard */,
+				7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */,
 			);
 			path = "Recem Chegados";
 			sourceTree = "<group>";
@@ -367,6 +377,7 @@
 			children = (
 				3B6A639D25537D0F003FE2A9 /* TextFields */,
 				3BD5A007253D4CDB005A5BB2 /* Views */,
+				7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */,
+				7E0C593F255D62B9009D68A1 /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +465,7 @@
 				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
+				7E0C593E255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib in Resources */,
 				3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,12 +501,14 @@
 			files = (
 				3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */,
 				3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */,
+				7E0C5942255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift in Sources */,
 				3B0B8A3D2554FF4A00033297 /* String.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
 				3B0B8A2B2554FC8C00033297 /* UITextField.swift in Sources */,
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
+				7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */,
 				3BFE13B3255622BA003627C3 /* UISegmentControll.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
@@ -503,6 +518,7 @@
 				3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */,
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */,
+				7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */,
 				3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */,
 				3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 import Fakery
 
 
+
 class RandomPet {
     // MARK: - Properties
     
@@ -17,6 +18,12 @@ class RandomPet {
     private let faker = Faker(locale: "en-US")
     
     private var used_images : Array<String> = []
+    
+    private let pelagemMock : Array<String> = [
+        "Pequena",
+        "Média",
+        "Alta"
+    ]
     
     
     private var pet_image_url : String?
@@ -46,7 +53,7 @@ class RandomPet {
         
         print("Generating random pet")
         
-       
+        
         
         getRandomPetImage() { imgData in
             
@@ -57,12 +64,12 @@ class RandomPet {
                 petDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna non lectus consectetur hendrerit. Fusce fringilla sapien sit amet lorem gravida tincidunt quis sit amet tellus. Phasellus elementum interdum ante, vel facilisis sapien consectetur non. Aliquam erat volutpat. Suspendisse consequat vel neque eu ultricies. Proin et fermentum justo. In leo sapien, laoreet nec dictum sit amet, interdum vitae mauris. Morbi a sodales nisl. Mauris egestas, ante nec posuere molestie, orci lectus laoreet leo, nec mattis purus lectus in magna.",
                 adoption: self.faker.number.randomBool(),
                 info: Info(
-                    coat: "PelagemMock",
+                    coat: self.pelagemMock.randomElement(),
                     gender: self.faker.gender.binaryType(),
                     size: String(self.faker.number.randomFloat(min: 0.3, max: 4.5)),
                     breed: self.faker.cat.breed(),
-                    birth: "\(self.faker.number.randomInt(min: 1, max: 31))/\(self.faker.number.randomInt(min: 1, max: 12))",
-                    weight: self.faker.number.randomDouble()),
+                    birth: "\(self.faker.number.randomInt(min: 1, max: 31))/\(self.faker.number.randomInt(min: 1, max: 12))/\(self.faker.number.randomInt(min: 2010, max: 2020))",
+                    weight: Double(self.faker.number.randomInt(min: 1, max: 10))),
                 medicalData: MedicalData(surgerys: [], vaccines: []),
                 dataImage: imgData)
             

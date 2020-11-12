@@ -283,7 +283,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `beagle`.
     static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
@@ -293,6 +293,10 @@ struct R: Rswift.Validatable {
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
     /// Image `gato`.
     static let gato = Rswift.ImageResource(bundle: R.hostingBundle, name: "gato")
+    /// Image `gender-f`.
+    static let genderF = Rswift.ImageResource(bundle: R.hostingBundle, name: "gender-f")
+    /// Image `gender.m`.
+    static let genderM = Rswift.ImageResource(bundle: R.hostingBundle, name: "gender.m")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "beagle", bundle: ..., traitCollection: ...)`
@@ -319,6 +323,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "gato", bundle: ..., traitCollection: ...)`
     static func gato(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.gato, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gender-f", bundle: ..., traitCollection: ...)`
+    static func genderF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.genderF, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gender.m", bundle: ..., traitCollection: ...)`
+    static func genderM(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.genderM, compatibleWith: traitCollection)
     }
     #endif
 

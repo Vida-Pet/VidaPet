@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="AdotaCollectionViewCell" customModule="Vida_Pet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-6F-MZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullDog" translatesAutoresizingMaskIntoConstraints="NO" id="Hmk-qV-oz3">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="bo8-xX-p1A"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KJ-Nv-Z9I">
+                                <rect key="frame" x="8" y="232" width="45.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recife - PE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36T-nc-7ca">
+                                <rect key="frame" x="10" y="264" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-7X-0Hg">
+                                <rect key="frame" x="159" y="227.5" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="Efs-L7-DRo"/>
+                                    <constraint firstAttribute="height" constant="33" id="uOk-oT-o6T"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hS1-7X-0Hg" secondAttribute="trailing" constant="8" id="0eq-HJ-aSO"/>
+                            <constraint firstAttribute="height" constant="300" id="Dfo-Lw-2oF"/>
+                            <constraint firstItem="0KJ-Nv-Z9I" firstAttribute="leading" secondItem="y7x-6F-MZJ" secondAttribute="leading" constant="8" id="Jxb-Cb-3n8"/>
+                            <constraint firstItem="36T-nc-7ca" firstAttribute="leading" secondItem="y7x-6F-MZJ" secondAttribute="leading" constant="10" id="Qhf-qs-m0d"/>
+                            <constraint firstAttribute="trailing" secondItem="36T-nc-7ca" secondAttribute="trailing" constant="45" id="RYH-Py-vYO"/>
+                            <constraint firstItem="hS1-7X-0Hg" firstAttribute="centerY" secondItem="0KJ-Nv-Z9I" secondAttribute="centerY" id="ZxK-DI-n00"/>
+                            <constraint firstItem="Hmk-qV-oz3" firstAttribute="top" secondItem="y7x-6F-MZJ" secondAttribute="top" id="aO3-zE-ur7"/>
+                            <constraint firstItem="Hmk-qV-oz3" firstAttribute="leading" secondItem="y7x-6F-MZJ" secondAttribute="leading" id="gfq-7w-hYb"/>
+                            <constraint firstItem="36T-nc-7ca" firstAttribute="top" secondItem="0KJ-Nv-Z9I" secondAttribute="bottom" constant="8" symbolic="YES" id="ie0-BD-aMr"/>
+                            <constraint firstAttribute="width" constant="200" id="tlt-V3-2wi"/>
+                            <constraint firstItem="0KJ-Nv-Z9I" firstAttribute="top" secondItem="Hmk-qV-oz3" secondAttribute="bottom" constant="8" symbolic="YES" id="wq0-P1-ZXr"/>
+                            <constraint firstAttribute="trailing" secondItem="Hmk-qV-oz3" secondAttribute="trailing" id="zGs-EH-QAc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="y7x-6F-MZJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1k5-Ev-agl"/>
+                <constraint firstAttribute="trailing" secondItem="y7x-6F-MZJ" secondAttribute="trailing" id="NBA-g1-SW0"/>
+                <constraint firstItem="y7x-6F-MZJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uTx-uE-VQc"/>
+                <constraint firstAttribute="bottom" secondItem="y7x-6F-MZJ" secondAttribute="bottom" id="z1s-41-CzY"/>
+            </constraints>
+            <connections>
+                <outlet property="imgGender" destination="hS1-7X-0Hg" id="YEz-iO-1qu"/>
+                <outlet property="imgPet" destination="Hmk-qV-oz3" id="AAh-IE-LDQ"/>
+                <outlet property="lbAddress" destination="36T-nc-7ca" id="CeO-wg-3f9"/>
+                <outlet property="lbName" destination="0KJ-Nv-Z9I" id="lx5-kH-wNt"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bullDog" width="315" height="331"/>
+        <namedColor name="Vida Pet: Blue">
+            <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -8,11 +8,33 @@
 
 import UIKit
 
-class AdoteListaViewController: VidaPetMainViewController {
-
+class AdoteListaViewController: VidaPetMainViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+    
+    @IBOutlet weak var cvPets: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return MeusPetsListaViewController.pets.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = cvPets.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AdotaCollectionViewCell
+        cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()
+        cell.lbName.text = MeusPetsListaViewController.pets[indexPath.row].name
+        cell.lbAddress.text = MeusPetsListaViewController.pets[indexPath.row].info.size
+        cell.layer.cornerRadius = 5
+        return cell
+    }
+    
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        cvPets.dataSource = self
+        cvPets.delegate = self
+        let nibCell  = UINib(nibName: "AdotaCollectionViewCell", bundle: nil)
+        cvPets.register(nibCell, forCellWithReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
     }
     

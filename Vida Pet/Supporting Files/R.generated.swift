@@ -356,7 +356,27 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `AdotaCollectionViewCell`.
+    static let adotaCollectionViewCell = _R.nib._AdotaCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AdotaCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.adotaCollectionViewCell) instead")
+    static func adotaCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.adotaCollectionViewCell)
+    }
+    #endif
+
+    static func adotaCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
+      return R.nib.adotaCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdotaCollectionViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `cell_cirurgias_detalhes`.
     static let cell_cirurgias_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias_detalhes")
@@ -366,8 +386,6 @@ struct R: Rswift.Validatable {
     static let cell_vacinas_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas_detalhes")
     /// Reuse identifier `cell_vacinas`.
     static let cell_vacinas: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas")
-    /// Reuse identifier `cell`.
-    static let cell: Rswift.ReuseIdentifier<MeusPetsListaCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "cell")
 
     fileprivate init() {}
   }
@@ -669,9 +687,43 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _AdotaCollectionViewCell.validate()
+    }
+
+    struct _AdotaCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = AdotaCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "cell"
+      let name = "AdotaCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdotaCollectionViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "bullDog", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bullDog' is used in nib 'AdotaCollectionViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'AdotaCollectionViewCell', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

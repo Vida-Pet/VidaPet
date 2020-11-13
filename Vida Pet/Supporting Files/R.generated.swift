@@ -373,10 +373,6 @@ struct R: Rswift.Validatable {
     static let loginImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "loginImage")
     /// Image `userImage`.
     static let userImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "userImage")
-    /// Image `gender-f`.
-    static let genderF = Rswift.ImageResource(bundle: R.hostingBundle, name: "gender-f")
-    /// Image `gender.m`.
-    static let genderM = Rswift.ImageResource(bundle: R.hostingBundle, name: "gender.m")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "beagle", bundle: ..., traitCollection: ...)`
@@ -431,9 +427,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "googleLogo", bundle: ..., traitCollection: ...)`
     static func googleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.googleLogo, compatibleWith: traitCollection)
-    /// `UIImage(named: "gender-f", bundle: ..., traitCollection: ...)`
-    static func genderF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.genderF, compatibleWith: traitCollection)
     }
     #endif
 
@@ -448,9 +441,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "userImage", bundle: ..., traitCollection: ...)`
     static func userImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.userImage, compatibleWith: traitCollection)
-    /// `UIImage(named: "gender.m", bundle: ..., traitCollection: ...)`
-    static func genderM(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.genderM, compatibleWith: traitCollection)
     }
     #endif
 
@@ -508,7 +498,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `cell_cirurgias_detalhes`.
     static let cell_cirurgias_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias_detalhes")
@@ -518,6 +508,8 @@ struct R: Rswift.Validatable {
     static let cell_vacinas_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas_detalhes")
     /// Reuse identifier `cell_vacinas`.
     static let cell_vacinas: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas")
+    /// Reuse identifier `cell`.
+    static let cell: Rswift.ReuseIdentifier<MeusPetsListaCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "cell")
 
     fileprivate init() {}
   }
@@ -992,7 +984,7 @@ struct _R: Rswift.Validatable {
       typealias ReusableType = AdotaCollectionViewCell
 
       let bundle = R.hostingBundle
-      let identifier = "cell"
+      let identifier = "cell_adote"
       let name = "AdotaCollectionViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
@@ -1112,7 +1104,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "pet3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pet3' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'MeusPets', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "plus.viewfinder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus.viewfinder' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "square.and.pencil", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.pencil' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'MeusPets', but couldn't be loaded.") }

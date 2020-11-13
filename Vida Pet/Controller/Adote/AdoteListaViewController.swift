@@ -18,7 +18,7 @@ class AdoteListaViewController: VidaPetMainViewController , UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = cvPets.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AdotaCollectionViewCell
+        let cell = cvPets.dequeueReusableCell(withReuseIdentifier: "cell_adote", for: indexPath) as! AdotaCollectionViewCell
         cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()
         cell.lbName.text = MeusPetsListaViewController.pets[indexPath.row].name
         cell.lbAddress.text = MeusPetsListaViewController.pets[indexPath.row].info.size
@@ -34,7 +34,7 @@ class AdoteListaViewController: VidaPetMainViewController , UICollectionViewDele
         cvPets.dataSource = self
         cvPets.delegate = self
         let nibCell  = UINib(nibName: "AdotaCollectionViewCell", bundle: nil)
-        cvPets.register(nibCell, forCellWithReuseIdentifier: "cell")
+        cvPets.register(nibCell, forCellWithReuseIdentifier: "cell_adote")
         // Do any additional setup after loading the view.
     }
     

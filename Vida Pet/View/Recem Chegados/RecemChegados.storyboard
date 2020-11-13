@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lcf-MB-30r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lcf-MB-30r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,44 +16,320 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIL-3G-Clf">
-                                <rect key="frame" x="36.5" y="422.5" width="341" height="51"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <state key="normal" title="CLICA EM ALGUM PET">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="sVc-T1-lLD" kind="show" id="tMK-Ef-Gn2"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KB3-XU-I2y">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecemChegadosTableViewCellv2" rowHeight="414" id="v3V-uF-mfm" customClass="RecemChegadosTableViewCellv2" customModule="Vida_Pet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="414"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v3V-uF-mfm" id="lm2-Ni-dnd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NIL-3G-Clf" firstAttribute="centerY" secondItem="Xee-cc-1Lx" secondAttribute="centerY" id="94l-Pg-kdf"/>
-                            <constraint firstItem="NIL-3G-Clf" firstAttribute="centerX" secondItem="Xee-cc-1Lx" secondAttribute="centerX" id="cF4-D7-sSk"/>
+                            <constraint firstItem="KB3-XU-I2y" firstAttribute="top" secondItem="UIY-YE-onJ" secondAttribute="top" id="CDa-6i-BtP"/>
+                            <constraint firstItem="KB3-XU-I2y" firstAttribute="leading" secondItem="UIY-YE-onJ" secondAttribute="leading" id="DuP-Ed-I6g"/>
+                            <constraint firstItem="KB3-XU-I2y" firstAttribute="bottom" secondItem="UIY-YE-onJ" secondAttribute="bottom" id="jl3-0A-ZnJ"/>
+                            <constraint firstItem="KB3-XU-I2y" firstAttribute="trailing" secondItem="UIY-YE-onJ" secondAttribute="trailing" id="lFH-RC-r7I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UIY-YE-onJ"/>
                     </view>
+                    <connections>
+                        <outlet property="recemChegadosTableView" destination="KB3-XU-I2y" id="uah-Xm-9Oy"/>
+                        <segue destination="sVc-T1-lLD" kind="show" identifier="RecemChegadosListaToPetsDetalhes" id="WY3-mI-y7w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7a-pB-br7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="120"/>
+            <point key="canvasLocation" x="-288.40579710144931" y="119.86607142857142"/>
         </scene>
         <!--Detalhes do Pet-->
         <scene sceneID="ea2-rv-bFT">
             <objects>
-                <viewController title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="sVc-T1-lLD" customClass="RecemChegadosDetalhesViewController" sceneMemberID="viewController">
+                <viewController title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="sVc-T1-lLD" customClass="RecemChegadosDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLR-Xj-dd1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8o-4q-26U">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beagle" translatesAutoresizingMaskIntoConstraints="NO" id="BXN-h7-9UI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BXN-h7-9UI" secondAttribute="height" multiplier="1:1" id="GAF-n0-ohS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk1-Gd-PEA" userLabel="ViewHeader">
+                                        <rect key="frame" x="0.0" y="414" width="414" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="adX-1G-x9x">
+                                                <rect key="frame" x="25" y="10" width="364" height="40"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-CS-scI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-OC-nqD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <color key="tintColor" name="Vida Pet: Blue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="eJA-WL-vFY"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="qvr-n6-UsD"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="18o-SM-e5Z">
+                                                                <rect key="frame" x="60" y="0.0" width="304" height="40"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bernardo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dWi-83-nAN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="25.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Bul Terier, 6 anos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iml-Kd-CVj">
+                                                                        <rect key="frame" x="0.0" y="25.5" width="304" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Vida Pet: White"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="adX-1G-x9x" secondAttribute="trailing" constant="25" id="7uc-ds-euL"/>
+                                            <constraint firstItem="adX-1G-x9x" firstAttribute="leading" secondItem="Mk1-Gd-PEA" secondAttribute="leading" constant="25" id="Cmv-Ut-B2c"/>
+                                            <constraint firstAttribute="height" constant="60" id="aY5-At-Ckz"/>
+                                            <constraint firstItem="adX-1G-x9x" firstAttribute="centerX" secondItem="Mk1-Gd-PEA" secondAttribute="centerX" id="gUn-4u-xT3"/>
+                                            <constraint firstItem="adX-1G-x9x" firstAttribute="centerY" secondItem="Mk1-Gd-PEA" secondAttribute="centerY" id="ndb-8q-Yc6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ff-7E-9A4" userLabel="ViewDescricao">
+                                        <rect key="frame" x="0.0" y="474" width="414" height="59"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-4N-b9Z" userLabel="LblDescricao">
+                                                <rect key="frame" x="8" y="8" width="398" height="43"/>
+                                                <string key="text">Sou um cachorrinho fofo, sapeca, que adora morder o pé do sofá. Tenho problemas renais e ronco muito a noite. Minha comidinha favorita é da Purina e meu brinquedo predileto é o osso de borracha.</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                                <color key="textColor" name="Vida Pet: Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="u8E-4N-b9Z" secondAttribute="bottom" constant="8" id="0Mo-8i-k4D"/>
+                                            <constraint firstAttribute="trailing" secondItem="u8E-4N-b9Z" secondAttribute="trailing" constant="8" id="OOV-Co-ear"/>
+                                            <constraint firstItem="u8E-4N-b9Z" firstAttribute="leading" secondItem="7Ff-7E-9A4" secondAttribute="leading" constant="8" id="jTu-ef-VZK"/>
+                                            <constraint firstItem="u8E-4N-b9Z" firstAttribute="top" secondItem="7Ff-7E-9A4" secondAttribute="top" constant="8" id="yYc-G0-iCv"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8h-KF-9yt" userLabel="ViewInfo">
+                                        <rect key="frame" x="0.0" y="533" width="414" height="91"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E9Y-5d-w1w">
+                                                <rect key="frame" x="8" y="0.0" width="398" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" name="Vida Pet: Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-nl-Jat">
+                                                <rect key="frame" x="8" y="29.5" width="398" height="53.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UcH-NJ-WaE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="53.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nYl-Yk-3Pq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Raça:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DOQ-Mk-NnM">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Bul Terier" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tad-kE-EPb">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="US9-eE-gLi">
+                                                                <rect key="frame" x="0.0" y="19.5" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Porte:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0KJ-E3-y5s">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Pequeno" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GuM-ja-Skb">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-xC-ia3">
+                                                                <rect key="frame" x="0.0" y="39" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Idade:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="okT-eM-tek">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="6 anos " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r3L-3h-YTN">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kxT-wc-v7B">
+                                                        <rect key="frame" x="219" y="0.0" width="179" height="53.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VlX-EY-LYO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Peso:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-Eu-XDz">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="40 Kg" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6E0-ri-58i">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DJQ-E9-DcX">
+                                                                <rect key="frame" x="0.0" y="19.5" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Pelagem:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sif-HG-qdm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Curta" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pUy-XW-vd2">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-77-NuS">
+                                                                <rect key="frame" x="0.0" y="39" width="179" height="14.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Sexo:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a7M-og-gEh">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Macho" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VYS-EF-HEF">
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="Vida Pet: Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="W4u-nl-Jat" firstAttribute="top" secondItem="E9Y-5d-w1w" secondAttribute="bottom" constant="10" id="3gJ-e4-iyW"/>
+                                            <constraint firstItem="E9Y-5d-w1w" firstAttribute="top" secondItem="G8h-KF-9yt" secondAttribute="top" id="5gP-Uz-FJH"/>
+                                            <constraint firstAttribute="trailing" secondItem="E9Y-5d-w1w" secondAttribute="trailing" constant="8" id="OoA-KA-QCU"/>
+                                            <constraint firstItem="W4u-nl-Jat" firstAttribute="leading" secondItem="G8h-KF-9yt" secondAttribute="leading" constant="8" id="SaB-mI-Lsm"/>
+                                            <constraint firstAttribute="bottom" secondItem="W4u-nl-Jat" secondAttribute="bottom" constant="8" id="TFY-yv-08S"/>
+                                            <constraint firstItem="E9Y-5d-w1w" firstAttribute="leading" secondItem="G8h-KF-9yt" secondAttribute="leading" constant="8" id="l5l-YO-w7n"/>
+                                            <constraint firstAttribute="trailing" secondItem="W4u-nl-Jat" secondAttribute="trailing" constant="8" id="nhS-Tb-EZ0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Ff-7E-9A4" firstAttribute="trailing" secondItem="KIB-a6-pDL" secondAttribute="trailing" id="1RH-p4-aHF"/>
+                                    <constraint firstItem="Mk1-Gd-PEA" firstAttribute="top" secondItem="BXN-h7-9UI" secondAttribute="bottom" id="5OW-dB-qqC"/>
+                                    <constraint firstItem="BXN-h7-9UI" firstAttribute="centerX" secondItem="M8o-4q-26U" secondAttribute="centerX" id="8EE-po-jps"/>
+                                    <constraint firstItem="Mk1-Gd-PEA" firstAttribute="leading" secondItem="KIB-a6-pDL" secondAttribute="leading" id="8Sq-86-Hs3"/>
+                                    <constraint firstItem="G8h-KF-9yt" firstAttribute="leading" secondItem="KIB-a6-pDL" secondAttribute="leading" id="BTD-uU-uJm"/>
+                                    <constraint firstAttribute="trailing" secondItem="BXN-h7-9UI" secondAttribute="trailing" id="FCf-SY-qOg"/>
+                                    <constraint firstAttribute="bottom" secondItem="BXN-h7-9UI" secondAttribute="bottom" constant="428" id="FPH-KC-MNY"/>
+                                    <constraint firstItem="KIB-a6-pDL" firstAttribute="trailing" secondItem="G8h-KF-9yt" secondAttribute="trailing" id="Gey-iU-2vp"/>
+                                    <constraint firstItem="7Ff-7E-9A4" firstAttribute="top" secondItem="Mk1-Gd-PEA" secondAttribute="bottom" id="YAM-0w-VeW"/>
+                                    <constraint firstItem="BXN-h7-9UI" firstAttribute="leading" secondItem="M8o-4q-26U" secondAttribute="leading" id="ZKW-WL-A8s"/>
+                                    <constraint firstItem="Mk1-Gd-PEA" firstAttribute="trailing" secondItem="KIB-a6-pDL" secondAttribute="trailing" id="bk0-nx-IRE"/>
+                                    <constraint firstItem="Mk1-Gd-PEA" firstAttribute="top" secondItem="BXN-h7-9UI" secondAttribute="bottom" id="er7-ta-x2T"/>
+                                    <constraint firstItem="7Ff-7E-9A4" firstAttribute="leading" secondItem="KIB-a6-pDL" secondAttribute="leading" id="he3-P8-1TD"/>
+                                    <constraint firstItem="BXN-h7-9UI" firstAttribute="top" secondItem="M8o-4q-26U" secondAttribute="top" id="kDB-es-xch"/>
+                                    <constraint firstItem="G8h-KF-9yt" firstAttribute="top" secondItem="7Ff-7E-9A4" secondAttribute="bottom" id="mmT-9V-p69"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="KIB-a6-pDL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="aHq-Xl-Aa7"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M8o-4q-26U" firstAttribute="centerX" secondItem="DLR-Xj-dd1" secondAttribute="centerX" id="AOn-xo-fXA"/>
+                            <constraint firstItem="M8o-4q-26U" firstAttribute="leading" secondItem="D1u-pq-3oJ" secondAttribute="leading" id="TPW-bW-NIi"/>
+                            <constraint firstItem="M8o-4q-26U" firstAttribute="top" secondItem="D1u-pq-3oJ" secondAttribute="top" id="Z3s-7g-TBk"/>
+                            <constraint firstAttribute="bottom" secondItem="M8o-4q-26U" secondAttribute="bottom" id="sSc-DZ-uJ8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="D1u-pq-3oJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="KYm-lk-A3z"/>
+                    <connections>
+                        <outlet property="detailPetImage" destination="BXN-h7-9UI" id="zIn-lK-eND"/>
+                        <outlet property="petAge" destination="r3L-3h-YTN" id="ftZ-ha-XW1"/>
+                        <outlet property="petCoat" destination="pUy-XW-vd2" id="vL6-Pw-89B"/>
+                        <outlet property="petDesc" destination="u8E-4N-b9Z" id="RmZ-Tx-BfL"/>
+                        <outlet property="petGender" destination="VYS-EF-HEF" id="WAr-WB-9x1"/>
+                        <outlet property="petName" destination="dWi-83-nAN" id="09d-Kj-DFq"/>
+                        <outlet property="petRace" destination="tad-kE-EPb" id="p9j-Zh-F7g"/>
+                        <outlet property="petSize" destination="GuM-ja-Skb" id="g9S-17-URH"/>
+                        <outlet property="petSub" destination="iml-Kd-CVj" id="ZZv-Um-dxJ"/>
+                        <outlet property="petWeight" destination="6E0-ri-58i" id="GtT-kz-i0E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejm-J8-daZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526" y="120"/>
+            <point key="canvasLocation" x="727.536231884058" y="119.86607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beagle" width="398" height="388"/>
+        <image name="claw_icon" width="48" height="48"/>
+        <namedColor name="Vida Pet: Blue">
+            <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Vida Pet: White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

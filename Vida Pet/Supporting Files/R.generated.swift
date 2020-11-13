@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 6 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 7 view controllers.
   struct segue {
     /// This struct is generated for `LoginViewController`, and contains static references to 1 segues.
     struct loginViewController {
@@ -164,6 +164,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func fromPerfilToEdit(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PerfilViewController, EditarPerfilViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.perfilViewController.fromPerfilToEdit, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `RecemChegadosListaViewController`, and contains static references to 1 segues.
+    struct recemChegadosListaViewController {
+      /// Segue identifier `RecemChegadosListaToPetsDetalhes`.
+      static let recemChegadosListaToPetsDetalhes: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RecemChegadosListaViewController, RecemChegadosDetalheViewController> = Rswift.StoryboardSegueIdentifier(identifier: "RecemChegadosListaToPetsDetalhes")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `RecemChegadosListaToPetsDetalhes`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func recemChegadosListaToPetsDetalhes(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RecemChegadosListaViewController, RecemChegadosDetalheViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes, segue: segue)
       }
       #endif
 
@@ -478,10 +495,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `AdotaCollectionViewCell`.
     static let adotaCollectionViewCell = _R.nib._AdotaCollectionViewCell()
+    /// Nib `RecemChegadosTableViewCellv2`.
+    static let recemChegadosTableViewCellv2 = _R.nib._RecemChegadosTableViewCellv2()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AdotaCollectionViewCell", in: bundle)`
@@ -491,15 +510,29 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RecemChegadosTableViewCellv2", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.recemChegadosTableViewCellv2) instead")
+    static func recemChegadosTableViewCellv2(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.recemChegadosTableViewCellv2)
+    }
+    #endif
+
     static func adotaCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
       return R.nib.adotaCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdotaCollectionViewCell
+    }
+
+    static func recemChegadosTableViewCellv2(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecemChegadosTableViewCellv2? {
+      return R.nib.recemChegadosTableViewCellv2.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecemChegadosTableViewCellv2
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `RecemChegadosTableViewCellv2`.
+    static let recemChegadosTableViewCellv2: Rswift.ReuseIdentifier<RecemChegadosTableViewCellv2> = Rswift.ReuseIdentifier(identifier: "RecemChegadosTableViewCellv2")
     /// Reuse identifier `cell_cirurgias_detalhes`.
     static let cell_cirurgias_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias_detalhes")
     /// Reuse identifier `cell_cirurgias`.
@@ -1001,6 +1034,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _RecemChegadosTableViewCellv2: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = RecemChegadosTableViewCellv2
+
+      let bundle = R.hostingBundle
+      let identifier = "RecemChegadosTableViewCellv2"
+      let name = "RecemChegadosTableViewCellv2"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecemChegadosTableViewCellv2? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecemChegadosTableViewCellv2
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -1165,7 +1212,11 @@ struct _R: Rswift.Validatable {
       let name = "RecemChegados"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "beagle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'beagle' is used in storyboard 'RecemChegados', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'RecemChegados', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'RecemChegados', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Vida Pet: White", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: White' is used in storyboard 'RecemChegados', but couldn't be loaded.") }
         }
       }
 

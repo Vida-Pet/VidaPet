@@ -8,5 +8,6 @@ target 'Vida Pet' do
   # Pods for Vida Pet
   pod ‘MaterialComponents/TextFields’
   pod 'R.swift'
+  pod 'Fakery'
 
 end

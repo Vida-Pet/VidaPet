@@ -30,6 +30,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     @IBOutlet weak var btnSalvar: UIButton!
     @IBOutlet weak var switchAdocao: UISwitch!
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var scrollViewBottomSpace: NSLayoutConstraint!
     
     
     // MARK: Variables
@@ -72,6 +73,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         if editMode {
             setupEditMode()
         }
+        configureTapGesture()
     }
     
     
@@ -140,7 +142,12 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     // MARK: Methods
     
     
-    fileprivate func setupEditMode() {
+    private func configureTapGesture(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    private func setupEditMode() {
         txtName.text = pet?.name
         txtDescription.text = pet?.petDescription
         imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
@@ -158,12 +165,12 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         tableViewCirurgias.reloadData()
     }
     
-    fileprivate func validateAllFields() -> Bool {
+    private func validateAllFields() -> Bool {
         // TODO: validar campos...
         return true
     }
     
-    fileprivate func showSuccessPetAdded(){
+    private func showSuccessPetAdded(){
         let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_add(), comment: ""), message: nil, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
         let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
@@ -173,7 +180,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    fileprivate func showSuccessPetEdited(){
+    private func showSuccessPetEdited(){
         let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_edit(), comment: ""), message: nil, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
         let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
@@ -183,7 +190,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    fileprivate func showImageActionSheet(){
+    private func showImageActionSheet(){
         let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_nova_imagem(), comment: ""), message: nil, preferredStyle: .actionSheet)
         actionSheetController.view.tintColor = UIColor.black
         let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_cancelar(), comment: ""), style: .cancel)
@@ -199,7 +206,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    fileprivate func imageFromCamera() {
+    private func imageFromCamera() {
         let myPickerControllerCamera = UIImagePickerController()
         myPickerControllerCamera.delegate = self
         myPickerControllerCamera.sourceType = UIImagePickerController.SourceType.camera
@@ -207,7 +214,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         self.present(myPickerControllerCamera, animated: true, completion: nil)
     }
     
-    fileprivate func imageFromGalery() {
+    private func imageFromGalery() {
         let myPickerControllerGallery = UIImagePickerController()
         myPickerControllerGallery.delegate = self
         myPickerControllerGallery.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -215,10 +222,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         self.present(myPickerControllerGallery, animated: true, completion: nil)
     }
     
-    
-    
-    
-    fileprivate func showAlertController(named title: String, withMessage message: String, withNamePlaceholder namePlaceholder: String, withNameTag nameTag: Int, andDateTag dateTag: Int, andType type: MedicalDataType) {
+    private func showAlertController(named title: String, withMessage message: String, withNamePlaceholder namePlaceholder: String, withNameTag nameTag: Int, andDateTag dateTag: Int, andType type: MedicalDataType) {
         var textFieldNome = UITextField()
         var textFieldData = UITextField()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -303,7 +307,7 @@ extension MeusPetsCadastroViewController: UITableViewDataSource {
 
 extension MeusPetsCadastroViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -345,8 +349,9 @@ extension MeusPetsCadastroViewController: UITextFieldDelegate {
 // MARK: - UITextViewDelegate
 
 extension MeusPetsCadastroViewController: UITextViewDelegate {
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

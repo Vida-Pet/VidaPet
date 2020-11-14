@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: VidaPetMainViewController {
 
     // MARK: - IBOutlets
     

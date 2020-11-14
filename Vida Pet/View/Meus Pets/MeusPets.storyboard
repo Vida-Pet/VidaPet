@@ -1010,6 +1010,7 @@
                         <outlet property="heightConstraintCirurgias" destination="53q-uW-nxt" id="PQb-ew-eHU"/>
                         <outlet property="heightConstraintVacinas" destination="zRh-K4-5Jv" id="gdd-5P-Jvz"/>
                         <outlet property="imgView" destination="EeO-2Q-QBU" id="SkC-iS-rev"/>
+                        <outlet property="scrollViewBottomSpace" destination="fxX-ac-NSE" id="k2Z-mT-H1p"/>
                         <outlet property="segmentPelagem" destination="jkq-DD-6bZ" id="ORk-jJ-Vnz"/>
                         <outlet property="segmentPorte" destination="utn-tZ-OOj" id="IV9-hC-wQt"/>
                         <outlet property="segmentSexo" destination="SbB-FH-9wl" id="Ufq-6L-liQ"/>

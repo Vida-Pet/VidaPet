@@ -5,6 +5,7 @@
 - Bruno Freire
 - João Pedro Giarrante
 - Timóteo Holanda
+- Thais Nicodemus
 
 
 ## Objetivo do App

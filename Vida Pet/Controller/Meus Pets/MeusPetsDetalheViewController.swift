@@ -18,10 +18,9 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     let defaultRowHeight: Int = 25
     let defaultTableViewMargin: CGFloat = 15
     let defaultFontSize: CGFloat = 14
-    let twelveMonths: Double = 12
-    let oneYear: Double = 1
     var selectedPetIndex: Int?
     var pet: Pet!
+    
     
     // MARK: IBOutlets
     
@@ -66,17 +65,10 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     fileprivate func setupFields() {
         imgPet.image = pet.image?.decodeBase64ToImage()
         lblNome.text = pet.name
-        if var age = pet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = pet.info.breed {
-            if age > oneYear {
-                let formattedAge = "\(Int(floor(age))) anos"
-                lblMiniBio.text = "\(breed), \(formattedAge)"
-                lblIdade.text = formattedAge
-            } else {
-                age *= twelveMonths
-                let formattedAge = "\(Int(floor(age))) meses"
-                lblMiniBio.text = "\(breed), \(formattedAge)"
-                lblIdade.text = formattedAge
-            }
+        if let age = pet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter)
+           , let breed = pet.info.breed {
+            lblMiniBio.text = "\(breed), \(age.formatAge())"
+            lblIdade.text = age.formatAge()
         } else {
             lblMiniBio.text = emptyField
             lblIdade.text = emptyLinedField

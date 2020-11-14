@@ -10,7 +10,6 @@ import UIKit
 
 extension UIButton {
     
-    
     func setStyleRounded(withRadius radius: CGFloat) {
         self.layer.cornerRadius = radius
     }

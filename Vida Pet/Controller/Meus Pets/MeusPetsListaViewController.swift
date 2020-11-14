@@ -11,15 +11,10 @@ import UIKit
 
 class MeusPetsListaViewController: VidaPetMainViewController {
     
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
-
-    
-    // MARK: Properties
-    
-    let twelveMonths: Double = 12
-    let oneYear: Double = 1
     
     
     // MARK: LifeCicle
@@ -35,7 +30,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-
+    
     fileprivate func setupNavBar() {
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = addItem
@@ -44,7 +39,8 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     @objc fileprivate func addTapped() {
         performSegue(withIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro, sender: self)
     }
-
+    
+    
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +54,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         default: break
         }
     }
-
+    
 }
 
 
@@ -66,26 +62,18 @@ class MeusPetsListaViewController: VidaPetMainViewController {
 
 extension MeusPetsListaViewController: UITableViewDataSource {
     
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MeusPetsListaViewController.pets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell, for: indexPath) else {
             return UITableViewCell()
         }
-        
-        if var age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter), let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
-            if age > oneYear {
-                let formattedAge = "\(Int(floor(age))) anos"
-                cell.lblDescricao.text = "\(breed), \(formattedAge)"
-            } else {
-                age *= twelveMonths
-                let formattedAge = "\(Int(floor(age))) meses"
-                cell.lblDescricao.text = "\(breed), \(formattedAge)"
-            }
+        if let age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter)
+           , let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
+            cell.lblDescricao.text = "\(breed), \(age.formatAge())"
         }
         cell.lblNome.text = MeusPetsListaViewController.pets[indexPath.row].name
         cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()

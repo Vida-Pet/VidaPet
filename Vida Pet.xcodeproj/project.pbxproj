@@ -15,7 +15,6 @@
 		3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581ADB2544F2E4003E2A68 /* Pets.swift */; };
 		3B581ADF2544F478003E2A68 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581ADE2544F478003E2A68 /* UIImage.swift */; };
 		3B581AF4254518B9003E2A68 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581AF3254518B9003E2A68 /* UIButton.swift */; };
-		3B581AF8254518C3003E2A68 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581AF7254518C3003E2A68 /* Textfield.swift */; };
 		3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */; };
 		3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */; };
 		3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B584BC8253811C20090A779 /* RecemChegadosListaViewController.swift */; };
@@ -37,28 +36,27 @@
 		3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B695D2B2537E91F00CE15AF /* Login.storyboard */; };
 		3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */; };
 		3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */; };
+		3B94025F255F721E003AD1EA /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94025E255F721E003AD1EA /* Double.swift */; };
 		3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B984344255A1440000DA748 /* EditarPerfil.strings */; };
 		3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */; };
 		3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */; };
 		3BD5A000253D445F005A5BB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FFF253D445F005A5BB2 /* UIView.swift */; };
 		3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */; };
 		3BFE13B3255622BA003627C3 /* UISegmentControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControll.swift */; };
-		4176AF54255CBBA300562BE6 /* AdotaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* AdotaCollectionViewCell.swift */; };
-		4176AF55255CBBA300562BE6 /* AdotaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4176AF53255CBBA300562BE6 /* AdotaCollectionViewCell.xib */; };
-		7E0C593E255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */; };
+		4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */; };
+		4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */ = {isa = PBXBuildFile; fileRef = 4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */; };
+		7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */; };
 		7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C593F255D62B9009D68A1 /* GradientView.swift */; };
-		7E0C5942255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */; };
+		7E0C5942255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */; };
 		7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */; };
 		7E64FD93255AB80C009B2092 /* RandomPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E64FD92255AB80C009B2092 /* RandomPet.swift */; };
-		7E64FD95255AFB0D009B2092 /* RecemChegadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */; };
-		8E8432071697664A98D1DCBD /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF2957E6A0000B577719F0B /* Pods_Vida_Pet.framework */; };
-		FE30F9BA255A307A00B59058 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30F9B9255A307A00B59058 /* AvatarImage.swift */; };
+		8E5131C296D2603691E94C9A /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4009275C2D5A3F1A17FBFB0 /* Pods_Vida_Pet.framework */; };
+		FE30F9BA255A307A00B59058 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30F9B9255A307A00B59058 /* UIImageView.swift */; };
 		FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */; };
 		FE352AEB2554E49000D4E680 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352AEA2554E49000D4E680 /* UserData.swift */; };
 		FE82FC002555E940007B396E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE82FBFF2555E940007B396E /* UserModel.swift */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
-		FED16A2325461D3D00552870 /* ToggleEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED16A2225461D3C00552870 /* ToggleEye.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +68,6 @@
 		3B581ADB2544F2E4003E2A68 /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
 		3B581ADE2544F478003E2A68 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = "Vida Pet/Model/Meus Pets/UIImage.swift"; sourceTree = SOURCE_ROOT; };
 		3B581AF3254518B9003E2A68 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		3B581AF7254518C3003E2A68 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		3B584BC4253811A90090A779 /* MeusPetsListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaViewController.swift; sourceTree = "<group>"; };
 		3B584BC6253811B60090A779 /* MeusPetsDetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsDetalheViewController.swift; sourceTree = "<group>"; };
 		3B584BC8253811C20090A779 /* RecemChegadosListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosListaViewController.swift; sourceTree = "<group>"; };
@@ -94,30 +91,29 @@
 		3B695D2B2537E91F00CE15AF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3B6A639F25537D40003FE2A9 /* VPRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
 		3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPMultilineRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
+		3B94025E255F721E003AD1EA /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3B984344255A1440000DA748 /* EditarPerfil.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EditarPerfil.strings; sourceTree = "<group>"; };
 		3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsCadastroViewController.swift; sourceTree = "<group>"; };
 		3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaCellTableViewCell.swift; sourceTree = "<group>"; };
 		3BD59FFF253D445F005A5BB2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = "Vida Pet/Controller/Meus Pets/UIView.swift"; sourceTree = SOURCE_ROOT; };
 		3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3BFE13B2255622BA003627C3 /* UISegmentControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentControll.swift; sourceTree = "<group>"; };
-		4176AF52255CBBA300562BE6 /* AdotaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdotaCollectionViewCell.swift; sourceTree = "<group>"; };
-		4176AF53255CBBA300562BE6 /* AdotaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdotaCollectionViewCell.xib; sourceTree = "<group>"; };
-		7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecemChegadosTableViewCellv2.xib; sourceTree = "<group>"; };
+		4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.XIB; sourceTree = "<group>"; };
+		7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPLargeRoundedTableViewCell.xib; sourceTree = "<group>"; };
 		7E0C593F255D62B9009D68A1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosTableViewCellv2.swift; sourceTree = "<group>"; };
+		7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPLargeRoundedTableViewCell.swift; sourceTree = "<group>"; };
 		7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		7E64FD92255AB80C009B2092 /* RandomPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPet.swift; sourceTree = "<group>"; };
-		7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecemChegadosTableViewCell.swift; sourceTree = "<group>"; };
-		8AB03C7D5A520F45EE6E668B /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
-		CBF2957E6A0000B577719F0B /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD84FD221A36244A07E30120 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
-		FE30F9B9255A307A00B59058 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		C6B157D87E1FE1D4E2443B98 /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
+		D37C36412B5D8A61D9C97515 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
+		D4009275C2D5A3F1A17FBFB0 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE30F9B9255A307A00B59058 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		FE352AEA2554E49000D4E680 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Perfil/UserData.swift; sourceTree = SOURCE_ROOT; };
 		FE82FBFF2555E940007B396E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Perfil/UserModel.swift; sourceTree = SOURCE_ROOT; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		FED16A2225461D3C00552870 /* ToggleEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEye.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8432071697664A98D1DCBD /* Pods_Vida_Pet.framework in Frameworks */,
+				8E5131C296D2603691E94C9A /* Pods_Vida_Pet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +131,8 @@
 		0A78D3C9317B40A7F94596B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD84FD221A36244A07E30120 /* Pods-Vida Pet.debug.xcconfig */,
-				8AB03C7D5A520F45EE6E668B /* Pods-Vida Pet.release.xcconfig */,
+				D37C36412B5D8A61D9C97515 /* Pods-Vida Pet.debug.xcconfig */,
+				C6B157D87E1FE1D4E2443B98 /* Pods-Vida Pet.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -185,9 +181,8 @@
 				3B0B8A3C2554FF4A00033297 /* String.swift */,
 				3BFE13B2255622BA003627C3 /* UISegmentControll.swift */,
 				3B581AF3254518B9003E2A68 /* UIButton.swift */,
-				3B581AF7254518C3003E2A68 /* Textfield.swift */,
-				FED16A2225461D3C00552870 /* ToggleEye.swift */,
-				FE30F9B9255A307A00B59058 /* AvatarImage.swift */,
+				FE30F9B9255A307A00B59058 /* UIImageView.swift */,
+				3B94025E255F721E003AD1EA /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,9 +213,6 @@
 			children = (
 				3B584BC8253811C20090A779 /* RecemChegadosListaViewController.swift */,
 				3B584BCA253811CF0090A779 /* RecemChegadosDetalheViewController.swift */,
-				7E64FD92255AB80C009B2092 /* RandomPet.swift */,
-				7E64FD94255AFB0D009B2092 /* RecemChegadosTableViewCell.swift */,
-				7E0C5941255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift */,
 			);
 			path = "Recem Chegados";
 			sourceTree = "<group>";
@@ -249,7 +241,7 @@
 				3B695D062537E71300CE15AF /* Vida Pet */,
 				3B695D052537E71300CE15AF /* Products */,
 				0A78D3C9317B40A7F94596B8 /* Pods */,
-				515D275071FB27043DFC49D1 /* Frameworks */,
+				E935419CE12C53D58867358C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -337,8 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				3B695D232537E8DB00CE15AF /* Adote.storyboard */,
-				4176AF52255CBBA300562BE6 /* AdotaCollectionViewCell.swift */,
-				4176AF53255CBBA300562BE6 /* AdotaCollectionViewCell.xib */,
 			);
 			path = Adote;
 			sourceTree = "<group>";
@@ -355,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				3B695D212537E8CF00CE15AF /* RecemChegados.storyboard */,
-				7E0C593D255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib */,
 			);
 			path = "Recem Chegados";
 			sourceTree = "<group>";
@@ -375,6 +364,17 @@
 				3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		3B9401E1255F59C0003AD1EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */,
+				7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */,
+				4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */,
+				4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3B984343255A140A000DA748 /* Perfil */ = {
@@ -404,6 +404,7 @@
 		3BD59FEB253B719E005A5BB2 /* Recem Chegados */ = {
 			isa = PBXGroup;
 			children = (
+				7E64FD92255AB80C009B2092 /* RandomPet.swift */,
 			);
 			path = "Recem Chegados";
 			sourceTree = "<group>";
@@ -428,8 +429,8 @@
 			isa = PBXGroup;
 			children = (
 				3B6A639D25537D0F003FE2A9 /* TextFields */,
+				3B9401E1255F59C0003AD1EA /* Cells */,
 				3BD5A007253D4CDB005A5BB2 /* Views */,
-				7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -437,18 +438,11 @@
 		3BD5A007253D4CDB005A5BB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */,
 				3BD5A003253D4CCF005A5BB2 /* ShadowView.swift */,
 				7E0C593F255D62B9009D68A1 /* GradientView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		515D275071FB27043DFC49D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CBF2957E6A0000B577719F0B /* Pods_Vida_Pet.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7E0C593C255B47D6009D68A1 /* General */ = {
@@ -458,6 +452,14 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		E935419CE12C53D58867358C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4009275C2D5A3F1A17FBFB0 /* Pods_Vida_Pet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,12 +467,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B695D182537E71500CE15AF /* Build configuration list for PBXNativeTarget "Vida Pet" */;
 			buildPhases = (
-				BC9CDAF430A438D9F2148372 /* [CP] Check Pods Manifest.lock */,
+				D5530C652167DB8603B4316B /* [CP] Check Pods Manifest.lock */,
 				3B0B899825543F3600033297 /* ShellScript */,
 				3B695D002537E71300CE15AF /* Sources */,
 				3B695D012537E71300CE15AF /* Frameworks */,
 				3B695D022537E71300CE15AF /* Resources */,
-				1FBB9E8A54BEEDC9CBAF1EEC /* [CP] Embed Pods Frameworks */,
+				2473581E915D725B7CB5C404 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,7 +523,7 @@
 			files = (
 				3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */,
 				3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */,
-				4176AF55255CBBA300562BE6 /* AdotaCollectionViewCell.xib in Resources */,
+				4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */,
 				3B0B897225543A6C00033297 /* MeusPetsCadastro.strings in Resources */,
 				3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */,
 				3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */,
@@ -529,7 +531,7 @@
 				3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
-				7E0C593E255D60C1009D68A1 /* RecemChegadosTableViewCellv2.xib in Resources */,
+				7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */,
 				3B695D222537E8CF00CE15AF /* RecemChegados.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +539,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FBB9E8A54BEEDC9CBAF1EEC /* [CP] Embed Pods Frameworks */ = {
+		2473581E915D725B7CB5C404 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -573,7 +575,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift\"\n    echo \"R.SWIFT GENERATED\"\n";
 		};
-		BC9CDAF430A438D9F2148372 /* [CP] Check Pods Manifest.lock */ = {
+		D5530C652167DB8603B4316B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -604,13 +606,14 @@
 			files = (
 				3B584BC7253811B60090A779 /* MeusPetsDetalheViewController.swift in Sources */,
 				3B584BC9253811C20090A779 /* RecemChegadosListaViewController.swift in Sources */,
-				7E0C5942255D64F3009D68A1 /* RecemChegadosTableViewCellv2.swift in Sources */,
+				7E0C5942255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift in Sources */,
 				3B0B8A3D2554FF4A00033297 /* String.swift in Sources */,
+				3B94025F255F721E003AD1EA /* Double.swift in Sources */,
 				3B581AF4254518B9003E2A68 /* UIButton.swift in Sources */,
 				3B584BCF253811E30090A779 /* AdoteDetalheViewController.swift in Sources */,
 				FE82FC002555E940007B396E /* UserModel.swift in Sources */,
 				3B0B8A2B2554FC8C00033297 /* UITextField.swift in Sources */,
-				4176AF54255CBBA300562BE6 /* AdotaCollectionViewCell.swift in Sources */,
+				4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */,
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
@@ -625,19 +628,16 @@
 				3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */,
 				FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
-				3B581AF8254518C3003E2A68 /* Textfield.swift in Sources */,
 				FECCE0742542335200E0934F /* ValidateFields.swift in Sources */,
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */,
 				7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */,
 				3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */,
 				3BD5A004253D4CCF005A5BB2 /* ShadowView.swift in Sources */,
-				FE30F9BA255A307A00B59058 /* AvatarImage.swift in Sources */,
+				FE30F9BA255A307A00B59058 /* UIImageView.swift in Sources */,
 				3B584BC5253811A90090A779 /* MeusPetsListaViewController.swift in Sources */,
-				7E64FD95255AFB0D009B2092 /* RecemChegadosTableViewCell.swift in Sources */,
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
 				3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */,
-				FED16A2325461D3D00552870 /* ToggleEye.swift in Sources */,
 				7E64FD93255AB80C009B2092 /* RandomPet.swift in Sources */,
 				3B584BD7253812900090A779 /* LoginViewController.swift in Sources */,
 				3B581ADF2544F478003E2A68 /* UIImage.swift in Sources */,
@@ -776,7 +776,7 @@
 		};
 		3B695D192537E71500CE15AF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD84FD221A36244A07E30120 /* Pods-Vida Pet.debug.xcconfig */;
+			baseConfigurationReference = D37C36412B5D8A61D9C97515 /* Pods-Vida Pet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -795,7 +795,7 @@
 		};
 		3B695D1A2537E71500CE15AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AB03C7D5A520F45EE6E668B /* Pods-Vida Pet.release.xcconfig */;
+			baseConfigurationReference = C6B157D87E1FE1D4E2443B98 /* Pods-Vida Pet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

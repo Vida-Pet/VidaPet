@@ -368,6 +368,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `VPCardCollectionViewCell.XIB`.
+    static let vpCardCollectionViewCellXIB = Rswift.FileResource(bundle: R.hostingBundle, name: "VPCardCollectionViewCell", pathExtension: "XIB")
+
+    /// `bundle.url(forResource: "VPCardCollectionViewCell", withExtension: "XIB")`
+    static func vpCardCollectionViewCellXIB(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.vpCardCollectionViewCellXIB
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `beagle`.
@@ -497,46 +511,50 @@ struct R: Rswift.Validatable {
 
   /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
-    /// Nib `AdotaCollectionViewCell`.
-    static let adotaCollectionViewCell = _R.nib._AdotaCollectionViewCell()
-    /// Nib `RecemChegadosTableViewCellv2`.
-    static let recemChegadosTableViewCellv2 = _R.nib._RecemChegadosTableViewCellv2()
+    /// Nib `VPCardCollectionViewCell`.
+    static let vpCardCollectionViewCell = _R.nib._VPCardCollectionViewCell()
+    /// Nib `VPLargeRoundedTableViewCell`.
+    static let vpLargeRoundedTableViewCell = _R.nib._VPLargeRoundedTableViewCell()
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "AdotaCollectionViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.adotaCollectionViewCell) instead")
-    static func adotaCollectionViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.adotaCollectionViewCell)
+    /// `UINib(name: "VPCardCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.vpCardCollectionViewCell) instead")
+    static func vpCardCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.vpCardCollectionViewCell)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "RecemChegadosTableViewCellv2", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.recemChegadosTableViewCellv2) instead")
-    static func recemChegadosTableViewCellv2(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.recemChegadosTableViewCellv2)
+    /// `UINib(name: "VPLargeRoundedTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.vpLargeRoundedTableViewCell) instead")
+    static func vpLargeRoundedTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.vpLargeRoundedTableViewCell)
     }
     #endif
 
-    static func adotaCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
-      return R.nib.adotaCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdotaCollectionViewCell
+    static func vpCardCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPCardCollectionViewCell? {
+      return R.nib.vpCardCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VPCardCollectionViewCell
     }
 
-    static func recemChegadosTableViewCellv2(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecemChegadosTableViewCellv2? {
-      return R.nib.recemChegadosTableViewCellv2.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecemChegadosTableViewCellv2
+    static func vpLargeRoundedTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPLargeRoundedTableViewCell? {
+      return R.nib.vpLargeRoundedTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VPLargeRoundedTableViewCell
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 8 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `RecemChegadosTableViewCellv2`.
-    static let recemChegadosTableViewCellv2: Rswift.ReuseIdentifier<RecemChegadosTableViewCellv2> = Rswift.ReuseIdentifier(identifier: "RecemChegadosTableViewCellv2")
+    /// Reuse identifier `VPLargeRoundedTableViewCell`.
+    static let vpLargeRoundedTableViewCell: Rswift.ReuseIdentifier<VPLargeRoundedTableViewCell> = Rswift.ReuseIdentifier(identifier: "VPLargeRoundedTableViewCell")
+    /// Reuse identifier `cell_adote`.
+    static let cell_adote: Rswift.ReuseIdentifier<VPCardCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "cell_adote")
     /// Reuse identifier `cell_cirurgias_detalhes`.
     static let cell_cirurgias_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias_detalhes")
     /// Reuse identifier `cell_cirurgias`.
     static let cell_cirurgias: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_cirurgias")
+    /// Reuse identifier `cell_id_adote`.
+    static let cell_id_adote: Rswift.ReuseIdentifier<UIKit.UIView> = Rswift.ReuseIdentifier(identifier: "cell_id_adote")
     /// Reuse identifier `cell_vacinas_detalhes`.
     static let cell_vacinas_detalhes: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell_vacinas_detalhes")
     /// Reuse identifier `cell_vacinas`.
@@ -1010,39 +1028,48 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _AdotaCollectionViewCell.validate()
+      try _VPCardCollectionViewCell.validate()
+      try _VPLargeRoundedTableViewCell.validate()
     }
 
-    struct _AdotaCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = AdotaCollectionViewCell
+    struct _VPCardCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = VPCardCollectionViewCell
 
       let bundle = R.hostingBundle
       let identifier = "cell_adote"
-      let name = "AdotaCollectionViewCell"
+      let name = "VPCardCollectionViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AdotaCollectionViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AdotaCollectionViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPCardCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VPCardCollectionViewCell
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "bullDog", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bullDog' is used in nib 'AdotaCollectionViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "bullDog", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bullDog' is used in nib 'VPCardCollectionViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in nib 'VPCardCollectionViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'AdotaCollectionViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'VPCardCollectionViewCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Vida Pet: White", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: White' is used in storyboard 'VPCardCollectionViewCell', but couldn't be loaded.") }
         }
       }
 
       fileprivate init() {}
     }
 
-    struct _RecemChegadosTableViewCellv2: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = RecemChegadosTableViewCellv2
+    struct _VPLargeRoundedTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = VPLargeRoundedTableViewCell
 
       let bundle = R.hostingBundle
-      let identifier = "RecemChegadosTableViewCellv2"
-      let name = "RecemChegadosTableViewCellv2"
+      let identifier = "VPLargeRoundedTableViewCell"
+      let name = "VPLargeRoundedTableViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RecemChegadosTableViewCellv2? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RecemChegadosTableViewCellv2
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPLargeRoundedTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VPLargeRoundedTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in nib 'VPLargeRoundedTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -1087,6 +1114,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Adote', but couldn't be loaded.") }
         }
       }
 
@@ -1148,6 +1176,7 @@ struct _R: Rswift.Validatable {
       let name = "MeusPets"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "camera.viewfinder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'camera.viewfinder' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "pet3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pet3' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'MeusPets', but couldn't be loaded.") }

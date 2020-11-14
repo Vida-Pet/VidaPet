@@ -10,8 +10,14 @@ import UIKit
 
 class RecemChegadosDetalheViewController: VidaPetMainViewController {
     
+    
+    // MARK: Properties
+    
     var pet : Pet?
     var selectedPetIndex : Int?
+    
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var detailPetImage: UIImageView!
     @IBOutlet weak var petName: UILabel!
@@ -25,45 +31,30 @@ class RecemChegadosDetalheViewController: VidaPetMainViewController {
     @IBOutlet weak var petGender: UILabel!
     
     
-    
-    
+    // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        detailPetImage.contentMode = .scaleAspectFit
-        detailPetImage.clipsToBounds = true
-        
-        detailPetImage.image = UIImage(data: pet!.dataImage!)?.squared()
-        petName.text = pet!.name
-        petSub.text = pet!.info.breed
-        petDesc.text = pet!.petDescription
-        petRace.text = pet!.info.breed
-        petAge.text = formatAge()
-        petWeight.text = "\(pet!.info.weight!) Kg"
-        petCoat.text = pet!.info.coat
-        petGender.text = pet!.info.gender
-        
-        
-        
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-    func formatAge() -> String {
-        var formattedAge = ""
-        if var age = pet!.info.birth?.ageFromDate(withFormatter: defaultDateFormatter) {
-            if(age > 1) {
-                formattedAge = "\(Int(floor(age))) anos"
-            }
-            else {
-                age *= 12
-                formattedAge = "\(Int(floor(age))) meses"
-            }
+    
+    // MARK: Methods
+
+    private func setupView() {
+        detailPetImage.contentMode = .scaleAspectFit
+        detailPetImage.clipsToBounds = true
+        detailPetImage.image = UIImage(data: pet!.dataImage!)?.squared()
+        if let safePet = pet {
+            petName.text = safePet.name
+            petSub.text = safePet.info.breed
+            petDesc.text = safePet.petDescription
+            petRace.text = safePet.info.breed
+            petAge.text = safePet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter).formatAge()
+            petWeight.text = "\(safePet.info.weight!) Kg"
+            petCoat.text = safePet.info.coat
+            petGender.text = safePet.info.gender
         }
-        return formattedAge
-        
-        
     }
     
     

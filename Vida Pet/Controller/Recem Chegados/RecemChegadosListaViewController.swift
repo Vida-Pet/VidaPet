@@ -11,48 +11,48 @@ import UIKit
 class RecemChegadosListaViewController: VidaPetMainViewController {
     
     
+    // MARK: IBOutlets
     
     @IBOutlet weak var recemChegadosTableView: UITableView!
     
-    private let cellName: String = "RecemChegadosTableViewCellv2"
-    private let segueToDetails = "RecemChegadosListaToPetsDetalhes"
+    
+    // MARK: Properties
     
     private var pets : Array<Pet> = []
     
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
+        setupLoad()
+    }
+    
+    
+    // MARK: Methods
+    
+    private func setupTableView() {
         recemChegadosTableView.delegate = self
         recemChegadosTableView.dataSource = self
-        recemChegadosTableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
-        
-        
-        
+        recemChegadosTableView.register(UINib(nibName: R.nib.vpLargeRoundedTableViewCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.vpLargeRoundedTableViewCell.identifier)
         addNewPet(id: 3) {
             DispatchQueue.main.async {
                 self.recemChegadosTableView.reloadData()
             }
         }
-        
+    }
+    
+    private func setupLoad() {
         let spinner = UIActivityIndicatorView()
         spinner.startAnimating()
         recemChegadosTableView.backgroundView = spinner
-        
-        
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func addNewPet(id: Int, completion : @escaping () -> Void) {
-        
         if(id < 1) {
             return
         }
-        
         DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1000..<1500))), execute: {
             RandomPet.shared().generateRandomPet(id: id) { pet in
                 self.pets.append(pet)
@@ -61,20 +61,13 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
         })
         self.addNewPet(id: id - 1, completion: completion)
     }
+
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case segueToDetails:
+        case R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes.identifier:
             if let destinationVC = segue.destination as? RecemChegadosDetalheViewController,
                 let indexPath = sender as? IndexPath{
                 destinationVC.pet = self.pets[indexPath.row]
@@ -88,13 +81,20 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
     
 }
 
+
+// MARK: - UITableViewDelegate
+
 extension RecemChegadosListaViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(pets[indexPath.row])
-        performSegue(withIdentifier: self.segueToDetails, sender: indexPath)
+        performSegue(withIdentifier: R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes.identifier, sender: indexPath)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
+
+
+// MARK: - UITableViewDataSource
 
 extension RecemChegadosListaViewController : UITableViewDataSource {
     
@@ -105,35 +105,26 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.width
     }
-    
-    
-    
-    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as? RecemChegadosTableViewCellv2 else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.vpLargeRoundedTableViewCell.identifier, for: indexPath) as? VPLargeRoundedTableViewCell else {
             return UITableViewCell()
         }
         
         let selectedPet = self.pets[indexPath.row]
-        
         cell.petImage.layer.cornerRadius = 8.0
         cell.petImage.clipsToBounds = true
-        
         cell.imageView?.contentMode = .scaleAspectFit
-        
-        
-        cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(formatAge(pet: selectedPet))"
-        
-        
-        
+        cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter).formatAge() ?? "")"
         cell.petImage.contentMode = .scaleAspectFit
         cell.petImage.image = UIImage(data: selectedPet.dataImage!)?.squared()
         
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 1.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 0.5)
+        
         let whiteColor = UIColor.white
         gradient.colors = [
             whiteColor.withAlphaComponent(0.0).cgColor,
@@ -147,60 +138,8 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
         gradient.frame = cell.petImage.bounds
         cell.petImage.layer.mask = gradient
         
-        
-        
-        //        RandomPet.shared().generateRandomPet(id: indexPath.row) { pet in
-        //            DispatchQueue.main.sync {
-        //                cell.petDesc.text = pet.name
-        //                cell.petImage.image = UIImage(data: pet.dataImage!)?.squared()
-        //                cell.contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 20, bottom: 20, right: 16))
-        //            }
-        //        }
-        
         return cell
     }
-    
-    func formatAge(pet: Pet?) -> String {
-        var formattedAge = ""
-        if var age = pet!.info.birth?.ageFromDate(withFormatter: defaultDateFormatter) {
-            if(age > 1) {
-                formattedAge = "\(Int(floor(age))) anos"
-            }
-            else {
-                age *= 12
-                formattedAge = "\(Int(floor(age))) meses"
-            }
-        }
-        return formattedAge
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
 }
 
-
-extension UIImage {
-    var isPortrait:  Bool    { size.height > size.width }
-    var isLandscape: Bool    { size.width > size.height }
-    var breadth:     CGFloat { min(size.width, size.height) }
-    var breadthSize: CGSize  { .init(width: breadth, height: breadth) }
-    func squared(isOpaque: Bool = false) -> UIImage? {
-        guard let cgImage = cgImage?
-            .cropping(to: .init(origin: .init(x: isLandscape ? ((size.width-size.height)/2).rounded(.down) : 0,
-                                              y: isPortrait  ? ((size.height-size.width)/2).rounded(.down) : 0),
-                                size: breadthSize)) else { return nil }
-        let format = imageRendererFormat
-        format.opaque = isOpaque
-        return UIGraphicsImageRenderer(size: breadthSize, format: format).image { _ in
-            UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation)
-                .draw(in: .init(origin: .zero, size: breadthSize))
-        }
-    }
-}
 

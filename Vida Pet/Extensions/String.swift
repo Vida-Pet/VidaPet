@@ -8,9 +8,7 @@
 
 import UIKit
 
-public extension String {
-    
-    
+extension String {
     
     func indexFirst(of char: Character) -> Int? {
         return firstIndex(of: char)?.utf16Offset(in: self)
@@ -31,6 +29,4 @@ public extension String {
         let timeInterval = birthday?.timeIntervalSinceNow
         return abs(Double(timeInterval! / secondsInYear))
     }
-    
-    
 }

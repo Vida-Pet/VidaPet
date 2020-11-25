@@ -16,7 +16,6 @@
 				CBFFEB46EB7EF57CA696D2EFF283FE46 /* PBXTargetDependency */,
 			);
 			name = R.swift;
-			productName = R.swift;
 		};
 /* End PBXAggregateTarget section */
 
@@ -24,6 +23,7 @@
 		0007F7743834EA46F269F4DA3B2D912C /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB19826A17036030E763B34E147877A /* NibResource+UIKit.swift */; };
 		0097FDBBEF48647385315B03F0A707F9 /* MDCShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A83867EC8F1A6069841C1B3DE4D2A6 /* MDCShadowLayer.m */; };
 		00AE59D410C9020CB92E787E64953DE8 /* MDCTypography.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AF6C3E4B198565FFBFE708D7B26F313 /* MDCTypography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B160CA30F5FD8DD92645B39CFB38D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		02AD7CACB36F52B71C09BEBA9A88B520 /* MaterialMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E5A743943C04408B61CDC252230567 /* MaterialMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03903006083B6E165F6D7D3A319908B0 /* MDCRippleLayerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB493E951899DF9A443AA300B695E851 /* MDCRippleLayerDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		076DEA6715BC340EFC6BC5FA2B1F0893 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C456D4A49277CB2B219183B496613F /* ArrayExtension.swift */; };
@@ -50,7 +50,6 @@
 		1BE16905B692B40229918521DB7BDB4A /* MaterialButtons.h in Headers */ = {isa = PBXBuildFile; fileRef = C7ADA5B991110E40E45DD4F01F677D9B /* MaterialButtons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D1E13D7AB43AE58122245F9A7DC453A /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56439734BEFCC0501255873AFEE1366 /* StoryboardResource.swift */; };
 		1DD7E4D21060AF09D94E57DC33CE36D2 /* MDCTextInputControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEFFBC4563B7B9A41A6DAD39B38493 /* MDCTextInputControllerBase.m */; };
-		1E5142F99DAF2505F458370CF2F61FDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
 		1E8C211E65C82544183D9785BEDA9D4E /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4041FDCD04C8183DD80D1369CA073 /* Name.swift */; };
 		1F523003FA740AF95DD056E170AE0EBC /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801F7ADAB79154358E464596613BCF1 /* UIFont+FontResource.swift */; };
 		22E89899D33664D8BCB73881DA250187 /* MaterialInk.h in Headers */ = {isa = PBXBuildFile; fileRef = 1954CCAA9C255708BE0056272691897B /* MaterialInk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,6 +95,7 @@
 		467945348B5CBC221E8B039F49F45E18 /* MDCPaletteExpansions.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AAAC22C9EBE2CA0912DD9332951D6E /* MDCPaletteExpansions.m */; };
 		46C62F0DA5849748A37DA615EC40CAC9 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE2F1DD20070BBD4DBB6BED1A7230D /* UINib+NibResource.swift */; };
 		47F59B3D7A8DCD44682D1EA4542D3D68 /* MDCCornerTreatment+CornerTypeInitalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 165106099E6B0497EA4C217D43BAE593 /* MDCCornerTreatment+CornerTypeInitalizer.m */; };
+		48B606FC9C0306D3F10CE69AB5B26EC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		49F2A7BF643690BE07D1D8A98DD07569 /* UIView+MaterialRTL.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = E229714A155BF1EE0FF20128F3DDCF90 /* UIView+MaterialRTL.h */; };
 		4A3AA963E55897E612D8CC9CCA676C4C /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F80F5EBFA19E9F925E82413437107C /* Generator.swift */; };
 		4B4A87E6A1BC18BA1307621CBB6C2168 /* en-IND.json in Resources */ = {isa = PBXBuildFile; fileRef = CA868B1F5D6CAB9E182B990D0D65616F /* en-IND.json */; };
@@ -164,7 +164,6 @@
 		76837A482B3722B7CAC9D9AFE1C66C4C /* UIColor+MaterialElevation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37267C577CA97D7E6B5E59A3AA7B5709 /* UIColor+MaterialElevation.m */; };
 		76E0F7D4645A77D7AFFD38580BA3B8A8 /* MDCTextInputControllerOutlined.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877B3D0CB869E759DBFB72AAAF4DEF /* MDCTextInputControllerOutlined.m */; };
 		773A52CFC8025C1A9FDBBBFEB4B95CBD /* MDFColorCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B677D857D761F09B5BDFD170EE8AE /* MDFColorCalculations.m */; };
-		77F751F360BEE4A2A70A09ADE62031A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
 		78D754BA01ECF7E5FA25A939F4D89DCE /* MDCTextField+Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 198878A87F4353E3349204052267156D /* MDCTextField+Testing.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7935780161DAEC32FA2264034882D368 /* MDCFloatingButtonModeAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E109BE40A3CE1813B815326EB29BE16 /* MDCFloatingButtonModeAnimator.m */; };
 		7B3C8057F9FA2C6E673C9FAC97163DCB /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2761BA91B0B9EB5630396179E160D23 /* Lorem.swift */; };
@@ -176,8 +175,9 @@
 		812EB3A95DF3C528EF069453CFDF9B06 /* MDCShapeGenerating.h in Headers */ = {isa = PBXBuildFile; fileRef = 228383661867207E6C865E17728E66AE /* MDCShapeGenerating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81C2B81FA09D580B049B2D1944DE35E4 /* MDCInkView.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB03BEDCD5F1E5BCC1AF75AAB3A4C90 /* MDCInkView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		820AEBA5E0CFB3BABF437CBC68833FC5 /* MDCTextInputUnderlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82128CAC0298030D9796225BFBE0E54E /* MDCTextInputUnderlineView.m */; };
-		823A44AC43B3F70F8084C110981450DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		82CC2B1421352780D99C77FCCA42781E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		83456F9CAD4369064CE929013518BD15 /* MDCButton+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE7DA4F0FA9C63D6A91F800954B9E55 /* MDCButton+Subclassing.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		86C151C2DCB643B1DF85B5DCDAAD3CFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		8724B501B21334F89FF24B954AC783A4 /* ko.json in Resources */ = {isa = PBXBuildFile; fileRef = C18F272F1CF9F7746B373BB8538F0F1F /* ko.json */; };
 		87DE6792EC724A3B8087C161698D909F /* MDCPathGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9830635648F89B1FAB35C8C40F5AAC /* MDCPathGenerator.m */; };
 		87EA430667A4006F6574575F4CDFAFD9 /* UIView+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D047FF670BDC6B5E1C9E9D5529ADB5 /* UIView+MaterialRTL.m */; };
@@ -194,7 +194,6 @@
 		8D2FAB4C71A8A5B7C81F0918A5008746 /* MDCTextInputControllerLegacyFullWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = AB41F55870CF5523ED8B10C0ECFA7A55 /* MDCTextInputControllerLegacyFullWidth.m */; };
 		919CF3948F36E218B6AE40A93297A195 /* Hobbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D02B52F90812935214C57F9D68C6B7D /* Hobbit.swift */; };
 		92797C66AF5223EDDB23298E48D7EF0B /* sv.json in Resources */ = {isa = PBXBuildFile; fileRef = 59B3372402C9306BD7BDD891BF8B01F9 /* sv.json */; };
-		92AB57FEB547CF332A1FCB19AFFA138F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
 		93E33FEF1AD0B7A7C4E3C1CCB169CA7D /* MDCRippleTouchController.h in Headers */ = {isa = PBXBuildFile; fileRef = D51F3C89F94829F99880AFB75AA6E362 /* MDCRippleTouchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94A2FF3B46FD82ACFE04D741B778039D /* MDCCutCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A402DC0F5B30390273ABFCC79162DFA /* MDCCutCornerTreatment.m */; };
 		953A61647D552577B9542111DAEE13B6 /* MDCCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 016C6D500318B2E7A76412AE23529775 /* MDCCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -222,6 +221,7 @@
 		A8D44A9B600E96EAC6FF3DBA8A900402 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9EF66D7F32688F736DDF02DC26AF726 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8D48140B9CD83A1D7B02C736B2E3B38 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923F3F70D50FE23769F08502008039D /* ImageResource.swift */; };
 		A8FCE76494398984DC461EBF00E03C20 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12A14EA72BD6DBBA3A7BAFBC5348A2 /* Validatable.swift */; };
+		A90D29952A5CCA519EB15EBE444760AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		A91EBE1F7C66F0294C6746B71FDFC0E8 /* UIFontDescriptor+MaterialTypography.m in Sources */ = {isa = PBXBuildFile; fileRef = EC45E49351417B686554540805D71E16 /* UIFontDescriptor+MaterialTypography.m */; };
 		A9C95A90FAED73603F621F439EE80E30 /* MDCIntrinsicHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564CC7548999EAE634F95A8C8F1D2124 /* MDCIntrinsicHeightTextView.m */; };
 		AA286852D27CD127BA850AE71ABF3044 /* Commerce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD945E4456600BAB1FD12DDF7BCF3669 /* Commerce.swift */; };
@@ -250,6 +250,7 @@
 		BFE40124272C7F2EF656F0F093FB15B6 /* UIImage+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 89DC981DC31CD53524C216639661233E /* UIImage+MaterialRTL.h */; };
 		C0E878FF75A5A5B17FEE698D095F3178 /* MDCTextInputController.h in Headers */ = {isa = PBXBuildFile; fileRef = C2778E5470FEB55F091DD1AB015D2291 /* MDCTextInputController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1723161A003712E1C433AB77F343084 /* MDCTextInputControllerFilled.m in Sources */ = {isa = PBXBuildFile; fileRef = 88724D29F1F1B0389DDE5BF4A86B8317 /* MDCTextInputControllerFilled.m */; };
+		C1E022F13F859806A7C11BD1D2680017 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */; };
 		C1F82A0E37C81C7597AF3FBB500AC1ED /* UIFont+MaterialScalable.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E176AA6795F217A8AA01C2549A0827 /* UIFont+MaterialScalable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2248823D2B8A2E22D233DE5F61B5532 /* Faker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB9EDEF446E3F7D484CA4B8085AFEAA6 /* Faker.bundle */; };
 		C378F7B37645F5DA7E55B24D7724CB5C /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F1C299B9E4BEB96E20DBF58E96BA3 /* Data+FileResource.swift */; };
@@ -279,7 +280,6 @@
 		D92A9D37E2F2BA7191073FFAED1F2922 /* MDCShapedView.h in Headers */ = {isa = PBXBuildFile; fileRef = EB278F3C0399A099E97588ADFF90ABB9 /* MDCShapedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBCBB8D70C7F9B9015B8D85B080FC17B /* MDCSlantedRectShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = A735C5CF69E3FC9BFF90C5ABB438E247 /* MDCSlantedRectShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBE4B350544E79F2AEFBE1B8C6269684 /* MaterialComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BBE81DFB7F6BBCB90E0665F5FA6BDF /* MaterialComponents-dummy.m */; };
-		DD078D45EDD8A4724C410032520EC5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
 		DEB78494B4A2421BF0AF223E846FA506 /* pl.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BB14BFE7918FD5F5175ED28821007E /* pl.json */; };
 		DFE3DB5AC48C93D7EC176E717AB39891 /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C0E58ADBDA02402ECB4C8AD31D353 /* StoryboardSegueIdentifierProtocol.swift */; };
 		E05B6E40B1C49970348A779BE13E7128 /* NSString+MaterialBidi.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = DCFF7404EC583E3A6258E7AF72B42441 /* NSString+MaterialBidi.h */; };
@@ -315,7 +315,6 @@
 		F836F2E7363D3BD5A666BBDAD11E3282 /* MDFTextAccessibility-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A49C409B51550BF1CDF95BEAEC5F7 /* MDFTextAccessibility-dummy.m */; };
 		F8611EE9D035FCD8D9BD629BBD480F5F /* fa.json in Resources */ = {isa = PBXBuildFile; fileRef = C5F4ACEC91A3582C6602ABB22CBA91FB /* fa.json */; };
 		F863AD28D51BFD06C9311B8414EFAE55 /* MDCLegacyInkLayerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C98882FCA5D1BF8E00301EA81C6AB9 /* MDCLegacyInkLayerDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F8CB6E89A41FE8639B8E2850DB9FD28B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
 		F9BBEC02D3931C4019FC0E4D8EFCB133 /* MDCMath.h in Headers */ = {isa = PBXBuildFile; fileRef = DE039C7CABAA5C29E056B8E80C557D9F /* MDCMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9BE03EBD813E5154782101B853300FD /* MDCShapedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CA9FD8BBFF9FC24010BAC53752F3BC /* MDCShapedView.m */; };
 		FACD75865B5C8108B16E557DC0BB1B62 /* MDCRippleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC3671264285FD8905E235237945C65 /* MDCRippleLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -422,7 +421,7 @@
 		05851DC842C13E7DB7EF4362C5E0F8AE /* MDFRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFRTL.m; path = Sources/MDFRTL.m; sourceTree = "<group>"; };
 		061E82EA9F3F5744F0B8DBAED7440C76 /* MDFInternationalization-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFInternationalization-prefix.pch"; sourceTree = "<group>"; };
 		062C52BF2BBEE3FA4DEF54EA379F60A8 /* MaterialMathDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialMathDummy.m; path = components/private/Math/src/MaterialMathDummy.m; sourceTree = "<group>"; };
-		0632CE64C4B2036E0B120D2ED3CB425E /* en.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = en.json; path = Resources/Locales/en.json; sourceTree = "<group>"; };
+		0632CE64C4B2036E0B120D2ED3CB425E /* en.json */ = {isa = PBXFileReference; includeInIndex = 1; name = en.json; path = Resources/Locales/en.json; sourceTree = "<group>"; };
 		0862E2413D2D8E86120CCC8D9FD2CBF1 /* MDCPaletteNames.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPaletteNames.m; path = components/Palettes/src/private/MDCPaletteNames.m; sourceTree = "<group>"; };
 		09F724F1F50218AF2A0913C8291DF413 /* MDCTextInputControllerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputControllerBase.h; path = components/TextFields/src/MDCTextInputControllerBase.h; sourceTree = "<group>"; };
 		0B4B51DF5EF40C89E0172ECAA743CE05 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
@@ -434,10 +433,10 @@
 		0E5227756AF4810DE69DBD597584D6E4 /* MDCRectangleShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRectangleShapeGenerator.m; path = components/Shapes/src/MDCRectangleShapeGenerator.m; sourceTree = "<group>"; };
 		0E846F22BF3B5B62BECD65354E4911BC /* MDCTriangleEdgeTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTriangleEdgeTreatment.h; path = components/ShapeLibrary/src/MDCTriangleEdgeTreatment.h; sourceTree = "<group>"; };
 		0EA8140BE9630AC1C1AC324EBFFF5F02 /* MDCInkView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkView.m; path = components/Ink/src/MDCInkView.m; sourceTree = "<group>"; };
-		11C78B271448D32D8320C5F3537FC665 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		12AEF5C2568127EE247D816ABFA105C9 /* zh-CN.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "zh-CN.json"; path = "Resources/Locales/zh-CN.json"; sourceTree = "<group>"; };
+		11C78B271448D32D8320C5F3537FC665 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Vida_Pet.framework; path = "Pods-Vida Pet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AEF5C2568127EE247D816ABFA105C9 /* zh-CN.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-CN.json"; path = "Resources/Locales/zh-CN.json"; sourceTree = "<group>"; };
 		12C65AABCE6E78037A4678012B7137C7 /* MDCTextInputControllerLegacyDefault.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTextInputControllerLegacyDefault.m; path = components/TextFields/src/MDCTextInputControllerLegacyDefault.m; sourceTree = "<group>"; };
-		135B9EA8498D8BD288DE862D407255AE /* Fakery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fakery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		135B9EA8498D8BD288DE862D407255AE /* Fakery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fakery.framework; path = Fakery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1394E01FC8186603718310EEE19C5932 /* MDCElevationOverriding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevationOverriding.h; path = components/Elevation/src/MDCElevationOverriding.h; sourceTree = "<group>"; };
 		13A5C43C2B878E9AE8C51B95029066D1 /* PhoneNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneNumber.swift; path = Sources/Fakery/Generators/PhoneNumber.swift; sourceTree = "<group>"; };
 		14FD314A70C0CC817F0AC1BEF72BD6C3 /* MDCTextInputCommonFundament.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputCommonFundament.h; path = components/TextFields/src/private/MDCTextInputCommonFundament.h; sourceTree = "<group>"; };
@@ -466,12 +465,12 @@
 		23B3F221F8E5A41F7B580A0FC9BD5D17 /* MDCTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextField.h; path = components/TextFields/src/MDCTextField.h; sourceTree = "<group>"; };
 		24014E73713DC386722AD3CEB501121A /* MDCPaletteNames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPaletteNames.h; path = components/Palettes/src/private/MDCPaletteNames.h; sourceTree = "<group>"; };
 		24BBE81DFB7F6BBCB90E0665F5FA6BDF /* MaterialComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialComponents-dummy.m"; sourceTree = "<group>"; };
-		2515BDEAAC3E2394835BD3B886B1B2BC /* it.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = it.json; path = Resources/Locales/it.json; sourceTree = "<group>"; };
+		2515BDEAAC3E2394835BD3B886B1B2BC /* it.json */ = {isa = PBXFileReference; includeInIndex = 1; name = it.json; path = Resources/Locales/it.json; sourceTree = "<group>"; };
 		2562D0BAC7E24D20B10C799D2A9031C2 /* MDCTriangleEdgeTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTriangleEdgeTreatment.m; path = components/ShapeLibrary/src/MDCTriangleEdgeTreatment.m; sourceTree = "<group>"; };
 		27CAAD5080308503BD91382BE597F7D7 /* MDCTextInputArt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputArt.h; path = components/TextFields/src/private/MDCTextInputArt.h; sourceTree = "<group>"; };
 		2850746D25EEBDC8A08EE224DF3E6AC3 /* MDCLegacyInkLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCLegacyInkLayer.h; path = components/Ink/src/private/MDCLegacyInkLayer.h; sourceTree = "<group>"; };
 		2BDBD02822DCDA07099FC7D8974B7725 /* MaterialComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MaterialComponents-Info.plist"; sourceTree = "<group>"; };
-		2D21CCAAA319867F0E4669BD99E1DA9C /* zh-TW.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "zh-TW.json"; path = "Resources/Locales/zh-TW.json"; sourceTree = "<group>"; };
+		2D21CCAAA319867F0E4669BD99E1DA9C /* zh-TW.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-TW.json"; path = "Resources/Locales/zh-TW.json"; sourceTree = "<group>"; };
 		2DD8D9566705A503C61A6F37F3AF3BA0 /* MDCCurvedCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCurvedCornerTreatment.h; path = components/ShapeLibrary/src/MDCCurvedCornerTreatment.h; sourceTree = "<group>"; };
 		2DF8739D1B4302A518C2BCF83D94D3FA /* MDFTextAccessibility.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDFTextAccessibility.modulemap; sourceTree = "<group>"; };
 		2DFF9DCB2392894B55A4256981A1832B /* MDCCurvedRectShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCurvedRectShapeGenerator.h; path = components/ShapeLibrary/src/MDCCurvedRectShapeGenerator.h; sourceTree = "<group>"; };
@@ -482,7 +481,7 @@
 		33229632E9267DF4E62B470C94F0FE95 /* MDCCurvedRectShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCurvedRectShapeGenerator.m; path = components/ShapeLibrary/src/MDCCurvedRectShapeGenerator.m; sourceTree = "<group>"; };
 		338D0BF0E1873F591AB9FC46713C1F62 /* MaterialShadowElevationsDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialShadowElevationsDummy.m; path = components/ShadowElevations/src/MaterialShadowElevationsDummy.m; sourceTree = "<group>"; };
 		34BC2D291D755FF1B0DBE3F727C11F0E /* MaterialAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialAvailability.h; path = components/Availability/src/MaterialAvailability.h; sourceTree = "<group>"; };
-		3526EEBE92AE395C8CBA7067E046572D /* de-CH.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "de-CH.json"; path = "Resources/Locales/de-CH.json"; sourceTree = "<group>"; };
+		3526EEBE92AE395C8CBA7067E046572D /* de-CH.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "de-CH.json"; path = "Resources/Locales/de-CH.json"; sourceTree = "<group>"; };
 		36E4B4151DF7A17B53DC88F19170041B /* MDCStatefulRippleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCStatefulRippleView.h; path = components/Ripple/src/MDCStatefulRippleView.h; sourceTree = "<group>"; };
 		37267C577CA97D7E6B5E59A3AA7B5709 /* UIColor+MaterialElevation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialElevation.m"; path = "components/Elevation/src/UIColor+MaterialElevation.m"; sourceTree = "<group>"; };
 		3731FBDBDA0E65F31EA06A968ED8DA2D /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
@@ -501,7 +500,7 @@
 		407095E9FE44D0F07E4C97B47163E921 /* MDCShapedShadowLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedShadowLayer.m; path = components/Shapes/src/MDCShapedShadowLayer.m; sourceTree = "<group>"; };
 		409FB31BA2B977A64777D6BF2BA24D0C /* MDFInternationalization-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFInternationalization-umbrella.h"; sourceTree = "<group>"; };
 		4116737621A72B6328561859186B0986 /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
-		425688323A0EE1BA287C6E6969710BD1 /* nl.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = nl.json; path = Resources/Locales/nl.json; sourceTree = "<group>"; };
+		425688323A0EE1BA287C6E6969710BD1 /* nl.json */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.json; path = Resources/Locales/nl.json; sourceTree = "<group>"; };
 		4315B46462473E797171598E9407E143 /* NSLocale+MaterialRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+MaterialRTL.m"; path = "Sources/NSLocale+MaterialRTL.m"; sourceTree = "<group>"; };
 		4399632F32518EB861681FF4F72B27C1 /* UIView+MDCTimingFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MDCTimingFunction.m"; path = "components/AnimationTiming/src/UIView+MDCTimingFunction.m"; sourceTree = "<group>"; };
 		43AFC95510EB39434E9FF0ED95A2C902 /* MDCFontScaler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontScaler.h; path = components/Typography/src/MDCFontScaler.h; sourceTree = "<group>"; };
@@ -528,7 +527,7 @@
 		501930F818E2FAF9B5DF6502B2418EC1 /* R.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.release.xcconfig; sourceTree = "<group>"; };
 		505FD97806F11F844F6BA5513C074644 /* MaterialComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialComponents.modulemap; sourceTree = "<group>"; };
 		515C000FD896401479DC68ED9C201825 /* UIColor+MaterialDynamic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialDynamic.h"; path = "components/private/Color/src/UIColor+MaterialDynamic.h"; sourceTree = "<group>"; };
-		541EC572C35CC71063E1D5D394DCD840 /* en-GB.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-GB.json"; path = "Resources/Locales/en-GB.json"; sourceTree = "<group>"; };
+		541EC572C35CC71063E1D5D394DCD840 /* en-GB.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-GB.json"; path = "Resources/Locales/en-GB.json"; sourceTree = "<group>"; };
 		54A07DCE85CD20388F963B8AD8535889 /* Pods-Vida Pet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Vida Pet-acknowledgements.plist"; sourceTree = "<group>"; };
 		557FC5E0490CF1ED82E12AE0E2C6D948 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D1A42917835BC3E567375026C5D9EC /* MDFImageCalculations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFImageCalculations.h; path = src/private/MDFImageCalculations.h; sourceTree = "<group>"; };
@@ -540,7 +539,7 @@
 		57DABCBD8CF21CCA1A6218FD79DCD92F /* Fakery-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Fakery-dummy.m"; sourceTree = "<group>"; };
 		5877C5FEC9A3291569541D7226FC606D /* Pods-Vida Pet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vida Pet-umbrella.h"; sourceTree = "<group>"; };
 		5998F20A1619D19EC87E237FE532934D /* MDCRectangleShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRectangleShapeGenerator.h; path = components/Shapes/src/MDCRectangleShapeGenerator.h; sourceTree = "<group>"; };
-		59B3372402C9306BD7BDD891BF8B01F9 /* sv.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = sv.json; path = Resources/Locales/sv.json; sourceTree = "<group>"; };
+		59B3372402C9306BD7BDD891BF8B01F9 /* sv.json */ = {isa = PBXFileReference; includeInIndex = 1; name = sv.json; path = Resources/Locales/sv.json; sourceTree = "<group>"; };
 		5AF6C3E4B198565FFBFE708D7B26F313 /* MDCTypography.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTypography.h; path = components/Typography/src/MDCTypography.h; sourceTree = "<group>"; };
 		5B7D5CA91D8CA453FBE24C720859F703 /* MDCTextInputControllerFilled.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputControllerFilled.h; path = components/TextFields/src/MDCTextInputControllerFilled.h; sourceTree = "<group>"; };
 		5D3334DE65EF82E4C85F3D467C953102 /* Pods-Vida Pet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Vida Pet-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -555,13 +554,12 @@
 		699E5B32BF248A9D1134461FC7CF5992 /* MDCShapedShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapedShadowLayer.h; path = components/Shapes/src/MDCShapedShadowLayer.h; sourceTree = "<group>"; };
 		6A14F59C616AE0673C3862D94C1866B5 /* MDCFontTextStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontTextStyle.h; path = components/Typography/src/MDCFontTextStyle.h; sourceTree = "<group>"; };
 		6A402DC0F5B30390273ABFCC79162DFA /* MDCCutCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCutCornerTreatment.m; path = components/ShapeLibrary/src/MDCCutCornerTreatment.m; sourceTree = "<group>"; };
-		6B837DD985F89146657DD1A11935356E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6D5F31C2008EAA158457F132B8C9882C /* MaterialAnimationTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialAnimationTiming.h; path = components/AnimationTiming/src/MaterialAnimationTiming.h; sourceTree = "<group>"; };
 		6DD51ED5C50A8C6A1AAAC23E6E5630AF /* MDCInkTouchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkTouchController.h; path = components/Ink/src/MDCInkTouchController.h; sourceTree = "<group>"; };
-		6DF81208DE870F71A1ED7340B0F18074 /* fr.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = fr.json; path = Resources/Locales/fr.json; sourceTree = "<group>"; };
-		705506C425940E7FCAF39805E5D4BCFA /* ja.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = ja.json; path = Resources/Locales/ja.json; sourceTree = "<group>"; };
+		6DF81208DE870F71A1ED7340B0F18074 /* fr.json */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.json; path = Resources/Locales/fr.json; sourceTree = "<group>"; };
+		705506C425940E7FCAF39805E5D4BCFA /* ja.json */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.json; path = Resources/Locales/ja.json; sourceTree = "<group>"; };
 		73375E1D137098ADC631058C78DFD05D /* MDFTextAccessibility-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDFTextAccessibility-Info.plist"; sourceTree = "<group>"; };
-		735F8D4E52A32C3670E08DAD7C2FB9E9 /* ru.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = ru.json; path = Resources/Locales/ru.json; sourceTree = "<group>"; };
+		735F8D4E52A32C3670E08DAD7C2FB9E9 /* ru.json */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.json; path = Resources/Locales/ru.json; sourceTree = "<group>"; };
 		73E5A743943C04408B61CDC252230567 /* MaterialMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialMath.h; path = components/private/Math/src/MaterialMath.h; sourceTree = "<group>"; };
 		741D8297CB3531E59CC78B8922F02609 /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
 		74C456D4A49277CB2B219183B496613F /* ArrayExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = Sources/Fakery/Extensions/ArrayExtension.swift; sourceTree = "<group>"; };
@@ -574,7 +572,7 @@
 		7D0E58C4A218EDCCD73611CF98E8C130 /* MDFTextAccessibility-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-prefix.pch"; sourceTree = "<group>"; };
 		7D22FD1DF4F5BF587A28F17AD324979A /* NSString+MaterialBidi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MaterialBidi.m"; path = "Sources/NSString+MaterialBidi.m"; sourceTree = "<group>"; };
 		7D6F6C543BBFCB3A79F820BCBB301A49 /* MaterialElevation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialElevation.h; path = components/Elevation/src/MaterialElevation.h; sourceTree = "<group>"; };
-		7F644CD771110E69C642270210884BC0 /* en-TEST.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-TEST.json"; path = "Resources/Locales/en-TEST.json"; sourceTree = "<group>"; };
+		7F644CD771110E69C642270210884BC0 /* en-TEST.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-TEST.json"; path = "Resources/Locales/en-TEST.json"; sourceTree = "<group>"; };
 		801F260BE3FB1A53EE9F1281436C18E1 /* R.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.debug.xcconfig; sourceTree = "<group>"; };
 		817BA95DADEFC58920E1DBDE0884FED1 /* MDCInkTouchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkTouchController.m; path = components/Ink/src/MDCInkTouchController.m; sourceTree = "<group>"; };
 		82128CAC0298030D9796225BFBE0E54E /* MDCTextInputUnderlineView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTextInputUnderlineView.m; path = components/TextFields/src/MDCTextInputUnderlineView.m; sourceTree = "<group>"; };
@@ -585,7 +583,7 @@
 		8567493A41FF6AEFC2719732D7606F9D /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
 		8710AD2A087DF983734165BF831E2C0C /* MDCLegacyInkLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCLegacyInkLayer.m; path = components/Ink/src/private/MDCLegacyInkLayer.m; sourceTree = "<group>"; };
 		878C1A49661731C19AC1DEEA31E24895 /* MDCCutCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCutCornerTreatment.h; path = components/ShapeLibrary/src/MDCCutCornerTreatment.h; sourceTree = "<group>"; };
-		88267DAC932651CD427B64002CF8A111 /* uk.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = uk.json; path = Resources/Locales/uk.json; sourceTree = "<group>"; };
+		88267DAC932651CD427B64002CF8A111 /* uk.json */ = {isa = PBXFileReference; includeInIndex = 1; name = uk.json; path = Resources/Locales/uk.json; sourceTree = "<group>"; };
 		88724D29F1F1B0389DDE5BF4A86B8317 /* MDCTextInputControllerFilled.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTextInputControllerFilled.m; path = components/TextFields/src/MDCTextInputControllerFilled.m; sourceTree = "<group>"; };
 		88F23F2F1293FD06A72B72AC6AE776F8 /* MDCRoundedCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRoundedCornerTreatment.h; path = components/ShapeLibrary/src/MDCRoundedCornerTreatment.h; sourceTree = "<group>"; };
 		89DC981DC31CD53524C216639661233E /* UIImage+MaterialRTL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MaterialRTL.h"; path = "Sources/UIImage+MaterialRTL.h"; sourceTree = "<group>"; };
@@ -603,7 +601,7 @@
 		91C16FB32269C945DBDBE747EF2B130D /* MDCTextInputControllerLegacyDefault.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputControllerLegacyDefault.h; path = components/TextFields/src/MDCTextInputControllerLegacyDefault.h; sourceTree = "<group>"; };
 		92C7D1221DCFA70D465C63625025A7DD /* App.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = App.swift; path = Sources/Fakery/Generators/App.swift; sourceTree = "<group>"; };
 		93683554373D0649313A06F5173F76CC /* MaterialComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialComponents.debug.xcconfig; sourceTree = "<group>"; };
-		93A0C78B8499DB4EEFBE0774C21CDC9E /* es.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = es.json; path = Resources/Locales/es.json; sourceTree = "<group>"; };
+		93A0C78B8499DB4EEFBE0774C21CDC9E /* es.json */ = {isa = PBXFileReference; includeInIndex = 1; name = es.json; path = Resources/Locales/es.json; sourceTree = "<group>"; };
 		9430F06413FD81754C44792F7BD27DBD /* MDCCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCornerTreatment.m; path = components/Shapes/src/MDCCornerTreatment.m; sourceTree = "<group>"; };
 		95F7EAC62F941520F8CDC92D4EDBBC2C /* MDCTextInputCommonFundament.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTextInputCommonFundament.m; path = components/TextFields/src/private/MDCTextInputCommonFundament.m; sourceTree = "<group>"; };
 		96950BCE57DE6DBFF2EE7AB9D43A5AD3 /* MaterialShapeLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShapeLibrary.h; path = components/ShapeLibrary/src/MaterialShapeLibrary.h; sourceTree = "<group>"; };
@@ -611,20 +609,20 @@
 		98BAB4D144E5F3FF0CE0F7A1B08AC700 /* UIFont+MaterialSimpleEquality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialSimpleEquality.h"; path = "components/Typography/src/UIFont+MaterialSimpleEquality.h"; sourceTree = "<group>"; };
 		9923F3F70D50FE23769F08502008039D /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
 		99611E9F8993E7065B90748CD4AD3D8B /* Bundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+FileResource.swift"; path = "Library/Foundation/Bundle+FileResource.swift"; sourceTree = "<group>"; };
-		9A2AC0B8BAC6EF061EBC28825653DF99 /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AF7A8951CC18A04F638DD20C6D1F0F9 /* sk.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = sk.json; path = Resources/Locales/sk.json; sourceTree = "<group>"; };
+		9A2AC0B8BAC6EF061EBC28825653DF99 /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDFInternationalization.framework; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF7A8951CC18A04F638DD20C6D1F0F9 /* sk.json */ = {isa = PBXFileReference; includeInIndex = 1; name = sk.json; path = Resources/Locales/sk.json; sourceTree = "<group>"; };
 		9BDD477E59FEF2249FE61F02F3791409 /* MaterialShapes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShapes.h; path = components/Shapes/src/MaterialShapes.h; sourceTree = "<group>"; };
 		9D175AC43CEEDBE66679554A65EE30C5 /* Pods-Vida Pet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vida Pet-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DF4041FDCD04C8183DD80D1369CA073 /* Name.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Name.swift; path = Sources/Fakery/Generators/Name.swift; sourceTree = "<group>"; };
 		A1A1F68075B60200720409EEAC72C0A8 /* MDCPillShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPillShapeGenerator.m; path = components/ShapeLibrary/src/MDCPillShapeGenerator.m; sourceTree = "<group>"; };
 		A203633D3C107B391AC60B47D1059012 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Fakery/Data/Parser.swift; sourceTree = "<group>"; };
 		A2761BA91B0B9EB5630396179E160D23 /* Lorem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lorem.swift; path = Sources/Fakery/Generators/Lorem.swift; sourceTree = "<group>"; };
 		A2CB837FA0719BC19E3A516B689C452F /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
 		A3060E46583AE27AA0DBA7093F5AD8B6 /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
-		A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaterialComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MaterialComponents.framework; path = MaterialComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41603CD9DA246000EC157379A98C7B6 /* R.swift.Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.release.xcconfig; sourceTree = "<group>"; };
-		A47BB92AED480339CDA43A0FE860F587 /* de.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = de.json; path = Resources/Locales/de.json; sourceTree = "<group>"; };
+		A47BB92AED480339CDA43A0FE860F587 /* de.json */ = {isa = PBXFileReference; includeInIndex = 1; name = de.json; path = Resources/Locales/de.json; sourceTree = "<group>"; };
 		A51DDF36FD886879DA739D5107355AAE /* MDCFlatButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFlatButton.m; path = components/Buttons/src/MDCFlatButton.m; sourceTree = "<group>"; };
 		A57F1C299B9E4BEB96E20DBF58E96BA3 /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
 		A735C5CF69E3FC9BFF90C5ABB438E247 /* MDCSlantedRectShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSlantedRectShapeGenerator.h; path = components/ShapeLibrary/src/MDCSlantedRectShapeGenerator.h; sourceTree = "<group>"; };
@@ -646,7 +644,7 @@
 		B464AEC7417B2DE2EF34D51F0D35C506 /* UIFont+MaterialTypographyPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialTypographyPrivate.h"; path = "components/Typography/src/private/UIFont+MaterialTypographyPrivate.h"; sourceTree = "<group>"; };
 		B4F80F5EBFA19E9F925E82413437107C /* Generator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generator.swift; path = Sources/Fakery/Generators/Generator.swift; sourceTree = "<group>"; };
 		B6E10C4AA6D95521F4083A0DB19AB130 /* Provider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = Sources/Fakery/Data/Provider.swift; sourceTree = "<group>"; };
-		B7BB14BFE7918FD5F5175ED28821007E /* pl.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = pl.json; path = Resources/Locales/pl.json; sourceTree = "<group>"; };
+		B7BB14BFE7918FD5F5175ED28821007E /* pl.json */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.json; path = Resources/Locales/pl.json; sourceTree = "<group>"; };
 		B865D423BC2514A5A38B4CDC428FD0D3 /* MDCFloatingButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFloatingButton.m; path = components/Buttons/src/MDCFloatingButton.m; sourceTree = "<group>"; };
 		B96B0CF010D1057C7944448754EE0EAA /* Fakery.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Fakery.modulemap; sourceTree = "<group>"; };
 		BD596993F0E65481E9D484AE7FBC3132 /* MDCRippleViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleViewDelegate.h; path = components/Ripple/src/MDCRippleViewDelegate.h; sourceTree = "<group>"; };
@@ -655,13 +653,13 @@
 		BEB03BEDCD5F1E5BCC1AF75AAB3A4C90 /* MDCInkView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkView.h; path = components/Ink/src/MDCInkView.h; sourceTree = "<group>"; };
 		BF49BB185884187021F05CACDB2DE677 /* MDFInternationalization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFInternationalization.h; path = Sources/MDFInternationalization.h; sourceTree = "<group>"; };
 		C06462A0E2487BEF2699193D34F97DD8 /* MaterialShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowLayer.h; path = components/ShadowLayer/src/MaterialShadowLayer.h; sourceTree = "<group>"; };
-		C18F272F1CF9F7746B373BB8538F0F1F /* ko.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = ko.json; path = Resources/Locales/ko.json; sourceTree = "<group>"; };
+		C18F272F1CF9F7746B373BB8538F0F1F /* ko.json */ = {isa = PBXFileReference; includeInIndex = 1; name = ko.json; path = Resources/Locales/ko.json; sourceTree = "<group>"; };
 		C230343F9A27E778496A6B471424C4F9 /* MDCInkTouchControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkTouchControllerDelegate.h; path = components/Ink/src/MDCInkTouchControllerDelegate.h; sourceTree = "<group>"; };
 		C2778E5470FEB55F091DD1AB015D2291 /* MDCTextInputController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputController.h; path = components/TextFields/src/MDCTextInputController.h; sourceTree = "<group>"; };
 		C3FCCDF4705938B07AFD7387F8504153 /* Zelda.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zelda.swift; path = Sources/Fakery/Generators/Zelda.swift; sourceTree = "<group>"; };
 		C48BC8602097A90ADD22F49C79C6110D /* MDCInkViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkViewDelegate.h; path = components/Ink/src/MDCInkViewDelegate.h; sourceTree = "<group>"; };
 		C56439734BEFCC0501255873AFEE1366 /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
-		C5F4ACEC91A3582C6602ABB22CBA91FB /* fa.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = fa.json; path = Resources/Locales/fa.json; sourceTree = "<group>"; };
+		C5F4ACEC91A3582C6602ABB22CBA91FB /* fa.json */ = {isa = PBXFileReference; includeInIndex = 1; name = fa.json; path = Resources/Locales/fa.json; sourceTree = "<group>"; };
 		C6E4CD087BF61856EC596600820EB0A1 /* MDCPaletteExpansions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPaletteExpansions.h; path = components/Palettes/src/private/MDCPaletteExpansions.h; sourceTree = "<group>"; };
 		C73C0EAEF26F225BC8744F999951B44B /* MDFInternationalization.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDFInternationalization.modulemap; sourceTree = "<group>"; };
 		C761498435451C8BBC570EB526AD0A46 /* MDCRippleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleView.h; path = components/Ripple/src/MDCRippleView.h; sourceTree = "<group>"; };
@@ -673,17 +671,17 @@
 		C8FB89FACBA2F16A86093459BBC81544 /* Gender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gender.swift; path = Sources/Fakery/Generators/Gender.swift; sourceTree = "<group>"; };
 		C9B4B99CD7D543BF816E5BD35B7D50D0 /* UIView+MaterialElevationResponding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MaterialElevationResponding.h"; path = "components/Elevation/src/UIView+MaterialElevationResponding.h"; sourceTree = "<group>"; };
 		C9EF66D7F32688F736DDF02DC26AF726 /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
-		CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Rswift.framework; path = R.swift.Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5254E8343A0921400BD79E4BB4364D /* MDCFloatingButtonModeAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFloatingButtonModeAnimator.h; path = components/Buttons/src/private/MDCFloatingButtonModeAnimator.h; sourceTree = "<group>"; };
-		CA868B1F5D6CAB9E182B990D0D65616F /* en-IND.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-IND.json"; path = "Resources/Locales/en-IND.json"; sourceTree = "<group>"; };
+		CA868B1F5D6CAB9E182B990D0D65616F /* en-IND.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-IND.json"; path = "Resources/Locales/en-IND.json"; sourceTree = "<group>"; };
 		CABE3B087199E77E5CC3045BD74AF2A2 /* Cat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cat.swift; path = Sources/Fakery/Generators/Cat.swift; sourceTree = "<group>"; };
 		CD31B09E59AEA6CFEA1C0ED7E1CBCEE7 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
 		CE07F59CEA9EC85172C921E20FF92661 /* MDFInternationalization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDFInternationalization.debug.xcconfig; sourceTree = "<group>"; };
-		CEADC3E87E8171CB02D1617EB66A76FF /* nb-NO.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "nb-NO.json"; path = "Resources/Locales/nb-NO.json"; sourceTree = "<group>"; };
+		CEADC3E87E8171CB02D1617EB66A76FF /* nb-NO.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "nb-NO.json"; path = "Resources/Locales/nb-NO.json"; sourceTree = "<group>"; };
 		CEE87FB003224BBCF5A9D5589EE325AA /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0049C6CB0E2A316C350930D899DA28 /* UIApplication+MDCAppExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+MDCAppExtensions.m"; path = "components/private/Application/src/UIApplication+MDCAppExtensions.m"; sourceTree = "<group>"; };
 		D0010A6AFF73E3FFB0482BFE4BE64450 /* MDCTextInputControllerBase+Subclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDCTextInputControllerBase+Subclassing.h"; path = "components/TextFields/src/private/MDCTextInputControllerBase+Subclassing.h"; sourceTree = "<group>"; };
-		D15A31670C87E09F33BEDAB460CB9E50 /* en-CA.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-CA.json"; path = "Resources/Locales/en-CA.json"; sourceTree = "<group>"; };
+		D15A31670C87E09F33BEDAB460CB9E50 /* en-CA.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-CA.json"; path = "Resources/Locales/en-CA.json"; sourceTree = "<group>"; };
 		D3AFF8DFC59871238C1A12E8918BA857 /* MaterialApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialApplication.h; path = components/private/Application/src/MaterialApplication.h; sourceTree = "<group>"; };
 		D425F58DCEF7F4BE5B7CE30FDA8A6B8C /* UIColor+ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+ColorResource.swift"; path = "Library/UIKit/UIColor+ColorResource.swift"; sourceTree = "<group>"; };
 		D51F3C89F94829F99880AFB75AA6E362 /* MDCRippleTouchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleTouchController.h; path = components/Ripple/src/MDCRippleTouchController.h; sourceTree = "<group>"; };
@@ -691,7 +689,7 @@
 		D7610C62EADD48B49D992E0112AEF71D /* MDFTextAccessibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFTextAccessibility.m; path = src/MDFTextAccessibility.m; sourceTree = "<group>"; };
 		D810641217A26BD37F63D90825063456 /* UIColor+MaterialDynamic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialDynamic.m"; path = "components/private/Color/src/UIColor+MaterialDynamic.m"; sourceTree = "<group>"; };
 		D88E1186D3BE62126158D075A1F3E13B /* NSArray+MDFUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MDFUtils.m"; path = "src/private/NSArray+MDFUtils.m"; sourceTree = "<group>"; };
-		D9E6C38E0D85594A618CF8CB2079A90C /* en-US.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-US.json"; path = "Resources/Locales/en-US.json"; sourceTree = "<group>"; };
+		D9E6C38E0D85594A618CF8CB2079A90C /* en-US.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-US.json"; path = "Resources/Locales/en-US.json"; sourceTree = "<group>"; };
 		DB493E951899DF9A443AA300B695E851 /* MDCRippleLayerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleLayerDelegate.h; path = components/Ripple/src/private/MDCRippleLayerDelegate.h; sourceTree = "<group>"; };
 		DBC99B3E0584A7CC04D4EB2725E9D538 /* NSArray+MDFUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MDFUtils.h"; path = "src/private/NSArray+MDFUtils.h"; sourceTree = "<group>"; };
 		DCFF7404EC583E3A6258E7AF72B42441 /* NSString+MaterialBidi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MaterialBidi.h"; path = "Sources/NSString+MaterialBidi.h"; sourceTree = "<group>"; };
@@ -712,7 +710,7 @@
 		E491720081B139242B484A4A43078E07 /* MDCEdgeTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCEdgeTreatment.m; path = components/Shapes/src/MDCEdgeTreatment.m; sourceTree = "<group>"; };
 		E4CA9FD8BBFF9FC24010BAC53752F3BC /* MDCShapedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedView.m; path = components/Shapes/src/MDCShapedView.m; sourceTree = "<group>"; };
 		E4E0B497485AA0668AB0867E5DFE2EDE /* MaterialColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialColor.h; path = components/private/Color/src/MaterialColor.h; sourceTree = "<group>"; };
-		E6EAFC5CFC3C781627D832248E315DC5 /* tr-TR.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "tr-TR.json"; path = "Resources/Locales/tr-TR.json"; sourceTree = "<group>"; };
+		E6EAFC5CFC3C781627D832248E315DC5 /* tr-TR.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "tr-TR.json"; path = "Resources/Locales/tr-TR.json"; sourceTree = "<group>"; };
 		E70EABC8F7F4D1F0191D40592F5086F2 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
 		E7C98882FCA5D1BF8E00301EA81C6AB9 /* MDCLegacyInkLayerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCLegacyInkLayerDelegate.h; path = components/Ink/src/private/MDCLegacyInkLayerDelegate.h; sourceTree = "<group>"; };
 		E833FAD9CF189776D16427AC00F172BC /* MDCElevatable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevatable.h; path = components/Elevation/src/MDCElevatable.h; sourceTree = "<group>"; };
@@ -726,7 +724,7 @@
 		EDA6D5202F6B9168B4FE4167A0A3B2D1 /* MDCTextInputBorderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputBorderView.h; path = components/TextFields/src/MDCTextInputBorderView.h; sourceTree = "<group>"; };
 		EDBE2F1DD20070BBD4DBB6BED1A7230D /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
 		EE8F8044B392CCD3A56AF46D70FE5562 /* MDCTextInputControllerOutlined.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTextInputControllerOutlined.h; path = components/TextFields/src/MDCTextInputControllerOutlined.h; sourceTree = "<group>"; };
-		EE954B5A80BB906A894E68EEF95F26A5 /* de-AT.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "de-AT.json"; path = "Resources/Locales/de-AT.json"; sourceTree = "<group>"; };
+		EE954B5A80BB906A894E68EEF95F26A5 /* de-AT.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "de-AT.json"; path = "Resources/Locales/de-AT.json"; sourceTree = "<group>"; };
 		EEB19826A17036030E763B34E147877A /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
 		F1E71F91AB2632481D135373C7AE53A8 /* MDCTypographyUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTypographyUtilities.m; path = components/Typography/src/private/MDCTypographyUtilities.m; sourceTree = "<group>"; };
 		F230717B3682B20F2438C5A1BFDF7257 /* Pods-Vida Pet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Vida Pet-Info.plist"; sourceTree = "<group>"; };
@@ -737,11 +735,12 @@
 		F8BEFFBC4563B7B9A41A6DAD39B38493 /* MDCTextInputControllerBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTextInputControllerBase.m; path = components/TextFields/src/MDCTextInputControllerBase.m; sourceTree = "<group>"; };
 		F8EE88778DC33AC3EA3E1BC077589B26 /* MDCButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCButton.h; path = components/Buttons/src/MDCButton.h; sourceTree = "<group>"; };
 		F921D21A7A358BD3D845FA3DE011AF90 /* UIFont+MaterialScalable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialScalable.m"; path = "components/Typography/src/UIFont+MaterialScalable.m"; sourceTree = "<group>"; };
+		F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F9F7DCB1A3882CF7407ED936FDA61A5D /* MDCIntrinsicHeightTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCIntrinsicHeightTextView.h; path = components/TextFields/src/MDCIntrinsicHeightTextView.h; sourceTree = "<group>"; };
-		FB8220FA4D9117310AEFC629A6EE4A08 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8220FA4D9117310AEFC629A6EE4A08 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDFTextAccessibility.framework; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9720C2017BEDB751E24C7D7BF95917 /* MDCInkGestureRecognizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkGestureRecognizer.m; path = components/Ink/src/MDCInkGestureRecognizer.m; sourceTree = "<group>"; };
-		FB9EDEF446E3F7D484CA4B8085AFEAA6 /* Faker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Faker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBC62765FCA8652A536169E308F78F2F /* en-AU.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = "en-AU.json"; path = "Resources/Locales/en-AU.json"; sourceTree = "<group>"; };
+		FB9EDEF446E3F7D484CA4B8085AFEAA6 /* Faker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Faker.bundle; path = "Fakery-Faker.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC62765FCA8652A536169E308F78F2F /* en-AU.json */ = {isa = PBXFileReference; includeInIndex = 1; name = "en-AU.json"; path = "Resources/Locales/en-AU.json"; sourceTree = "<group>"; };
 		FBCE49F3A1E4F75F77C679E199978B84 /* MDFTextAccessibility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDFTextAccessibility.release.xcconfig; sourceTree = "<group>"; };
 		FD7DD45780DCBEB77BA4047DE77B652D /* MDCPalettes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPalettes.m; path = components/Palettes/src/MDCPalettes.m; sourceTree = "<group>"; };
 		FD9D8A693AE01711784CD9FECA9E6043 /* MDCFloatingButtonModeAnimatorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFloatingButtonModeAnimatorDelegate.h; path = components/Buttons/src/private/MDCFloatingButtonModeAnimatorDelegate.h; sourceTree = "<group>"; };
@@ -756,7 +755,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AB57FEB547CF332A1FCB19AFFA138F /* Foundation.framework in Frameworks */,
+				A90D29952A5CCA519EB15EBE444760AA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +770,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F751F360BEE4A2A70A09ADE62031A3 /* Foundation.framework in Frameworks */,
+				82CC2B1421352780D99C77FCCA42781E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,7 +778,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD078D45EDD8A4724C410032520EC5C0 /* Foundation.framework in Frameworks */,
+				86C151C2DCB643B1DF85B5DCDAAD3CFB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +786,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823A44AC43B3F70F8084C110981450DF /* Foundation.framework in Frameworks */,
+				01B160CA30F5FD8DD92645B39CFB38D9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +794,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8CB6E89A41FE8639B8E2850DB9FD28B /* Foundation.framework in Frameworks */,
+				48B606FC9C0306D3F10CE69AB5B26EC3 /* Foundation.framework in Frameworks */,
 				52FBC2E515EE7B22B2EA341E34B713FE /* MDFInternationalization.framework in Frameworks */,
 				D7B8E5CF90B988FD71713629DF0E4D19 /* MDFTextAccessibility.framework in Frameworks */,
 			);
@@ -805,7 +804,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E5142F99DAF2505F458370CF2F61FDB /* Foundation.framework in Frameworks */,
+				C1E022F13F859806A7C11BD1D2680017 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,6 +939,7 @@
 				9186781CDC1A792AE0453B85D892120D /* Resources */,
 				1BC08C4BC01F36E7EEC92F17BDFFC9CE /* Support Files */,
 			);
+			name = Fakery;
 			path = Fakery;
 			sourceTree = "<group>";
 		};
@@ -948,7 +948,7 @@
 			children = (
 				CEE87FB003224BBCF5A9D5589EE325AA /* MDFInternationalization.framework */,
 				557FC5E0490CF1ED82E12AE0E2C6D948 /* MDFTextAccessibility.framework */,
-				E812F3A2D26429D22F6A56DDD678DBF7 /* iOS */,
+				6B42D1915010DB7BF7CC0D2BD9B4D34A /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -982,6 +982,7 @@
 				F67E915747D595BD479C6FD2076A8ABE /* TextFields */,
 				3A1A5A22250C381DCA0869743E65DE70 /* Typography */,
 			);
+			name = MaterialComponents;
 			path = MaterialComponents;
 			sourceTree = "<group>";
 		};
@@ -1006,6 +1007,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MDFTextAccessibility";
+			sourceTree = "<group>";
+		};
+		6B42D1915010DB7BF7CC0D2BD9B4D34A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F936D0FEA60E2302ADFA4A1174B70093 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		707250E2EEE2C9962FE04E26C1A864BC /* Palettes */ = {
@@ -1162,6 +1171,7 @@
 				B1D047FF670BDC6B5E1C9E9D5529ADB5 /* UIView+MaterialRTL.m */,
 				A27DCF5B85C5F750225DC648166CCA14 /* Support Files */,
 			);
+			name = MDFInternationalization;
 			path = MDFInternationalization;
 			sourceTree = "<group>";
 		};
@@ -1304,6 +1314,7 @@
 				DD12A14EA72BD6DBBA3A7BAFBC5348A2 /* Validatable.swift */,
 				DE93766EF9294C9B636C288E409F19FC /* Support Files */,
 			);
+			name = R.swift.Library;
 			path = R.swift.Library;
 			sourceTree = "<group>";
 		};
@@ -1369,6 +1380,7 @@
 				D88E1186D3BE62126158D075A1F3E13B /* NSArray+MDFUtils.m */,
 				6AFAC402AFC56428BC82B2FF5E96027C /* Support Files */,
 			);
+			name = MDFTextAccessibility;
 			path = MDFTextAccessibility;
 			sourceTree = "<group>";
 		};
@@ -1382,19 +1394,12 @@
 			name = Math;
 			sourceTree = "<group>";
 		};
-		E812F3A2D26429D22F6A56DDD678DBF7 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6B837DD985F89146657DD1A11935356E /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		F232B826FAF822B5B2813BF405DEBC2B /* R.swift */ = {
 			isa = PBXGroup;
 			children = (
 				4EAC8B72EC03E4F5BE3F7AE7D1EE338B /* Support Files */,
 			);
+			name = R.swift;
 			path = R.swift;
 			sourceTree = "<group>";
 		};
@@ -1759,7 +1764,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -2117,7 +2122,320 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
+		036A46B8C59E74E4DD1C5B1FF5CB4C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF63AAEB8CD9A20814C00B2295F92999 /* Fakery.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Fakery/Fakery-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Fakery/Fakery-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Fakery/Fakery.modulemap";
+				PRODUCT_MODULE_NAME = Fakery;
+				PRODUCT_NAME = Fakery;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0862749B122602A531E69FC0CAAC9D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96DC15FDC6D6B468F2816894532B151 /* Fakery.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Fakery/Fakery-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Fakery/Fakery-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Fakery/Fakery.modulemap";
+				PRODUCT_MODULE_NAME = Fakery;
+				PRODUCT_NAME = Fakery;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12A99F1510EB726BEAC396DD6D8D0D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2CB837FA0719BC19E3A516B689C452F /* Pods-Vida Pet.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1521242EB4D94C4CC7235FBFF83440EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8FCBF7235E4213188AC421D7B50778 /* MaterialComponents.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		320B7BB0DD25597F58A857E82813A922 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF63AAEB8CD9A20814C00B2295F92999 /* Fakery.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fakery";
+				IBSC_MODULE = Fakery;
+				INFOPLIST_FILE = "Target Support Files/Fakery/ResourceBundle-Faker-Fakery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Faker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		4BC9B5F11592679301708F8282811A15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93683554373D0649313A06F5173F76CC /* MaterialComponents.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		55AF14E5DAD5099A9044D7ED8B08A2C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2036D4A210A44545A1C6F2A6C09EA6 /* R.swift.Library.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				PRODUCT_MODULE_NAME = Rswift;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		694EB0160B943B065829D1BB12982C1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 501930F818E2FAF9B5DF6502B2418EC1 /* R.swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7BC396C8D85241E3F0C0E8B1B4FFB6A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE07F59CEA9EC85172C921E20FF92661 /* MDFInternationalization.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
+				PRODUCT_MODULE_NAME = MDFInternationalization;
+				PRODUCT_NAME = MDFInternationalization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		83E0EAD68F3234DF88AEA9228451112A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779820D5D313863EECA297224FE462A7 /* MDFInternationalization.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
+				PRODUCT_MODULE_NAME = MDFInternationalization;
+				PRODUCT_NAME = MDFInternationalization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C7FC025747B55D46DDEDEE5F4DFD2F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2178,352 +2496,12 @@
 			};
 			name = Release;
 		};
-		430CEBD4DB573E70ADEB449067322254 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2CB837FA0719BC19E3A516B689C452F /* Pods-Vida Pet.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		44AA3E07F35DC49E758AB882123E630C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501930F818E2FAF9B5DF6502B2418EC1 /* R.swift.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		561B1D09A5B0DDBE95D7B5A00D70C7A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F2036D4A210A44545A1C6F2A6C09EA6 /* R.swift.Library.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
-				PRODUCT_MODULE_NAME = Rswift;
-				PRODUCT_NAME = Rswift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		651165E546F21DA400382ED4809F9E4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF63AAEB8CD9A20814C00B2295F92999 /* Fakery.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fakery";
-				IBSC_MODULE = Fakery;
-				INFOPLIST_FILE = "Target Support Files/Fakery/ResourceBundle-Faker-Fakery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = Faker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		68F000FEA1F092B12C9A67706802659C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D8FCBF7235E4213188AC421D7B50778 /* MaterialComponents.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
-				PRODUCT_MODULE_NAME = MaterialComponents;
-				PRODUCT_NAME = MaterialComponents;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		699C3BBAB693012D6BE0B0D02D6CA921 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF63AAEB8CD9A20814C00B2295F92999 /* Fakery.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Fakery/Fakery-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Fakery/Fakery-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Fakery/Fakery.modulemap";
-				PRODUCT_MODULE_NAME = Fakery;
-				PRODUCT_NAME = Fakery;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6E4A8C0B7D5D522FFD83A6BB7FF19D70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 779820D5D313863EECA297224FE462A7 /* MDFInternationalization.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
-				PRODUCT_MODULE_NAME = MDFInternationalization;
-				PRODUCT_NAME = MDFInternationalization;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		876EEA2D606DD734CDD7A55CBD4A97F8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93683554373D0649313A06F5173F76CC /* MaterialComponents.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
-				PRODUCT_MODULE_NAME = MaterialComponents;
-				PRODUCT_NAME = MaterialComponents;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9075711F7325C1AA9914535E86AF816A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A41603CD9DA246000EC157379A98C7B6 /* R.swift.Library.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
-				PRODUCT_MODULE_NAME = Rswift;
-				PRODUCT_NAME = Rswift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9D0F4B3590F2F38D4AB6C2C658D147B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 801F260BE3FB1A53EE9F1281436C18E1 /* R.swift.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A33355DA6A3289E3496F767229D45CD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A96DC15FDC6D6B468F2816894532B151 /* Fakery.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Fakery/Fakery-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Fakery/Fakery-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Fakery/Fakery.modulemap";
-				PRODUCT_MODULE_NAME = Fakery;
-				PRODUCT_NAME = Fakery;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A6F4FA375A189EE72EF917629E5F6C92 /* Release */ = {
+		8D1AAB348606BA63E11972F61CAA1576 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6603F8B7EC937F804AE04A92D90DE4DF /* Pods-Vida Pet.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2556,15 +2534,134 @@
 			};
 			name = Release;
 		};
-		BBDE784DF1046CA70F40C4E6B4EAA84A /* Debug */ = {
+		8E6096E4176B1D45E4D02FB53F5A6350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 801F260BE3FB1A53EE9F1281436C18E1 /* R.swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A760B7F2A8A8A440CAC034E4F581879B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBCE49F3A1E4F75F77C679E199978B84 /* MDFTextAccessibility.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
+				PRODUCT_MODULE_NAME = MDFTextAccessibility;
+				PRODUCT_NAME = MDFTextAccessibility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C0379AD97DACBBC2070CD4598DAB76ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A41603CD9DA246000EC157379A98C7B6 /* R.swift.Library.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/R.swift.Library-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				PRODUCT_MODULE_NAME = Rswift;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E540B783D51493F765697E510CA5091C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393DCBF1B32AE316D7397E6F6BD752AE /* MDFTextAccessibility.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
+				PRODUCT_MODULE_NAME = MDFTextAccessibility;
+				PRODUCT_NAME = MDFTextAccessibility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E5610A1384CACBF87583CE520B91DB94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A96DC15FDC6D6B468F2816894532B151 /* Fakery.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fakery";
 				IBSC_MODULE = Fakery;
 				INFOPLIST_FILE = "Target Support Files/Fakery/ResourceBundle-Faker-Fakery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Faker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2573,7 +2670,7 @@
 			};
 			name = Debug;
 		};
-		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
+		EEF25CDFE5981495667B2EF4925DC0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2638,120 +2735,14 @@
 			};
 			name = Debug;
 		};
-		F1066ED8F22E91B1567778620D971004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBCE49F3A1E4F75F77C679E199978B84 /* MDFTextAccessibility.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
-				PRODUCT_MODULE_NAME = MDFTextAccessibility;
-				PRODUCT_NAME = MDFTextAccessibility;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F1C83C6DBEF491BF8EB244BA760CAFC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE07F59CEA9EC85172C921E20FF92661 /* MDFInternationalization.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
-				PRODUCT_MODULE_NAME = MDFInternationalization;
-				PRODUCT_NAME = MDFInternationalization;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F719136979443CC886A4A063A9A5C4DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 393DCBF1B32AE316D7397E6F6BD752AE /* MDFTextAccessibility.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
-				PRODUCT_MODULE_NAME = MDFTextAccessibility;
-				PRODUCT_NAME = MDFTextAccessibility;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		1A35703FDC188D8D10B289BA9F636C8B /* Build configuration list for PBXNativeTarget "Fakery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A33355DA6A3289E3496F767229D45CD2 /* Debug */,
-				699C3BBAB693012D6BE0B0D02D6CA921 /* Release */,
+				0862749B122602A531E69FC0CAAC9D20 /* Debug */,
+				036A46B8C59E74E4DD1C5B1FF5CB4C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2759,8 +2750,8 @@
 		2C4532E54CCEE471FB9DE2C4C55EC31B /* Build configuration list for PBXNativeTarget "MDFInternationalization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1C83C6DBEF491BF8EB244BA760CAFC7 /* Debug */,
-				6E4A8C0B7D5D522FFD83A6BB7FF19D70 /* Release */,
+				7BC396C8D85241E3F0C0E8B1B4FFB6A0 /* Debug */,
+				83E0EAD68F3234DF88AEA9228451112A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2768,8 +2759,8 @@
 		2D1AB3F97E122A2FE367F3BF3C314806 /* Build configuration list for PBXNativeTarget "Pods-Vida Pet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				430CEBD4DB573E70ADEB449067322254 /* Debug */,
-				A6F4FA375A189EE72EF917629E5F6C92 /* Release */,
+				12A99F1510EB726BEAC396DD6D8D0D01 /* Debug */,
+				8D1AAB348606BA63E11972F61CAA1576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2777,8 +2768,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
-				1422B121EAEAEA11307496903FA623C6 /* Release */,
+				EEF25CDFE5981495667B2EF4925DC0C9 /* Debug */,
+				8C7FC025747B55D46DDEDEE5F4DFD2F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2786,8 +2777,8 @@
 		6E19C8E8F0C9B49DEE9AFBA54E0A4733 /* Build configuration list for PBXAggregateTarget "R.swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D0F4B3590F2F38D4AB6C2C658D147B6 /* Debug */,
-				44AA3E07F35DC49E758AB882123E630C /* Release */,
+				8E6096E4176B1D45E4D02FB53F5A6350 /* Debug */,
+				694EB0160B943B065829D1BB12982C1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2795,8 +2786,8 @@
 		94335E78FD35190CF14FD480967950A1 /* Build configuration list for PBXNativeTarget "Fakery-Faker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBDE784DF1046CA70F40C4E6B4EAA84A /* Debug */,
-				651165E546F21DA400382ED4809F9E4C /* Release */,
+				E5610A1384CACBF87583CE520B91DB94 /* Debug */,
+				320B7BB0DD25597F58A857E82813A922 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2804,8 +2795,8 @@
 		D0083862E21CD173D2F56742F0E8A624 /* Build configuration list for PBXNativeTarget "MaterialComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				876EEA2D606DD734CDD7A55CBD4A97F8 /* Debug */,
-				68F000FEA1F092B12C9A67706802659C /* Release */,
+				4BC9B5F11592679301708F8282811A15 /* Debug */,
+				1521242EB4D94C4CC7235FBFF83440EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2813,8 +2804,8 @@
 		E4CBC6D650AB617E362C821AEB4555C6 /* Build configuration list for PBXNativeTarget "R.swift.Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				561B1D09A5B0DDBE95D7B5A00D70C7A2 /* Debug */,
-				9075711F7325C1AA9914535E86AF816A /* Release */,
+				55AF14E5DAD5099A9044D7ED8B08A2C0 /* Debug */,
+				C0379AD97DACBBC2070CD4598DAB76ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2822,8 +2813,8 @@
 		EC9EE90623117B3DE91F2107404D0FDA /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F719136979443CC886A4A063A9A5C4DA /* Debug */,
-				F1066ED8F22E91B1567778620D971004 /* Release */,
+				E540B783D51493F765697E510CA5091C /* Debug */,
+				A760B7F2A8A8A440CAC034E4F581879B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

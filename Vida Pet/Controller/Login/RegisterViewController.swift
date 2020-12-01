@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 // MARK: - VidaPetMainViewController
 
@@ -83,10 +85,30 @@ class RegisterViewController: VidaPetMainViewController {
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
+      
+        
         if error != nil {
             showError(message: error!)
         } else {
-            self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+            if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+               
+            
+                
+                if let _error = error {
+                    self.showError(message: "Error creating user")
+                    print("erro do firebase \(_error) ")
+                } else {
+                    //user was created successfully
+                    self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+                    
+                }
+            }
+            }
+            
+            
+            
+            
         }
     }
     

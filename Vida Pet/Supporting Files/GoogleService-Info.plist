@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>692259290919-k15v019o5c56pfscmsrk6n1t9e58meu6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.692259290919-k15v019o5c56pfscmsrk6n1t9e58meu6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDrQr1fQa66mEpUiSuucKq-kZ88rhCjx_w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>692259290919</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.santandercoders.Vida-Pet</string>
+	<key>PROJECT_ID</key>
+	<string>vidapetios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vidapetios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:692259290919:ios:f0307aa4d93d6b21913302</string>
+	<key>DATABASE_URL</key>
+	<string>https://vidapetios.firebaseio.com</string>
+</dict>
+</plist>

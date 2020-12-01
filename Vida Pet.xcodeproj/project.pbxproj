@@ -55,6 +55,7 @@
 		FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */; };
 		FE352AEB2554E49000D4E680 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352AEA2554E49000D4E680 /* UserData.swift */; };
 		FE82FC002555E940007B396E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE82FBFF2555E940007B396E /* UserModel.swift */; };
+		FEB29B002576914B00EEBF75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEB29AFF2576914B00EEBF75 /* GoogleService-Info.plist */; };
 		FECCE0742542335200E0934F /* ValidateFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE0732542335200E0934F /* ValidateFields.swift */; };
 		FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECCE077254268A200E0934F /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		FE352AEA2554E49000D4E680 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Perfil/UserData.swift; sourceTree = SOURCE_ROOT; };
 		FE82FBFF2555E940007B396E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Perfil/UserModel.swift; sourceTree = SOURCE_ROOT; };
+		FEB29AFF2576914B00EEBF75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FECCE0732542335200E0934F /* ValidateFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateFields.swift; path = Login/ValidateFields.swift; sourceTree = SOURCE_ROOT; };
 		FECCE077254268A200E0934F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,6 +313,7 @@
 				3B0B896B25543A1800033297 /* Strings */,
 				3B0B89B22554423D00033297 /* R.generated.swift */,
 				3B695D152537E71500CE15AF /* Info.plist */,
+				FEB29AFF2576914B00EEBF75 /* GoogleService-Info.plist */,
 				3B695D102537E71500CE15AF /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -513,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB29B002576914B00EEBF75 /* GoogleService-Info.plist in Resources */,
 				3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */,
 				3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */,
 				4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */,

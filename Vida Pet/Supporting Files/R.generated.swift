@@ -368,10 +368,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `VPCardCollectionViewCell.XIB`.
     static let vpCardCollectionViewCellXIB = Rswift.FileResource(bundle: R.hostingBundle, name: "VPCardCollectionViewCell", pathExtension: "XIB")
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "VPCardCollectionViewCell", withExtension: "XIB")`
     static func vpCardCollectionViewCellXIB(_: Void = ()) -> Foundation.URL? {

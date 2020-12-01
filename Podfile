@@ -9,5 +9,6 @@ target 'Vida Pet' do
   pod ‘MaterialComponents/TextFields’
   pod 'R.swift'
   pod 'Fakery'
-
+  pod 'Firebase/Auth'
+  
 end

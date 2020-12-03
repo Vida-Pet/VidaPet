@@ -1,0 +1,24 @@
+/* 
+  Login.strings
+  Vida Pet
+
+  Created by Toki on 02/12/20.
+  Copyright © 2020 João Pedro Giarrante. All rights reserved.
+*/
+
+//erros do firebase
+
+"invalid_email_pasword" = "Email ou senha inválidos";
+"invalid_email_format" = "E-mail inválido";
+
+//Forgot Password Alert
+
+"forgot_password" = "Esqueceu sua senha?";
+"enter_email" = "Infome seu e-mail";
+"cancel" = "Cancelar";
+"reset_password" = "Resetar Senha";
+"reset_failed" = "Email inválido";
+"error" = "Error:";
+"ok" = "OK";
+"reset_mail_success" = "E-mail enviado com sucesso!";
+"check_email" = "Verifique o seu e-mail";

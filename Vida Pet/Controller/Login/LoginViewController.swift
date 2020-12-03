@@ -61,7 +61,7 @@ class LoginViewController: VidaPetMainViewController {
         passwordTextField.delegate = self
     }
     
-
+    
     // MARK: IBActions
     
     @IBAction func loginPressed(_ sender: Any) {
@@ -74,24 +74,45 @@ class LoginViewController: VidaPetMainViewController {
         } else {
             
             if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-               
-            
-                
-                if let _error = error {
-                    self.showError(message: "Error creating user")
-                    print("erro do firebase \(_error) ")
-                } else {
-                    //user was created successfully
-                    self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
-                    
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                    if let e = error {
+                        print(e)
+                        self?.showError(message: R.string.login.invalid_email_pasword())
+                    } else {
+                        self?.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+                    }
                 }
             }
-            }
-            
-            
         }
     }
+    
+    
+  
+    @IBAction func forgotPasswordAlert(_ sender: UIButton) {
+        
+        let forgotPasswordAlert = UIAlertController(title: R.string.login.forgot_password(), message: R.string.login.enter_email(), preferredStyle: .alert)
+            forgotPasswordAlert.addTextField { (textField) in
+                textField.placeholder = R.string.login.enter_email()
+            }
+            forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.cancel(), style: .cancel, handler: nil))
+            forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.reset_password(), style: .default, handler: { (action) in
+                let resetEmail = forgotPasswordAlert.textFields?.first?.text
+                Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                    if error != nil{
+                        let resetFailedAlert = UIAlertController(title: R.string.login.reset_failed(), message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                        resetFailedAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
+                        self.present(resetFailedAlert, animated: true, completion: nil)
+                    }else {
+                        let resetEmailSentAlert = UIAlertController(title: R.string.login.reset_mail_success(), message: R.string.login.check_email(), preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
+                        self.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                })
+            }))
+            //PRESENT ALERT
+            self.present(forgotPasswordAlert, animated: true, completion: nil)
+    }
+    
     
     
     // MARK: Navigation

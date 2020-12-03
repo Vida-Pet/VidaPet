@@ -573,7 +573,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
     /// This `R.string.editarPerfil` struct is generated, and contains static references to 10 localization keys.
     struct editarPerfil {
@@ -726,6 +726,177 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("galery_access", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.login` struct is generated, and contains static references to 11 localization keys.
+    struct login {
+      /// Value: Cancelar
+      static let cancel = Rswift.StringResource(key: "cancel", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: E-mail enviado com sucesso!
+      static let reset_mail_success = Rswift.StringResource(key: "reset_mail_success", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: E-mail inválido
+      static let invalid_email_format = Rswift.StringResource(key: "invalid_email_format", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Email inválido
+      static let reset_failed = Rswift.StringResource(key: "reset_failed", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Email ou senha inválidos
+      static let invalid_email_pasword = Rswift.StringResource(key: "invalid_email_pasword", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Error:
+      static let error = Rswift.StringResource(key: "error", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Esqueceu sua senha?
+      static let forgot_password = Rswift.StringResource(key: "forgot_password", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Infome seu e-mail
+      static let enter_email = Rswift.StringResource(key: "enter_email", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
+      static let ok = Rswift.StringResource(key: "ok", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Resetar Senha
+      static let reset_password = Rswift.StringResource(key: "reset_password", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Verifique o seu e-mail
+      static let check_email = Rswift.StringResource(key: "check_email", tableName: "Login", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Cancelar
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "cancel"
+        }
+
+        return NSLocalizedString("cancel", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: E-mail enviado com sucesso!
+      static func reset_mail_success(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_mail_success", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "reset_mail_success"
+        }
+
+        return NSLocalizedString("reset_mail_success", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: E-mail inválido
+      static func invalid_email_format(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("invalid_email_format", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "invalid_email_format"
+        }
+
+        return NSLocalizedString("invalid_email_format", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Email inválido
+      static func reset_failed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_failed", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "reset_failed"
+        }
+
+        return NSLocalizedString("reset_failed", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Email ou senha inválidos
+      static func invalid_email_pasword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("invalid_email_pasword", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "invalid_email_pasword"
+        }
+
+        return NSLocalizedString("invalid_email_pasword", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Error:
+      static func error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "error"
+        }
+
+        return NSLocalizedString("error", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Esqueceu sua senha?
+      static func forgot_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("forgot_password", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "forgot_password"
+        }
+
+        return NSLocalizedString("forgot_password", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Infome seu e-mail
+      static func enter_email(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("enter_email", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "enter_email"
+        }
+
+        return NSLocalizedString("enter_email", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: OK
+      static func ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ok", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "ok"
+        }
+
+        return NSLocalizedString("ok", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Resetar Senha
+      static func reset_password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("reset_password", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "reset_password"
+        }
+
+        return NSLocalizedString("reset_password", tableName: "Login", bundle: bundle, comment: "")
+      }
+
+      /// Value: Verifique o seu e-mail
+      static func check_email(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("check_email", tableName: "Login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Login", preferredLanguages: preferredLanguages) else {
+          return "check_email"
+        }
+
+        return NSLocalizedString("check_email", tableName: "Login", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

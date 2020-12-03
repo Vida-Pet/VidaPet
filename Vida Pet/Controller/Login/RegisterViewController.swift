@@ -96,8 +96,8 @@ class RegisterViewController: VidaPetMainViewController {
             
                 
                 if let _error = error {
-                    self.showError(message: "Error creating user")
-                    print("erro do firebase \(_error) ")
+                    self.showError(message: R.string.login.invalid_email_format())
+                  
                 } else {
                     //user was created successfully
                     self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
@@ -105,10 +105,6 @@ class RegisterViewController: VidaPetMainViewController {
                 }
             }
             }
-            
-            
-            
-            
         }
     }
     

@@ -51,10 +51,10 @@ class PerfilViewController: VidaPetMainViewController {
     
     func upDateUserInfo(){
         userNameLabel.text = userModel.user.name
-        userImage.image = UIImage(named: userModel.user.image)
+        userImage.image = UIImage(named: userModel.user.image ?? "")
         bioLabel.text = userModel.user.bio
-        petsLabel.text = userModel.user.numberOfPets
-        dateLabel.text = userModel.user.date
+//        petsLabel.text = userModel.user.ownedPetsIds
+//        dateLabel.text = userModel.user.date
     
     }
 }

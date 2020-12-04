@@ -66,11 +66,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-RO-13B">
-                                <rect key="frame" x="121" y="468" width="133" height="50"/>
+                                <rect key="frame" x="121" y="467" width="133" height="50"/>
                                 <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="gPe-YK-Sel"/>
-                                    <constraint firstAttribute="height" constant="50" id="hOH-yO-hW6"/>
+                                    <constraint firstAttribute="height" constant="50" id="O3g-8D-Qe0"/>
+                                    <constraint firstAttribute="width" constant="133" id="jpI-IE-uWm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Login">
@@ -99,37 +99,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-3p-Gzd">
-                                <rect key="frame" x="20" y="607" width="335" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81U-nQ-PGH">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Kg2-PK-Ju4"/>
-                                        </constraints>
-                                        <state key="normal" title="  Facebook" image="facebookLogo">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="q5f-d0-Aey" kind="presentation" modalPresentationStyle="fullScreen" id="id6-S3-P2e"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R56-0S-MUm">
-                                        <rect key="frame" x="180" y="0.0" width="155" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="jmZ-hp-fOg"/>
-                                        </constraints>
-                                        <state key="normal" title="  Google" image="googleLogo">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="q5f-d0-Aey" kind="presentation" modalPresentationStyle="fullScreen" id="h6p-gO-HUb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpG-e2-jmZ" customClass="GIDSignInButton">
+                                <rect key="frame" x="20" y="607" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rIu-PK-bK8"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-B3-Nue">
                                 <rect key="frame" x="20" y="266" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -148,32 +124,31 @@
                         <color key="backgroundColor" name="Vida Pet: Blue"/>
                         <color key="tintColor" name="Vida Pet: White"/>
                         <constraints>
-                            <constraint firstItem="5DF-RO-13B" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="3Wo-sS-bj1"/>
-                            <constraint firstItem="xAN-3p-Gzd" firstAttribute="top" secondItem="jJi-C1-hxZ" secondAttribute="bottom" constant="30" id="BST-rn-Ao9"/>
+                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="bottom" secondItem="GpG-e2-jmZ" secondAttribute="bottom" constant="10" id="AfH-dZ-TmX"/>
+                            <constraint firstItem="5DF-RO-13B" firstAttribute="top" secondItem="tfZ-vP-cow" secondAttribute="bottom" constant="16" id="E7y-5J-NP4"/>
                             <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="qIe-B3-Nue" secondAttribute="trailing" constant="20" id="FjX-2c-Gx9"/>
                             <constraint firstItem="tfZ-vP-cow" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" constant="20" id="Ftc-3h-Ev6"/>
+                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="GpG-e2-jmZ" secondAttribute="trailing" constant="20" id="JP9-HU-nPV"/>
                             <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="tfZ-vP-cow" secondAttribute="trailing" constant="20" id="Mlj-qF-eMf"/>
                             <constraint firstItem="sLA-Yk-fRt" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" constant="20" id="QiI-fP-QNX"/>
                             <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="sLA-Yk-fRt" secondAttribute="trailing" constant="20" id="WqH-G3-gSl"/>
                             <constraint firstItem="qIe-B3-Nue" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" constant="20" id="Xuy-mn-vEg"/>
+                            <constraint firstItem="GpG-e2-jmZ" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" constant="20" id="bqo-ue-byO"/>
                             <constraint firstItem="tfZ-vP-cow" firstAttribute="top" secondItem="sLA-Yk-fRt" secondAttribute="bottom" constant="10" id="c9h-qE-iDz"/>
+                            <constraint firstItem="GpG-e2-jmZ" firstAttribute="top" secondItem="jJi-C1-hxZ" secondAttribute="bottom" constant="30" id="kxm-qF-fGw"/>
                             <constraint firstItem="jJi-C1-hxZ" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="miQ-Xq-vVQ"/>
                             <constraint firstItem="sLA-Yk-fRt" firstAttribute="top" secondItem="0M0-tx-QZ3" secondAttribute="top" constant="291" id="moj-1o-eDh"/>
                             <constraint firstItem="sLA-Yk-fRt" firstAttribute="top" secondItem="qIe-B3-Nue" secondAttribute="bottom" constant="8" id="qyV-0m-F2T"/>
-                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="trailing" secondItem="xAN-3p-Gzd" secondAttribute="trailing" constant="20" id="skb-Y4-lrm"/>
                             <constraint firstItem="MCj-AD-lI6" firstAttribute="centerY" secondItem="Z5y-bD-dB8" secondAttribute="centerY" multiplier="0.52" id="tX5-sA-oab"/>
                             <constraint firstItem="MCj-AD-lI6" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="vR2-04-RQY"/>
-                            <constraint firstItem="jJi-C1-hxZ" firstAttribute="top" secondItem="5DF-RO-13B" secondAttribute="bottom" constant="25" id="wHS-4N-gJu"/>
-                            <constraint firstItem="xAN-3p-Gzd" firstAttribute="leading" secondItem="0M0-tx-QZ3" secondAttribute="leading" constant="20" id="yJY-cr-Zgn"/>
-                            <constraint firstItem="0M0-tx-QZ3" firstAttribute="bottom" secondItem="xAN-3p-Gzd" secondAttribute="bottom" constant="20" id="z5Q-Tn-Wut"/>
+                            <constraint firstItem="5DF-RO-13B" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="zZB-Gw-ACK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bu4-vs-Wk1"/>
                     <connections>
                         <outlet property="emailTextField" destination="bsA-1K-frk" id="FLv-LA-nIy"/>
                         <outlet property="errorLabel" destination="qIe-B3-Nue" id="O8q-ld-yKj"/>
-                        <outlet property="facebookButton" destination="xAN-3p-Gzd" id="6gf-CU-NWd"/>
-                        <outlet property="googleButton" destination="R56-0S-MUm" id="Kzz-CA-U01"/>
+                        <outlet property="googleLoginButton" destination="GpG-e2-jmZ" id="vwJ-Za-Igb"/>
                         <outlet property="loginButton" destination="5DF-RO-13B" id="sM7-Ok-2Ta"/>
                         <outlet property="passwordTextField" destination="pwo-YG-WqN" id="QPf-yB-AUx"/>
                         <segue destination="q5f-d0-Aey" kind="presentation" identifier="WelcomeVC" modalPresentationStyle="fullScreen" id="L3b-lm-adn"/>
@@ -253,21 +228,6 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-ah-WaA">
-                                <rect key="frame" x="121" y="563" width="133" height="50"/>
-                                <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9og-8M-MZg"/>
-                                    <constraint firstAttribute="width" constant="133" id="jTw-pa-TlC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Registrar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerPressed:" destination="0ZK-al-Uu8" eventType="touchUpInside" id="f5O-6D-1s2"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-LL-SaQ">
                                 <rect key="frame" x="84.5" y="623" width="206" height="34"/>
                                 <subviews>
@@ -294,6 +254,21 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-ah-WaA">
+                                <rect key="frame" x="121" y="533.5" width="133" height="50"/>
+                                <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gQc-GP-xyf"/>
+                                    <constraint firstAttribute="width" constant="133" id="oEe-xA-AL7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Registrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="0ZK-al-Uu8" eventType="touchUpInside" id="f5O-6D-1s2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bdo-qW-V0v"/>
                         <color key="backgroundColor" name="Vida Pet: Blue"/>
@@ -301,15 +276,15 @@
                         <constraints>
                             <constraint firstItem="dw3-nD-anh" firstAttribute="centerX" secondItem="BWN-mC-KR8" secondAttribute="centerX" id="3uX-l2-uyO"/>
                             <constraint firstItem="uNB-vZ-MoV" firstAttribute="leading" secondItem="bdo-qW-V0v" secondAttribute="leading" constant="20" id="6UL-Jt-cjW"/>
-                            <constraint firstItem="jxy-LL-SaQ" firstAttribute="top" secondItem="dml-ah-WaA" secondAttribute="bottom" constant="10" id="E7m-bF-Naa"/>
+                            <constraint firstItem="dml-ah-WaA" firstAttribute="centerX" secondItem="BWN-mC-KR8" secondAttribute="centerX" id="Bc8-Jm-2bQ"/>
                             <constraint firstItem="uNB-vZ-MoV" firstAttribute="top" secondItem="dw3-nD-anh" secondAttribute="bottom" id="Eez-Lc-oWo"/>
                             <constraint firstItem="uNB-vZ-MoV" firstAttribute="top" secondItem="zNn-Yt-Ca4" secondAttribute="bottom" constant="8" id="IYz-Qy-Z8m"/>
                             <constraint firstItem="jxy-LL-SaQ" firstAttribute="centerX" secondItem="BWN-mC-KR8" secondAttribute="centerX" id="LMC-Vl-u4w"/>
+                            <constraint firstItem="dml-ah-WaA" firstAttribute="top" secondItem="uNB-vZ-MoV" secondAttribute="bottom" constant="30" id="QHu-Es-WMr"/>
                             <constraint firstItem="bdo-qW-V0v" firstAttribute="trailing" secondItem="uNB-vZ-MoV" secondAttribute="trailing" constant="20" id="fgP-NC-imD"/>
                             <constraint firstItem="zNn-Yt-Ca4" firstAttribute="leading" secondItem="bdo-qW-V0v" secondAttribute="leading" constant="20" id="jwb-pu-ZoX"/>
                             <constraint firstItem="dw3-nD-anh" firstAttribute="centerY" secondItem="BWN-mC-KR8" secondAttribute="centerY" multiplier="0.4" id="ont-Ya-voV"/>
                             <constraint firstItem="bdo-qW-V0v" firstAttribute="bottom" secondItem="jxy-LL-SaQ" secondAttribute="bottom" constant="10" id="tJ7-6u-XMm"/>
-                            <constraint firstItem="dml-ah-WaA" firstAttribute="centerX" secondItem="BWN-mC-KR8" secondAttribute="centerX" id="v9e-s1-5Nt"/>
                             <constraint firstItem="bdo-qW-V0v" firstAttribute="trailing" secondItem="zNn-Yt-Ca4" secondAttribute="trailing" constant="20" id="zLZ-hl-ecp"/>
                         </constraints>
                     </view>
@@ -379,11 +354,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="id6-S3-P2e"/>
+        <segue reference="L3b-lm-adn"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="facebookLogo" width="30" height="30"/>
-        <image name="googleLogo" width="30" height="30"/>
         <image name="loginImage" width="402" height="364"/>
         <namedColor name="Vida Pet: Blue">
             <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -394,6 +367,9 @@
         <namedColor name="Vida Pet: White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

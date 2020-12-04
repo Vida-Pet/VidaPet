@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct UserData{
-    let name, bio, image, date, numberOfPets: String
-    let publicUser: Bool
+struct User: Codable {
+    var id: Int?
+    var image,name,bio: String?
+    var isPublicProfile: Bool?
+    var ownedPetsIds: [Int]?
 }
+
+
 
 
 

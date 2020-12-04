@@ -10,5 +10,7 @@ target 'Vida Pet' do
   pod 'R.swift'
   pod 'Fakery'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'Firebase/Core'
   
 end

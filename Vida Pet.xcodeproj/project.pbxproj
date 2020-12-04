@@ -479,6 +479,7 @@
 				3B695D012537E71300CE15AF /* Frameworks */,
 				3B695D022537E71300CE15AF /* Resources */,
 				2473581E915D725B7CB5C404 /* [CP] Embed Pods Frameworks */,
+				9CC0E2206382D65D89EFC9FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -582,6 +583,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift\"\n    echo \"R.SWIFT GENERATED\"\n";
+		};
+		9CC0E2206382D65D89EFC9FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vida Pet/Pods-Vida Pet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vida Pet/Pods-Vida Pet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vida Pet/Pods-Vida Pet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D5530C652167DB8603B4316B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

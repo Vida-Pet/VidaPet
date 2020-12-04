@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import GoogleSignIn
 
 // MARK: - VidaPetMainViewController
 
@@ -19,9 +20,8 @@ class LoginViewController: VidaPetMainViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var facebookButton: UIStackView!
-    @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     
     
     // MARK: Properties
@@ -38,12 +38,13 @@ class LoginViewController: VidaPetMainViewController {
         configureTapGesture()
         configureTextFields()
         passwordTextField.enablePasswordToggle()
-        
+    
     }
     
     
     // MARK: Setup
     
+  
     func setUpElements(){
         emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
         passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
@@ -99,7 +100,7 @@ class LoginViewController: VidaPetMainViewController {
                 let resetEmail = forgotPasswordAlert.textFields?.first?.text
                 Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
                     if error != nil{
-                        let resetFailedAlert = UIAlertController(title: R.string.login.reset_failed(), message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                        let resetFailedAlert = UIAlertController(title: R.string.login.reset_failed(), message: R.string.login.invalid_email_format(), preferredStyle: .alert)
                         resetFailedAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
                         self.present(resetFailedAlert, animated: true, completion: nil)
                     }else {

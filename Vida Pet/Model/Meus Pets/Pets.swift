@@ -12,7 +12,7 @@ import Foundation
 
 // MARK: - Pet
 struct Pet: Codable {
-    var id: Int?
+    var id: Int? 
     var image, name, petDescription: String?
     var adoption: Bool?
     var info: Info

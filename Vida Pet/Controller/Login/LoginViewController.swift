@@ -13,7 +13,7 @@ import GoogleSignIn
 
 // MARK: - VidaPetMainViewController
 
-class LoginViewController: VidaPetMainViewController {
+class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     // MARK: IBOutlets
     
@@ -21,7 +21,6 @@ class LoginViewController: VidaPetMainViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     
     
     // MARK: Properties
@@ -38,19 +37,26 @@ class LoginViewController: VidaPetMainViewController {
         configureTapGesture()
         configureTextFields()
         passwordTextField.enablePasswordToggle()
-    
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        
+        
+        
     }
     
     
     // MARK: Setup
     
-  
+    
     func setUpElements(){
         emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
         passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
         loginButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
         self.errorLabel.isHidden = true
     }
+    
     
     private func configureTapGesture(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -62,6 +68,22 @@ class LoginViewController: VidaPetMainViewController {
         passwordTextField.delegate = self
     }
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Login Successful.")
+                self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+            }
+        }
+    }
     
     // MARK: IBActions
     
@@ -88,30 +110,41 @@ class LoginViewController: VidaPetMainViewController {
     }
     
     
-  
+    @IBAction func googleSingIn(_ sender: UIButton) {
+        
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
+    
+    
+
+    
+    
+    
+    
     @IBAction func forgotPasswordAlert(_ sender: UIButton) {
         
         let forgotPasswordAlert = UIAlertController(title: R.string.login.forgot_password(), message: R.string.login.enter_email(), preferredStyle: .alert)
-            forgotPasswordAlert.addTextField { (textField) in
-                textField.placeholder = R.string.login.enter_email()
-            }
-            forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.cancel(), style: .cancel, handler: nil))
-            forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.reset_password(), style: .default, handler: { (action) in
-                let resetEmail = forgotPasswordAlert.textFields?.first?.text
-                Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
-                    if error != nil{
-                        let resetFailedAlert = UIAlertController(title: R.string.login.reset_failed(), message: R.string.login.invalid_email_format(), preferredStyle: .alert)
-                        resetFailedAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
-                        self.present(resetFailedAlert, animated: true, completion: nil)
-                    }else {
-                        let resetEmailSentAlert = UIAlertController(title: R.string.login.reset_mail_success(), message: R.string.login.check_email(), preferredStyle: .alert)
-                        resetEmailSentAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
-                        self.present(resetEmailSentAlert, animated: true, completion: nil)
-                    }
-                })
-            }))
-            //PRESENT ALERT
-            self.present(forgotPasswordAlert, animated: true, completion: nil)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = R.string.login.enter_email()
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.cancel(), style: .cancel, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: R.string.login.reset_password(), style: .default, handler: { (action) in
+            let resetEmail = forgotPasswordAlert.textFields?.first?.text
+            Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                if error != nil{
+                    let resetFailedAlert = UIAlertController(title: R.string.login.reset_failed(), message: R.string.login.invalid_email_format(), preferredStyle: .alert)
+                    resetFailedAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
+                    self.present(resetFailedAlert, animated: true, completion: nil)
+                }else {
+                    let resetEmailSentAlert = UIAlertController(title: R.string.login.reset_mail_success(), message: R.string.login.check_email(), preferredStyle: .alert)
+                    resetEmailSentAlert.addAction(UIAlertAction(title: R.string.login.ok(), style: .default, handler: nil))
+                    self.present(resetEmailSentAlert, animated: true, completion: nil)
+                }
+            })
+        }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
     }
     
     

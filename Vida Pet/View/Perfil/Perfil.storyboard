@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uGG-TB-b3I">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -15,26 +15,25 @@
             <objects>
                 <viewController title="Perfil" id="uGG-TB-b3I" customClass="PerfilViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pY-Qf-SQO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cw-ya-aS1">
-                                <rect key="frame" x="20" y="187" width="335" height="101.5"/>
+                                <rect key="frame" x="20" y="231" width="374" height="81.5"/>
                                 <string key="text">Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum......</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Vida Pet: Blue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1x-SQ-p6P">
-                                <rect key="frame" x="143" y="677" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1x-SQ-p6P">
+                                <rect key="frame" x="142" y="722" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Avalie nosso App!">
                                     <color key="titleColor" name="Vida Pet: Blue"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-XB-hKh">
-                                <rect key="frame" x="15" y="46" width="170.5" height="111"/>
+                                <rect key="frame" x="15" y="90" width="170.5" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Felipe Miranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-O4-XCy">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="30"/>
@@ -63,7 +62,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="gK2-oe-NQE">
-                                <rect key="frame" x="265" y="46" width="90" height="90"/>
+                                <rect key="frame" x="304" y="90" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Fn8-Hp-lUu"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="V71-kV-5FV"/>
@@ -71,12 +70,31 @@
                                     <constraint firstAttribute="height" constant="90" id="byl-KI-bLP"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBO-ij-LGU">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <color key="backgroundColor" name="Vida Pet: Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YaI-Mc-sCm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Sair">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButton:" destination="uGG-TB-b3I" eventType="touchUpInside" id="vLd-RV-q8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f2v-Gs-Ybz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="uBO-ij-LGU" secondAttribute="trailing" constant="20" id="0RE-PV-Rcl"/>
                             <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="8Cw-ya-aS1" secondAttribute="trailing" constant="20" id="4TJ-1p-VIS"/>
+                            <constraint firstItem="uBO-ij-LGU" firstAttribute="top" secondItem="q1x-SQ-p6P" secondAttribute="bottom" constant="30" id="Anu-DQ-lJn"/>
+                            <constraint firstItem="q1x-SQ-p6P" firstAttribute="centerX" secondItem="6pY-Qf-SQO" secondAttribute="centerX" id="B9W-zl-T1u"/>
+                            <constraint firstItem="uBO-ij-LGU" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="20" id="FkF-ob-7I2"/>
                             <constraint firstItem="8Cw-ya-aS1" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="20" id="QVK-cP-1HR"/>
+                            <constraint firstItem="f2v-Gs-Ybz" firstAttribute="bottom" secondItem="uBO-ij-LGU" secondAttribute="bottom" constant="30" id="V58-WT-8aT"/>
                             <constraint firstItem="ycb-XB-hKh" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="15" id="Yea-av-X4g"/>
                             <constraint firstItem="ycb-XB-hKh" firstAttribute="top" secondItem="f2v-Gs-Ybz" secondAttribute="top" constant="46" id="k54-d2-erc"/>
                             <constraint firstItem="8Cw-ya-aS1" firstAttribute="top" secondItem="ycb-XB-hKh" secondAttribute="bottom" constant="30" id="lfX-TD-aAw"/>
@@ -103,14 +121,14 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="K3p-2f-Eku" customClass="EditarPerfilViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4h-uc-utv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gm9-7D-AMS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvb-5H-t7E">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="606.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="757.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-xe-d7L">
                                                 <rect key="frame" x="137.5" y="25" width="100" height="100"/>

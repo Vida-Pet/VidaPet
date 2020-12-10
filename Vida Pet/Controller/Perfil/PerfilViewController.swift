@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PerfilViewController: VidaPetMainViewController {
     
@@ -61,6 +62,11 @@ class PerfilViewController: VidaPetMainViewController {
     }
     
     @IBAction func logOutButton(_ sender: UIButton) {
-        
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            
+        }
     }
 }

@@ -12,5 +12,5 @@ target 'Vida Pet' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Firebase/Core'
-  
+  pod 'IQKeyboardManagerSwift'
 end

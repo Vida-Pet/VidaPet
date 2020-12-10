@@ -80,6 +80,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - IQKeyboardManagerSwift (6.5.6)
   - MaterialComponents/AnimationTiming (118.2.0)
   - MaterialComponents/Availability (118.2.0)
   - MaterialComponents/Buttons (118.2.0):
@@ -151,6 +152,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
+  - IQKeyboardManagerSwift
   - MaterialComponents/TextFields
   - R.swift
 
@@ -170,6 +172,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -193,6 +196,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: ffb2f4159f2c897c6e8992bd7fbcdef8a300589c
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   MaterialComponents: fc3dba46cf3ae8495728a875778b47d0c6ec7ed5
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -201,6 +205,6 @@ SPEC CHECKSUMS:
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
 
-PODFILE CHECKSUM: 6e791b29f7533f23b5dccfb46bc9ee83b22a5532
+PODFILE CHECKSUM: adebdf4229bcc7a9e3410cefebf0133074de3a04
 
 COCOAPODS: 1.9.3

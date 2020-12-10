@@ -9,7 +9,7 @@
 import GoogleSignIn
 import UIKit
 import Firebase
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GIDSignIn.sharedInstance()?.clientID = "692259290919-k15v019o5c56pfscmsrk6n1t9e58meu6.apps.googleusercontent.com"
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        
+        IQKeyboardManager.shared.enable = true
+       
         return true
     }
     

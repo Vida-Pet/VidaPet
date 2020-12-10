@@ -51,7 +51,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     func setupFields(){
         self.userNameTextField.text = userModel.user.name
-        self.estadoTextField.text = userModel.stateArray[25]
+        self.estadoTextField.text = userModel.stateArray[24]
         self.bio.text = userModel.user.bio
     }
     

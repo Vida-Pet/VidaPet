@@ -40,10 +40,6 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().delegate = self
-        
-        
-        
-        
     }
     
     
@@ -80,6 +76,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 print(error.localizedDescription)
             } else {
                 print("Login Successful.")
+                
                 self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
             }
         }
@@ -102,6 +99,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         print(e)
                         self?.showError(message: R.string.login.invalid_email_pasword())
                     } else {
+                        
                         self?.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 }
@@ -112,13 +110,10 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     @IBAction func googleSingIn(_ sender: UIButton) {
         
+        
         GIDSignIn.sharedInstance().signIn()
         
     }
-    
-    
-
-    
     
     
     
@@ -147,7 +142,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         self.present(forgotPasswordAlert, animated: true, completion: nil)
     }
     
-    
+    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
+        
+    }
     
     // MARK: Navigation
     

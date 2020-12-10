@@ -82,6 +82,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOutButton:" destination="uGG-TB-b3I" eventType="touchUpInside" id="vLd-RV-q8k"/>
+                                    <segue destination="gIS-xE-GiM" kind="unwind" unwindAction="unwindToHome:" id="X8w-eF-2DA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,6 +114,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDJ-De-1xB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gIS-xE-GiM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="789.60000000000002" y="141.67916041979012"/>
         </scene>

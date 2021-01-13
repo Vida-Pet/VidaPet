@@ -19,7 +19,7 @@ struct Pet: Codable {
     var medicalData: MedicalData
     var dataImage: Data?
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey { 
         case id, image, name, dataImage
         case petDescription = "description"
         case adoption, info, medicalData

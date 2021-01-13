@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class MeusPetsListaViewController: VidaPetMainViewController {
@@ -17,6 +18,11 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    // MARK: Variables
+    
+    var pets: Pets = []
+    
+    
     // MARK: LifeCicle
     
     override func viewDidLoad() {
@@ -24,17 +30,23 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setupNavBar()
-        
+        requestMeusPets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        updateTableView()
     }
+    
+    
+    // MARK: Setup
     
     fileprivate func setupNavBar() {
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = addItem
     }
+    
+    
+    // MARK: Actions
     
     @objc fileprivate func addTapped() {
         performSegue(withIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro, sender: self)
@@ -53,6 +65,37 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         case R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro.identifier: break
         default: break
         }
+    }
+    
+    // MARK: Networking
+    
+    func requestMeusPets() {
+        AF.request(APIRouter.getPets(type: .myPets))
+            .responseDecodable { (response: AFDataResponse<Pets>) in
+                switch response.result {
+                case .success(let response):
+                    self.pets = response
+                    self.updateTableView()
+                    
+                case .failure(let error):
+                    self.displayError(withText: error.localizedDescription)
+                }
+        }
+        
+    }
+    
+    // MARK: Private Functions
+    
+    private func updateTableView() {
+        DispatchQueue.main.async { self.tableView.reloadData() }
+    }
+    
+    private func displayError() {
+        //TODO: Inplementar erro
+    }
+    
+    private func displayError(withText error: String) {
+        //TODO: Inplementar erro
     }
     
 }

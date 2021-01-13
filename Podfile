@@ -13,4 +13,6 @@ target 'Vida Pet' do
   pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire'
+  pod 'AlamofireNetworkActivityLogger'
 end

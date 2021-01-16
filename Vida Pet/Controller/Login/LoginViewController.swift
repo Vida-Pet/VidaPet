@@ -10,12 +10,19 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import GoogleSignIn
+import Alamofire
 
 // MARK: - VidaPetMainViewController
 
 class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
-    // MARK: IBOutlets
+    // MARK: - Properties
+    
+    final let eyeButton = UIButton(type: .custom)
+    final let defaultButtonCornerRadius: CGFloat = 5
+    var tokenU : String?
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,69 +30,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     
     
-    // MARK: Properties
-    
-    final let eyeButton = UIButton(type: .custom)
-    final let defaultButtonCornerRadius: CGFloat = 5
-    
-    
-    // MARK: Life Cicle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpElements()
-        configureTapGesture()
-        configureTextFields()
-        passwordTextField.enablePasswordToggle()
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().delegate = self
-    }
-    
-    
-    // MARK: Setup
-    
-    
-    func setUpElements(){
-        emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
-        passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
-        loginButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
-        self.errorLabel.isHidden = true
-    }
-    
-    
-    private func configureTapGesture(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        self.view.addGestureRecognizer(tap)
-    }
-    
-    private func configureTextFields(){
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        guard let auth = user.authentication else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-        Auth.auth().signIn(with: credentials) { (authResult, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("Login Successful.")
-                
-                self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
-            }
-        }
-    }
-    
-    // MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func loginPressed(_ sender: Any) {
-        
         
         let error = ValidateFields.validateFieldsLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         
@@ -99,6 +46,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         print(e)
                         self?.showError(message: R.string.login.invalid_email_pasword())
                     } else {
+                        self?.getUserID()
                         
                         self?.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
@@ -108,13 +56,13 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     }
     
     
+    
+    
     @IBAction func googleSingIn(_ sender: UIButton) {
         
         
         GIDSignIn.sharedInstance().signIn()
-        
     }
-    
     
     
     @IBAction func forgotPasswordAlert(_ sender: UIButton) {
@@ -138,25 +86,126 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 }
             })
         }))
-        //PRESENT ALERT
+        
         self.present(forgotPasswordAlert, animated: true, completion: nil)
     }
+    
     
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
         
     }
     
-    // MARK: Navigation
+    
+    // MARK: - Life Cycles
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpElements()
+        configureTapGesture()
+        configureTextFields()
+        passwordTextField.enablePasswordToggle()
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    
+    // MARK: - Setup
+    
+    
+    
+    func setUpElements(){
+        emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        loginButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        self.errorLabel.isHidden = true
+    }
+    
+    
+    private func configureTapGesture(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    private func configureTextFields(){
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    
+    // MARK: - Methods
+    
+    private func getUserID() {
+        let user = Auth.auth().currentUser
+        if let _user = user {
+            tokenU = _user.uid
+            
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+        self.getUserID()
+        let user = UserData(email: "1@2.com", id: 123, name: "bruna", phone: "12345", token: "123455")
+        postUser(user: user)
+//        requestUser()
+        self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+    }
+    
+
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == R.segue.loginViewController.welcomeVC.identifier {
-            _ = segue.destination
+            let destinationVC = segue.destination as! WelcomeViewController
+            
         }
     }
     
     
-    // MARK: Alerts
+    // MARK: - Networking
+    
+    func postUser(user : UserData){
+       
+        
+        AF.request(APIRouter.postUser(user: user))
+                .responseDecodable { (response: AFDataResponse<UserData>) in
+                    switch response.result {
+                    case .success(let response):
+                        print("RRESPOSTA")
+                        print(response)
+                        
+                    case .failure(let error):
+                       print(error)
+                    }
+            }
+    }
+    
+    func requestUser(){
+        AF.request(APIRouter.getUser(token: "123455"))
+            .responseDecodable { (response: AFDataResponse<[UserData]>) in
+                switch response.result {
+                case .success(let response):
+                    print("Getttt>>>>>>>>>>>>>")
+                   print(response)
+                    
+                case .failure(let error):
+                   print(error)
+                }
+        }
+}
+    
+    
+    // MARK: - Alerts
     
     func showError( message: String){
         errorLabel.text = message
@@ -180,11 +229,9 @@ extension LoginViewController: UITextFieldDelegate {
                 && !self.passwordTextField.isSecureTextEntry) {
             self.passwordTextField.isSecureTextEntry = true
         }
-        
         return true
     }
-    
-    
 }
+
 
 

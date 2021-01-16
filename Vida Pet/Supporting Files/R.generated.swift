@@ -368,12 +368,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `VPCardCollectionViewCell.XIB`.
     static let vpCardCollectionViewCellXIB = Rswift.FileResource(bundle: R.hostingBundle, name: "VPCardCollectionViewCell", pathExtension: "XIB")
+    /// Resource file `user.json`.
+    static let userJson = Rswift.FileResource(bundle: R.hostingBundle, name: "user", pathExtension: "json")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -387,10 +389,16 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "user", withExtension: "json")`
+    static func userJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.userJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 10 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `beagle`.
     static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
@@ -398,6 +406,8 @@ struct R: Rswift.Validatable {
     static let bullDog = Rswift.ImageResource(bundle: R.hostingBundle, name: "bullDog")
     /// Image `claw_icon`.
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
+    /// Image `empty_user`.
+    static let empty_user = Rswift.ImageResource(bundle: R.hostingBundle, name: "empty_user")
     /// Image `eyeclosed`.
     static let eyeclosed = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeclosed")
     /// Image `eyeopen`.
@@ -431,6 +441,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "claw_icon", bundle: ..., traitCollection: ...)`
     static func claw_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.claw_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "empty_user", bundle: ..., traitCollection: ...)`
+    static func empty_user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.empty_user, compatibleWith: traitCollection)
     }
     #endif
 

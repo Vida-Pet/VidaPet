@@ -8,13 +8,18 @@
 
 import Foundation
 
-struct User: Codable {
-    var id: Int?
-    var image,name,bio: String?
-    var isPublicProfile: Bool?
-    var ownedPetsIds: [Int]?
-}
+//// MARK: - WelcomeElement
+//struct UserData: Codable {
+//    var id, image, name, bio: String
+//    var ownedPetsAmount: Int
+//    var state: String
+//}
 
+struct UserData: Codable {
+    var email: String?
+    var id: Int?
+    var name, phone, token: String?
+}
 
 
 

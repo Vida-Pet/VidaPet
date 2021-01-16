@@ -1,0 +1,8 @@
+{
+    "id" : "123456",
+    "image" : "userImage",
+    "name" : "Bruna Ebina",
+    "bio" : "tenho dois dogs lindos",
+    "ownedPetsAmount" : 2,
+    "state" : "Rio Grande do Sul"
+}

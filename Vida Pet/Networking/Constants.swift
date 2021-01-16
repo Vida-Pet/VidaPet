@@ -34,3 +34,4 @@ enum RequestParams {
     case url(_:Parameters)
     case header(_:[String:String])
 }
+//https://api-vida-pet.herokuapp.com/swagger-ui.html#/Usuario/salvarUsuarioUsingPOST

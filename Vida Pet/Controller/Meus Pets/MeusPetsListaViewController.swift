@@ -72,7 +72,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     func requestMeusPets() {
         AF.request(APIRouter.getPets(type: .myPets))
             .responseDecodable { (response: AFDataResponse<Pets>) in
-                switch response.result {
+                switch response.result {  
                 case .success(let response):
                     self.pets = response
                     self.updateTableView()

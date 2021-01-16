@@ -10,52 +10,22 @@ import UIKit
 
 class EditarPerfilViewController: VidaPetMainViewController {
     
+    // MARK: - Properties
+    
+    final let numberOfComponents = 1
+    var selectedState: String?
+    var userModel = UserModel()
+    var userData : UserData!
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: VPMultilineRoundPlaceholderTextField!
     
-    final let numberOfComponents = 1
-    var selectedState: String?
-    var userModel =  UserModel()
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        
-        userImage.setupImage(image: userImage)
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
-        configureTapGesture()
-        self.createAndSetupPickerView()
-        self.dismissAndClosePickerView()
-        setupFields()
-        
-        
-    }
-    
-    private func configureTapGesture(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        self.view.addGestureRecognizer(tap)
-    }
-    
-    @objc
-    func rightHandAction() {
-        _ = navigationController?.popViewController(animated: true)
-    }
-    
-    func setupFields(){
-        self.userNameTextField.text = userModel.user.name
-        self.estadoTextField.text = userModel.stateArray[24]
-        self.bio.text = userModel.user.bio
-    }
-    
-    // MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func perfilPublico(_ sender: Any) {
     }
@@ -77,10 +47,48 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Life Cycles
+    
+    override func viewDidLayoutSubviews() {
+        
+        super.viewDidLayoutSubviews()
+        userImage.setupImage(image: userImage)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
+        configureTapGesture()
+        self.createAndSetupPickerView()
+        self.dismissAndClosePickerView()
+        setupFields()
+    }
     
     
-    func openCamera()
-    {
+    // MARK: - Methods
+    
+    private func configureTapGesture(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    
+    @objc func rightHandAction() {
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func setupFields(){
+//        self.userNameTextField.text = userModel.user.name
+//        self.estadoTextField.text = userModel.stateArray[24]
+//        self.bio.text = userModel.user.bio
+    }
+    
+    
+    func openCamera() {
+        
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -96,8 +104,9 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
     }
     
-    func openGallery()
-    {
+    
+    func openGallery() {
+        
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -113,7 +122,9 @@ class EditarPerfilViewController: VidaPetMainViewController {
         }
     }
     
-    func createAndSetupPickerView(){
+    
+    func createAndSetupPickerView() {
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -122,6 +133,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     func dismissAndClosePickerView() {
+        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
@@ -131,15 +143,17 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.estadoTextField.inputAccessoryView = toolBar
     }
     
+    
     @objc func dismissAction(){
         self.view.endEditing(true)
     }
     
 }
+
+
 //MARK: - Image Picker
 
 extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
@@ -153,23 +167,25 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
 //MARK: - Picker View
 
 extension EditarPerfilViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return numberOfComponents
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return userModel.stateArray.count
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return userModel.stateArray[row]
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectedState = userModel.stateArray[row]
+//        self.selectedState = userData.state
         self.estadoTextField.text = self.selectedState
         
-        
     }
-    
 }

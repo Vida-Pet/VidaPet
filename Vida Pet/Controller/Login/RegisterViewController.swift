@@ -14,7 +14,7 @@ import FirebaseAuth
 
 class RegisterViewController: VidaPetMainViewController {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,12 +24,12 @@ class RegisterViewController: VidaPetMainViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
-    // MARK: Properties
+    // MARK: - Properties
     
     final let loginButtonCornerRadius: CGFloat = 5
+    var userData : UserData!
     
-    
-    // MARK: Life Cicle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +39,11 @@ class RegisterViewController: VidaPetMainViewController {
         setUpElements()
         passwordTextField.enablePasswordToggle()
         confirmPasswordTextField.enablePasswordToggle()
-
+        
     }
     
     
-    // MARK: Setup
+    // MARK: - Setup
     
     private func configureTapGesture(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -63,39 +63,40 @@ class RegisterViewController: VidaPetMainViewController {
         self.errorLabel.isHidden = true
     }
     
-
     
     
-    // MARK: IBActions
+    
+    // MARK: - IBActions
     
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
-      
-        
-        if error != nil {
-            showError(message: error!)
-        } else {
-            if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-               
+//        if error != nil {
+//            showError(message: error!)
+//        } else {
+//            if let userName = nameTextField.text{
+//                userData.name = userName
+//                print(userData.name)
+//            }
             
-                
-                if let _error = error {
-                    self.showError(message: R.string.login.invalid_email_format())
-                  
-                } else {
-                    //user was created successfully
-                    self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+            
+            if let email = emailTextField.text, let password = passwordTextField.text {
+                Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                     
+                    if let _error = error {
+                        self.showError(message: R.string.login.invalid_email_format())
+                        
+                    } else {
+                        //user was created successfully
+                        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+                    }
                 }
             }
-            }
         }
-    }
     
     
-    // MARK: Navigation
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
@@ -105,17 +106,16 @@ class RegisterViewController: VidaPetMainViewController {
     }
     
     
-    // MARK: Alerts
+    // MARK: - Alerts
     
     func showError( message: String){
         errorLabel.text = message
         errorLabel.isHidden = false
     }
-    
 }
 
 
-// MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

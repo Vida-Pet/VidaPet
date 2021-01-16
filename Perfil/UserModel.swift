@@ -10,7 +10,7 @@ import Foundation
 
 struct UserModel{
     
-    var user = User(id: 1, image: "userImage", name: "Felipe Miranda", bio: "Amo meus pets, são a alegria da casa. Tenho dois cachorros e um gato, sou muito feliz...", isPublicProfile: true, ownedPetsIds: [2, 1])
+//    var user = User(id: 1, image: "userImage", name: "Felipe Miranda", bio: "Amo meus pets, são a alegria da casa. Tenho dois cachorros e um gato, sou muito feliz...", isPublicProfile: true,  )
     
 //    var user = UserData(name: "Felipe Miranda", bio: "Amo meus pets, são a alegria da casa. Tenho dois cachorros e um gato, sou muito feliz...", image: "userImage", date: "Entrou em 18/08/20", numberOfPets: "2 cachorros e 1 gato", publicUser: true)
 

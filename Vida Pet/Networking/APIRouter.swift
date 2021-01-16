@@ -31,8 +31,8 @@ enum APIRouter: APIConfiguration {
     // MARK: User
     case getUsers
     case getUser(token: String)
-    case patchUser(userId: Int, user: User)
-    case postUser(user: User)
+    case patchUser(userId: Int, user: UserData)
+    case postUser(user: UserData)
     
     
     // MARK: - HTTPMethod

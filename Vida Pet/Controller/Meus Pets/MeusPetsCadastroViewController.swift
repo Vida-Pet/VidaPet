@@ -144,43 +144,54 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     func requestAddPet(_ pet: Pet) {
         
         
-//        let mockPet: [String: Any] = [
-//            "adoption": pet.adoption,
-//            "dataImage": pet.dataImage,
-//            "description": pet.description,
-//            "image": pet.image,
-//            "info": [
-//                "birth": pet.info.birth,
-//                "breed": pet.info.breed,
-//                "coat": pet.info.coat,
-//                "gender": pet.info.gender,
-//                "size": pet.info.size,
-//                "weight": pet.info.weight
-//            ],
-//                        "medicalData": [
-//                          "surgerys": [
-//                            "data": pet.info,
-//                              "name": "string"
-//                          ],
-//                          "vaccines": [
-//                              "data": "2021-01-17T16:37:49.455Z",
-//                              "name": "string"
-//                          ]
-//                        ],
-//            "name": "string",
-//            "user": [
-//                "id": 1,
-//            ]
-//        ]
-
+        var surgeries: [[String: Any]] = []
+        for s in pet.medicalData.surgerys {
+            var surgery: [String: Any] = [:]
+            surgery["data"] = s.data
+            surgery["name"] = s.nome
+            surgeries.append(surgery)
+        }
         
-        guard let json = pet.asJSON() else { displayError(); return }
-        let params: [String: Any] = ["body": json]
-
-        APIHelper.request(url: .pet, method: .post, parameters: params)
+        
+        var vaccines: [[String: Any]] = []
+        for v in pet.medicalData.vaccines {
+            var vaccine: [String: Any] = [:]
+            vaccine["data"] = v.data
+            vaccine["name"] = v.nome
+            vaccines.append(vaccine)
+        }
+        
+        let mockPet: [String: Any] = [
+            "adoption": pet.adoption,
+            "dataImage": pet.dataImage,
+            "description": pet.description,
+            "image": pet.image,
+            "info": [
+                "birth": pet.info.birth,
+                "breed": pet.info.breed,
+                "coat": pet.info.coat,
+                "gender": pet.info.gender,
+                "size": pet.info.size,
+                "weight": pet.info.weight
+            ],
+            "medicalData": [
+                "surgerys": surgeries,
+                "vaccines": vaccines
+            ],
+            "name": "string",
+            "user": [
+                "id": 1,
+            ]
+        ]
+        
+        
+//        guard let json = pet.asJSON() else { displayError(); return }
+//        let params: [String: Any] = ["body": json]
+        
+        APIHelper.request(url: .pet, method: .post, parameters: mockPet)
             .responseJSON { response in
                 print(response)
-        }
+            }
         
     }
     

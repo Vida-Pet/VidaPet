@@ -184,14 +184,10 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             ]
         ]
         
-        
-//        guard let json = pet.asJSON() else { displayError(); return }
-//        let params: [String: Any] = ["body": json]
-        
         APIHelper.request(url: .pet, method: .post, parameters: mockPet)
             .responseJSON { response in
                 print(response)
-            }
+        }
         
     }
     

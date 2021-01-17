@@ -76,8 +76,9 @@ enum APIRouter: APIConfiguration {
             return .header(["informationType":type.rawValue, "userId":"\(userId)"])
         case .patchPet(let petId, let pet):
             return .body(["petResource":pet.asJSON(), "id":petId])
-        case .postPet(let userId, let pet):
-            return .body(["pet":pet.asJSON(), "userId":userId])
+        case .postPet(let userId, var pet):
+            pet.image = nil
+            return .body(["pet":pet.asJSON(), "user":SimpleUser(id: userId).asJSON()])
             
         // MARK: Surgerys
         case .getSurgerys(let petId):

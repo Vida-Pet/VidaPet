@@ -15,6 +15,14 @@ struct User: Codable {
     var ownedPetsIds: [Int]?
 }
 
+struct SimpleUser: Codable {
+    var id: Int?
+    
+    init(id: Int) {
+        self.id = id
+    }
+}
+
 
 
 

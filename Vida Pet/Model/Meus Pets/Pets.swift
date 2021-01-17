@@ -13,15 +13,15 @@ import Foundation
 // MARK: - Pet
 struct Pet: Codable {
     var id: Int? 
-    var image, name, petDescription: String?
+    var image, name, description: String?
     var adoption: Bool?
     var info: Info
     var medicalData: MedicalData
     var dataImage: Data?
 
     enum CodingKeys: String, CodingKey { 
-        case id, image, name, dataImage
-        case petDescription = "description"
+        case id, image, name
+        case description = "description"
         case adoption, info, medicalData
     }
 }
@@ -41,11 +41,13 @@ struct MedicalData: Codable {
 // MARK: - Surgery
 struct Surgery: Codable {
     var nome, data: String?
+    var id, petId: Int?
 }
 
 // MARK: - Vaccine
 struct Vaccine: Codable {
     var nome, data: String?
+    var id, petId: Int?
 }
 
 typealias Pets = [Pet]

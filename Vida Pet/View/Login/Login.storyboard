@@ -108,7 +108,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="googleSignOut:" destination="7WN-jy-XWH" eventType="touchUpInside" id="oib-95-fVe"/>
+                                            <action selector="mockSignIn:" destination="7WN-jy-XWH" eventType="touchUpInside" id="Swn-9B-btE"/>
                                         </connections>
                                     </button>
                                 </subviews>

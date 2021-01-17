@@ -50,7 +50,7 @@ class RandomPet {
                 id: id,
                 image: self.pet_image_url,
                 name: self.faker.name.firstName(),
-                petDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna non lectus consectetur hendrerit. Fusce fringilla sapien sit amet lorem gravida tincidunt quis sit amet tellus. Phasellus elementum interdum ante, vel facilisis sapien consectetur non. Aliquam erat volutpat. Suspendisse consequat vel neque eu ultricies. Proin et fermentum justo. In leo sapien, laoreet nec dictum sit amet, interdum vitae mauris. Morbi a sodales nisl. Mauris egestas, ante nec posuere molestie, orci lectus laoreet leo, nec mattis purus lectus in magna.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu magna non lectus consectetur hendrerit. Fusce fringilla sapien sit amet lorem gravida tincidunt quis sit amet tellus. Phasellus elementum interdum ante, vel facilisis sapien consectetur non. Aliquam erat volutpat. Suspendisse consequat vel neque eu ultricies. Proin et fermentum justo. In leo sapien, laoreet nec dictum sit amet, interdum vitae mauris. Morbi a sodales nisl. Mauris egestas, ante nec posuere molestie, orci lectus laoreet leo, nec mattis purus lectus in magna.",
                 adoption: self.faker.number.randomBool(),
                 info: Info(
                     coat: self.pelagemMock.randomElement(),

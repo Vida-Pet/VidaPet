@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents.MaterialTextFields
+import Alamofire
 
 class MeusPetsCadastroViewController: VidaPetMainViewController {
     
@@ -85,7 +86,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                             withNamePlaceholder: R.string.meusPetsCadastro.nova_vacina_placeholder(),
                             withNameTag: TAG_NEW_VACCINE_NAME,
                             andDateTag: TAG_NEW_VACCINE_DATA,
-                            andType: MedicalDataType.VACCINES)
+                            andType: .VACCINES)
     }
     
     @IBAction func newCirurgia(_ sender: UIButton) {
@@ -94,7 +95,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                             withNamePlaceholder: R.string.meusPetsCadastro.nova_cirurgia_placeholder(),
                             withNameTag: TAG_NEW_SURGERY_NAME,
                             andDateTag: TAG_NEW_SURGERY_DATA,
-                            andType: MedicalDataType.SURGERYS)
+                            andType: .SURGERYS)
     }
     
     @IBAction func clickImage(_ sender: UIButton) {
@@ -118,10 +119,10 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         pet = Pet(id: 1,
                   image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
-                  petDescription: txtDescription.text,
+                  description: txtDescription.text,
                   adoption: switchAdocao.isOn,
                   info: info, medicalData: medicalData)
-
+        
         if let newPet = pet {
             if editMode {
                 if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
@@ -132,10 +133,38 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     showSuccessPetEdited()
                 }
             } else {
-                MeusPetsCadastroViewController.pets.append(newPet)
-                showSuccessPetAdded()
+                requestAddPet(newPet)
+                //                MeusPetsCadastroViewController.pets.append(newPet)
+                //                showSuccessPetAdded()
             }
         }
+    }
+    
+    // MARK: Networking
+    
+    func requestAddPet(_ pet: Pet) {var id, petId: Int?
+        
+        AF.request(APIRouter.postPet(userId: 1, pet: pet))
+            .responseDecodable { (response: AFDataResponse<Pets>) in
+                switch response.result {
+                case .success(let response):
+                    self.showSuccessPetAdded()
+                    
+                case .failure(let error):
+                    self.displayError(withText: error.localizedDescription)
+                }
+        }
+        
+    }
+    
+    // MARK: Private Functions
+    
+    private func displayError() {
+        //TODO: Inplementar erro
+    }
+    
+    private func displayError(withText error: String) {
+        //TODO: Inplementar erro
     }
     
     
@@ -149,7 +178,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     private func setupEditMode() {
         txtName.text = pet?.name
-        txtDescription.text = pet?.petDescription
+        txtDescription.text = pet?.description
         imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
         txtRaca.text = pet?.info.breed
         txtData.text = pet?.info.birth
@@ -230,12 +259,12 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         let addAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_adicionar(), style: .default) { (action) in
             if let text = textFieldNome.text, let data = textFieldData.text {
                 switch type {
-                case MedicalDataType.SURGERYS:
-                    self.medicalData.surgerys.append(Surgery(nome: text, data: data))
+                case .SURGERYS:
+                    self.medicalData.surgerys.append(Surgery(nome: text, data: data, petId: self.pet?.id))
                     self.tableViewCirurgias.reloadData()
                     return
-                case MedicalDataType.VACCINES:
-                    self.medicalData.vaccines.append(Vaccine(nome: text, data: data))
+                case .VACCINES:
+                    self.medicalData.vaccines.append(Vaccine(nome: text, data: data, petId: self.pet?.id))
                     self.tableViewVacinas.reloadData()
                     return
                 }
@@ -360,12 +389,12 @@ extension MeusPetsCadastroViewController: UITextViewDelegate {
 
 extension MeusPetsCadastroViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            guard let selectedImage = info[.originalImage] as? UIImage else {
-                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-            }
-            imgView.image = selectedImage
-            dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
+        imgView.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

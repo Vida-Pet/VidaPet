@@ -107,6 +107,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         }
     }
     
+    @IBAction func mockSignIn(_ sender: Any) {
+        self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+    }
     
     @IBAction func googleSingIn(_ sender: UIButton) {
         

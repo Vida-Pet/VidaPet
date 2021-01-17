@@ -70,17 +70,17 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestMeusPets() {
-        AF.request(APIRouter.getPets(type: .myPets))
-            .responseDecodable { (response: AFDataResponse<Pets>) in
-                switch response.result {
-                case .success(let response):
-                    self.pets = response
-                    self.updateTableView()
-                    
-                case .failure(let error):
-                    self.displayError(withText: error.localizedDescription)
-                }
-        }
+//        AF.request(APIRouter.getPets(type: .myPets))
+//            .responseDecodable { (response: AFDataResponse<Pets>) in
+//                switch response.result {
+//                case .success(let response):
+//                    self.pets = response
+//                    self.updateTableView()
+//                    
+//                case .failure(let error):
+//                    self.displayError(withText: error.localizedDescription)
+//                }
+//        }
         
     }
     

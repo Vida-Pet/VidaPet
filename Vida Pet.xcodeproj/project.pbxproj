@@ -12,6 +12,7 @@
 		3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B8A2A2554FC8C00033297 /* UITextField+.swift */; };
 		3B0B8A3D2554FF4A00033297 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B8A3C2554FF4A00033297 /* String+.swift */; };
 		3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */; };
+		3B53474F25B4D648007717D7 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53474E25B4D648007717D7 /* APIHelper.swift */; };
 		3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581ADB2544F2E4003E2A68 /* Pets.swift */; };
 		3B581ADF2544F478003E2A68 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581ADE2544F478003E2A68 /* UIImage+.swift */; };
 		3B581AF4254518B9003E2A68 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B581AF3254518B9003E2A68 /* UIButton+.swift */; };
@@ -38,11 +39,6 @@
 		3B6A63A82553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */; };
 		3B94025F255F721E003AD1EA /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94025E255F721E003AD1EA /* Double+.swift */; };
 		3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B984344255A1440000DA748 /* EditarPerfil.strings */; };
-		3B98A22D25AE89BE00D24C0F /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98A22C25AE89BE00D24C0F /* APIConfiguration.swift */; };
-		3B98A22F25AE89D100D24C0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98A22E25AE89D100D24C0F /* Constants.swift */; };
-		3B98A23125AE89E600D24C0F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98A23025AE89E600D24C0F /* APIRouter.swift */; };
-		3B98A23325AE8A8C00D24C0F /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98A23225AE8A8C00D24C0F /* InformationType.swift */; };
-		3B98A23725AEB49D00D24C0F /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B98A23625AEB49D00D24C0F /* Encodable+.swift */; };
 		3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */; };
 		3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */; };
 		3BD5A000253D445F005A5BB2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD59FFF253D445F005A5BB2 /* UIView+.swift */; };
@@ -73,6 +69,7 @@
 		3B0B8A2A2554FC8C00033297 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "Vida Pet/Supporting Files/UITextField+.swift"; sourceTree = SOURCE_ROOT; };
 		3B0B8A3C2554FF4A00033297 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		3B53474E25B4D648007717D7 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		3B581ADB2544F2E4003E2A68 /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
 		3B581ADE2544F478003E2A68 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Vida Pet/Model/Meus Pets/UIImage+.swift"; sourceTree = SOURCE_ROOT; };
 		3B581AF3254518B9003E2A68 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -101,11 +98,6 @@
 		3B6A63A72553829D003FE2A9 /* VPMultilineRoundPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPMultilineRoundPlaceholderTextField.swift; sourceTree = "<group>"; };
 		3B94025E255F721E003AD1EA /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		3B984344255A1440000DA748 /* EditarPerfil.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EditarPerfil.strings; sourceTree = "<group>"; };
-		3B98A22C25AE89BE00D24C0F /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
-		3B98A22E25AE89D100D24C0F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3B98A23025AE89E600D24C0F /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		3B98A23225AE8A8C00D24C0F /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
-		3B98A23625AEB49D00D24C0F /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		3B9F25B02553784F00C16F90 /* MeusPetsCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsCadastroViewController.swift; sourceTree = "<group>"; };
 		3BD59FF5253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusPetsListaCellTableViewCell.swift; sourceTree = "<group>"; };
 		3BD59FFF253D445F005A5BB2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Vida Pet/Controller/Meus Pets/UIView+.swift"; sourceTree = SOURCE_ROOT; };
@@ -197,7 +189,6 @@
 				3B581AF3254518B9003E2A68 /* UIButton+.swift */,
 				FE30F9B9255A307A00B59058 /* UIImageView+.swift */,
 				3B94025E255F721E003AD1EA /* Double+.swift */,
-				3B98A23625AEB49D00D24C0F /* Encodable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,10 +396,7 @@
 		3B98A22925AE7ECB00D24C0F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3B98A22C25AE89BE00D24C0F /* APIConfiguration.swift */,
-				3B98A22E25AE89D100D24C0F /* Constants.swift */,
-				3B98A23025AE89E600D24C0F /* APIRouter.swift */,
-				3B98A23225AE8A8C00D24C0F /* InformationType.swift */,
+				3B53474E25B4D648007717D7 /* APIHelper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -664,7 +652,6 @@
 				3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */,
 				4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */,
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
-				3B98A23325AE8A8C00D24C0F /* InformationType.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
 				FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */,
@@ -674,15 +661,12 @@
 				3B695D082537E71300CE15AF /* AppDelegate.swift in Sources */,
 				3B584BCB253811CF0090A779 /* RecemChegadosDetalheViewController.swift in Sources */,
 				3B0B89B32554423D00033297 /* R.generated.swift in Sources */,
-				3B98A22F25AE89D100D24C0F /* Constants.swift in Sources */,
-				3B98A23125AE89E600D24C0F /* APIRouter.swift in Sources */,
+				3B53474F25B4D648007717D7 /* APIHelper.swift in Sources */,
 				3BD5A000253D445F005A5BB2 /* UIView+.swift in Sources */,
 				3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */,
 				FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
-				3B98A23725AEB49D00D24C0F /* Encodable+.swift in Sources */,
 				FECCE0742542335200E0934F /* ValidateFields.swift in Sources */,
-				3B98A22D25AE89BE00D24C0F /* APIConfiguration.swift in Sources */,
 				3B584BD5253812720090A779 /* VidaPetMainViewController.swift in Sources */,
 				3BD59FF6253D3BD4005A5BB2 /* MeusPetsListaCellTableViewCell.swift in Sources */,
 				7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */,

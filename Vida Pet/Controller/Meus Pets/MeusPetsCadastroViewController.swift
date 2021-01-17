@@ -144,16 +144,52 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     func requestAddPet(_ pet: Pet) {var id, petId: Int?
         
-        AF.request(APIRouter.postPet(userId: 1, pet: pet))
-            .responseDecodable { (response: AFDataResponse<Pets>) in
-                switch response.result {
-                case .success(let response):
-                    self.showSuccessPetAdded()
-                    
-                case .failure(let error):
-                    self.displayError(withText: error.localizedDescription)
-                }
+        
+        let mockPet: [String: Any] = [
+            "adoption": true,
+            "dataImage": "string",
+            "description": "string",
+            "image": "string",
+            "id":500,
+            "info": [
+                "birth": "string",
+                "breed": "string",
+                "coat": "string",
+                "gender": "string",
+                "size": "string",
+                "weight": 0
+            ],
+            //            "medicalData": [
+            //              "surgerys": [
+            //                  "data": "2021-01-17T16:37:49.455Z",
+            //                  "name": "string"
+            //              ],
+            //              "vaccines": [
+            //                  "data": "2021-01-17T16:37:49.455Z",
+            //                  "name": "string"
+            //              ]
+            //            ],
+            "name": "string",
+            "user": [
+                "id": 1,
+            ]
+        ]
+        
+        APIHelper.request(url: .pet, method: .post, parameters: mockPet)
+            .responseJSON { response in
+                print(response)
         }
+        
+        //        AF.request(APIRouter.postPet(userId: 1, pet: pet))
+        //            .responseDecodable { (response: AFDataResponse<Pets>) in
+        //                switch response.result {
+        //                case .success(let response):
+        //                    self.showSuccessPetAdded()
+        //
+        //                case .failure(let error):
+        //                    self.displayError(withText: error.localizedDescription)
+        //                }
+        //        }
         
     }
     

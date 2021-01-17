@@ -142,7 +142,31 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestAddPet(_ pet: Pet) {
-        
+        APIHelper.request(url: .pet, method: .post, parameters: getParamsToApi(from: pet))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success: break
+                    
+                case .failure(let error): break
+                    
+                }
+                
+            }
+    }
+    
+    // MARK: Private Functions
+    
+    private func displayError() {
+        //TODO: Inplementar erro
+    }
+    
+    private func displayError(withText error: String) {
+        //TODO: Inplementar erro
+    }
+    
+    // FUNCAO PADRÃO DE CONVERSÃO DE OBJETO PARA ENVIAR PARA O SERVIÇO!
+    private func getParamsToApi(from pet: Pet) -> [String: Any] {
         
         var surgeries: [[String: Any]] = []
         for s in pet.medicalData.surgerys {
@@ -152,7 +176,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             surgeries.append(surgery)
         }
         
-        
         var vaccines: [[String: Any]] = []
         for v in pet.medicalData.vaccines {
             var vaccine: [String: Any] = [:]
@@ -161,18 +184,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             vaccines.append(vaccine)
         }
         
-        let mockPet: [String: Any] = [
-            "adoption": pet.adoption,
-            "dataImage": pet.dataImage,
-            "description": pet.description,
-            "image": pet.image,
+        let finalPet: [String: Any] = [
+            "adoption": pet.adoption as Any,
+            "dataImage": pet.dataImage as Any,
+            "description": pet.description as Any,
+            "image": pet.image as Any,
             "info": [
-                "birth": pet.info.birth,
-                "breed": pet.info.breed,
-                "coat": pet.info.coat,
-                "gender": pet.info.gender,
-                "size": pet.info.size,
-                "weight": pet.info.weight
+                "birth": pet.info.birth as Any,
+                "breed": pet.info.breed as Any,
+                "coat": pet.info.coat as Any,
+                "gender": pet.info.gender as Any,
+                "size": pet.info.size as Any,
+                "weight": pet.info.weight as Any
             ],
             "medicalData": [
                 "surgerys": surgeries,
@@ -184,21 +207,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             ]
         ]
         
-        APIHelper.request(url: .pet, method: .post, parameters: mockPet)
-            .responseJSON { response in
-                print(response)
-        }
-        
-    }
-    
-    // MARK: Private Functions
-    
-    private func displayError() {
-        //TODO: Inplementar erro
-    }
-    
-    private func displayError(withText error: String) {
-        //TODO: Inplementar erro
+        return finalPet
     }
     
     

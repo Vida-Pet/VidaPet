@@ -22,11 +22,12 @@ class APIHelper {
     
     static func request(
         url folder: UrlType = .none,
+        aditionalUrl: String = "",
         method: HTTPMethod = .get,
         parameters: Parameters? = nil,
         headers: HTTPHeaders? = nil) -> DataRequest {
         
-        return AF.request("\(defaultFullUrl+folder.rawValue)", method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        return AF.request("\(defaultFullUrl+folder.rawValue+aditionalUrl)", method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
     }
     
 }

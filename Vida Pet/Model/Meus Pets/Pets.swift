@@ -18,11 +18,12 @@ struct Pet: Codable {
     var info: Info
     var medicalData: MedicalData
     var dataImage: Data?
+    var user: PetUser
 
     enum CodingKeys: String, CodingKey { 
         case id, image, name
         case description = "description"
-        case adoption, info, medicalData
+        case adoption, info, medicalData, user
     }
 }
 
@@ -48,6 +49,11 @@ struct Surgery: Codable {
 struct Vaccine: Codable {
     var nome, data: String?
     var id, petId: Int?
+}
+
+// MARK: - User
+struct PetUser: Codable {
+    var id: Int
 }
 
 typealias Pets = [Pet]

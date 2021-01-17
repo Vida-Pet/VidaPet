@@ -60,7 +60,7 @@ class RandomPet {
                     birth: "\(self.faker.number.randomInt(min: 1, max: 31))/\(self.faker.number.randomInt(min: 1, max: 12))/\(self.faker.number.randomInt(min: 2010, max: 2020))",
                     weight: Double(self.faker.number.randomInt(min: 1, max: 10))),
                 medicalData: MedicalData(surgerys: [], vaccines: []),
-                dataImage: imgData)
+                dataImage: imgData, user: PetUser(id: 1))
             completionHandler(pet)
         }
     }

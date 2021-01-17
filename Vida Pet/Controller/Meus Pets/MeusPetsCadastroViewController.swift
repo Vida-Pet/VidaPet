@@ -116,12 +116,11 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     breed: txtRaca.text,
                     birth: txtData.text,
                     weight: peso)
-        pet = Pet(id: 1,
-                  image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
+        pet = Pet(image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
                   description: txtDescription.text,
                   adoption: switchAdocao.isOn,
-                  info: info, medicalData: medicalData)
+                  info: info, medicalData: medicalData, user: PetUser(id: 1))
         
         if let newPet = pet {
             if editMode {
@@ -142,54 +141,46 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     // MARK: Networking
     
-    func requestAddPet(_ pet: Pet) {var id, petId: Int?
+    func requestAddPet(_ pet: Pet) {
         
         
-        let mockPet: [String: Any] = [
-            "adoption": true,
-            "dataImage": "string",
-            "description": "string",
-            "image": "string",
-            "id":500,
-            "info": [
-                "birth": "string",
-                "breed": "string",
-                "coat": "string",
-                "gender": "string",
-                "size": "string",
-                "weight": 0
-            ],
-            //            "medicalData": [
-            //              "surgerys": [
-            //                  "data": "2021-01-17T16:37:49.455Z",
-            //                  "name": "string"
-            //              ],
-            //              "vaccines": [
-            //                  "data": "2021-01-17T16:37:49.455Z",
-            //                  "name": "string"
-            //              ]
-            //            ],
-            "name": "string",
-            "user": [
-                "id": 1,
-            ]
-        ]
+//        let mockPet: [String: Any] = [
+//            "adoption": pet.adoption,
+//            "dataImage": pet.dataImage,
+//            "description": pet.description,
+//            "image": pet.image,
+//            "info": [
+//                "birth": pet.info.birth,
+//                "breed": pet.info.breed,
+//                "coat": pet.info.coat,
+//                "gender": pet.info.gender,
+//                "size": pet.info.size,
+//                "weight": pet.info.weight
+//            ],
+//                        "medicalData": [
+//                          "surgerys": [
+//                            "data": pet.info,
+//                              "name": "string"
+//                          ],
+//                          "vaccines": [
+//                              "data": "2021-01-17T16:37:49.455Z",
+//                              "name": "string"
+//                          ]
+//                        ],
+//            "name": "string",
+//            "user": [
+//                "id": 1,
+//            ]
+//        ]
+
         
-        APIHelper.request(url: .pet, method: .post, parameters: mockPet)
+        guard let json = pet.asJSON() else { displayError(); return }
+        let params: [String: Any] = ["body": json]
+
+        APIHelper.request(url: .pet, method: .post, parameters: params)
             .responseJSON { response in
                 print(response)
         }
-        
-        //        AF.request(APIRouter.postPet(userId: 1, pet: pet))
-        //            .responseDecodable { (response: AFDataResponse<Pets>) in
-        //                switch response.result {
-        //                case .success(let response):
-        //                    self.showSuccessPetAdded()
-        //
-        //                case .failure(let error):
-        //                    self.displayError(withText: error.localizedDescription)
-        //                }
-        //        }
         
     }
     

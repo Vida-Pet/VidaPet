@@ -43,6 +43,9 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     final let TAG_NEW_SURGERY_NAME = 77
     final let TAG_NEW_SURGERY_DATA = 66
     let noPetImagePlaceholder = "plus.viewfinder"
+    let defaultCameraIcon = {
+        UIImage(systemName: "camera.viewfinder")
+    }
     let defaultDateDivisor: Character = "/"
     var delegate: UIViewController?
     var editMode: Bool = false
@@ -75,6 +78,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             setupEditMode()
         }
         configureTapGesture()
+        imgView.image = defaultCameraIcon()
     }
     
     
@@ -109,14 +113,14 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     
     @IBAction func clickSalvar(_ sender: UIButton) {
-        guard validateAllFields() else { return }
+        guard validateAllFields() else { presentInputError(); return }
         info = Info(coat: segmentPelagem.titleForSegment(at: segmentPelagem.selectedSegmentIndex),
                     gender: segmentSexo.titleForSegment(at: segmentSexo.selectedSegmentIndex),
                     size: segmentPorte.titleForSegment(at: segmentPorte.selectedSegmentIndex),
                     breed: txtRaca.text,
                     birth: txtData.text,
                     weight: peso)
-        pet = Pet(image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
+        pet = Pet(image: (imgView.image != nil && imgView.image != defaultCameraIcon()) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
                   description: txtDescription.text,
                   adoption: switchAdocao.isOn,
@@ -133,8 +137,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                 }
             } else {
                 requestAddPet(newPet)
-                //                MeusPetsCadastroViewController.pets.append(newPet)
-                //                showSuccessPetAdded()
             }
         }
     }
@@ -142,36 +144,31 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestAddPet(_ pet: Pet) {
+       
+        loadingIndicator(.start)
+        
         APIHelper.request(url: .pet, method: .post, parameters: getParamsToApi(from: pet))
             .responseJSON { response in
                 
+                self.loadingIndicator(.stop)
+                
                 switch response.result {
-                case .success: break
+                case .success:
+                    self.showSuccessPetAdded()
                     
-                case .failure(let error): break
-                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestAddPet(pet) })
                 }
                 
             }
     }
-    
-    // MARK: Private Functions
-    
-    private func displayError() {
-        //TODO: Inplementar erro
-    }
-    
-    private func displayError(withText error: String) {
-        //TODO: Inplementar erro
-    }
-    
-    // FUNCAO PADRÃO DE CONVERSÃO DE OBJETO PARA ENVIAR PARA O SERVIÇO!
+
     private func getParamsToApi(from pet: Pet) -> [String: Any] {
         
         var surgeries: [[String: Any]] = []
         for s in pet.medicalData.surgerys {
             var surgery: [String: Any] = [:]
-            surgery["data"] = s.data
+            surgery["data"] = s.data?.getDate(fromFormatter: defaultDateFormatter)?.iso8601
             surgery["name"] = s.nome
             surgeries.append(surgery)
         }
@@ -179,18 +176,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         var vaccines: [[String: Any]] = []
         for v in pet.medicalData.vaccines {
             var vaccine: [String: Any] = [:]
-            vaccine["data"] = v.data
+            vaccine["data"] = v.data?.getDate(fromFormatter: defaultDateFormatter)?.iso8601
             vaccine["name"] = v.nome
             vaccines.append(vaccine)
         }
         
         let finalPet: [String: Any] = [
             "adoption": pet.adoption as Any,
-            "dataImage": pet.dataImage as Any,
+            "dataImage": pet.image as Any,
             "description": pet.description as Any,
             "image": pet.image as Any,
             "info": [
-                "birth": pet.info.birth as Any,
+                "birth": pet.info.birth?.getDate(fromFormatter: defaultDateFormatter)?.iso8601 as Any,
                 "breed": pet.info.breed as Any,
                 "coat": pet.info.coat as Any,
                 "gender": pet.info.gender as Any,
@@ -238,14 +235,40 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func validateAllFields() -> Bool {
-        // TODO: validar campos...
-        return true
+        return
+            txtName.validateInput() &&
+            txtRaca.validateInput() &&
+            txtData.validateInput() &&
+            txtPeso.validateInput() &&
+            txtDescription.text != nil && txtDescription.text != ""
+    }
+    
+    private func presentInputError() {
+        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.input_alert(), message: nil, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.input_alert_button(), style: .default)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
+        let alert = UIAlertController(title: R.string.meusPetsCadastro.title_failure_alert(), message: error, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        let tryAgain: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.try_again_failure_alert_button(), style: .default) { action -> Void in
+            tryAgainAction?()
+        }
+        let cancel: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.cancel_failure_alert_button(), style: .cancel) { action -> Void in
+            
+        }
+        alert.addAction(tryAgain)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func showSuccessPetAdded(){
-        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_add(), comment: ""), message: nil, preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.success_alert_title_add(), message: nil, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.success_alert_button(), style: .default) { action -> Void in
             self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(action)
@@ -253,9 +276,9 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func showSuccessPetEdited(){
-        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_edit(), comment: ""), message: nil, preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.success_alert_title_edit(), message: nil, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.success_alert_button(), style: .default) { action -> Void in
             self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(action)
@@ -263,13 +286,13 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func showImageActionSheet(){
-        let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_nova_imagem(), comment: ""), message: nil, preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.image_selector_nova_imagem(), message: nil, preferredStyle: .actionSheet)
         actionSheetController.view.tintColor = UIColor.black
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_cancelar(), comment: ""), style: .cancel)
-        let saveActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_camera(), comment: ""), style: .default) { action -> Void in
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_cancelar(), style: .cancel)
+        let saveActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_camera(), style: .default) { action -> Void in
             self.imageFromCamera()
         }
-        let deleteActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_galeria(), comment: ""), style: .default) { action -> Void in
+        let deleteActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_galeria(), style: .default) { action -> Void in
             self.imageFromGalery()
         }
         actionSheetController.addAction(cancelActionButton)

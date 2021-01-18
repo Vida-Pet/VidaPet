@@ -29,4 +29,8 @@ extension String {
         let timeInterval = birthday?.timeIntervalSinceNow
         return abs(Double(timeInterval! / secondsInYear))
     }
+    
+    func getDate(fromFormatter formatter: DateFormatter) -> Date? {
+        return formatter.date(from: self)
+    }
 }

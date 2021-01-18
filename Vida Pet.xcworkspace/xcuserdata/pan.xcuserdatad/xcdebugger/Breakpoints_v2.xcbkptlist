@@ -39,22 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A8E0E765-BA09-48A5-B769-19A443747A2E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vida Pet/Controller/Meus Pets/MeusPetsCadastroViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "requestAddPet(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3603E31A-D007-42AA-9AD5-ABFDFFE46435"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -62,8 +46,8 @@
             filePath = "Vida Pet/Controller/Meus Pets/MeusPetsCadastroViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "requestAddPet(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -71,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DFCFDB4E-68D5-45E0-A4DF-F1CB0D029718"
+            uuid = "EB3DD0C7-0579-4167-B5DC-6870CA03E85C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vida Pet/Networking/APIHelper.swift"
+            filePath = "Vida Pet/Controller/Meus Pets/MeusPetsCadastroViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "request(url:aditionalUrl:method:parameters:headers:)"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "requestAddPet(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

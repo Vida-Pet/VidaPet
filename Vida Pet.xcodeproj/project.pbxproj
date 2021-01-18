@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B08DBC625B525DB00DE63D1 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08DBC525B525DB00DE63D1 /* Date+.swift */; };
 		3B0B897225543A6C00033297 /* MeusPetsCadastro.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */; };
 		3B0B89B32554423D00033297 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B89B22554423D00033297 /* R.generated.swift */; };
 		3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B8A2A2554FC8C00033297 /* UITextField+.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		1C84F61C14D5E1FF6B87B0E8 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B08DBC525B525DB00DE63D1 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MeusPetsCadastro.strings; sourceTree = "<group>"; };
 		3B0B89B22554423D00033297 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3B0B8A2A2554FC8C00033297 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "Vida Pet/Supporting Files/UITextField+.swift"; sourceTree = SOURCE_ROOT; };
@@ -194,6 +196,7 @@
 				3B581AF3254518B9003E2A68 /* UIButton+.swift */,
 				FE30F9B9255A307A00B59058 /* UIImageView+.swift */,
 				3B94025E255F721E003AD1EA /* Double+.swift */,
+				3B08DBC525B525DB00DE63D1 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
+				3B08DBC625B525DB00DE63D1 /* Date+.swift in Sources */,
 				FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
 				7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */,

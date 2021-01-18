@@ -10,6 +10,7 @@ import UIKit
 typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
     
+    let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     let defaultDateFormatter: DateFormatter = DateFormatter()
     
     static var pets = [
@@ -22,7 +23,41 @@ class VidaPetMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLoadingIndicator()
         defaultDateFormatter.dateFormat = R.string.meusPetsCadastro.default_date_formater()
     }
     
+}
+
+
+// MARK - Loading Helper
+
+extension VidaPetMainViewController {
+    
+    func setupLoadingIndicator() {
+        indicator.color = R.color.vidaPetBlue()
+        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 120)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubviewToFront(view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func loadingIndicator(_ action: LoadingAction) {
+        switch action {
+        case .start:
+            indicator.startAnimating()
+            
+        case .stop:
+            indicator.stopAnimating()
+            
+        }
+        
+    }
+
+}
+
+enum LoadingAction {
+    case start
+    case stop
 }

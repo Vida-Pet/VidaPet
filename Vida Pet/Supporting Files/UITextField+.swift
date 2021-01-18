@@ -71,4 +71,8 @@ extension UITextField {
         self.isSecureTextEntry = !self.isSecureTextEntry
         setPasswordToggleImage(sender as! UIButton)
     }
+    
+    func validateInput() -> Bool {
+        return self.text != nil && self.text!.count > 0
+    }
 }

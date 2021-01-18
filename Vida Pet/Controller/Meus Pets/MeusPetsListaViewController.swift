@@ -30,11 +30,10 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setupNavBar()
-        requestMeusPets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateTableView()
+        requestMeusPets()
     }
     
     

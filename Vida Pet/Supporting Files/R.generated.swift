@@ -902,12 +902,14 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.meusPetsCadastro` struct is generated, and contains static references to 18 localization keys.
+    /// This `R.string.meusPetsCadastro` struct is generated, and contains static references to 23 localization keys.
     struct meusPetsCadastro {
       /// Value: Adicionar
       static let nova_adicionar = Rswift.StringResource(key: "nova_adicionar", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Adicionar Imagem
       static let image_selector_nova_imagem = Rswift.StringResource(key: "image_selector_nova_imagem", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Cancelar
+      static let cancel_failure_alert_button = Rswift.StringResource(key: "cancel_failure_alert_button", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancelar
       static let image_selector_cancelar = Rswift.StringResource(key: "image_selector_cancelar", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancelar
@@ -925,7 +927,11 @@ struct R: Rswift.Validatable {
       /// Value: Nova Vacina
       static let nova_vacina_titulo = Rswift.StringResource(key: "nova_vacina_titulo", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
+      static let input_alert_button = Rswift.StringResource(key: "input_alert_button", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
       static let success_alert_button = Rswift.StringResource(key: "success_alert_button", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Ocorreu um erro
+      static let title_failure_alert = Rswift.StringResource(key: "title_failure_alert", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pet foi adicionado com sucesso!
       static let success_alert_title_add = Rswift.StringResource(key: "success_alert_title_add", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Pet foi editado com sucesso!
@@ -934,6 +940,10 @@ struct R: Rswift.Validatable {
       static let nova_cirurgia_mensagem = Rswift.StringResource(key: "nova_cirurgia_mensagem", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Preencha as informações abaixo
       static let nova_vacina_mensagem = Rswift.StringResource(key: "nova_vacina_mensagem", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Preencha todos os campos para salvar
+      static let input_alert = Rswift.StringResource(key: "input_alert", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Tentar Novamente
+      static let try_again_failure_alert_button = Rswift.StringResource(key: "try_again_failure_alert_button", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Tirar Foto
       static let image_selector_camera = Rswift.StringResource(key: "image_selector_camera", tableName: "MeusPetsCadastro", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Vacina
@@ -965,6 +975,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("image_selector_nova_imagem", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
+      }
+
+      /// Value: Cancelar
+      static func cancel_failure_alert_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel_failure_alert_button", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "MeusPetsCadastro", preferredLanguages: preferredLanguages) else {
+          return "cancel_failure_alert_button"
+        }
+
+        return NSLocalizedString("cancel_failure_alert_button", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
       }
 
       /// Value: Cancelar
@@ -1072,6 +1095,19 @@ struct R: Rswift.Validatable {
       }
 
       /// Value: OK
+      static func input_alert_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("input_alert_button", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "MeusPetsCadastro", preferredLanguages: preferredLanguages) else {
+          return "input_alert_button"
+        }
+
+        return NSLocalizedString("input_alert_button", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
+      }
+
+      /// Value: OK
       static func success_alert_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("success_alert_button", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
@@ -1082,6 +1118,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("success_alert_button", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
+      }
+
+      /// Value: Ocorreu um erro
+      static func title_failure_alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("title_failure_alert", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "MeusPetsCadastro", preferredLanguages: preferredLanguages) else {
+          return "title_failure_alert"
+        }
+
+        return NSLocalizedString("title_failure_alert", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
       }
 
       /// Value: Pet foi adicionado com sucesso!
@@ -1134,6 +1183,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("nova_vacina_mensagem", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
+      }
+
+      /// Value: Preencha todos os campos para salvar
+      static func input_alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("input_alert", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "MeusPetsCadastro", preferredLanguages: preferredLanguages) else {
+          return "input_alert"
+        }
+
+        return NSLocalizedString("input_alert", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
+      }
+
+      /// Value: Tentar Novamente
+      static func try_again_failure_alert_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("try_again_failure_alert_button", tableName: "MeusPetsCadastro", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "MeusPetsCadastro", preferredLanguages: preferredLanguages) else {
+          return "try_again_failure_alert_button"
+        }
+
+        return NSLocalizedString("try_again_failure_alert_button", tableName: "MeusPetsCadastro", bundle: bundle, comment: "")
       }
 
       /// Value: Tirar Foto

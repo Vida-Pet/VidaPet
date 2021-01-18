@@ -20,8 +20,10 @@
 "image_selector_camera" = "Tirar Foto";
 "image_selector_galeria" = "Escolher da Galeria";
 "error_wrong_date" = "Digite uma data válida";
-"success_alert_title_add" = "Pet foi adicionado com sucesso!";
-"success_alert_title_edit" = "Pet foi editado com sucesso!";
+"success_alert_title_add" = "Pet adicionado!";
+"success_alert_subtitle_add" = "Veja ele agora em Meus Pets :)";
+"success_alert_title_edit" = "Pet Editado";
+"success_alert_subtitle_edit" = "Agora sabemos mais sobre seu amiguinho :)";
 "success_alert_button" = "OK";
 "input_alert_button" = "OK";
 "input_alert" = "Preencha todos os campos para salvar";

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SCLAlertView
+
 typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
     
+    let colorStyle = 0x26BABA
     let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     static var pets = [
@@ -71,14 +74,14 @@ extension VidaPetMainViewController {
     
     func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
         print(error)
-        let alert = UIAlertController(title: R.string.main.error_title(), message: R.string.main.error_description(), preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let tryAgain: UIAlertAction = UIAlertAction(title: R.string.main.error_try_again(), style: .default) { action -> Void in
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.main.error_try_again(), action: {
             tryAgainAction?()
-        }
-        let cancel: UIAlertAction = UIAlertAction(title: R.string.main.error_cancel(), style: .cancel)
-        alert.addAction(tryAgain)
-        alert.addAction(cancel)
-        self.present(alert, animated: true, completion: nil)
+        })
+        alertView.addButton(R.string.main.error_cancel(), action: {})
+        alertView.showError(R.string.main.error_title(), subTitle: R.string.main.error_description())
     }
 }

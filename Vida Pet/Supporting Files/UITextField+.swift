@@ -10,9 +10,9 @@ import UIKit
 
 extension UITextField {
     
-    func validateDate(string: String, range: NSRange, dateFormatter: DateFormatter, dateDivisor: Character) -> Bool {
-        var errorAction: EmptyClosure?
-        var normalAction: EmptyClosure?
+    func validateDate(string: String, range: NSRange, dateFormatter: DateFormatter, dateDivisor: Character, errorAction: EmptyClosure? = nil, normalAction: EmptyClosure? = nil) -> Bool {
+        var errorAction: EmptyClosure? = errorAction
+        var normalAction: EmptyClosure? = normalAction
         if let vpTxtField = self as? VPRoundPlaceholderTextField {
             errorAction = {
                 vpTxtField.toggleError(R.string.meusPetsCadastro.error_wrong_date())

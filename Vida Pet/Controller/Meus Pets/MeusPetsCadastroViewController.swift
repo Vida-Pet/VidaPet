@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialTextFields
 import Alamofire
+import SCLAlertView
 
 class MeusPetsCadastroViewController: VidaPetMainViewController {
     
@@ -57,6 +58,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         case VACCINES
         case SURGERYS
     }
+    var addButton: SCLButton?
     
     
     // MARK: LifeCicle
@@ -184,6 +186,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     if let error = response.error {
                         self.displayError(error.localizedDescription, withTryAgain: { self.requestEditPet(pet) })
                     } else {
+                        guard
+                            let data = response.data,
+                            let responsePet = try? JSONDecoder().decode(Pet.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestEditPet(pet) })
+                            return
+                        }
+                        
+                        if let petDetalhesVC = self.delegate as? MeusPetsDetalheViewController {
+                            petDetalhesVC.pet = responsePet
+                        }
+                        
                         self.showSuccessPetEdited()
                     }
                     
@@ -219,6 +233,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             "dataImage": pet.image as Any,
             "description": pet.description as Any,
             "image": pet.image as Any,
+            "id": pet.id as Any,
             "info": [
                 "birth": pet.info.birth?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601 as Any,
                 "breed": pet.info.breed as Any,
@@ -277,47 +292,51 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func presentInputError() {
-        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.input_alert(), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.input_alert_button(), style: .default)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton( R.string.meusPetsCadastro.input_alert_button(), action: {})
+        alertView.showError(R.string.meusPetsCadastro.input_alert(), subTitle: "")
     }
     
     private func showSuccessPetAdded(){
-        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.success_alert_title_add(), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.success_alert_button(), style: .default) { action -> Void in
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.success_alert_button(), action: {
             self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        })
+        alertView.showSuccess(R.string.meusPetsCadastro.success_alert_title_add(), subTitle: R.string.meusPetsCadastro.success_alert_subtitle_add(), colorStyle: UInt(self.colorStyle))
+
     }
     
     private func showSuccessPetEdited(){
-        let alert: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.success_alert_title_edit(), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.success_alert_button(), style: .default) { action -> Void in
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.success_alert_button(), action: {
             self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        })
+        alertView.showSuccess(R.string.meusPetsCadastro.success_alert_title_edit(), subTitle: R.string.meusPetsCadastro.success_alert_subtitle_edit(), colorStyle: UInt(self.colorStyle))
     }
     
     private func showImageActionSheet(){
-        let actionSheetController: UIAlertController = UIAlertController(title: R.string.meusPetsCadastro.image_selector_nova_imagem(), message: nil, preferredStyle: .actionSheet)
-        actionSheetController.view.tintColor = UIColor.black
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_cancelar(), style: .cancel)
-        let saveActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_camera(), style: .default) { action -> Void in
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_camera(), action: {
             self.imageFromCamera()
-        }
-        let deleteActionButton: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.image_selector_galeria(), style: .default) { action -> Void in
+        })
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_galeria(), action: {
             self.imageFromGalery()
-        }
-        actionSheetController.addAction(cancelActionButton)
-        actionSheetController.addAction(saveActionButton)
-        actionSheetController.addAction(deleteActionButton)
-        self.present(actionSheetController, animated: true, completion: nil)
+        })
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_cancelar(), action: {})
+        alertView.showInfo(R.string.meusPetsCadastro.image_selector_nova_imagem(), subTitle: "", colorStyle: UInt(self.colorStyle))
     }
     
     private func imageFromCamera() {
@@ -337,11 +356,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func showAlertController(named title: String, withMessage message: String, withNamePlaceholder namePlaceholder: String, withNameTag nameTag: Int, andDateTag dateTag: Int, andType type: MedicalDataType) {
-        var textFieldNome = UITextField()
-        var textFieldData = UITextField()
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_cancelar(), style: .cancel, handler: nil)
-        let addAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_adicionar(), style: .default) { (action) in
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        let textFieldNome = alertView.addTextField(namePlaceholder)
+        let textFieldData = alertView.addTextField(R.string.meusPetsCadastro.nova_data())
+        textFieldNome.delegate = self
+        textFieldNome.tag = nameTag
+        textFieldData.delegate = self
+        textFieldData.tag = dateTag
+        self.addButton = alertView.addButton(R.string.meusPetsCadastro.nova_adicionar(), action: {
             if let text = textFieldNome.text, let data = textFieldData.text {
                 switch type {
                 case .SURGERYS:
@@ -354,22 +380,10 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     return
                 }
             }
-        }
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        alert.addTextField { (field) in
-            textFieldNome = field
-            textFieldNome.placeholder = namePlaceholder
-            textFieldNome.tag = nameTag
-            textFieldNome.delegate = self
-        }
-        alert.addTextField { (field) in
-            textFieldData = field
-            textFieldData.placeholder = R.string.meusPetsCadastro.nova_data()
-            textFieldData.tag = dateTag
-            textFieldData.delegate = self
-        }
-        present(alert, animated: true, completion: nil)
+        })
+        addButton?.isEnabled = false
+        alertView.addButton(R.string.meusPetsCadastro.nova_cancelar(), action: {})
+        alertView.showEdit(title, subTitle: message, colorStyle: UInt(self.colorStyle))
     }
 }
 
@@ -443,9 +457,9 @@ extension MeusPetsCadastroViewController: UITextFieldDelegate {
         
         switch textField.tag {
         case TAG_NEW_SURGERY_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor, errorAction: { self.addButton?.isEnabled = false }, normalAction: { self.addButton?.isEnabled = true} )
         case TAG_NEW_VACCINE_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor, errorAction: { self.addButton?.isEnabled = false }, normalAction: { self.addButton?.isEnabled = true} )
         default:
             switch textField {
             case txtData:

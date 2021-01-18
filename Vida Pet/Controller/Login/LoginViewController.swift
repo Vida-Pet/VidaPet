@@ -20,8 +20,8 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     final let eyeButton = UIButton(type: .custom)
     final let defaultButtonCornerRadius: CGFloat = 5
-    var tokenU : String?
-    
+    var userData : UserData!
+    var id : String?
     // MARK: - IBOutlets
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -138,7 +138,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     private func getUserID() {
         let user = Auth.auth().currentUser
         if let _user = user {
-            tokenU = _user.uid
+            id = _user.uid
             
         }
     }
@@ -153,9 +153,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
             return
         }
         self.getUserID()
-        let user = UserData(email: "1@2.com", id: 123, name: "bruna", phone: "12345", token: "123455")
-        postUser(user: user)
-//        requestUser()
+        let user = UserData(id: id, image: "", name: "Bruna", bio: "amo meus pets", isPublicProfile: true, state: "Rio Grande do Sul")
+       
+        requestUser()
         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
     }
     
@@ -175,20 +175,23 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     // MARK: - Networking
     
     func postUser(user : UserData){
-       
         
-        AF.request(APIRouter.postUser(user: user))
-                .responseDecodable { (response: AFDataResponse<UserData>) in
-                    switch response.result {
-                    case .success(let response):
-                        print("RRESPOSTA")
-                        print(response)
-                        
-                    case .failure(let error):
-                       print(error)
-                    }
+        
+        let testeBruno: [String: Any] = [
+            "name" : userData.name,
+            "image" : userData.image,
+            "bio" : userData.bio,
+            "isPublicProfile" : userData.isPublicProfile,
+            "state" : userData.state,
+            "uid" : userData.id
+        ]
+        
+        AF.request("https://api-vida-pet.herokuapp.com/user", method: .post, parameters: testeBruno, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
             }
     }
+
     
     func requestUser(){
         AF.request(APIRouter.getUser(token: "123455"))
@@ -202,8 +205,8 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                    print(error)
                 }
         }
-}
-    
+    }
+
     
     // MARK: - Alerts
     

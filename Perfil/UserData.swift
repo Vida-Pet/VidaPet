@@ -16,9 +16,10 @@ import Foundation
 //}
 
 struct UserData: Codable {
-    var email: String?
-    var id: Int?
-    var name, phone, token: String?
+    var id: String?
+    var image,name,bio: String?
+    var isPublicProfile: Bool?
+    var state: String?
 }
 
 

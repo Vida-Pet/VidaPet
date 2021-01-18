@@ -154,7 +154,11 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                 
                 switch response.result {
                 case .success:
-                    self.showSuccessPetAdded()
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestAddPet(pet) })
+                    } else {
+                        self.showSuccessPetAdded()
+                    }
                     
                 case .failure(let error):
                     self.displayError(error.localizedDescription, withTryAgain: { self.requestAddPet(pet) })

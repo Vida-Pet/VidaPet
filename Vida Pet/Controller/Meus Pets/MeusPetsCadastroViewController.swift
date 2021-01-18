@@ -256,7 +256,8 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
-        let alert = UIAlertController(title: R.string.meusPetsCadastro.title_failure_alert(), message: error, preferredStyle: .alert)
+        print(error)
+        let alert = UIAlertController(title: R.string.meusPetsCadastro.title_failure_alert(), message: nil, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
         let tryAgain: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.try_again_failure_alert_button(), style: .default) { action -> Void in
             tryAgainAction?()

@@ -46,9 +46,11 @@ extension VidaPetMainViewController {
     func loadingIndicator(_ action: LoadingAction) {
         switch action {
         case .start:
+            self.view.isUserInteractionEnabled = false
             indicator.startAnimating()
             
         case .stop:
+            self.view.isUserInteractionEnabled = true
             indicator.stopAnimating()
             
         }

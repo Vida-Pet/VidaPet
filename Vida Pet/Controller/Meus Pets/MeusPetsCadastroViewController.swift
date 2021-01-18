@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents.MaterialTextFields
+import Alamofire
 
 class MeusPetsCadastroViewController: VidaPetMainViewController {
     
@@ -85,7 +86,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                             withNamePlaceholder: R.string.meusPetsCadastro.nova_vacina_placeholder(),
                             withNameTag: TAG_NEW_VACCINE_NAME,
                             andDateTag: TAG_NEW_VACCINE_DATA,
-                            andType: MedicalDataType.VACCINES)
+                            andType: .VACCINES)
     }
     
     @IBAction func newCirurgia(_ sender: UIButton) {
@@ -94,7 +95,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                             withNamePlaceholder: R.string.meusPetsCadastro.nova_cirurgia_placeholder(),
                             withNameTag: TAG_NEW_SURGERY_NAME,
                             andDateTag: TAG_NEW_SURGERY_DATA,
-                            andType: MedicalDataType.SURGERYS)
+                            andType: .SURGERYS)
     }
     
     @IBAction func clickImage(_ sender: UIButton) {
@@ -115,13 +116,12 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     breed: txtRaca.text,
                     birth: txtData.text,
                     weight: peso)
-        pet = Pet(id: 1,
-                  image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
+        pet = Pet(image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
-                  petDescription: txtDescription.text,
+                  description: txtDescription.text,
                   adoption: switchAdocao.isOn,
-                  info: info, medicalData: medicalData)
-
+                  info: info, medicalData: medicalData, user: PetUser(id: 1))
+        
         if let newPet = pet {
             if editMode {
                 if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
@@ -132,10 +132,82 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     showSuccessPetEdited()
                 }
             } else {
-                MeusPetsCadastroViewController.pets.append(newPet)
-                showSuccessPetAdded()
+                requestAddPet(newPet)
+                //                MeusPetsCadastroViewController.pets.append(newPet)
+                //                showSuccessPetAdded()
             }
         }
+    }
+    
+    // MARK: Networking
+    
+    func requestAddPet(_ pet: Pet) {
+        APIHelper.request(url: .pet, method: .post, parameters: getParamsToApi(from: pet))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success: break
+                    
+                case .failure(let error): break
+                    
+                }
+                
+            }
+    }
+    
+    // MARK: Private Functions
+    
+    private func displayError() {
+        //TODO: Inplementar erro
+    }
+    
+    private func displayError(withText error: String) {
+        //TODO: Inplementar erro
+    }
+    
+    // FUNCAO PADRÃO DE CONVERSÃO DE OBJETO PARA ENVIAR PARA O SERVIÇO!
+    private func getParamsToApi(from pet: Pet) -> [String: Any] {
+        
+        var surgeries: [[String: Any]] = []
+        for s in pet.medicalData.surgerys {
+            var surgery: [String: Any] = [:]
+            surgery["data"] = s.data
+            surgery["name"] = s.nome
+            surgeries.append(surgery)
+        }
+        
+        var vaccines: [[String: Any]] = []
+        for v in pet.medicalData.vaccines {
+            var vaccine: [String: Any] = [:]
+            vaccine["data"] = v.data
+            vaccine["name"] = v.nome
+            vaccines.append(vaccine)
+        }
+        
+        let finalPet: [String: Any] = [
+            "adoption": pet.adoption as Any,
+            "dataImage": pet.dataImage as Any,
+            "description": pet.description as Any,
+            "image": pet.image as Any,
+            "info": [
+                "birth": pet.info.birth as Any,
+                "breed": pet.info.breed as Any,
+                "coat": pet.info.coat as Any,
+                "gender": pet.info.gender as Any,
+                "size": pet.info.size as Any,
+                "weight": pet.info.weight as Any
+            ],
+            "medicalData": [
+                "surgerys": surgeries,
+                "vaccines": vaccines
+            ],
+            "name": "string",
+            "user": [
+                "id": 1,
+            ]
+        ]
+        
+        return finalPet
     }
     
     
@@ -149,7 +221,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     private func setupEditMode() {
         txtName.text = pet?.name
-        txtDescription.text = pet?.petDescription
+        txtDescription.text = pet?.description
         imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
         txtRaca.text = pet?.info.breed
         txtData.text = pet?.info.birth
@@ -230,12 +302,12 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         let addAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_adicionar(), style: .default) { (action) in
             if let text = textFieldNome.text, let data = textFieldData.text {
                 switch type {
-                case MedicalDataType.SURGERYS:
-                    self.medicalData.surgerys.append(Surgery(nome: text, data: data))
+                case .SURGERYS:
+                    self.medicalData.surgerys.append(Surgery(nome: text, data: data, petId: self.pet?.id))
                     self.tableViewCirurgias.reloadData()
                     return
-                case MedicalDataType.VACCINES:
-                    self.medicalData.vaccines.append(Vaccine(nome: text, data: data))
+                case .VACCINES:
+                    self.medicalData.vaccines.append(Vaccine(nome: text, data: data, petId: self.pet?.id))
                     self.tableViewVacinas.reloadData()
                     return
                 }
@@ -360,12 +432,12 @@ extension MeusPetsCadastroViewController: UITextViewDelegate {
 
 extension MeusPetsCadastroViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            guard let selectedImage = info[.originalImage] as? UIImage else {
-                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-            }
-            imgView.image = selectedImage
-            dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
+        imgView.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

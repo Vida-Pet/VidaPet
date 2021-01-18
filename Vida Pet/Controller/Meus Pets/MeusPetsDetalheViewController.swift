@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MeusPetsDetalheViewController: VidaPetMainViewController {
     
@@ -46,6 +47,10 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         performSegue(withIdentifier: R.segue.meusPetsDetalheViewController.meusPetsDetalhesToMeusPetsCadastro, sender: self)
     }
     
+    @IBAction func clickRemove(_ sender: UIButton) {
+        deletePet(pet)
+    }
+    
     
     // MARK: Life Cicle
     
@@ -73,7 +78,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
             lblMiniBio.text = emptyField
             lblIdade.text = emptyLinedField
         }
-        lblDescricao.text = pet.petDescription
+        lblDescricao.text = pet.description
         lblRaca.text = pet.info.breed
         lblPorte.text = pet.info.size
         if let weight = pet.info.weight {
@@ -105,6 +110,12 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         default:
             break
         }
+    }
+    
+    // MARK: Networking
+    
+    func deletePet(_ pet: Pet) {
+        //TODO: Implement delete
     }
     
 }

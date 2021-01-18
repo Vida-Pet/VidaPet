@@ -48,7 +48,7 @@ class RecemChegadosDetalheViewController: VidaPetMainViewController {
         if let safePet = pet {
             petName.text = safePet.name
             petSub.text = safePet.info.breed
-            petDesc.text = safePet.petDescription
+            petDesc.text = safePet.description
             petRace.text = safePet.info.breed
             petAge.text = safePet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter).formatAge()
             petWeight.text = "\(safePet.info.weight!) Kg"

@@ -22,6 +22,14 @@ struct UserData: Codable {
     var state: String?
 }
 
+struct SimpleUser: Codable {
+    var id: Int?
+    
+    init(id: Int) {
+        self.id = id
+    }
+}
+
 
 
 

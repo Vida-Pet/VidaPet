@@ -9,11 +9,21 @@
 import Foundation
 
 extension Encodable {
-    func asJSON() -> String {
-        guard
-            let jsonData = try? JSONEncoder().encode(self),
-            let jsonString = String(data: jsonData, encoding: .utf8)
-        else { return "" }
-        return jsonString
+    
+    func asJSON() -> Any? {
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try? jsonEncoder.encode(self)
+        let json = String(data: jsonData!, encoding: String.Encoding.utf8)
+        
+        if let data = json!.data(using: .utf8) {
+            do {
+                if let jsonArray = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    return jsonArray
+                }
+            } catch {
+                return nil
+            }
+        }
+        return nil
     }
 }

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SCLAlertView
+
 typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
     
-    let defaultDateFormatter: DateFormatter = DateFormatter()
+    let colorStyle = 0x26BABA
+    let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     static var pets = [
         Pet(id: 1, image: images[0], name: "Rodolfo", description: "Rodolfo é top, ele é demais. Sério, puta dog top! Ele gosta muito de brincar de comer o sofá e sempre faz xixi no tapete... Adoro este cachorrinho sapeca!", adoption: false, info: Info(coat: "Curta", gender: "Macho", size: "Grande", breed: "Beagle", birth: "15/01/2007", weight: 9.0), medicalData: MedicalData(surgerys: [Surgery(nome: "Hérnia de disco", data: "04/09/2018"), Surgery(nome: "Castração", data: "01/10/2007")], vaccines: [Vaccine(nome: "Corona Virus Animal", data: "11/03/2013"), Vaccine(nome: "Raiva", data: "28/01/2015"), Vaccine(nome: "Múltiplas: V6 e V10", data: "12/10/2008")]), user: PetUser(id: 1)),
@@ -22,7 +25,63 @@ class VidaPetMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultDateFormatter.dateFormat = R.string.meusPetsCadastro.default_date_formater()
+        setupLoadingIndicator()
     }
     
+}
+
+
+// MARK - Loading Helper
+
+extension VidaPetMainViewController {
+    
+    func setupLoadingIndicator() {
+        indicator.color = R.color.vidaPetBlue()
+        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 120)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubviewToFront(view)
+    }
+    
+    func loadingIndicator(_ action: LoadingAction) {
+        switch action {
+        case .start:
+            self.view.isUserInteractionEnabled = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            indicator.startAnimating()
+            
+        case .stop:
+            self.view.isUserInteractionEnabled = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            indicator.stopAnimating()
+            
+        }
+        
+    }
+
+}
+
+enum LoadingAction {
+    case start
+    case stop
+}
+
+
+
+// MARK: - Errors
+
+extension VidaPetMainViewController {
+    
+    func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
+        print(error)
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.main.error_try_again(), action: {
+            tryAgainAction?()
+        })
+        alertView.addButton(R.string.main.error_cancel(), action: {})
+        alertView.showError(R.string.main.error_title(), subTitle: R.string.main.error_description())
+    }
 }

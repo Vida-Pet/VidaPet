@@ -39,6 +39,9 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     @IBOutlet weak var tableViewCirurgias: UITableView!
     @IBOutlet weak var heightVacinas: NSLayoutConstraint!
     @IBOutlet weak var heightCirurgias: NSLayoutConstraint!
+    @IBOutlet weak var lblTitleCirurgias: UILabel!
+    @IBOutlet weak var lblTitleVacinas: UILabel!
+    @IBOutlet weak var lblDadosMedicos: UILabel!
     
     
     // MARK: IBActions
@@ -47,9 +50,6 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         performSegue(withIdentifier: R.segue.meusPetsDetalheViewController.meusPetsDetalhesToMeusPetsCadastro, sender: self)
     }
     
-    @IBAction func clickRemove(_ sender: UIButton) {
-        deletePet(pet)
-    }
     
     
     // MARK: Life Cicle
@@ -62,6 +62,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupFields()
+        setupTableViews()
     }
     
     
@@ -70,7 +71,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     fileprivate func setupFields() {
         imgPet.image = pet.image?.decodeBase64ToImage()
         lblNome.text = pet.name
-        if let age = pet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter)
+        if let age = pet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)
            , let breed = pet.info.breed {
             lblMiniBio.text = "\(breed), \(age.formatAge())"
             lblIdade.text = age.formatAge()
@@ -88,12 +89,52 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
         }
         lblPelagem.text = pet.info.coat
         lblSexo.text = pet.info.gender
-        heightVacinas.constant = CGFloat((pet.medicalData.vaccines.count) * defaultRowHeight) + defaultTableViewMargin
-        heightCirurgias.constant = CGFloat((pet.medicalData.surgerys.count) * defaultRowHeight) + defaultTableViewMargin
-        tableViewVacinas.reloadData()
-        tableViewCirurgias.reloadData()
+        heightVacinas.constant = CGFloat((pet.medicalData?.vaccines.count ?? 0) * defaultRowHeight) + defaultTableViewMargin
+        heightCirurgias.constant = CGFloat((pet.medicalData?.surgerys.count ?? 0) * defaultRowHeight) + defaultTableViewMargin
+        
     }
     
+    fileprivate func setupTableViews() {
+        if let medicalData = pet.medicalData {
+            if medicalData.vaccines.count > 0 {
+                showVaccines(true)
+            } else {
+                showVaccines(false)
+            }
+            if medicalData.surgerys.count > 0 {
+                showSurgerys(true)
+            } else {
+                showSurgerys(false)
+            }
+        } else {
+            showVaccines(false)
+            showSurgerys(false)
+        }
+        
+        lblDadosMedicos.isHidden = tableViewCirurgias.isHidden && tableViewVacinas.isHidden
+    }
+    
+    private func showVaccines(_ show: Bool) {
+        if show {
+            tableViewCirurgias.isHidden = false
+            lblTitleCirurgias.isHidden = false
+            tableViewCirurgias.reloadData()
+        } else {
+            tableViewCirurgias.isHidden = true
+            lblTitleCirurgias.isHidden = true
+        }
+    }
+    
+    private func showSurgerys(_ show: Bool) {
+        if show {
+            tableViewVacinas.isHidden = false
+            lblTitleVacinas.isHidden = false
+            tableViewVacinas.reloadData()
+        } else {
+            tableViewVacinas.isHidden = true
+            lblTitleVacinas.isHidden = true
+        }
+    }
     
     
     // MARK: Navigation
@@ -111,23 +152,16 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
             break
         }
     }
-    
-    // MARK: Networking
-    
-    func deletePet(_ pet: Pet) {
-        //TODO: Implement delete
-    }
-    
 }
 
 extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case tableViewVacinas:
-            return pet.medicalData.vaccines.count
+            return pet.medicalData?.vaccines.count ?? 0
     
         case tableViewCirurgias:
-            return pet.medicalData.surgerys.count
+            return pet.medicalData?.surgerys.count ?? 0
             
         default:
             return 0
@@ -140,8 +174,8 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
         switch tableView {
         case tableViewVacinas:
             guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas_detalhes.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = pet.medicalData.vaccines[indexPath.row].nome
-            cell.detailTextLabel?.text = pet.medicalData.vaccines[indexPath.row].data
+            cell.textLabel?.text = pet.medicalData?.vaccines[indexPath.row].nome
+            cell.detailTextLabel?.text = pet.medicalData?.vaccines[indexPath.row].data
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
             cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)
@@ -150,8 +184,8 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
             
         case tableViewCirurgias:
             guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias_detalhes.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = pet.medicalData.surgerys[indexPath.row].nome
-            cell.detailTextLabel?.text = pet.medicalData.surgerys[indexPath.row].data
+            cell.textLabel?.text = pet.medicalData?.surgerys[indexPath.row].nome
+            cell.detailTextLabel?.text = pet.medicalData?.surgerys[indexPath.row].data
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
             cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)

@@ -15,4 +15,5 @@ target 'Vida Pet' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger'
+  pod 'SCLAlertView'
 end

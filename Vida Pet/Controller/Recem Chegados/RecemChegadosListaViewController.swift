@@ -117,7 +117,7 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
         cell.petImage.layer.cornerRadius = 8.0
         cell.petImage.clipsToBounds = true
         cell.imageView?.contentMode = .scaleAspectFit
-        cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter).formatAge() ?? "")"
+        cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)?.formatAge() ?? "")"
         cell.petImage.contentMode = .scaleAspectFit
         cell.petImage.image = UIImage(data: selectedPet.dataImage!)?.squared()
         

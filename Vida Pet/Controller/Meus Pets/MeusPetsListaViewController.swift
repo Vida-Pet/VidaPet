@@ -30,11 +30,10 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setupNavBar()
-        requestMeusPets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateTableView()
+        requestMeusPets()
     }
     
     
@@ -59,7 +58,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         switch segue.identifier {
         case R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsDetalhes.identifier:
             if let destinationVC = segue.destination as? MeusPetsDetalheViewController, let indexPath = sender as? IndexPath{
-                destinationVC.pet = MeusPetsListaViewController.pets[indexPath.row]
+                destinationVC.pet = pets[indexPath.row]
                 destinationVC.selectedPetIndex = indexPath.row
             }
         case R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro.identifier: break
@@ -70,32 +69,48 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestMeusPets() {
-//        AF.request(APIRouter.getPets(type: .myPets))
-//            .responseDecodable { (response: AFDataResponse<Pets>) in
-//                switch response.result {
-//                case .success(let response):
-//                    self.pets = response
-//                    self.updateTableView()
-//                    
-//                case .failure(let error):
-//                    self.displayError(withText: error.localizedDescription)
-//                }
-//        }
         
+        self.loadingIndicator(.start)
+        
+        APIHelper.request(url: .pet, method: .get, headers: getHeadersToApi())
+            .responseJSON { response in
+                self.loadingIndicator(.stop)
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responsePets = try? JSONDecoder().decode(Pets.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestMeusPets() })
+                            return
+                        }
+                        
+                        self.pets = responsePets
+                        self.updateTableView()
+                    }
+                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                }
+            }
     }
     
     // MARK: Private Functions
     
+    private func getHeadersToApi() -> HTTPHeaders {
+        
+        return
+            HTTPHeaders(
+                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
+                HTTPHeader.init(name: "userId", value: "1")
+            )
+    }
+    
     private func updateTableView() {
         DispatchQueue.main.async { self.tableView.reloadData() }
-    }
-    
-    private func displayError() {
-        //TODO: Inplementar erro
-    }
-    
-    private func displayError(withText error: String) {
-        //TODO: Inplementar erro
     }
     
 }
@@ -107,19 +122,19 @@ extension MeusPetsListaViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MeusPetsListaViewController.pets.count
+        return pets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell, for: indexPath) else {
             return UITableViewCell()
         }
-        if let age = MeusPetsListaViewController.pets[indexPath.row].info.birth?.ageFromDate(withFormatter: defaultDateFormatter)
-           , let breed = MeusPetsListaViewController.pets[indexPath.row].info.breed {
+        if let age = pets[indexPath.row].info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)
+           , let breed = pets[indexPath.row].info.breed {
             cell.lblDescricao.text = "\(breed), \(age.formatAge())"
         }
-        cell.lblNome.text = MeusPetsListaViewController.pets[indexPath.row].name
-        cell.imgPet.image = MeusPetsListaViewController.pets[indexPath.row].image?.decodeBase64ToImage()
+        cell.lblNome.text = pets[indexPath.row].name
+        cell.imgPet.image = pets[indexPath.row].image?.decodeBase64ToImage()
         
         return cell
     }

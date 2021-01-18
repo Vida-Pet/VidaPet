@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialTextFields
 import Alamofire
+import SCLAlertView
 
 class MeusPetsCadastroViewController: VidaPetMainViewController {
     
@@ -43,6 +44,9 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     final let TAG_NEW_SURGERY_NAME = 77
     final let TAG_NEW_SURGERY_DATA = 66
     let noPetImagePlaceholder = "plus.viewfinder"
+    let defaultCameraIcon = {
+        UIImage(systemName: "camera.viewfinder")
+    }
     let defaultDateDivisor: Character = "/"
     var delegate: UIViewController?
     var editMode: Bool = false
@@ -54,6 +58,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         case VACCINES
         case SURGERYS
     }
+    var addButton: SCLButton?
     
     
     // MARK: LifeCicle
@@ -75,6 +80,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             setupEditMode()
         }
         configureTapGesture()
+        imgView.image = defaultCameraIcon()
     }
     
     
@@ -109,32 +115,31 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     
     
     @IBAction func clickSalvar(_ sender: UIButton) {
-        guard validateAllFields() else { return }
+        guard validateAllFields() else { presentInputError(); return }
         info = Info(coat: segmentPelagem.titleForSegment(at: segmentPelagem.selectedSegmentIndex),
                     gender: segmentSexo.titleForSegment(at: segmentSexo.selectedSegmentIndex),
                     size: segmentPorte.titleForSegment(at: segmentPorte.selectedSegmentIndex),
                     breed: txtRaca.text,
                     birth: txtData.text,
                     weight: peso)
-        pet = Pet(image: (imgView.image != nil) ? imgView.image!.encodeImageToBase64() : "",
+        pet = Pet(id: pet?.id, image: (imgView.image != nil && imgView.image != defaultCameraIcon()) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
                   description: txtDescription.text,
                   adoption: switchAdocao.isOn,
-                  info: info, medicalData: medicalData, user: PetUser(id: 1))
+                  info: info, medicalData: medicalData, user: pet?.user ?? PetUser(id: 1))
         
         if let newPet = pet {
             if editMode {
-                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
-                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
-                        petDetalhesVC.pet = safePet
-                        MeusPetsListaViewController.pets[safeIndex] = safePet
-                    }
-                    showSuccessPetEdited()
-                }
+//                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
+//                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
+//                        petDetalhesVC.pet = safePet
+//                        MeusPetsListaViewController.pets[safeIndex] = safePet
+//                    }
+//                    showSuccessPetEdited()
+//                }
+                requestEditPet(newPet)
             } else {
                 requestAddPet(newPet)
-                //                MeusPetsCadastroViewController.pets.append(newPet)
-                //                showSuccessPetAdded()
             }
         }
     }
@@ -142,55 +147,95 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestAddPet(_ pet: Pet) {
+        
+        loadingIndicator(.start)
+        
         APIHelper.request(url: .pet, method: .post, parameters: getParamsToApi(from: pet))
             .responseJSON { response in
                 
+                self.loadingIndicator(.stop)
+                
                 switch response.result {
-                case .success: break
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestAddPet(pet) })
+                    } else {
+                        self.showSuccessPetAdded()
+                    }
                     
-                case .failure(let error): break
-                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestAddPet(pet) })
                 }
                 
             }
     }
     
-    // MARK: Private Functions
-    
-    private func displayError() {
-        //TODO: Inplementar erro
+    func requestEditPet(_ pet: Pet) {
+        
+        loadingIndicator(.start)
+        
+        guard let id = pet.id else { self.displayError("", withTryAgain: { self.requestEditPet(pet) }); return }
+        
+        APIHelper.request(url: .pet, aditionalUrl: "/\(id)", method: .patch, parameters: getParamsToApi(from: pet))
+            .responseJSON { response in
+                
+                self.loadingIndicator(.stop)
+                
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestEditPet(pet) })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responsePet = try? JSONDecoder().decode(Pet.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestEditPet(pet) })
+                            return
+                        }
+                        
+                        if let petDetalhesVC = self.delegate as? MeusPetsDetalheViewController {
+                            petDetalhesVC.pet = responsePet
+                        }
+                        
+                        self.showSuccessPetEdited()
+                    }
+                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestEditPet(pet) })
+                }
+                
+            }
     }
     
-    private func displayError(withText error: String) {
-        //TODO: Inplementar erro
-    }
-    
-    // FUNCAO PADRÃO DE CONVERSÃO DE OBJETO PARA ENVIAR PARA O SERVIÇO!
     private func getParamsToApi(from pet: Pet) -> [String: Any] {
         
         var surgeries: [[String: Any]] = []
-        for s in pet.medicalData.surgerys {
-            var surgery: [String: Any] = [:]
-            surgery["data"] = s.data
-            surgery["name"] = s.nome
-            surgeries.append(surgery)
-        }
-        
         var vaccines: [[String: Any]] = []
-        for v in pet.medicalData.vaccines {
-            var vaccine: [String: Any] = [:]
-            vaccine["data"] = v.data
-            vaccine["name"] = v.nome
-            vaccines.append(vaccine)
+        if let medicalData = pet.medicalData {
+            for s in medicalData.surgerys {
+                var surgery: [String: Any] = [:]
+                surgery["data"] = s.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
+                surgery["name"] = s.nome
+                surgeries.append(surgery)
+            }
+            
+            for v in medicalData.vaccines {
+                var vaccine: [String: Any] = [:]
+                vaccine["data"] = v.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
+                vaccine["name"] = v.nome
+                vaccines.append(vaccine)
+            }
         }
         
         let finalPet: [String: Any] = [
             "adoption": pet.adoption as Any,
-            "dataImage": pet.dataImage as Any,
+            "dataImage": pet.image as Any,
             "description": pet.description as Any,
             "image": pet.image as Any,
+            "id": pet.id as Any,
             "info": [
-                "birth": pet.info.birth as Any,
+                "birth": pet.info.birth?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601 as Any,
                 "breed": pet.info.breed as Any,
                 "coat": pet.info.coat as Any,
                 "gender": pet.info.gender as Any,
@@ -201,7 +246,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                 "surgerys": surgeries,
                 "vaccines": vaccines
             ],
-            "name": "string",
+            "name": pet.name as Any,
             "user": [
                 "id": 1,
             ]
@@ -224,7 +269,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         txtDescription.text = pet?.description
         imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
         txtRaca.text = pet?.info.breed
-        txtData.text = pet?.info.birth
+        txtData.text = pet?.info.birth?.getDate(fromFormatter: Date.Formatter.iso8601)?.defaultDate
         txtPeso.text = pet?.info.weight != nil ? "\(String(pet!.info.weight!)) Kg" : ""
         peso = pet?.info.weight
         stepperPeso.value = pet?.info.weight ?? 0
@@ -238,44 +283,60 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func validateAllFields() -> Bool {
-        // TODO: validar campos...
-        return true
+        return
+            txtName.validateInput() &&
+            txtRaca.validateInput() &&
+            txtData.validateInput() &&
+            txtPeso.validateInput() &&
+            txtDescription.text != nil && txtDescription.text != ""
+    }
+    
+    private func presentInputError() {
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton( R.string.meusPetsCadastro.input_alert_button(), action: {})
+        alertView.showError(R.string.meusPetsCadastro.input_alert(), subTitle: "")
     }
     
     private func showSuccessPetAdded(){
-        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_add(), comment: ""), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.success_alert_button(), action: {
             self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        })
+        alertView.showSuccess(R.string.meusPetsCadastro.success_alert_title_add(), subTitle: R.string.meusPetsCadastro.success_alert_subtitle_add(), colorStyle: UInt(self.colorStyle))
+
     }
     
     private func showSuccessPetEdited(){
-        let alert: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_title_edit(), comment: ""), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let action: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.success_alert_button(), comment: ""), style: .default) { action -> Void in
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.success_alert_button(), action: {
             self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        })
+        alertView.showSuccess(R.string.meusPetsCadastro.success_alert_title_edit(), subTitle: R.string.meusPetsCadastro.success_alert_subtitle_edit(), colorStyle: UInt(self.colorStyle))
     }
     
     private func showImageActionSheet(){
-        let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_nova_imagem(), comment: ""), message: nil, preferredStyle: .actionSheet)
-        actionSheetController.view.tintColor = UIColor.black
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_cancelar(), comment: ""), style: .cancel)
-        let saveActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_camera(), comment: ""), style: .default) { action -> Void in
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_camera(), action: {
             self.imageFromCamera()
-        }
-        let deleteActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString(R.string.meusPetsCadastro.image_selector_galeria(), comment: ""), style: .default) { action -> Void in
+        })
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_galeria(), action: {
             self.imageFromGalery()
-        }
-        actionSheetController.addAction(cancelActionButton)
-        actionSheetController.addAction(saveActionButton)
-        actionSheetController.addAction(deleteActionButton)
-        self.present(actionSheetController, animated: true, completion: nil)
+        })
+        alertView.addButton(R.string.meusPetsCadastro.image_selector_cancelar(), action: {})
+        alertView.showInfo(R.string.meusPetsCadastro.image_selector_nova_imagem(), subTitle: "", colorStyle: UInt(self.colorStyle))
     }
     
     private func imageFromCamera() {
@@ -295,11 +356,18 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     }
     
     private func showAlertController(named title: String, withMessage message: String, withNamePlaceholder namePlaceholder: String, withNameTag nameTag: Int, andDateTag dateTag: Int, andType type: MedicalDataType) {
-        var textFieldNome = UITextField()
-        var textFieldData = UITextField()
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_cancelar(), style: .cancel, handler: nil)
-        let addAction = UIAlertAction(title: R.string.meusPetsCadastro.nova_adicionar(), style: .default) { (action) in
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        let textFieldNome = alertView.addTextField(namePlaceholder)
+        let textFieldData = alertView.addTextField(R.string.meusPetsCadastro.nova_data())
+        textFieldNome.delegate = self
+        textFieldNome.tag = nameTag
+        textFieldData.delegate = self
+        textFieldData.tag = dateTag
+        self.addButton = alertView.addButton(R.string.meusPetsCadastro.nova_adicionar(), action: {
             if let text = textFieldNome.text, let data = textFieldData.text {
                 switch type {
                 case .SURGERYS:
@@ -312,22 +380,10 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     return
                 }
             }
-        }
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        alert.addTextField { (field) in
-            textFieldNome = field
-            textFieldNome.placeholder = namePlaceholder
-            textFieldNome.tag = nameTag
-            textFieldNome.delegate = self
-        }
-        alert.addTextField { (field) in
-            textFieldData = field
-            textFieldData.placeholder = R.string.meusPetsCadastro.nova_data()
-            textFieldData.tag = dateTag
-            textFieldData.delegate = self
-        }
-        present(alert, animated: true, completion: nil)
+        })
+        addButton?.isEnabled = false
+        alertView.addButton(R.string.meusPetsCadastro.nova_cancelar(), action: {})
+        alertView.showEdit(title, subTitle: message, colorStyle: UInt(self.colorStyle))
     }
 }
 
@@ -401,13 +457,13 @@ extension MeusPetsCadastroViewController: UITextFieldDelegate {
         
         switch textField.tag {
         case TAG_NEW_SURGERY_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor, errorAction: { self.addButton?.isEnabled = false }, normalAction: { self.addButton?.isEnabled = true} )
         case TAG_NEW_VACCINE_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor, errorAction: { self.addButton?.isEnabled = false }, normalAction: { self.addButton?.isEnabled = true} )
         default:
             switch textField {
             case txtData:
-                return txtData.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+                return txtData.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
             default:
                 return true
             }

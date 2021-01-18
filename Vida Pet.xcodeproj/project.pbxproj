@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B08DBC625B525DB00DE63D1 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08DBC525B525DB00DE63D1 /* Date+.swift */; };
+		3B08DBD025B5321200DE63D1 /* main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B08DBCF25B5321200DE63D1 /* main.strings */; };
 		3B0B897225543A6C00033297 /* MeusPetsCadastro.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */; };
 		3B0B89B32554423D00033297 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B89B22554423D00033297 /* R.generated.swift */; };
 		3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B8A2A2554FC8C00033297 /* UITextField+.swift */; };
@@ -48,12 +50,12 @@
 		3BFE13B3255622BA003627C3 /* UISegmentControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */; };
 		4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */; };
 		4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */ = {isa = PBXBuildFile; fileRef = 4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */; };
+		65E1B252AD84E982B5BE09E0 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */; };
 		7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */; };
 		7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C593F255D62B9009D68A1 /* GradientView.swift */; };
 		7E0C5942255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */; };
 		7E0C5944255D6C20009D68A1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */; };
 		7E64FD93255AB80C009B2092 /* RandomPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E64FD92255AB80C009B2092 /* RandomPet.swift */; };
-		CC8E08209F68ED2661901BAF /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C84F61C14D5E1FF6B87B0E8 /* Pods_Vida_Pet.framework */; };
 		FE30F9BA255A307A00B59058 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30F9B9255A307A00B59058 /* UIImageView+.swift */; };
 		FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */; };
 		FE352AEB2554E49000D4E680 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE352AEA2554E49000D4E680 /* UserData.swift */; };
@@ -66,7 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C84F61C14D5E1FF6B87B0E8 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B08DBC525B525DB00DE63D1 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		3B08DBCF25B5321200DE63D1 /* main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = main.strings; sourceTree = "<group>"; };
 		3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MeusPetsCadastro.strings; sourceTree = "<group>"; };
 		3B0B89B22554423D00033297 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3B0B8A2A2554FC8C00033297 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "Vida Pet/Supporting Files/UITextField+.swift"; sourceTree = SOURCE_ROOT; };
@@ -110,13 +113,14 @@
 		3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControl+.swift"; sourceTree = "<group>"; };
 		4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.XIB; sourceTree = "<group>"; };
+		67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPLargeRoundedTableViewCell.xib; sourceTree = "<group>"; };
 		7E0C593F255D62B9009D68A1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPLargeRoundedTableViewCell.swift; sourceTree = "<group>"; };
 		7E0C5943255D6C1F009D68A1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		7E64FD92255AB80C009B2092 /* RandomPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPet.swift; sourceTree = "<group>"; };
-		CEC2AD599ACAB0C02ECABE49 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
-		ED0F14DF3E61977B17507C1F /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
+		B0A88DD2FD3A109F53FD20A7 /* Pods-Vida Pet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.debug.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.debug.xcconfig"; sourceTree = "<group>"; };
+		B7F0E39EA720D8B1BD6080BC /* Pods-Vida Pet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vida Pet.release.xcconfig"; path = "Target Support Files/Pods-Vida Pet/Pods-Vida Pet.release.xcconfig"; sourceTree = "<group>"; };
 		FE30F9B9255A307A00B59058 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		FE352ADE25548EB700D4E680 /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		FE352AEA2554E49000D4E680 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Perfil/UserData.swift; sourceTree = SOURCE_ROOT; };
@@ -133,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC8E08209F68ED2661901BAF /* Pods_Vida_Pet.framework in Frameworks */,
+				65E1B252AD84E982B5BE09E0 /* Pods_Vida_Pet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +147,18 @@
 		0A78D3C9317B40A7F94596B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CEC2AD599ACAB0C02ECABE49 /* Pods-Vida Pet.debug.xcconfig */,
-				ED0F14DF3E61977B17507C1F /* Pods-Vida Pet.release.xcconfig */,
+				B0A88DD2FD3A109F53FD20A7 /* Pods-Vida Pet.debug.xcconfig */,
+				B7F0E39EA720D8B1BD6080BC /* Pods-Vida Pet.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		0DB2B26BC1B75C9A13BF2A94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3B0B896B25543A1800033297 /* Strings */ = {
@@ -197,6 +209,7 @@
 				3B581AF3254518B9003E2A68 /* UIButton+.swift */,
 				FE30F9B9255A307A00B59058 /* UIImageView+.swift */,
 				3B94025E255F721E003AD1EA /* Double+.swift */,
+				3B08DBC525B525DB00DE63D1 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,7 +268,7 @@
 				3B695D062537E71300CE15AF /* Vida Pet */,
 				3B695D052537E71300CE15AF /* Products */,
 				0A78D3C9317B40A7F94596B8 /* Pods */,
-				6DE4AA6163DC3F0E173FAB6B /* Frameworks */,
+				0DB2B26BC1B75C9A13BF2A94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +303,7 @@
 				3BD59FEB253B719E005A5BB2 /* Recem Chegados */,
 				3BD59FEC253B71A5005A5BB2 /* Adote */,
 				3BD59FED253B71AA005A5BB2 /* Perfil */,
+				3B08DBCF25B5321200DE63D1 /* main.strings */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,14 +484,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6DE4AA6163DC3F0E173FAB6B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C84F61C14D5E1FF6B87B0E8 /* Pods_Vida_Pet.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FEB674AF25782BEE009B129C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,13 +499,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B695D182537E71500CE15AF /* Build configuration list for PBXNativeTarget "Vida Pet" */;
 			buildPhases = (
-				AE190CD7BF3374346DD2DF94 /* [CP] Check Pods Manifest.lock */,
+				1918A31C77433FF8C88EB394 /* [CP] Check Pods Manifest.lock */,
 				3B0B899825543F3600033297 /* ShellScript */,
 				3B695D002537E71300CE15AF /* Sources */,
 				3B695D012537E71300CE15AF /* Frameworks */,
 				3B695D022537E71300CE15AF /* Resources */,
-				E6E721D58D79A8FAB7897B4E /* [CP] Embed Pods Frameworks */,
-				F4D6A1A63E43DBFD8E135FB4 /* [CP] Copy Pods Resources */,
+				8C8E8BD4F16393B4936A7B4D /* [CP] Embed Pods Frameworks */,
+				93792B1CE1510C0DFFC2DCB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -559,6 +565,7 @@
 				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
 				FEBBF2A825B1E5B30016B9A2 /* user.json in Resources */,
 				3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */,
+				3B08DBD025B5321200DE63D1 /* main.strings in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
 				7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */,
@@ -569,26 +576,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B0B899825543F3600033297 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift\"\n    echo \"R.SWIFT GENERATED\"\n";
-		};
-		AE190CD7BF3374346DD2DF94 /* [CP] Check Pods Manifest.lock */ = {
+		1918A31C77433FF8C88EB394 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,7 +598,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6E721D58D79A8FAB7897B4E /* [CP] Embed Pods Frameworks */ = {
+		3B0B899825543F3600033297 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Vida Pet/Supporting Files/R.generated.swift\"\n    echo \"R.SWIFT GENERATED\"\n";
+		};
+		8C8E8BD4F16393B4936A7B4D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -627,7 +634,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vida Pet/Pods-Vida Pet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4D6A1A63E43DBFD8E135FB4 /* [CP] Copy Pods Resources */ = {
+		93792B1CE1510C0DFFC2DCB8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -664,6 +671,7 @@
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,
+				3B08DBC625B525DB00DE63D1 /* Date+.swift in Sources */,
 				FE352ADF25548EB700D4E680 /* EditarPerfilViewController.swift in Sources */,
 				3B584BCD253811D70090A779 /* AdoteListaViewController.swift in Sources */,
 				7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */,
@@ -826,7 +834,7 @@
 		};
 		3B695D192537E71500CE15AF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEC2AD599ACAB0C02ECABE49 /* Pods-Vida Pet.debug.xcconfig */;
+			baseConfigurationReference = B0A88DD2FD3A109F53FD20A7 /* Pods-Vida Pet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -846,7 +854,7 @@
 		};
 		3B695D1A2537E71500CE15AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED0F14DF3E61977B17507C1F /* Pods-Vida Pet.release.xcconfig */;
+			baseConfigurationReference = B7F0E39EA720D8B1BD6080BC /* Pods-Vida Pet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

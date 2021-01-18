@@ -1,0 +1,12 @@
+/* 
+  main.strings
+  Vida Pet
+
+  Created by João Pedro Giarrante on 18/01/21.
+  Copyright © 2021 João Pedro Giarrante. All rights reserved.
+*/
+
+"error_title" = "Atenção";
+"error_description" = "Ocorreu um erro";
+"error_cancel" = "Cancelar";
+"error_try_again" = "Tentar Novamente";

@@ -12,11 +12,11 @@ import Foundation
 
 // MARK: - Pet
 struct Pet: Codable {
-    var id: Int? 
+    var id: Int?
     var image, name, description: String?
     var adoption: Bool?
     var info: Info
-    var medicalData: MedicalData
+    var medicalData: MedicalData?
     var dataImage: Data?
     var user: PetUser
 
@@ -54,6 +54,10 @@ struct Vaccine: Codable {
 // MARK: - User
 struct PetUser: Codable {
     var id: Int
+    let bio: String? = nil
+    let isPublicProfile: Bool? = nil
+    let image: String? = nil
+    let name: String? = nil
 }
 
 typealias Pets = [Pet]

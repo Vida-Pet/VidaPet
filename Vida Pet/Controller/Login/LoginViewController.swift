@@ -33,27 +33,40 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     // MARK: - IBActions
     
     @IBAction func loginPressed(_ sender: Any) {
-        
+
         let error = ValidateFields.validateFieldsLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
-        
+
         if error != nil {
             showError(message: error!)
         } else {
-            
+
             if let email = emailTextField.text, let password = passwordTextField.text {
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                     if let e = error {
                         print(e)
                         self?.showError(message: R.string.login.invalid_email_pasword())
                     } else {
-                        self?.getUserID()
                         
-                        self?.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+                        
+                        APIHelper.request(url: .user, method: .post, parameters: self?.getParamsToApi(from: self!.userData))
+                            .responseJSON { response in
+                                
+                                switch response.result {
+                                case .success: break
+                                        
+                                    self?.mockSignIn(self)
+                                case .failure(let error): break
+                                    
+                                }
+                                
+                            }
                     }
                 }
             }
         }
     }
+    
+    
     
     @IBAction func mockSignIn(_ sender: Any) {
         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
@@ -156,9 +169,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
             return
         }
         self.getUserID()
-        let user = UserData(id: id, image: "", name: "Bruna", bio: "amo meus pets", isPublicProfile: true, state: "Rio Grande do Sul")
+        
        
-        requestUser()
+        
         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
     }
     
@@ -177,37 +190,32 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     // MARK: - Networking
     
-    func postUser(user : UserData){
+    private func getParamsToApi(from user: UserData) -> [String: Any] {
+    let finalUser: [String: Any] = [
         
+        "name" : userData.name as Any,
+        "image" : userData.image as Any,
+        "bio" : userData.bio as Any,
+        "isPublicProfile" : userData.isPublicProfile as Any,
+        "state" : userData.state as Any,
+        "uid" : userData.id as Any ]
         
-        let testeBruno: [String: Any] = [
-            "name" : userData.name,
-            "image" : userData.image,
-            "bio" : userData.bio,
-            "isPublicProfile" : userData.isPublicProfile,
-            "state" : userData.state,
-            "uid" : userData.id
-        ]
-        
-        AF.request("https://api-vida-pet.herokuapp.com/user", method: .post, parameters: testeBruno, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                print(response)
-            }
-    }
-
-    
-    func requestUser(){
-        AF.request(APIRouter.getUser(token: "123455"))
-            .responseDecodable { (response: AFDataResponse<[UserData]>) in
-                switch response.result {
-                case .success(let response):
-                    print("Getttt>>>>>>>>>>>>>")
-                   print(response)
-                    
-                case .failure(let error):
-                   print(error)
-                }
+        return finalUser
         }
+    
+    
+    func requestAddUser(_ user: UserData) {
+        APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success: break
+                    
+                case .failure(let error): break
+                    
+                }
+                
+            }
     }
 
     

@@ -11,7 +11,6 @@ typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
     
     let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-    let defaultDateFormatter: DateFormatter = DateFormatter()
     
     static var pets = [
         Pet(id: 1, image: images[0], name: "Rodolfo", description: "Rodolfo é top, ele é demais. Sério, puta dog top! Ele gosta muito de brincar de comer o sofá e sempre faz xixi no tapete... Adoro este cachorrinho sapeca!", adoption: false, info: Info(coat: "Curta", gender: "Macho", size: "Grande", breed: "Beagle", birth: "15/01/2007", weight: 9.0), medicalData: MedicalData(surgerys: [Surgery(nome: "Hérnia de disco", data: "04/09/2018"), Surgery(nome: "Castração", data: "01/10/2007")], vaccines: [Vaccine(nome: "Corona Virus Animal", data: "11/03/2013"), Vaccine(nome: "Raiva", data: "28/01/2015"), Vaccine(nome: "Múltiplas: V6 e V10", data: "12/10/2008")]), user: PetUser(id: 1)),
@@ -24,7 +23,6 @@ class VidaPetMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLoadingIndicator()
-        defaultDateFormatter.dateFormat = R.string.meusPetsCadastro.default_date_formater()
     }
     
 }
@@ -40,17 +38,18 @@ extension VidaPetMainViewController {
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.bringSubviewToFront(view)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func loadingIndicator(_ action: LoadingAction) {
         switch action {
         case .start:
             self.view.isUserInteractionEnabled = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             indicator.startAnimating()
             
         case .stop:
             self.view.isUserInteractionEnabled = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             indicator.stopAnimating()
             
         }
@@ -62,4 +61,24 @@ extension VidaPetMainViewController {
 enum LoadingAction {
     case start
     case stop
+}
+
+
+
+// MARK: - Errors
+
+extension VidaPetMainViewController {
+    
+    func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
+        print(error)
+        let alert = UIAlertController(title: R.string.main.error_title(), message: R.string.main.error_description(), preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        let tryAgain: UIAlertAction = UIAlertAction(title: R.string.main.error_try_again(), style: .default) { action -> Void in
+            tryAgainAction?()
+        }
+        let cancel: UIAlertAction = UIAlertAction(title: R.string.main.error_cancel(), style: .cancel)
+        alert.addAction(tryAgain)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

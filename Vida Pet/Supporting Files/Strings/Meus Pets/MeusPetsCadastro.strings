@@ -19,13 +19,9 @@
 "image_selector_cancelar" = "Cancelar";
 "image_selector_camera" = "Tirar Foto";
 "image_selector_galeria" = "Escolher da Galeria";
-"default_date_formater" = "dd/MM/yyyy";
 "error_wrong_date" = "Digite uma data válida";
 "success_alert_title_add" = "Pet foi adicionado com sucesso!";
 "success_alert_title_edit" = "Pet foi editado com sucesso!";
 "success_alert_button" = "OK";
-"try_again_failure_alert_button" = "Tentar Novamente";
-"cancel_failure_alert_button" = "Cancelar";
-"title_failure_alert" = "Ocorreu um erro";
 "input_alert_button" = "OK";
 "input_alert" = "Preencha todos os campos para salvar";

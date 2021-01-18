@@ -45,7 +45,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8J-b7-Zh4">
-                                                            <rect key="frame" x="178" y="51" width="158" height="40"/>
+                                                            <rect key="frame" x="178" y="51" width="145" height="40"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vks-QK-LY2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -56,16 +56,16 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oI8-pr-J4A">
-                                                                    <rect key="frame" x="60" y="0.0" width="98" height="40"/>
+                                                                    <rect key="frame" x="60" y="0.0" width="85" height="40"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bernardo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-7O-g3P">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="25.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-7O-g3P">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                             <color key="textColor" name="Vida Pet: Blue"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Bul Terier, 6 anos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-8a-RNW">
-                                                                            <rect key="frame" x="0.0" y="25.5" width="98" height="14.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-8a-RNW">
+                                                                            <rect key="frame" x="0.0" y="40" width="85" height="0.0"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" name="Vida Pet: Blue"/>
                                                                             <nil key="highlightedColor"/>
@@ -156,7 +156,7 @@
                                                         <rect key="frame" x="25" y="10" width="364" height="40"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-cx-yBi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="229" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="269" height="40"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y3D-Re-Nfe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -167,16 +167,16 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-0q-rbt">
-                                                                        <rect key="frame" x="60" y="0.0" width="169" height="40"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="209" height="40"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bernardo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="akj-fq-EzS">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="169" height="25.5"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="akj-fq-EzS">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="209" height="40"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                 <color key="textColor" name="Vida Pet: Blue"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Bul Terier, 6 anos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-Uy-TEj">
-                                                                                <rect key="frame" x="0.0" y="25.5" width="169" height="14.5"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-Uy-TEj">
+                                                                                <rect key="frame" x="0.0" y="40" width="209" height="0.0"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="Vida Pet: Blue"/>
                                                                                 <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rud-3t-hlm">
-                                                                <rect key="frame" x="284" y="0.0" width="80" height="40"/>
+                                                                <rect key="frame" x="324" y="0.0" width="40" height="40"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwE-os-TIo">
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -197,17 +197,6 @@
                                                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                                                         <connections>
                                                                             <action selector="clickEdit:" destination="PDa-ey-lcH" eventType="touchUpInside" id="XMj-MH-bdN"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-gv-D1i">
-                                                                        <rect key="frame" x="40" y="0.0" width="40" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="7rU-gv-D1i" secondAttribute="height" multiplier="1:1" id="O9t-BG-1LX"/>
-                                                                        </constraints>
-                                                                        <color key="tintColor" name="Vida Pet: Blue"/>
-                                                                        <state key="normal" image="trash.fill" catalog="system"/>
-                                                                        <connections>
-                                                                            <action selector="clickRemove:" destination="PDa-ey-lcH" eventType="touchUpInside" id="Q1w-pY-Y3M"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -544,6 +533,7 @@
                         <outlet property="heightCirurgias" destination="Y5R-HQ-mbv" id="SFY-FU-dKs"/>
                         <outlet property="heightVacinas" destination="oZJ-DS-Vq0" id="mfr-H1-bx8"/>
                         <outlet property="imgPet" destination="dxh-pf-SC9" id="UfN-lN-x6s"/>
+                        <outlet property="lblDadosMedicos" destination="iZY-Ej-6Ys" id="PG6-Xg-KW5"/>
                         <outlet property="lblDescricao" destination="Qmn-wn-PZh" id="3qK-ce-pAR"/>
                         <outlet property="lblIdade" destination="ihC-0T-y0D" id="uaC-Lf-wHQ"/>
                         <outlet property="lblMiniBio" destination="Ias-Uy-TEj" id="UdZ-1C-OWD"/>
@@ -553,6 +543,8 @@
                         <outlet property="lblPorte" destination="8A5-Uz-UeK" id="vwj-PA-5nf"/>
                         <outlet property="lblRaca" destination="6GF-Sa-TY3" id="BNU-Sx-YgJ"/>
                         <outlet property="lblSexo" destination="vRa-wM-I9D" id="0LK-76-Aep"/>
+                        <outlet property="lblTitleCirurgias" destination="XJf-KN-pCZ" id="swq-0e-1q1"/>
+                        <outlet property="lblTitleVacinas" destination="PnI-ml-YKE" id="dFD-Ci-BeK"/>
                         <outlet property="tableViewCirurgias" destination="Trv-SP-zGf" id="YEP-Os-559"/>
                         <outlet property="tableViewVacinas" destination="4Ld-ty-yKn" id="K7E-Yx-NuO"/>
                         <segue destination="B1t-hP-TC1" kind="show" identifier="MeusPetsDetalhesToMeusPetsCadastro" id="6SQ-XD-K7f"/>
@@ -1090,7 +1082,6 @@
         <image name="pet3" width="634" height="634"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
-        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="Vida Pet: Blue">
             <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

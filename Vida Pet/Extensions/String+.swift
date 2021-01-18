@@ -23,14 +23,21 @@ extension String {
         return UIImage(data: dataDecoded as Data)
     }
     
-    func ageFromDate(withFormatter formatter: DateFormatter) -> Double {
+    func ageFromDate(withFormatter formatter: DateFormatter) -> Double? {
         let secondsInYear = 31556926.0
         let birthday = formatter.date(from: self)
         let timeInterval = birthday?.timeIntervalSinceNow
-        return abs(Double(timeInterval! / secondsInYear))
+        if let interval = timeInterval {
+            return abs(Double(interval / secondsInYear))
+        } else {
+            return nil
+        }
+        
     }
     
     func getDate(fromFormatter formatter: DateFormatter) -> Date? {
         return formatter.date(from: self)
     }
+    
+    
 }

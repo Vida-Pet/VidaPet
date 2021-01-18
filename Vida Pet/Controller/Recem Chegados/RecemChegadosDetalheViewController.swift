@@ -50,7 +50,7 @@ class RecemChegadosDetalheViewController: VidaPetMainViewController {
             petSub.text = safePet.info.breed
             petDesc.text = safePet.description
             petRace.text = safePet.info.breed
-            petAge.text = safePet.info.birth?.ageFromDate(withFormatter: defaultDateFormatter).formatAge()
+            petAge.text = safePet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)?.formatAge()
             petWeight.text = "\(safePet.info.weight!) Kg"
             petCoat.text = safePet.info.coat
             petGender.text = safePet.info.gender

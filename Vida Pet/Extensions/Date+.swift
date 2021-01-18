@@ -18,6 +18,14 @@ extension Date {
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
             return formatter
         }()
+        
+        
+        static let defaultDate: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            return formatter
+        }()
     }
     var iso8601: String { return Formatter.iso8601.string(from: self) }
+    var defaultDate: String  { return Formatter.defaultDate.string(from: self) }
 }

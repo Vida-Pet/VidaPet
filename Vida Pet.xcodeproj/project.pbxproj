@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B08DBC625B525DB00DE63D1 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08DBC525B525DB00DE63D1 /* Date+.swift */; };
+		3B08DBD025B5321200DE63D1 /* main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B08DBCF25B5321200DE63D1 /* main.strings */; };
 		3B0B897225543A6C00033297 /* MeusPetsCadastro.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */; };
 		3B0B89B32554423D00033297 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B89B22554423D00033297 /* R.generated.swift */; };
 		3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B8A2A2554FC8C00033297 /* UITextField+.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		1C84F61C14D5E1FF6B87B0E8 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B08DBC525B525DB00DE63D1 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		3B08DBCF25B5321200DE63D1 /* main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = main.strings; sourceTree = "<group>"; };
 		3B0B897125543A6C00033297 /* MeusPetsCadastro.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MeusPetsCadastro.strings; sourceTree = "<group>"; };
 		3B0B89B22554423D00033297 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3B0B8A2A2554FC8C00033297 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "Vida Pet/Supporting Files/UITextField+.swift"; sourceTree = SOURCE_ROOT; };
@@ -290,6 +292,7 @@
 				3BD59FEB253B719E005A5BB2 /* Recem Chegados */,
 				3BD59FEC253B71A5005A5BB2 /* Adote */,
 				3BD59FED253B71AA005A5BB2 /* Perfil */,
+				3B08DBCF25B5321200DE63D1 /* main.strings */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				3B695D242537E8DB00CE15AF /* Adote.storyboard in Resources */,
 				3B265D8E2537ECBA009F1EE9 /* Navigation.storyboard in Resources */,
 				3B984345255A1440000DA748 /* EditarPerfil.strings in Resources */,
+				3B08DBD025B5321200DE63D1 /* main.strings in Resources */,
 				3B695D112537E71500CE15AF /* Assets.xcassets in Resources */,
 				3B695D262537E8E900CE15AF /* Perfil.storyboard in Resources */,
 				7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */,

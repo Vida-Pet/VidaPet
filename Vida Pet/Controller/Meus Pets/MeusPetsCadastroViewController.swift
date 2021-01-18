@@ -120,21 +120,22 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                     breed: txtRaca.text,
                     birth: txtData.text,
                     weight: peso)
-        pet = Pet(image: (imgView.image != nil && imgView.image != defaultCameraIcon()) ? imgView.image!.encodeImageToBase64() : "",
+        pet = Pet(id: pet?.id, image: (imgView.image != nil && imgView.image != defaultCameraIcon()) ? imgView.image!.encodeImageToBase64() : "",
                   name: txtName.text,
                   description: txtDescription.text,
                   adoption: switchAdocao.isOn,
-                  info: info, medicalData: medicalData, user: PetUser(id: 1))
+                  info: info, medicalData: medicalData, user: pet?.user ?? PetUser(id: 1))
         
         if let newPet = pet {
             if editMode {
-                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
-                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
-                        petDetalhesVC.pet = safePet
-                        MeusPetsListaViewController.pets[safeIndex] = safePet
-                    }
-                    showSuccessPetEdited()
-                }
+//                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
+//                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
+//                        petDetalhesVC.pet = safePet
+//                        MeusPetsListaViewController.pets[safeIndex] = safePet
+//                    }
+//                    showSuccessPetEdited()
+//                }
+                requestEditPet(newPet)
             } else {
                 requestAddPet(newPet)
             }
@@ -144,7 +145,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
     // MARK: Networking
     
     func requestAddPet(_ pet: Pet) {
-       
+        
         loadingIndicator(.start)
         
         APIHelper.request(url: .pet, method: .post, parameters: getParamsToApi(from: pet))
@@ -166,23 +167,51 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                 
             }
     }
-
+    
+    func requestEditPet(_ pet: Pet) {
+        
+        loadingIndicator(.start)
+        
+        guard let id = pet.id else { self.displayError("", withTryAgain: { self.requestEditPet(pet) }); return }
+        
+        APIHelper.request(url: .pet, aditionalUrl: "/\(id)", method: .patch, parameters: getParamsToApi(from: pet))
+            .responseJSON { response in
+                
+                self.loadingIndicator(.stop)
+                
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestEditPet(pet) })
+                    } else {
+                        self.showSuccessPetEdited()
+                    }
+                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestEditPet(pet) })
+                }
+                
+            }
+    }
+    
     private func getParamsToApi(from pet: Pet) -> [String: Any] {
         
         var surgeries: [[String: Any]] = []
-        for s in pet.medicalData.surgerys {
-            var surgery: [String: Any] = [:]
-            surgery["data"] = s.data?.getDate(fromFormatter: defaultDateFormatter)?.iso8601
-            surgery["name"] = s.nome
-            surgeries.append(surgery)
-        }
-        
         var vaccines: [[String: Any]] = []
-        for v in pet.medicalData.vaccines {
-            var vaccine: [String: Any] = [:]
-            vaccine["data"] = v.data?.getDate(fromFormatter: defaultDateFormatter)?.iso8601
-            vaccine["name"] = v.nome
-            vaccines.append(vaccine)
+        if let medicalData = pet.medicalData {
+            for s in medicalData.surgerys {
+                var surgery: [String: Any] = [:]
+                surgery["data"] = s.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
+                surgery["name"] = s.nome
+                surgeries.append(surgery)
+            }
+            
+            for v in medicalData.vaccines {
+                var vaccine: [String: Any] = [:]
+                vaccine["data"] = v.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
+                vaccine["name"] = v.nome
+                vaccines.append(vaccine)
+            }
         }
         
         let finalPet: [String: Any] = [
@@ -191,7 +220,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             "description": pet.description as Any,
             "image": pet.image as Any,
             "info": [
-                "birth": pet.info.birth?.getDate(fromFormatter: defaultDateFormatter)?.iso8601 as Any,
+                "birth": pet.info.birth?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601 as Any,
                 "breed": pet.info.breed as Any,
                 "coat": pet.info.coat as Any,
                 "gender": pet.info.gender as Any,
@@ -202,7 +231,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
                 "surgerys": surgeries,
                 "vaccines": vaccines
             ],
-            "name": "string",
+            "name": pet.name as Any,
             "user": [
                 "id": 1,
             ]
@@ -225,7 +254,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         txtDescription.text = pet?.description
         imgView.image = pet?.image?.decodeBase64ToImage() ?? UIImage.init(systemName: noPetImagePlaceholder)
         txtRaca.text = pet?.info.breed
-        txtData.text = pet?.info.birth
+        txtData.text = pet?.info.birth?.getDate(fromFormatter: Date.Formatter.iso8601)?.defaultDate
         txtPeso.text = pet?.info.weight != nil ? "\(String(pet!.info.weight!)) Kg" : ""
         peso = pet?.info.weight
         stepperPeso.value = pet?.info.weight ?? 0
@@ -252,21 +281,6 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         alert.view.tintColor = UIColor.black
         let action: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.input_alert_button(), style: .default)
         alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func displayError(_ error: String, withTryAgain tryAgainAction: EmptyClosure?) {
-        print(error)
-        let alert = UIAlertController(title: R.string.meusPetsCadastro.title_failure_alert(), message: nil, preferredStyle: .alert)
-        alert.view.tintColor = UIColor.black
-        let tryAgain: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.try_again_failure_alert_button(), style: .default) { action -> Void in
-            tryAgainAction?()
-        }
-        let cancel: UIAlertAction = UIAlertAction(title: R.string.meusPetsCadastro.cancel_failure_alert_button(), style: .cancel) { action -> Void in
-            
-        }
-        alert.addAction(tryAgain)
-        alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -429,13 +443,13 @@ extension MeusPetsCadastroViewController: UITextFieldDelegate {
         
         switch textField.tag {
         case TAG_NEW_SURGERY_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
         case TAG_NEW_VACCINE_DATA:
-            return textField.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+            return textField.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
         default:
             switch textField {
             case txtData:
-                return txtData.validateDate(string: string, range: range, dateFormatter: defaultDateFormatter, dateDivisor: defaultDateDivisor)
+                return txtData.validateDate(string: string, range: range, dateFormatter: Date.Formatter.defaultDate, dateDivisor: defaultDateDivisor)
             default:
                 return true
             }

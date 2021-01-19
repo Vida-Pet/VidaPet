@@ -86,19 +86,19 @@ class EditarPerfilViewController: VidaPetMainViewController {
         
         self.loadingIndicator(.start)
        
-        
-        let mockUid = "/mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
-        APIHelper.request(url: .user, aditionalUrl: mockUid, method: .patch, parameters: getParamsToApi(from: user))
+        APIHelper.request(url: .user, method: .patch, parameters: getParamsToApi(from: user))
             .responseJSON { response in
                 
                 switch response.result {
                 case .success:
                     if let error = response.error {
+                        
                         self.displayError(error.localizedDescription, withTryAgain: { self.pathUser(user) })
                        
                     } else {
-                        self.loadingIndicator(.stop)
-                        self.rightHandAction()
+                        print("pach com sucesso")
+                        _ = self.navigationController?.popViewController(animated: true)
+                        
                         
                        
                     }
@@ -126,28 +126,14 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     func saveButton(){
         
-       
+     
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
     }
     
     
     @objc func rightHandAction() {
-        bioUser = bio.text
-        name = userNameTextField.text
-        var mockUid = "/mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
-        if let _bio = bioUser, let _state = state, let _name = name{
-            
-            userData = UserData(uid: mockUid , bio: _bio, isPublicProfile: isPublicProfile ?? false, image: "", name: _name, state: _state)}
-        print("userpatch")
-        print(userData)
+        updateProfile()
         
-        if let _userData = userData {
-            pathUser(_userData)
-            print("userpatch")
-            print(_userData)
-        }
-        
-        _ = navigationController?.popViewController(animated: true)
     }
     
     
@@ -156,9 +142,18 @@ class EditarPerfilViewController: VidaPetMainViewController {
     // MARK: - Methods
     func updateProfile(){
         
+        bioUser = bio.text
+        name = userNameTextField.text
+        var mockUid = "mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
+        if let _bio = bioUser, let _state = state, let _name = name{
+            
+            userData = UserData(uid: mockUid , bio: _bio, isPublicProfile: isPublicProfile ?? false, image: "", name: _name, state: _state)}
+
         
-        
-    }
+        if let _userData = userData {
+            pathUser(_userData)
+        saveButton()
+        }}
     
     
     private func configureTapGesture(){

@@ -74,8 +74,8 @@ class PerfilViewController: VidaPetMainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == R.segue.perfilViewController.fromPerfilToEdit.identifier {
             let destinationVC = segue.destination as! EditarPerfilViewController
-            destinationVC.userName = userData?.name
-            destinationVC.uimage = userData?.image
+            destinationVC.name = userData?.name
+            destinationVC.image = userData?.image
         }
     }
     
@@ -96,7 +96,7 @@ class PerfilViewController: VidaPetMainViewController {
        
             
         
-        let mockUid = "/BV2ypQgX69fnKTqJ4Bb8G5U4swV2"
+        let mockUid = "/mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
         
         APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in

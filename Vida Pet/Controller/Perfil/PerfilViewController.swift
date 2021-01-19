@@ -93,7 +93,7 @@ class PerfilViewController: VidaPetMainViewController {
         
         let mockUid = "9L1cEYZ3hJYAbG4sKlFle4sqhL32"
         
-        APIHelper.request(url: .user, aditionalUrl: "/\(mockUid)", method: .get)
+        APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in
                 self.loadingIndicator(.stop)
                 switch response.result {
@@ -109,7 +109,7 @@ class PerfilViewController: VidaPetMainViewController {
                             self.displayError("", withTryAgain: { self.requestMyUser() })
                             return
                         }
-                        // responseUsers é um ARRAY de user! não um único user..
+
                         self.userData = responseUsers
                         print("responseUser\(responseUsers)")
                         print("user responseUser\(self.userData)")

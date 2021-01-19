@@ -23,13 +23,13 @@ import Foundation
 
 // MARK: - UserData
 struct UserData: Codable {
-    let uid: String?
-    let id: Int
-    let bio: String?
-    let isPublicProfile: Bool?
-    let image: String?
-    let name: String?
-    let state: String?
+    var uid: String?
+    var id: Int? = 0
+    var bio: String?
+    var isPublicProfile: Bool?
+    var image: String?
+    var name: String?
+    var state: String?
 }
 
 struct SimpleUser: Codable {

@@ -15,12 +15,15 @@ class WelcomeViewController: VidaPetMainViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
 
+    // MARK: - Properties
+    
+    var userName: String?
     
     // MARK: - Life Cicle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        userNameLabel.text = user.name ?? ""
+        userNameLabel.text = userName
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
             self.performSegue(withIdentifier: R.segue.welcomeViewController.segueToNavigation, sender: self)

@@ -91,7 +91,7 @@ class PerfilViewController: VidaPetMainViewController {
         
         self.loadingIndicator(.start)
         
-        let mockUid = "9L1cEYZ3hJYAbG4sKlFle4sqhL32"
+        let mockUid = "/9L1cEYZ3hJYAbG4sKlFle4sqhL32"
         
         APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in

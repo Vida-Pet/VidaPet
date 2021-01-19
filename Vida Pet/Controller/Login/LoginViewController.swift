@@ -22,7 +22,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     final let eyeButton = UIButton(type: .custom)
     final let defaultButtonCornerRadius: CGFloat = 5
     var userData : UserData?
- 
+    
     
     // MARK: - IBOutlets
     
@@ -35,13 +35,13 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     // MARK: - IBActions
     
     @IBAction func loginPressed(_ sender: Any) {
-
+        
         let error = ValidateFields.validateFieldsLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
-
+        
         if error != nil {
             showError(message: error!)
         } else {
-
+            
             if let email = emailTextField.text, let password = passwordTextField.text {
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                     if let e = error {
@@ -50,21 +50,21 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                     } else {
                         //TODO fazer o get do usuario
                         
-//                        let user = Auth.auth().currentUser
-//                        if let user = user {
-//                          // The user's ID, unique to the Firebase project.
-//                          // Do NOT use this value to authenticate with your backend server,
-//                          // if you have one. Use getTokenWithCompletion:completion: instead.
-//                          let uid = user.uid
-//                          let email = user.email
-//                          let photoURL = user.photoURL
-//                          var multiFactorString = "MultiFactor: "
-//                          for info in user.multiFactor.enrolledFactors {
-//                            multiFactorString += info.displayName ?? "[DispayName]"
-//                            multiFactorString += " "
-//                          }
-                       
-                            
+                        //                        let user = Auth.auth().currentUser
+                        //                        if let user = user {
+                        //                          // The user's ID, unique to the Firebase project.
+                        //                          // Do NOT use this value to authenticate with your backend server,
+                        //                          // if you have one. Use getTokenWithCompletion:completion: instead.
+                        //                          let uid = user.uid
+                        //                          let email = user.email
+                        //                          let photoURL = user.photoURL
+                        //                          var multiFactorString = "MultiFactor: "
+                        //                          for info in user.multiFactor.enrolledFactors {
+                        //                            multiFactorString += info.displayName ?? "[DispayName]"
+                        //                            multiFactorString += " "
+                        //                          }
+                        
+                        
                     }
                 }
             }
@@ -73,7 +73,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     
     
-   @IBAction func mockSignIn(_ sender: Any) {
+    @IBAction func mockSignIn(_ sender: Any) {
         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
     }
     
@@ -160,47 +160,43 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
             self.navigationController?.popViewController(animated: true)
         })
         alertView.showSuccess(R.string.login.cancel(), subTitle: R.string.login.cancel(), colorStyle: UInt(self.colorStyle))
-
+        
     }
     
     
     // MARK: - Methods
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
             if let error = error {
                 print(error.localizedDescription)
-                return
-            }
-            guard let auth = user.authentication else { return }
-            let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-            Auth.auth().signIn(with: credentials) { (authResult, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    print("Login Successful.")
-                    let user = Auth.auth().currentUser
-                    if let _user = user {
-                        let uid = _user.uid
-                        let name = _user.displayName
-                        
-                        //MARK: - BRUNA! :)
-                        self.userData = UserData(uid: uid, id: 1, bio: nil, isPublicProfile: false, image: "empty_user", name: name, state: nil)
-                    }
-
-                    if let newUser = self.userData {
-                        self.requestAddUser(newUser)
-            
+            } else {
+                print("Login Successful.")
+                let user = Auth.auth().currentUser
+                if let _user = user {
+                    let uida = _user.uid
+                    let name = _user.displayName
+                    
+                    self.userData = UserData(uid: uida,  bio: "", isPublicProfile: false, image: "empty_user", name: name, state: nil)
+                    
                 }
-            }
-        }
-    }
-        
+                if let newUser = self.userData {
+                    self.requestAddUser(newUser)
+                }}
+        }}
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == R.segue.loginViewController.welcomeVC.identifier {
             let destinationVC = segue.destination as! WelcomeViewController
-        
+            destinationVC.userName = userData?.name
         }
     }
     
@@ -210,20 +206,21 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     private func getParamsToApi(from user: UserData) -> [String: Any] {
         
-    let finalUser: [String: Any] = [
-        
-        "name" : userData?.name as Any,
-        "image" : userData?.image as Any,
-        "bio" : userData?.bio as Any,
-        "isPublicProfile" : userData?.isPublicProfile as Any,
-        "state" : userData?.state as Any,
-        "uid" : userData?.id as Any ]
+        let finalUser: [String: Any] = [
+            
+            "name" : userData?.name as Any,
+            "image" : userData?.image as Any,
+            "bio" : userData?.bio as Any,
+            "isPublicProfile" : userData?.isPublicProfile as Any,
+            "state" : userData?.state as Any,
+            "uid" : userData?.uid as Any ]
         
         return finalUser
-        }
+    }
     
     
     func requestAddUser(_ user: UserData) {
+        self.loadingIndicator(.start)
         APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
             .responseJSON { response in
                 
@@ -233,9 +230,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
                         print("deu erro")
                     } else {
+                        self.loadingIndicator(.stop)
                         print("user adicionado")
-//                        TODO arrumar as strings do alert
-                        self.showSuccessUserAdded()
+                        
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 case .failure(let error):
@@ -244,7 +241,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 
             }
     }
-
+    
     
     // MARK: - Alerts
     

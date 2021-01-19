@@ -91,7 +91,9 @@ class PerfilViewController: VidaPetMainViewController {
         
         self.loadingIndicator(.start)
         
-        APIHelper.request(url: .user, method: .get, headers: getHeadersToApi())
+        let mockUid = "9L1cEYZ3hJYAbG4sKlFle4sqhL32"
+        
+        APIHelper.request(url: .user, aditionalUrl: "/\(mockUid)", method: .get)
             .responseJSON { response in
                 self.loadingIndicator(.stop)
                 switch response.result {
@@ -102,14 +104,14 @@ class PerfilViewController: VidaPetMainViewController {
                     } else {
                         guard
                             let data = response.data,
-                            let responseUsers = try? JSONDecoder().decode([UserData].self, from: data)
+                            let responseUsers = try? JSONDecoder().decode(UserData.self, from: data)
                         else {
                             self.displayError("", withTryAgain: { self.requestMyUser() })
                             return
                         }
                         // responseUsers é um ARRAY de user! não um único user..
-                        self.userData = responseUsers[0]
-                        print("responseUser\(responseUsers[0])")
+                        self.userData = responseUsers
+                        print("responseUser\(responseUsers)")
                         print("user responseUser\(self.userData)")
                         self.upDateUserInfo()
                     }
@@ -120,17 +122,5 @@ class PerfilViewController: VidaPetMainViewController {
                 }
             }
     }
-    
-    // MARK: Private Functions
-    
-    private func getHeadersToApi() -> HTTPHeaders {
-        
-        return
-            HTTPHeaders(
-                arrayLiteral: HTTPHeader.init(name: "uid", value: "9L1cEYZ3hJYAbG4sKlFle4sqhL32"))
-                
-            
-    }
-
     
 }

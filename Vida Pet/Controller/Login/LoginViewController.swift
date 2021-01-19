@@ -181,7 +181,10 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                     if let _user = user {
                         let uid = _user.uid
                         let name = _user.displayName
-                        self.userData = UserData(id: uid, image: "empty_user", name: name, bio: "", isPublicProfile: false, state: "")}
+                        
+                        //MARK: - BRUNA! :)
+                        self.userData = UserData(uid: uid, id: 1, bio: nil, isPublicProfile: false, image: "empty_user", name: name, state: nil)
+                    }
 
                     if let newUser = self.userData {
                         self.requestAddUser(newUser)

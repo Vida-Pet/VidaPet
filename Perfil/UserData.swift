@@ -15,11 +15,21 @@ import Foundation
 //    var state: String
 //}
 
+//struct UserData: Codable {
+//    var id: Int
+//    var image, name, bio, uid, state: String?
+//    var isPublicProfile: Bool?
+//}
+
+// MARK: - UserData
 struct UserData: Codable {
-    var id: String?
-    var image,name,bio: String?
-    var isPublicProfile: Bool?
-    var state: String?
+    let uid: String?
+    let id: Int
+    let bio: String?
+    let isPublicProfile: Bool?
+    let image: String?
+    let name: String?
+    let state: String?
 }
 
 struct SimpleUser: Codable {

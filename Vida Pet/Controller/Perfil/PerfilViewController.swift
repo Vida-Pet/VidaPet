@@ -102,14 +102,14 @@ class PerfilViewController: VidaPetMainViewController {
                     } else {
                         guard
                             let data = response.data,
-                            let responseUser = try? JSONDecoder().decode(UserData.self, from: data)
+                            let responseUsers = try? JSONDecoder().decode([UserData].self, from: data)
                         else {
                             self.displayError("", withTryAgain: { self.requestMyUser() })
                             return
                         }
-                        
-                        self.userData = responseUser
-                        print("responseUser\(responseUser)")
+                        // responseUsers é um ARRAY de user! não um único user..
+                        self.userData = responseUsers[0]
+                        print("responseUser\(responseUsers[0])")
                         print("user responseUser\(self.userData)")
                         self.upDateUserInfo()
                     }

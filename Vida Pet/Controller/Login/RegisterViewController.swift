@@ -101,7 +101,11 @@ class RegisterViewController: VidaPetMainViewController {
                         if let _user = user {
                             let uid = _user.uid
                             
-                            self.userData = UserData(id: uid, image: "empty_user", name: self.nameTextField.text, bio: "", isPublicProfile: false, state: "")}
+                            //MARK: - BRUNA! :)
+                            self.userData = UserData(uid: uid, id: 1, bio: nil, isPublicProfile: false, image: "empty_user", name: self.nameTextField.text, state: nil)
+                        }
+                            
+//                            self.userData = UserData(uid: uid, id: 1, image: "empty_user", name: self.nameTextField.text, bio: "", state: "", isPublicProfile: false)}
 
                         if let newUser = self.userData {
                             self.requestAddUser(newUser)

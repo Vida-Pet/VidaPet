@@ -28,7 +28,7 @@ class RegisterViewController: VidaPetMainViewController {
     // MARK: - Properties
     
     final let loginButtonCornerRadius: CGFloat = 5
-    var userData : UserData?
+    var userDataa : UserData?
     
     // MARK: - Life Cycle
     
@@ -95,26 +95,23 @@ class RegisterViewController: VidaPetMainViewController {
                         self.showError(message: R.string.login.invalid_email_format())
                         
                     } else {
-                        //user was created successfully
-//                        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+                        print("Login Successful.")
                         let user = Auth.auth().currentUser
                         if let _user = user {
-                            let uid = _user.uid
-                            
-                            //MARK: - BRUNA! :)
-                            self.userData = UserData(uid: uid, id: 1, bio: nil, isPublicProfile: false, image: "empty_user", name: self.nameTextField.text, state: nil)
+                            let uida = _user.uid
+                
+                            self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, image: "empty_user", name: self.nameTextField.text, state: nil)
+                           
                         }
-                            
-//                            self.userData = UserData(uid: uid, id: 1, image: "empty_user", name: self.nameTextField.text, bio: "", state: "", isPublicProfile: false)}
-
-                        if let newUser = self.userData {
-                            self.requestAddUser(newUser)
                         
-                        }}
+                        if let newUser = self.userDataa {
+                            self.requestAddUser(newUser)
+                        }
+                    
                 }
             }
         }
-    
+    }
     
     
     // MARK: - Networking
@@ -123,12 +120,12 @@ class RegisterViewController: VidaPetMainViewController {
         
     let finalUser: [String: Any] = [
         
-        "name" : userData?.name as Any,
-        "image" : userData?.image as Any,
-        "bio" : userData?.bio as Any,
-        "isPublicProfile" : userData?.isPublicProfile as Any,
-        "state" : userData?.state as Any,
-        "uid" : userData?.id as Any ]
+        "name" : userDataa?.name as Any,
+        "image" : userDataa?.image as Any,
+        "bio" : userDataa?.bio as Any,
+        "isPublicProfile" : userDataa?.isPublicProfile as Any,
+        "state" : userDataa?.state as Any,
+        "uid" : userDataa?.uid as Any ]
         
         return finalUser
         }
@@ -142,10 +139,9 @@ class RegisterViewController: VidaPetMainViewController {
                 case .success:
                     if let error = response.error {
                         self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
-                        print("deu erro")
+                      
                     } else {
-                        print("user adicionado")
-//                        TODO arrumar as strings do alert
+                      
                         self.showSuccessUserAdded()
                         self.mockSignIn(self)
                     }
@@ -161,7 +157,8 @@ class RegisterViewController: VidaPetMainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == R.segue.registerViewController.registerWelcomeVC.identifier  {
-            _ = segue.destination
+           let destinationVC = segue.destination as! WelcomeViewController
+            destinationVC.userName = nameTextField.text
         }
     }
     

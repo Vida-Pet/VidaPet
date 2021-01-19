@@ -67,12 +67,15 @@ class PerfilViewController: VidaPetMainViewController {
     @objc
     func rightHandAction() {
         performSegue(withIdentifier: R.segue.perfilViewController.fromPerfilToEdit.identifier, sender: self)
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == R.segue.perfilViewController.fromPerfilToEdit.identifier {
-            _ = segue.destination as! EditarPerfilViewController
+            let destinationVC = segue.destination as! EditarPerfilViewController
+            destinationVC.userName = userData?.name
+            destinationVC.uimage = userData?.image
         }
     }
     
@@ -90,8 +93,10 @@ class PerfilViewController: VidaPetMainViewController {
     func requestMyUser() {
         
         self.loadingIndicator(.start)
+       
+            
         
-        let mockUid = "/9L1cEYZ3hJYAbG4sKlFle4sqhL32"
+        let mockUid = "/BV2ypQgX69fnKTqJ4Bb8G5U4swV2"
         
         APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in
@@ -99,7 +104,7 @@ class PerfilViewController: VidaPetMainViewController {
                 switch response.result {
                 case .success:
                     if let error = response.error {
-                        print("deu erro no 1")
+                        
                         self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
                     } else {
                         guard
@@ -111,16 +116,15 @@ class PerfilViewController: VidaPetMainViewController {
                         }
 
                         self.userData = responseUsers
-                        print("responseUser\(responseUsers)")
-                        print("user responseUser\(self.userData)")
+                      
                         self.upDateUserInfo()
                     }
                     
                 case .failure(let error):
-                    print("deu erro no get")
+                  
                     self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
                 }
             }
-    }
-    
-}
+        }}
+
+

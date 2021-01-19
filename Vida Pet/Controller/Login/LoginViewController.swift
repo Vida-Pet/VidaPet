@@ -22,7 +22,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     final let eyeButton = UIButton(type: .custom)
     final let defaultButtonCornerRadius: CGFloat = 5
     var userData : UserData?
-    
+    var getUID : String?
     
     // MARK: - IBOutlets
     
@@ -32,7 +32,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     
     
-    // MARK: - IBActions
+    // MARK: - IBAction LOGIN
     
     @IBAction func loginPressed(_ sender: Any) {
         
@@ -48,29 +48,14 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         print(e)
                         self?.showError(message: R.string.login.invalid_email_pasword())
                     } else {
-                        //TODO fazer o get do usuario
-                        
-                        //                        let user = Auth.auth().currentUser
-                        //                        if let user = user {
-                        //                          // The user's ID, unique to the Firebase project.
-                        //                          // Do NOT use this value to authenticate with your backend server,
-                        //                          // if you have one. Use getTokenWithCompletion:completion: instead.
-                        //                          let uid = user.uid
-                        //                          let email = user.email
-                        //                          let photoURL = user.photoURL
-                        //                          var multiFactorString = "MultiFactor: "
-                        //                          for info in user.multiFactor.enrolledFactors {
-                        //                            multiFactorString += info.displayName ?? "[DispayName]"
-                        //                            multiFactorString += " "
-                        //                          }
-                        
-                        
-                    }
-                }
-            }
-        }
+                        print("Login Successful.")
+                        let user = Auth.auth().currentUser
+                        if let _user = user {
+                            self?.getUID = _user.uid
+                        }
+                        self?.getUser()
     }
-    
+                }}}}
     
     
     @IBAction func mockSignIn(_ sender: Any) {
@@ -150,21 +135,8 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         passwordTextField.delegate = self
     }
     
-    private func showSuccessUserAdded(){
-        
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false
-        )
-        let alertView = SCLAlertView(appearance: appearance)
-        alertView.addButton(R.string.login.cancel(), action: {
-            self.navigationController?.popViewController(animated: true)
-        })
-        alertView.showSuccess(R.string.login.cancel(), subTitle: R.string.login.cancel(), colorStyle: UInt(self.colorStyle))
-        
-    }
+    // MARK: - Google SignIN
     
-    
-    // MARK: - Methods
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print(error.localizedDescription)
@@ -186,9 +158,9 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                     
                 }
                 if let newUser = self.userData {
-                    self.requestAddUser(newUser)
+                    self.postUser(newUser)
                 }}
-        }}
+            }}
     
     // MARK: - Navigation
     
@@ -219,7 +191,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     }
     
     
-    func requestAddUser(_ user: UserData) {
+    func postUser(_ user: UserData) {
         self.loadingIndicator(.start)
         APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
             .responseJSON { response in
@@ -227,20 +199,55 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 switch response.result {
                 case .success:
                     if let error = response.error {
-                        self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
-                        print("deu erro")
+                        self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
+                       
                     } else {
                         self.loadingIndicator(.stop)
-                        print("user adicionado")
+                       
                         
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 case .failure(let error):
-                    self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
+                    self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
                 }
                 
             }
     }
+    
+    func getUser() {
+        
+        self.loadingIndicator(.start)
+        if let _getUID = getUID {
+        let mockUid = "/\(_getUID)"
+        
+        APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
+            .responseJSON { response in
+                self.loadingIndicator(.stop)
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        print("deu erro no 1")
+                        self.displayError(error.localizedDescription, withTryAgain: { self.getUser() })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responseUsers = try? JSONDecoder().decode(UserData.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.getUser() })
+                            return
+                        }
+
+                        self.userData = responseUsers
+                        self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+                      
+                    }
+                    
+                case .failure(let error):
+                    print("deu erro no get")
+                    self.displayError(error.localizedDescription, withTryAgain: { self.getUser() })
+                }
+            }
+        }}
     
     
     // MARK: - Alerts

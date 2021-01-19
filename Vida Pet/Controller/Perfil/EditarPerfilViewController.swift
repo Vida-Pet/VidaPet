@@ -14,6 +14,10 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     final let numberOfComponents = 1
     var selectedState: String?
+    var userName : String?
+    var uimage : String?
+    
+    
     var userModel = UserModel()
     var userData : UserData!
     
@@ -81,7 +85,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     func setupFields(){
-//        self.userNameTextField.text = userModel.user.name
+        self.userNameTextField.text = userName
 //        self.estadoTextField.text = userModel.stateArray[24]
 //        self.bio.text = userModel.user.bio
     }

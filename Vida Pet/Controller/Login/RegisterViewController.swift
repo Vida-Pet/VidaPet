@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SCLAlertView
 
 // MARK: - VidaPetMainViewController
 
@@ -27,7 +28,7 @@ class RegisterViewController: VidaPetMainViewController {
     // MARK: - Properties
     
     final let loginButtonCornerRadius: CGFloat = 5
-    var userData : UserData!
+    var userData : UserData?
     
     // MARK: - Life Cycle
     
@@ -63,7 +64,22 @@ class RegisterViewController: VidaPetMainViewController {
         self.errorLabel.isHidden = true
     }
     
+    func mockSignIn(_ sender: Any) {
+        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+    }
     
+    private func showSuccessUserAdded(){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.login.cancel(), action: {
+            self.navigationController?.popViewController(animated: true)
+        })
+        alertView.showSuccess(R.string.login.cancel(), subTitle: R.string.login.cancel(), colorStyle: UInt(self.colorStyle))
+
+    }
     
     
     // MARK: - IBActions
@@ -71,14 +87,6 @@ class RegisterViewController: VidaPetMainViewController {
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
-//        if error != nil {
-//            showError(message: error!)
-//        } else {
-//            if let userName = nameTextField.text{
-//                userData.name = userName
-//                print(userData.name)
-//            }
-            
             
             if let email = emailTextField.text, let password = passwordTextField.text {
                 Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -88,13 +96,61 @@ class RegisterViewController: VidaPetMainViewController {
                         
                     } else {
                         //user was created successfully
-                        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
-                    }
+//                        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+                        let user = Auth.auth().currentUser
+                        if let _user = user {
+                            let uid = _user.uid
+                            
+                            self.userData = UserData(id: uid, image: "empty_user", name: self.nameTextField.text, bio: "", isPublicProfile: false, state: "")}
+
+                        if let newUser = self.userData {
+                            self.requestAddUser(newUser)
+                        
+                        }}
                 }
             }
         }
     
     
+    
+    // MARK: - Networking
+    
+    private func getParamsToApi(from user: UserData) -> [String: Any] {
+        
+    let finalUser: [String: Any] = [
+        
+        "name" : userData?.name as Any,
+        "image" : userData?.image as Any,
+        "bio" : userData?.bio as Any,
+        "isPublicProfile" : userData?.isPublicProfile as Any,
+        "state" : userData?.state as Any,
+        "uid" : userData?.id as Any ]
+        
+        return finalUser
+        }
+    
+    
+    func requestAddUser(_ user: UserData) {
+        APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
+                        print("deu erro")
+                    } else {
+                        print("user adicionado")
+//                        TODO arrumar as strings do alert
+                        self.showSuccessUserAdded()
+                        self.mockSignIn(self)
+                    }
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
+                }
+                
+            }
+    }
     
     // MARK: - Navigation
     

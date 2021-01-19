@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Alamofire
 
 class PerfilViewController: VidaPetMainViewController {
     
@@ -16,7 +17,7 @@ class PerfilViewController: VidaPetMainViewController {
     
     let emptyField: String = ""
     final let barButtonTitle = "Editar"
-    var user : UserData!
+    var userData : UserData?
     
     
     // MARK: - IBOutlets
@@ -48,12 +49,16 @@ class PerfilViewController: VidaPetMainViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        requestMyUser()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
         userImage.setupImage(image: userImage)
-//        upDateUserInfo()
+        
     }
     
     
@@ -72,17 +77,60 @@ class PerfilViewController: VidaPetMainViewController {
     }
     
     func upDateUserInfo(){
-        userNameLabel.text = user.name ?? emptyField
-//        userImage.image = UIImage(named: user.image ?? "empty_user")
-//        bioLabel.text = user.bio ?? "Bio"
-//        
-////        if let ownedPet = user.ownedPetsAmount {
-////            petsLabel.text = String(ownedPet)
-////        } else {
-////            petsLabel.text = "Voce ainda não adicionou um pet"
-////        }
-//        
-//        regiaoLabel.text = user.state ?? emptyField
+        userNameLabel.text = userData?.name
+        userImage.image = UIImage(named: userData?.image ?? "")
+        bioLabel.text = userData?.bio
+        regiaoLabel.text = userData?.state
         
     }
+    
+    
+    // MARK: - Networking
+    
+    func requestMyUser() {
+        
+        self.loadingIndicator(.start)
+        
+        APIHelper.request(url: .user, method: .get, headers: getHeadersToApi())
+            .responseJSON { response in
+                self.loadingIndicator(.stop)
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        print("deu erro no 1")
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responseUser = try? JSONDecoder().decode(UserData.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestMyUser() })
+                            return
+                        }
+                        
+                        self.userData = responseUser
+                        print("responseUser\(responseUser)")
+                        print("user responseUser\(self.userData)")
+                        self.upDateUserInfo()
+                    }
+                    
+                case .failure(let error):
+                    print("deu erro no get")
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
+                }
+            }
+    }
+    
+    // MARK: Private Functions
+    
+    private func getHeadersToApi() -> HTTPHeaders {
+        
+        return
+            HTTPHeaders(
+                arrayLiteral: HTTPHeader.init(name: "uid", value: "9L1cEYZ3hJYAbG4sKlFle4sqhL32"))
+                
+            
+    }
+
+    
 }

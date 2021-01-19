@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7WN-jy-XWH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7WN-jy-XWH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,16 +66,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJi-C1-hxZ">
-                                <rect key="frame" x="107" y="738" width="200" height="34"/>
+                                <rect key="frame" x="108" y="738" width="198.5" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novo por aqui? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngo-ZZ-Bbu">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIt-ju-aPH">
-                                        <rect key="frame" x="126" y="0.0" width="74" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIt-ju-aPH">
+                                        <rect key="frame" x="125.5" y="0.0" width="73" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Começar"/>
                                         <connections>
@@ -116,10 +118,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-B3-Nue">
                                 <rect key="frame" x="20" y="465" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfZ-vP-cow">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfZ-vP-cow">
                                 <rect key="frame" x="20" y="482" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Esqueci a senha"/>
@@ -127,7 +129,7 @@
                                     <action selector="forgotPasswordAlert:" destination="7WN-jy-XWH" eventType="touchUpInside" id="rSQ-t4-BBq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-RO-13B">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-RO-13B">
                                 <rect key="frame" x="140.5" y="546" width="133" height="50"/>
                                 <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
                                 <constraints>
@@ -143,6 +145,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0M0-tx-QZ3"/>
                         <color key="backgroundColor" name="Vida Pet: Blue"/>
                         <color key="tintColor" name="Vida Pet: White"/>
                         <constraints>
@@ -166,7 +169,6 @@
                             <constraint firstItem="MCj-AD-lI6" firstAttribute="centerX" secondItem="Z5y-bD-dB8" secondAttribute="centerX" id="vR2-04-RQY"/>
                             <constraint firstItem="5DF-RO-13B" firstAttribute="top" secondItem="tfZ-vP-cow" secondAttribute="bottom" constant="30" id="yZG-H4-8A4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0M0-tx-QZ3"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bu4-vs-Wk1"/>
                     <connections>
@@ -252,16 +254,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-LL-SaQ">
-                                <rect key="frame" x="103.5" y="818" width="207" height="34"/>
+                                <rect key="frame" x="104" y="818" width="206" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já tem uma conta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQw-wh-JDf">
-                                        <rect key="frame" x="0.0" y="0.0" width="153" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-Qo-2Af">
-                                        <rect key="frame" x="153" y="0.0" width="54" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-Qo-2Af">
+                                        <rect key="frame" x="152" y="0.0" width="54" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title=" Entrar"/>
                                         <connections>
@@ -273,11 +275,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="zNn-Yt-Ca4">
                                 <rect key="frame" x="20" y="559" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-ah-WaA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-ah-WaA">
                                 <rect key="frame" x="140.5" y="616" width="133" height="50"/>
                                 <color key="backgroundColor" name="Vida Pet: Dark Blue"/>
                                 <constraints>
@@ -293,6 +295,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bdo-qW-V0v"/>
                         <color key="backgroundColor" name="Vida Pet: Blue"/>
                         <color key="tintColor" name="Vida Pet: White"/>
                         <constraints>
@@ -309,7 +312,6 @@
                             <constraint firstItem="dml-ah-WaA" firstAttribute="top" secondItem="uNB-vZ-MoV" secondAttribute="bottom" constant="67" id="r2g-6k-sRZ"/>
                             <constraint firstItem="bdo-qW-V0v" firstAttribute="bottom" secondItem="jxy-LL-SaQ" secondAttribute="bottom" constant="10" id="tJ7-6u-XMm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bdo-qW-V0v"/>
                     </view>
                     <navigationItem key="navigationItem" id="BIr-3y-uXs"/>
                     <connections>
@@ -354,6 +356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nZH-Gm-08T"/>
                         <color key="backgroundColor" name="Vida Pet: Blue"/>
                         <constraints>
                             <constraint firstItem="OwI-Zb-LBV" firstAttribute="top" secondItem="nZH-Gm-08T" secondAttribute="top" constant="180" id="32e-yR-aZN"/>
@@ -363,7 +366,6 @@
                             <constraint firstItem="OwI-Zb-LBV" firstAttribute="leading" secondItem="nZH-Gm-08T" secondAttribute="leading" constant="40" id="kWT-wh-fgG"/>
                             <constraint firstItem="LXG-vm-2q2" firstAttribute="centerX" secondItem="zyW-kB-9bT" secondAttribute="centerX" id="zJO-OW-PyU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nZH-Gm-08T"/>
                     </view>
                     <navigationItem key="navigationItem" id="wPe-AO-WI8"/>
                     <connections>
@@ -376,6 +378,9 @@
             <point key="canvasLocation" x="2665" y="821"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="L3b-lm-adn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="googleLogo" width="30" height="30"/>
         <image name="loginImage" width="402" height="364"/>
@@ -388,8 +393,8 @@
         <namedColor name="Vida Pet: White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="L3b-lm-adn"/>
-    </inferredMetricsTieBreakers>
 </document>

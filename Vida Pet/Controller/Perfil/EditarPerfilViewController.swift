@@ -117,8 +117,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
             "bio" : userData?.bio as Any,
             "isPublicProfile" : userData?.isPublicProfile as Any,
             "state" : userData?.state as Any,
-            "uid" : userData?.uid as Any ]
-        
+            "uid" : userData?.uid as Any,
+            "id" : userData?.id as Any ]
         return finalUser
     }
     
@@ -144,12 +144,11 @@ class EditarPerfilViewController: VidaPetMainViewController {
         
         bioUser = bio.text
         name = userNameTextField.text
-        var mockUid = "mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
+        var mockUid = "bEtKiiOCYvcEyGMIcE5jmEIAa8b2"
         if let _bio = bioUser, let _state = state, let _name = name{
             
-            userData = UserData(uid: mockUid , bio: _bio, isPublicProfile: isPublicProfile ?? false, image: "", name: _name, state: _state)}
+            userData = UserData(uid: mockUid , id: 11, bio: _bio, isPublicProfile: isPublicProfile ?? false, image: "", name: _name, state: _state)}
 
-        
         if let _userData = userData {
             pathUser(_userData)
         saveButton()

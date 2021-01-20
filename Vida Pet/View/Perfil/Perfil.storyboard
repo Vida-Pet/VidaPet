@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cw-ya-aS1">
-                                <rect key="frame" x="20" y="231" width="374" height="81.5"/>
+                                <rect key="frame" x="30" y="210" width="354" height="81.5"/>
                                 <string key="text">Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum...... Amo animais, lorem ipsum......</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Vida Pet: Blue"/>
@@ -33,7 +33,7 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-XB-hKh">
-                                <rect key="frame" x="15" y="90" width="170.5" height="111"/>
+                                <rect key="frame" x="30" y="104" width="170.5" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Felipe Miranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-O4-XCy">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="30"/>
@@ -41,21 +41,9 @@
                                         <color key="textColor" name="Vida Pet: Blue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 cachorros, 1 gato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0m-Ap-3Qc">
-                                        <rect key="frame" x="0.0" y="40" width="145.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="Vida Pet: Blue"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="São Paulo, Brasil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-nX-pbS">
-                                        <rect key="frame" x="0.0" y="70.5" width="101" height="16"/>
+                                        <rect key="frame" x="0.0" y="40" width="101" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" name="Vida Pet: Blue"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrou em 08/10/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-r7-H2u">
-                                        <rect key="frame" x="0.0" y="96.5" width="126.5" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" name="Vida Pet: Blue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -90,23 +78,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="uBO-ij-LGU" secondAttribute="trailing" constant="20" id="0RE-PV-Rcl"/>
-                            <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="8Cw-ya-aS1" secondAttribute="trailing" constant="20" id="4TJ-1p-VIS"/>
+                            <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="8Cw-ya-aS1" secondAttribute="trailing" constant="30" id="4TJ-1p-VIS"/>
                             <constraint firstItem="uBO-ij-LGU" firstAttribute="top" secondItem="q1x-SQ-p6P" secondAttribute="bottom" constant="30" id="Anu-DQ-lJn"/>
                             <constraint firstItem="q1x-SQ-p6P" firstAttribute="centerX" secondItem="6pY-Qf-SQO" secondAttribute="centerX" id="B9W-zl-T1u"/>
                             <constraint firstItem="uBO-ij-LGU" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="20" id="FkF-ob-7I2"/>
-                            <constraint firstItem="8Cw-ya-aS1" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="20" id="QVK-cP-1HR"/>
+                            <constraint firstItem="8Cw-ya-aS1" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="30" id="QVK-cP-1HR"/>
                             <constraint firstItem="f2v-Gs-Ybz" firstAttribute="bottom" secondItem="uBO-ij-LGU" secondAttribute="bottom" constant="30" id="V58-WT-8aT"/>
-                            <constraint firstItem="ycb-XB-hKh" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="15" id="Yea-av-X4g"/>
-                            <constraint firstItem="ycb-XB-hKh" firstAttribute="top" secondItem="f2v-Gs-Ybz" secondAttribute="top" constant="46" id="k54-d2-erc"/>
-                            <constraint firstItem="8Cw-ya-aS1" firstAttribute="top" secondItem="ycb-XB-hKh" secondAttribute="bottom" constant="30" id="lfX-TD-aAw"/>
+                            <constraint firstItem="ycb-XB-hKh" firstAttribute="leading" secondItem="f2v-Gs-Ybz" secondAttribute="leading" constant="30" id="Yea-av-X4g"/>
+                            <constraint firstItem="ycb-XB-hKh" firstAttribute="top" secondItem="f2v-Gs-Ybz" secondAttribute="top" constant="60" id="k54-d2-erc"/>
+                            <constraint firstItem="8Cw-ya-aS1" firstAttribute="top" secondItem="ycb-XB-hKh" secondAttribute="bottom" constant="50" id="lfX-TD-aAw"/>
                             <constraint firstItem="gK2-oe-NQE" firstAttribute="top" secondItem="f2v-Gs-Ybz" secondAttribute="top" constant="46" id="pC9-B8-ugt"/>
                             <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="gK2-oe-NQE" secondAttribute="trailing" constant="20" id="swM-gy-YOv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bioLabel" destination="8Cw-ya-aS1" id="Oe2-6e-xHg"/>
-                        <outlet property="dateLabel" destination="EEe-r7-H2u" id="c7a-Lc-R9B"/>
-                        <outlet property="petsLabel" destination="b0m-Ap-3Qc" id="eSP-DM-Pal"/>
                         <outlet property="regiaoLabel" destination="Phz-nX-pbS" id="LYP-oJ-PNd"/>
                         <outlet property="userImage" destination="gK2-oe-NQE" id="WPk-Ah-Yz4"/>
                         <outlet property="userNameLabel" destination="jsB-O4-XCy" id="0fq-K8-Guh"/>

@@ -76,6 +76,8 @@ class PerfilViewController: VidaPetMainViewController {
             let destinationVC = segue.destination as! EditarPerfilViewController
             destinationVC.name = userData?.name
             destinationVC.image = userData?.image
+            destinationVC.state = userData?.state
+            destinationVC.bioUser = userData?.bio
         }
     }
     
@@ -96,7 +98,7 @@ class PerfilViewController: VidaPetMainViewController {
        
             
         
-        let mockUid = "/mnxX36vV7gYYWO0lO6AEzq3Ur8D2"
+        let mockUid = "/bEtKiiOCYvcEyGMIcE5jmEIAa8b2"
         
         APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in

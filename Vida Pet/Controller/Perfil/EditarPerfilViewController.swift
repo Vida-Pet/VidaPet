@@ -19,7 +19,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     var bioUser: String?
     var isPublicProfile: Bool = false
-    var image: String?
+    var image: UIImage?
     var name: String?
     var state: String?
     
@@ -30,10 +30,10 @@ class EditarPerfilViewController: VidaPetMainViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: VPRoundPlaceholderTextField!
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: VPMultilineRoundPlaceholderTextField!
-    
+
     
     // MARK: - IBActions
     
@@ -57,7 +57,9 @@ class EditarPerfilViewController: VidaPetMainViewController {
     override func viewDidLayoutSubviews() {
         
         super.viewDidLayoutSubviews()
+        
         userImage.setupImage(image: userImage)
+        
     }
     
     override func viewDidLoad() {
@@ -68,6 +70,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.createAndSetupPickerView()
         self.dismissAndClosePickerView()
         setupFields()
+        
+        userNameTextField.delegate = self
     }
     
     // MARK: - Networking
@@ -86,11 +90,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
                         self.displayError(error.localizedDescription, withTryAgain: { self.pathUser(user) })
                        
                     } else {
-                        print("pach com sucesso")
+                        
                         _ = self.navigationController?.popViewController(animated: true)
-                        
-                        
-                       
                     }
                 case .failure(let error):
                     self.displayError(error.localizedDescription, withTryAgain: { self.pathUser(user) })
@@ -112,35 +113,64 @@ class EditarPerfilViewController: VidaPetMainViewController {
         return finalUser
     }
     
-    // MARK: - Navigation
+    // MARK: - Methods
     
     func saveButton(){
-        
-     
+
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
-    }
     
+    }
     
     @objc func rightHandAction() {
-        updateProfile()
+        if self.validadeFields(){
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false
+            )
+            let alertView = SCLAlertView(appearance: appearance)
+            alertView.addButton(R.string.editarPerfil.ok(), action: {
+                self.navigationController?.popViewController(animated: true)
+                self.updateProfile()
+            })
+            alertView.showSuccess(R.string.editarPerfil.ok(), subTitle: R.string.editarPerfil.user_updated(), colorStyle: UInt(self.colorStyle))
         
+        }
+        else {
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false
+            )
+            let alertView = SCLAlertView(appearance: appearance)
+            alertView.addButton( R.string.editarPerfil.ok(), action: {})
+            alertView.showError(R.string.editarPerfil.user_error(), subTitle: "")
+        }
+    }
+    
+    func validadeFields() -> Bool{
+        if self.userNameTextField.text?.isEmpty ?? true {
+            return false
+        }
+        return true
     }
     
     
     
     
-    // MARK: - Methods
     func updateProfile(){
+//        image = decodeBase64ToImage()
         
+        image = userImage.image
+        let encodedImage = image
+        print("encodedImage \(encodedImage)")
         bioUser = bio.text
         name = userNameTextField.text
-        var mockUid = "bEtKiiOCYvcEyGMIcE5jmEIAa8b2"
-        if let _bio = bioUser, let _state = state, let _name = name{
+        var mockUid = "9L1cEYZ3hJYAbG4sKlFle4sqhL32"
+        if let _bio = bioUser, let _state = state, let _name = name, let _encodedImage = image?.encodeImageToBase64() {
             
-            userData = UserData(uid: mockUid , id: 11, bio: _bio, isPublicProfile: isPublicProfile ?? false, image: "", name: _name, state: _state)}
+            userData = UserData(uid: mockUid , id: 12, bio: _bio, isPublicProfile: isPublicProfile ?? false, image: _encodedImage, name: _name, state: _state)}
+        print ("userdata")
+        print(userData)
 
         if let _userData = userData {
-            pathUser(_userData)
+//            pathUser(_userData)
         saveButton()
         }}
     
@@ -155,6 +185,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.userNameTextField.text = name
         self.estadoTextField.text = state
         self.bio.text = bioUser
+      
     }
     
     
@@ -255,4 +286,20 @@ extension EditarPerfilViewController: UIPickerViewDelegate, UIPickerViewDataSour
         estadoTextField.text = userModel.stateArray[row]
        state = estadoTextField.text
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case self.userNameTextField:
+            self.estadoTextField.becomeFirstResponder()
+        case self.estadoTextField:
+            self.bio.becomeFirstResponder()
+        default:break
+        }
+        return true
+    }
+    
+    
 }
+
+

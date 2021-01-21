@@ -27,7 +27,7 @@ struct UserData: Codable {
     var id: Int? = 0
     var bio: String?
     var isPublicProfile: Bool?
-    var image: String?
+    var image: String? = nil
     var name: String?
     var state: String?
 }

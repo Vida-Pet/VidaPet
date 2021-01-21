@@ -18,7 +18,7 @@ class PerfilViewController: VidaPetMainViewController {
     let emptyField: String = ""
     final let barButtonTitle = "Editar"
     var userData : UserData?
-    
+    let emptyUserImage = "empty_user"
     
     // MARK: - IBOutlets
     
@@ -75,18 +75,20 @@ class PerfilViewController: VidaPetMainViewController {
         if segue.identifier == R.segue.perfilViewController.fromPerfilToEdit.identifier {
             let destinationVC = segue.destination as! EditarPerfilViewController
             destinationVC.name = userData?.name
-            destinationVC.image = userData?.image
+            destinationVC.image = userImage.image
             destinationVC.state = userData?.state
             destinationVC.bioUser = userData?.bio
         }
     }
     
+    
+    
     func upDateUserInfo(){
         userNameLabel.text = userData?.name
-        userImage.image = UIImage(named: userData?.image ?? "")
+        
         bioLabel.text = userData?.bio
         regiaoLabel.text = userData?.state
-        
+        userImage.image = userData?.image?.decodeBase64ToImage() ?? UIImage(named: emptyUserImage)
     }
     
     
@@ -98,7 +100,7 @@ class PerfilViewController: VidaPetMainViewController {
        
             
         
-        let mockUid = "/bEtKiiOCYvcEyGMIcE5jmEIAa8b2"
+        let mockUid = "/9L1cEYZ3hJYAbG4sKlFle4sqhL32"
         
         APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
             .responseJSON { response in

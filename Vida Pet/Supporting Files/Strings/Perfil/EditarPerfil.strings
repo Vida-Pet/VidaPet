@@ -16,3 +16,5 @@
 "galery_access" = "Você não tem acesso a galeria";
 "picker_state" = "Escolha seu estado";
 "bar_button_title" = "Salvar";
+"user_updated" = "Usuário atualizado com sucesso";
+"user_error" = "O nome não pode ficar em branco";

@@ -154,7 +154,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                     let uida = _user.uid
                     let name = _user.displayName
                     
-                    self.userData = UserData(uid: uida,  bio: "", isPublicProfile: false, image: "empty_user", name: name, state: nil)
+                    self.userData = UserData(uid: uida,  bio: "", isPublicProfile: false, name: name, state: nil)
                     
                 }
                 if let newUser = self.userData {
@@ -210,7 +210,6 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 case .failure(let error):
                     self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
                 }
-                
             }
     }
     

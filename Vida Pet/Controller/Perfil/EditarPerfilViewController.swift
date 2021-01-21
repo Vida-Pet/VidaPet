@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class EditarPerfilViewController: VidaPetMainViewController {
     
@@ -47,19 +48,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     @IBAction func imagePressed(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: R.string.editarPerfil.image_title(), message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: R.string.editarPerfil.image_option_camera(), style: .default, handler: { _ in
-            self.openCamera()
-        }))
-        
-        alert.addAction(UIAlertAction(title: R.string.editarPerfil.image_option_galery(), style: .default, handler: { _ in
-            self.openGallery()
-        }))
-        
-        alert.addAction(UIAlertAction.init(title: R.string.editarPerfil.cancel(), style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        selectImage()
+  
     }
     
     // MARK: - Life Cycles
@@ -161,8 +151,6 @@ class EditarPerfilViewController: VidaPetMainViewController {
     }
     
     
-
-    
     func setupFields(){
         self.userNameTextField.text = name
         self.estadoTextField.text = state
@@ -170,39 +158,35 @@ class EditarPerfilViewController: VidaPetMainViewController {
     }
     
     
-    func openCamera() {
-        
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: R.string.editarPerfil.warning(), message: R.string.editarPerfil.camera_access(), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: R.string.editarPerfil.ok(), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+    private func selectImage(){
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.editarPerfil.image_option_camera(), action: {
+            self.imageFromCamera()
+        })
+        alertView.addButton(R.string.editarPerfil.image_option_galery(), action: {
+            self.imageFromGalery()
+        })
+        alertView.addButton(R.string.editarPerfil.cancel(), action: {})
+        alertView.showInfo(R.string.editarPerfil.image_title(), subTitle: "", colorStyle: UInt(self.colorStyle))
     }
     
+    private func imageFromCamera() {
+        let myPickerControllerCamera = UIImagePickerController()
+        myPickerControllerCamera.delegate = self
+        myPickerControllerCamera.sourceType = UIImagePickerController.SourceType.camera
+        myPickerControllerCamera.allowsEditing = true
+        self.present(myPickerControllerCamera, animated: true, completion: nil)
+    }
     
-    func openGallery() {
-        
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: R.string.editarPerfil.warning(), message: R.string.editarPerfil.galery_access(), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: R.string.editarPerfil.ok(), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+    private func imageFromGalery() {
+        let myPickerControllerGallery = UIImagePickerController()
+        myPickerControllerGallery.delegate = self
+        myPickerControllerGallery.sourceType = UIImagePickerController.SourceType.photoLibrary
+        myPickerControllerGallery.allowsEditing = true
+        self.present(myPickerControllerGallery, animated: true, completion: nil)
     }
     
     

@@ -6,7 +6,7 @@
   Copyright © 2020 João Pedro Giarrante. All rights reserved.
 */
 
-"image_title" = "Trocar a foto de perfil";
+"image_title" = "Alterar foto do perfil";
 "image_option_camera" = "Tirar foto";
 "image_option_galery" = "Galeria";
 "cancel" = "Cancelar";

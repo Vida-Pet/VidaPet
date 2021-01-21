@@ -902,10 +902,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.main` struct is generated, and contains static references to 4 localization keys.
+    /// This `R.string.main` struct is generated, and contains static references to 5 localization keys.
     struct main {
       /// Value: Atenção
       static let error_title = Rswift.StringResource(key: "error_title", tableName: "main", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Bem vindo novamente!
+      static let welcomeBack = Rswift.StringResource(key: "welcomeBack", tableName: "main", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancelar
       static let error_cancel = Rswift.StringResource(key: "error_cancel", tableName: "main", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ocorreu um erro
@@ -924,6 +926,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("error_title", tableName: "main", bundle: bundle, comment: "")
+      }
+
+      /// Value: Bem vindo novamente!
+      static func welcomeBack(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("welcomeBack", tableName: "main", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "main", preferredLanguages: preferredLanguages) else {
+          return "welcomeBack"
+        }
+
+        return NSLocalizedString("welcomeBack", tableName: "main", bundle: bundle, comment: "")
       }
 
       /// Value: Cancelar

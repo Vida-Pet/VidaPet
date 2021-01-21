@@ -22,7 +22,7 @@ class WelcomeViewController: VidaPetMainViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         userNameLabel.text = user.user.name
-        userWelcomeLabel.text = R.main.welcomeBack()
+        userWelcomeLabel.text = R.string.main.welcomeBack()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
             self.performSegue(withIdentifier: R.segue.welcomeViewController.segueToNavigation, sender: self)

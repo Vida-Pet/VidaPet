@@ -21,21 +21,24 @@ class PerfilViewController: VidaPetMainViewController {
     var userModel = UserModel()
     final let barButtonTitle = "Editar"
     
-        
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        upDateUserInfo()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = R.color.vidaPetBlue()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .done, target: self, action: #selector(rightHandAction))
-       
         
         userImage.setupImage(image: userImage)
-        upDateUserInfo()
-            }
+    }
     
     @objc
     func rightHandAction() {
@@ -56,9 +59,9 @@ class PerfilViewController: VidaPetMainViewController {
         userNameLabel.text = userModel.user.name
         userImage.image = UIImage(named: userModel.user.image ?? "")
         bioLabel.text = userModel.user.bio
-//        petsLabel.text = userModel.user.ownedPetsIds
-//        dateLabel.text = userModel.user.date
-    
+        //        petsLabel.text = userModel.user.ownedPetsIds
+        //        dateLabel.text = userModel.user.date
+        
     }
     
     @IBAction func logOutButton(_ sender: UIButton) {

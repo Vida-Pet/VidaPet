@@ -13,6 +13,8 @@ class AdoteListaViewController: VidaPetMainViewController {
 
     // MARK: Properties
     
+    var pets: Pets = []
+    
     final let defaultCornerRadius: CGFloat = 5
     final let defaultNumberOfCollumns: CGFloat = 2
     final let defaultCardSpaces: CGFloat = 15
@@ -40,6 +42,7 @@ class AdoteListaViewController: VidaPetMainViewController {
                           duration: 0.35,
                           options: .transitionCrossDissolve,
                           animations: { self.cvPets.reloadData() })
+        requestMeusPets()
     }
     
     
@@ -55,6 +58,39 @@ class AdoteListaViewController: VidaPetMainViewController {
         }
     }
     
+    func requestMeusPets() {
+        
+        self.loadingIndicator(.start)
+        
+        APIHelper.request(url: .pet,aditionalUrl: "?adoption=true" ,method: .get)
+            .responseJSON { response in
+                self.loadingIndicator(.stop)
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responsePets = try? JSONDecoder().decode(Pets.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestMeusPets() })
+                            return
+                        }
+                        
+                        self.pets = responsePets
+                        print(self.pets)
+                    }
+                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                }
+            }
+    }
+    
+    private func updateTableView() {
+        DispatchQueue.main.async { self.cvPets.reloadData() }
+    }
 }
 
 
@@ -64,15 +100,16 @@ class AdoteListaViewController: VidaPetMainViewController {
 extension AdoteListaViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MeusPetsListaViewController.pets.count * mockCellCountMultiplier
+        return self.pets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = cvPets.dequeueReusableCell(withReuseIdentifier: R.nib.vpCardCollectionViewCell.identifier, for: indexPath) as! VPCardCollectionViewCell
         
-        cell.imgPet.image = MeusPetsListaViewController.pets[mockCellIndex[indexPath.row]].image?.decodeBase64ToImage()
-        cell.lbName.text = MeusPetsListaViewController.pets[mockCellIndex[indexPath.row]].name
-        cell.lbAddress.text = MeusPetsListaViewController.pets[mockCellIndex[indexPath.row]].info.size
+        cell.imgPet.image = self.pets[indexPath.row].image?.decodeBase64ToImage()
+        cell.lbName.text = self.pets[indexPath.row].name
+        cell.lbAddress.text = self.pets[indexPath.row].info.size
         cell.layer.cornerRadius = defaultCornerRadius
         
         cell.widthConstant.constant = cellWidth

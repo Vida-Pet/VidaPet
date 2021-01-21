@@ -8,11 +8,28 @@
 
 import Foundation
 
-struct User: Codable {
-    var id: Int?
-    var image,name,bio: String?
+//// MARK: - WelcomeElement
+//struct UserData: Codable {
+//    var id, image, name, bio: String
+//    var ownedPetsAmount: Int
+//    var state: String
+//}
+
+//struct UserData: Codable {
+//    var id: Int
+//    var image, name, bio, uid, state: String?
+//    var isPublicProfile: Bool?
+//}
+
+// MARK: - UserData
+struct UserData: Codable {
+    var uid: String?
+    var id: Int? = 0
+    var bio: String?
     var isPublicProfile: Bool?
-    var ownedPetsIds: [Int]?
+    var image: String? = nil
+    var name: String?
+    var state: String?
 }
 
 struct SimpleUser: Codable {
@@ -22,7 +39,6 @@ struct SimpleUser: Codable {
         self.id = id
     }
 }
-
 
 
 

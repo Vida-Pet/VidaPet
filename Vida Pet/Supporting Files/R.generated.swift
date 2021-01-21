@@ -390,7 +390,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 10 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `beagle`.
     static let beagle = Rswift.ImageResource(bundle: R.hostingBundle, name: "beagle")
@@ -398,6 +398,8 @@ struct R: Rswift.Validatable {
     static let bullDog = Rswift.ImageResource(bundle: R.hostingBundle, name: "bullDog")
     /// Image `claw_icon`.
     static let claw_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "claw_icon")
+    /// Image `empty_user`.
+    static let empty_user = Rswift.ImageResource(bundle: R.hostingBundle, name: "empty_user")
     /// Image `eyeclosed`.
     static let eyeclosed = Rswift.ImageResource(bundle: R.hostingBundle, name: "eyeclosed")
     /// Image `eyeopen`.
@@ -431,6 +433,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "claw_icon", bundle: ..., traitCollection: ...)`
     static func claw_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.claw_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "empty_user", bundle: ..., traitCollection: ...)`
+    static func empty_user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.empty_user, compatibleWith: traitCollection)
     }
     #endif
 
@@ -575,8 +584,10 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
-    /// This `R.string.editarPerfil` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.editarPerfil` struct is generated, and contains static references to 12 localization keys.
     struct editarPerfil {
+      /// Value: Alterar foto do perfil
+      static let image_title = Rswift.StringResource(key: "image_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Aviso
       static let warning = Rswift.StringResource(key: "warning", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancelar
@@ -585,18 +596,33 @@ struct R: Rswift.Validatable {
       static let picker_state = Rswift.StringResource(key: "picker_state", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Galeria
       static let image_option_galery = Rswift.StringResource(key: "image_option_galery", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: O nome não pode ficar em branco
+      static let user_error = Rswift.StringResource(key: "user_error", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Salvar
       static let bar_button_title = Rswift.StringResource(key: "bar_button_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Tirar foto
       static let image_option_camera = Rswift.StringResource(key: "image_option_camera", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Trocar a foto de perfil
-      static let image_title = Rswift.StringResource(key: "image_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Usuário atualizado com sucesso
+      static let user_updated = Rswift.StringResource(key: "user_updated", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Você não tem acesso a câmera
       static let camera_access = Rswift.StringResource(key: "camera_access", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Você não tem acesso a galeria
       static let galery_access = Rswift.StringResource(key: "galery_access", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Alterar foto do perfil
+      static func image_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "image_title"
+        }
+
+        return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
 
       /// Value: Aviso
       static func warning(preferredLanguages: [String]? = nil) -> String {
@@ -650,6 +676,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("image_option_galery", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
+      /// Value: O nome não pode ficar em branco
+      static func user_error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("user_error", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "user_error"
+        }
+
+        return NSLocalizedString("user_error", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
       /// Value: Ok
       static func ok(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -689,17 +728,17 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("image_option_camera", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
-      /// Value: Trocar a foto de perfil
-      static func image_title(preferredLanguages: [String]? = nil) -> String {
+      /// Value: Usuário atualizado com sucesso
+      static func user_updated(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("user_updated", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
-          return "image_title"
+          return "user_updated"
         }
 
-        return NSLocalizedString("image_title", tableName: "EditarPerfil", bundle: bundle, comment: "")
+        return NSLocalizedString("user_updated", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
       /// Value: Você não tem acesso a câmera

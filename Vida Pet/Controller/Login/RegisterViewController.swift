@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SCLAlertView
 
 // MARK: - VidaPetMainViewController
 
 class RegisterViewController: VidaPetMainViewController {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,12 +25,12 @@ class RegisterViewController: VidaPetMainViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
-    // MARK: Properties
+    // MARK: - Properties
     
     final let loginButtonCornerRadius: CGFloat = 5
+    var userDataa : UserData?
     
-    
-    // MARK: Life Cicle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +40,11 @@ class RegisterViewController: VidaPetMainViewController {
         setUpElements()
         passwordTextField.enablePasswordToggle()
         confirmPasswordTextField.enablePasswordToggle()
-
+        
     }
     
     
-    // MARK: Setup
+    // MARK: - Setup
     
     private func configureTapGesture(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -63,59 +64,115 @@ class RegisterViewController: VidaPetMainViewController {
         self.errorLabel.isHidden = true
     }
     
+    func mockSignIn(_ sender: Any) {
+        self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+    }
+    
+    private func showSuccessUserAdded(){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(R.string.login.cancel(), action: {
+            self.navigationController?.popViewController(animated: true)
+        })
+        alertView.showSuccess(R.string.login.cancel(), subTitle: R.string.login.cancel(), colorStyle: UInt(self.colorStyle))
 
+    }
     
     
-    // MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
-      
-        
-        if error != nil {
-            showError(message: error!)
-        } else {
-            if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-               
             
+            if let email = emailTextField.text, let password = passwordTextField.text {
+                Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+                    
+                    if let _error = error {
+                        self.showError(message: R.string.login.invalid_email_format())
+                        
+                    } else {
+                        print("Login Successful.")
+                        let user = Auth.auth().currentUser
+                        if let _user = user {
+                            let uida = _user.uid
                 
-                if let _error = error {
-                    self.showError(message: R.string.login.invalid_email_format())
-                  
-                } else {
-                    //user was created successfully
-                    self.performSegue(withIdentifier: R.segue.registerViewController.registerWelcomeVC, sender: self)
+                            self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, name: self.nameTextField.text, state: nil)
+                           
+                        }
+                        
+                        if let newUser = self.userDataa {
+                            self.requestAddUser(newUser)
+                        }
                     
                 }
-            }
             }
         }
     }
     
     
-    // MARK: Navigation
+    // MARK: - Networking
+    
+    private func getParamsToApi(from user: UserData) -> [String: Any] {
+        
+    let finalUser: [String: Any] = [
+        
+        "name" : userDataa?.name as Any,
+        "image" : userDataa?.image as Any,
+        "bio" : userDataa?.bio as Any,
+        "isPublicProfile" : userDataa?.isPublicProfile as Any,
+        "state" : userDataa?.state as Any,
+        "uid" : userDataa?.uid as Any ]
+        
+        return finalUser
+        }
+    
+    
+    func requestAddUser(_ user: UserData) {
+        APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
+                      
+                    } else {
+                      
+                        self.showSuccessUserAdded()
+                        self.mockSignIn(self)
+                    }
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
+                }
+                
+            }
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == R.segue.registerViewController.registerWelcomeVC.identifier  {
-            _ = segue.destination
+           let destinationVC = segue.destination as! WelcomeViewController
+            destinationVC.userName = nameTextField.text
         }
     }
     
     
-    // MARK: Alerts
+    // MARK: - Alerts
     
     func showError( message: String){
         errorLabel.text = message
         errorLabel.isHidden = false
     }
-    
 }
 
 
-// MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

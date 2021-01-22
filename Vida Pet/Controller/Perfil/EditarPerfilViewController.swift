@@ -46,6 +46,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userImage.image = image
+        userImage.setupImage(image: userImage)
     }
     
     override func viewDidLoad() {
@@ -115,6 +116,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
             )
             let alertView = SCLAlertView(appearance: appearance)
             alertView.addButton(R.string.editarPerfil.ok(), action: {
+                alertView.dismiss(animated: true, completion: nil)
                 self.updateProfile()
             })
             alertView.addButton(R.string.editarPerfil.back(), action: {
@@ -238,7 +240,9 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
-            userImage.image = pickedImage
+            DispatchQueue.main.async {
+                self.userImage.image = pickedImage
+            }
             print(userImage.image as Any)
         }
         picker.dismiss(animated: true, completion: nil)

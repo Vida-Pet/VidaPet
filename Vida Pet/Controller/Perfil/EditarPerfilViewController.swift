@@ -43,8 +43,8 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     // MARK: - Life Cycles
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         userImage.image = image
         userImage.setupImage(image: userImage)
     }

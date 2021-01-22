@@ -70,6 +70,7 @@ class MeusPetsDetalheViewController: VidaPetMainViewController {
     
     fileprivate func setupFields() {
         imgPet.image = pet.image?.decodeBase64ToImage() ?? R.image.avataDog()!
+        pet.image = imgPet.image?.encodeImageToBase64()
         lblNome.text = pet.name
         if let age = pet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)
            , let breed = pet.info.breed {

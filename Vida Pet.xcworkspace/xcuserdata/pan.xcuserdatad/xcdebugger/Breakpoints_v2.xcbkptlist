@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "72290320-E80A-4C9E-ADB0-88CC59C99680"
+            uuid = "5292CC03-E5B1-4D3F-B690-4A79047C5A81"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vida Pet/Controller/Meus Pets/MeusPetsCadastroViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "setupEditMode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

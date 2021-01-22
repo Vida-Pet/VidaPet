@@ -71,7 +71,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     func requestMeusPets() {
         
         self.loadingIndicator(.start)
-        let userId = 1
+        let userId = GlobalSession.getUser()?.id ?? 1
         APIHelper.request(url: .pet, aditionalUrl: "?informationType=MY_PETS&userId=\(userId)", method: .get)
             .responseJSON { response in
                 self.loadingIndicator(.stop)

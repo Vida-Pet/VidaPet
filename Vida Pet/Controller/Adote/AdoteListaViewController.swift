@@ -80,6 +80,7 @@ class AdoteListaViewController: VidaPetMainViewController {
                         
                         self.pets = responsePets
                         print(self.pets)
+                        self.updateTableView()
                     }
                     
                 case .failure(let error):
@@ -107,7 +108,7 @@ extension AdoteListaViewController: UICollectionViewDataSource {
         
         let cell = cvPets.dequeueReusableCell(withReuseIdentifier: R.nib.vpCardCollectionViewCell.identifier, for: indexPath) as! VPCardCollectionViewCell
         
-        cell.imgPet.image = self.pets[indexPath.row].image?.decodeBase64ToImage()
+        cell.imgPet.image = self.pets[indexPath.row].image?.decodeBase64ToImage()  ?? R.image.avataDog()!
         cell.lbName.text = self.pets[indexPath.row].name
         cell.lbAddress.text = self.pets[indexPath.row].info.size
         cell.layer.cornerRadius = defaultCornerRadius

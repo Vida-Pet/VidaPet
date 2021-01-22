@@ -71,8 +71,8 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     func requestMeusPets() {
         
         self.loadingIndicator(.start)
-        
-        APIHelper.request(url: .pet, method: .get, headers: getHeadersToApi())
+        let userId: Int = GlobalSession.getUser()?.id ?? 1
+        APIHelper.request(url: .pet, aditionalUrl: "?informationType=MY_PETS&userId=\(userId)", method: .get)
             .responseJSON { response in
                 self.loadingIndicator(.stop)
                 switch response.result {
@@ -100,14 +100,14 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     
     // MARK: Private Functions
     
-    private func getHeadersToApi() -> HTTPHeaders {
-        
-        return
-            HTTPHeaders(
-                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
-                HTTPHeader.init(name: "userId", value: "1")
-            )
-    }
+//    private func getHeadersToApi() -> HTTPHeaders {
+//
+//        return
+//            HTTPHeaders(
+//                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
+//                HTTPHeader.init(name: "userId", value: "1")
+//            )
+//    }
     
     private func updateTableView() {
         DispatchQueue.main.async { self.tableView.reloadData() }
@@ -134,7 +134,7 @@ extension MeusPetsListaViewController: UITableViewDataSource {
             cell.lblDescricao.text = "\(breed), \(age.formatAge())"
         }
         cell.lblNome.text = pets[indexPath.row].name
-        cell.imgPet.image = pets[indexPath.row].image?.decodeBase64ToImage()
+        cell.imgPet.image = pets[indexPath.row].image?.decodeBase64ToImage() ?? R.image.avataDog()!
         
         return cell
     }

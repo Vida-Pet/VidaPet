@@ -25,10 +25,12 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        setupLoad()
+       // setupLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setupTableView()
+    }
     
     // MARK: Methods
     
@@ -36,33 +38,67 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
         recemChegadosTableView.delegate = self
         recemChegadosTableView.dataSource = self
         recemChegadosTableView.register(UINib(nibName: R.nib.vpLargeRoundedTableViewCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.vpLargeRoundedTableViewCell.identifier)
-        addNewPet(id: 3) {
-            DispatchQueue.main.async {
-                self.recemChegadosTableView.reloadData()
-            }
-        }
+        
+        requestMeusPets()
+//        addNewPet(id: 3) {
+//            DispatchQueue.main.async {
+//                self.recemChegadosTableView.reloadData()
+//            }
+//        }
     }
     
-    private func setupLoad() {
-        let spinner = UIActivityIndicatorView()
-        spinner.startAnimating()
-        recemChegadosTableView.backgroundView = spinner
-    }
+//    private func setupLoad() {
+//        let spinner = UIActivityIndicatorView()
+//        spinner.startAnimating()
+//        recemChegadosTableView.backgroundView = spinner
+//    }
     
-    func addNewPet(id: Int, completion : @escaping () -> Void) {
-        if(id < 1) {
-            return
-        }
-        DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1000..<1500))), execute: {
-            RandomPet.shared().generateRandomPet(id: id) { pet in
-                self.pets.append(pet)
-                completion()
+//    func addNewPet(id: Int, completion : @escaping () -> Void) {
+//        if(id < 1) {
+//            return
+//        }
+//        DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1000..<1500))), execute: {
+//            RandomPet.shared().generateRandomPet(id: id) { pet in
+//                self.pets.append(pet)
+//                completion()
+//            }
+//        })
+//        self.addNewPet(id: id - 1, completion: completion)
+//    }
+    
+    func requestMeusPets() {
+        
+        self.loadingIndicator(.start)
+        
+        APIHelper.request(url: .pet,aditionalUrl: "?informationType=NEW_PETS" ,method: .get)
+            .responseJSON { response in
+                self.loadingIndicator(.stop)
+                switch response.result {
+                case .success:
+                    if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                    } else {
+                        guard
+                            let data = response.data,
+                            let responsePets = try? JSONDecoder().decode(Pets.self, from: data)
+                        else {
+                            self.displayError("", withTryAgain: { self.requestMeusPets() })
+                            return
+                        }
+                        
+                        self.pets = responsePets
+                        self.updateTableView()
+                    }
+                    
+                case .failure(let error):
+                    self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
+                }
             }
-        })
-        self.addNewPet(id: id - 1, completion: completion)
     }
 
-    
+    private func updateTableView() {
+        DispatchQueue.main.async { self.recemChegadosTableView.reloadData() }
+    }
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,8 +155,8 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
         cell.imageView?.contentMode = .scaleAspectFit
         cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)?.formatAge() ?? "")"
         cell.petImage.contentMode = .scaleAspectFit
-        cell.petImage.image = UIImage(data: selectedPet.dataImage!)?.squared()
-        
+        cell.petImage.image = self.pets[indexPath.row].image?.decodeBase64ToImage() ?? R.image.avataDog()!
+
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 1.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 0.5)

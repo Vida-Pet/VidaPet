@@ -50,6 +50,7 @@
 		3BFE13B3255622BA003627C3 /* UISegmentControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */; };
 		4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */; };
 		4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */ = {isa = PBXBuildFile; fileRef = 4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */; };
+		41D5D20C25BA1A6D00E8596B /* GlobalSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */; };
 		65E1B252AD84E982B5BE09E0 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */; };
 		7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */; };
 		7E0C5940255D62B9009D68A1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C593F255D62B9009D68A1 /* GradientView.swift */; };
@@ -112,6 +113,7 @@
 		3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControl+.swift"; sourceTree = "<group>"; };
 		4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.XIB; sourceTree = "<group>"; };
+		41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSession.swift; sourceTree = "<group>"; };
 		67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPLargeRoundedTableViewCell.xib; sourceTree = "<group>"; };
 		7E0C593F255D62B9009D68A1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		3B695D062537E71300CE15AF /* Vida Pet */ = {
 			isa = PBXGroup;
 			children = (
+				41D5D20A25BA1A5A00E8596B /* Util */,
 				3B265D942537FF9D009F1EE9 /* Application */,
 				3B98A22925AE7ECB00D24C0F /* Networking */,
 				3B695D1B2537E84600CE15AF /* Model */,
@@ -299,7 +302,6 @@
 				3BD59FE9253B7188005A5BB2 /* Login */,
 				3BD59FEA253B7198005A5BB2 /* Meus Pets */,
 				3BD59FEB253B719E005A5BB2 /* Recem Chegados */,
-				3BD59FEC253B71A5005A5BB2 /* Adote */,
 				3BD59FED253B71AA005A5BB2 /* Perfil */,
 				3B08DBCF25B5321200DE63D1 /* main.strings */,
 			);
@@ -445,13 +447,6 @@
 			path = "Recem Chegados";
 			sourceTree = "<group>";
 		};
-		3BD59FEC253B71A5005A5BB2 /* Adote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Adote;
-			sourceTree = "<group>";
-		};
 		3BD59FED253B71AA005A5BB2 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +474,14 @@
 				7E0C593F255D62B9009D68A1 /* GradientView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		41D5D20A25BA1A5A00E8596B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		FEB674AF25782BEE009B129C /* Login */ = {
@@ -679,6 +682,7 @@
 				3BD5A000253D445F005A5BB2 /* UIView+.swift in Sources */,
 				3B9F25B12553784F00C16F90 /* MeusPetsCadastroViewController.swift in Sources */,
 				3BF230E825B4E0E80044F3C6 /* InformationType.swift in Sources */,
+				41D5D20C25BA1A6D00E8596B /* GlobalSession.swift in Sources */,
 				FECCE078254268A200E0934F /* WelcomeViewController.swift in Sources */,
 				3B584BD1253811EC0090A779 /* PerfilViewController.swift in Sources */,
 				FECCE0742542335200E0934F /* ValidateFields.swift in Sources */,

@@ -44,7 +44,7 @@ class RecemChegadosDetalheViewController: VidaPetMainViewController {
     private func setupView() {
         detailPetImage.contentMode = .scaleAspectFit
         detailPetImage.clipsToBounds = true
-        detailPetImage.image = UIImage(data: pet!.dataImage!)?.squared()
+        detailPetImage.image = self.pet?.image?.decodeBase64ToImage() ?? R.image.avataDog()!
         if let safePet = pet {
             petName.text = safePet.name
             petSub.text = safePet.info.breed

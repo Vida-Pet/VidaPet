@@ -109,6 +109,45 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="iRL-Iv-q3v">
+                                <rect key="frame" x="16" y="400" width="381" height="115"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-bm-PyJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="381" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não cadastrou Pets!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zzP-CB-X2E">
+                                                <rect key="frame" x="0.0" y="7" width="321" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" name="Vida Pet: Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Uv-4z-RU2">
+                                                <rect key="frame" x="341" y="0.0" width="40" height="40"/>
+                                                <color key="tintColor" name="Vida Pet: Blue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="AY1-GU-ItW"/>
+                                                    <constraint firstAttribute="width" constant="40" id="bmq-mc-qZr"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zi2-eb-2KC">
+                                        <rect key="frame" x="115.5" y="65" width="150" height="50"/>
+                                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="XsQ-EB-wjG"/>
+                                            <constraint firstAttribute="width" constant="150" id="lVc-Vv-3FG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Adicione Aqui :)">
+                                            <color key="titleColor" name="Vida Pet: White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPet:" destination="mmI-A6-73y" eventType="touchUpInside" id="2Qh-1d-5hL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SoV-Tv-z4z"/>
                         <color key="backgroundColor" name="Vida Pet: White"/>
@@ -120,6 +159,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPetsButton" destination="Zi2-eb-2KC" id="aX9-Mm-um7"/>
+                        <outlet property="emptyPetsStack" destination="iRL-Iv-q3v" id="4r4-Ud-CcK"/>
                         <outlet property="tableView" destination="3Hy-zg-Oq8" id="OnN-st-AHc"/>
                         <segue destination="PDa-ey-lcH" kind="show" identifier="MeusPetsListaToMeusPetsDetalhes" id="fFA-rR-lVs"/>
                         <segue destination="B1t-hP-TC1" kind="show" identifier="MeusPetsListaToMeusPetsCadastro" id="4zX-0o-e2W"/>
@@ -1073,7 +1114,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6SQ-XD-K7f"/>
+        <segue reference="4zX-0o-e2W"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Vida Pet: Blue"/>
     <resources>

@@ -154,9 +154,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                 if let _user = user {
                     let uida = _user.uid
                     let name = _user.displayName
-                    
                     self.userData = UserData(uid: uida,  bio: "", isPublicProfile: false, name: name, state: nil)
-                    
                 }
                 if let newUser = self.userData {
                     self.postUser(newUser)
@@ -204,6 +202,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         
                     } else {
                         self.loadingIndicator(.stop)
+                        self.cleanAllInfo()
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 case .failure(let error):
@@ -212,8 +211,14 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
             }
     }
     
+    func cleanAllInfo() {
+        DispatchQueue.main.async {
+            self.emailTextField.text = nil
+            self.passwordTextField.text = nil
+        }
+    }
+    
     func getUser() {
-        
         self.loadingIndicator(.start)
         if let _getUID = getUID {
             let mockUid = "/\(_getUID)"

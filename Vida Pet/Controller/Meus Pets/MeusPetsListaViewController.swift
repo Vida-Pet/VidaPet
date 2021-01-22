@@ -16,11 +16,14 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyPetsStack: UIStackView!
+    @IBOutlet weak var addPetsButton: UIButton!
     
     
     // MARK: Variables
     
     var pets: Pets = []
+    final let defaultButtonCornerRadius: CGFloat = 5
     
     
     // MARK: LifeCicle
@@ -34,6 +37,8 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         requestMeusPets()
+        emptyPetsStack.isHidden = true
+        addPetsButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
     }
     
     
@@ -46,6 +51,10 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     
     
     // MARK: Actions
+    
+    @IBAction func addPet(_ sender: UIButton) {
+        addTapped()
+    }
     
     @objc fileprivate func addTapped() {
         performSegue(withIdentifier: R.segue.meusPetsListaViewController.meusPetsListaToMeusPetsCadastro, sender: self)
@@ -65,6 +74,7 @@ class MeusPetsListaViewController: VidaPetMainViewController {
         default: break
         }
     }
+    
     
     // MARK: Networking
     
@@ -87,30 +97,27 @@ class MeusPetsListaViewController: VidaPetMainViewController {
                             self.displayError("", withTryAgain: { self.requestMeusPets() })
                             return
                         }
-                        
                         self.pets = responsePets
                         self.updateTableView()
                     }
-                    
                 case .failure(let error):
                     self.displayError(error.localizedDescription, withTryAgain: { self.requestMeusPets() })
                 }
             }
     }
     
+    
     // MARK: Private Functions
     
-    //    private func getHeadersToApi() -> HTTPHeaders {
-    //
-    //        return
-    //            HTTPHeaders(
-    //                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
-    //                HTTPHeader.init(name: "userId", value: "1")
-    //            )
-    //    }
-    
     private func updateTableView() {
-        DispatchQueue.main.async { self.tableView.reloadData() }
+        DispatchQueue.main.async {
+            if self.pets.count > 0 {
+                self.emptyPetsStack.isHidden = true
+            } else {
+                self.emptyPetsStack.isHidden = false
+            }
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -119,7 +126,6 @@ class MeusPetsListaViewController: VidaPetMainViewController {
 // MARK: - UITableViewDataSource
 
 extension MeusPetsListaViewController: UITableViewDataSource {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pets.count

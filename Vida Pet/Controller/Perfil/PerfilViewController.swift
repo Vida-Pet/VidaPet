@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import Alamofire
+import SCLAlertView
 
 class PerfilViewController: VidaPetMainViewController {
     
@@ -35,10 +36,11 @@ class PerfilViewController: VidaPetMainViewController {
     
     @IBAction func logOutButton(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signOut()
+        GlobalSession.setUser(withId: nil, andUid: nil)
         do {
             try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError as NSError {
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch _ as NSError {
         }
     }
     
@@ -86,7 +88,6 @@ class PerfilViewController: VidaPetMainViewController {
     
     func upDateUserInfo(){
         userNameLabel.text = userData?.name
-        
         bioLabel.text = userData?.bio
         regiaoLabel.text = userData?.state
         userImage.image = userData?.image?.decodeBase64ToImage() ?? UIImage(named: emptyUserImage)

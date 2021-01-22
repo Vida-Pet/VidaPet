@@ -21,3 +21,5 @@
 "user_updated" = "Usuário atualizado com sucesso";
 "user_error" = "O nome não pode ficar em branco";
 "back" = "Voltar";
+"continue_logout" = "Sair";
+"logout_user" = "Deseja sair da sua conta?";

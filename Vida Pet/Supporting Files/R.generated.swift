@@ -602,7 +602,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
-    /// This `R.string.editarPerfil` struct is generated, and contains static references to 15 localization keys.
+    /// This `R.string.editarPerfil` struct is generated, and contains static references to 17 localization keys.
     struct editarPerfil {
       /// Value: Alterar foto do perfil
       static let image_title = Rswift.StringResource(key: "image_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -610,6 +610,8 @@ struct R: Rswift.Validatable {
       static let warning = Rswift.StringResource(key: "warning", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancelar
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Deseja sair da sua conta?
+      static let logout_user = Rswift.StringResource(key: "logout_user", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Escolha seu estado
       static let picker_state = Rswift.StringResource(key: "picker_state", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Galeria
@@ -618,6 +620,8 @@ struct R: Rswift.Validatable {
       static let user_error = Rswift.StringResource(key: "user_error", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sair
+      static let continue_logout = Rswift.StringResource(key: "continue_logout", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Salvar
       static let bar_button_title = Rswift.StringResource(key: "bar_button_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Salvar
@@ -674,6 +678,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("cancel", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
+      /// Value: Deseja sair da sua conta?
+      static func logout_user(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("logout_user", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "logout_user"
+        }
+
+        return NSLocalizedString("logout_user", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
       /// Value: Escolha seu estado
       static func picker_state(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -724,6 +741,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ok", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Sair
+      static func continue_logout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("continue_logout", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "continue_logout"
+        }
+
+        return NSLocalizedString("continue_logout", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
       /// Value: Salvar

@@ -174,8 +174,8 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
         switch tableView {
         case tableViewVacinas:
             guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas_detalhes.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = pet.medicalData?.vaccines[indexPath.row].nome
-            cell.detailTextLabel?.text = pet.medicalData?.vaccines[indexPath.row].data
+            cell.textLabel?.text = pet.medicalData?.vaccines[indexPath.row].name
+            cell.detailTextLabel?.text =  Date.Formatter.defaultDate.string(from: pet.medicalData?.vaccines[indexPath.row].data?.getDate(fromFormatter: Date.Formatter.iso8601) ?? Date())
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
             cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)
@@ -184,8 +184,8 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
             
         case tableViewCirurgias:
             guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias_detalhes.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = pet.medicalData?.surgerys[indexPath.row].nome
-            cell.detailTextLabel?.text = pet.medicalData?.surgerys[indexPath.row].data
+            cell.textLabel?.text = pet.medicalData?.surgerys[indexPath.row].name
+            cell.detailTextLabel?.text =  Date.Formatter.defaultDate.string(from: pet.medicalData?.surgerys[indexPath.row].data?.getDate(fromFormatter: Date.Formatter.iso8601) ?? Date())
             cell.textLabel?.textColor = R.color.vidaPetBlue()
             cell.detailTextLabel?.textColor = R.color.vidaPetBlue()
             cell.textLabel?.font = cell.textLabel?.font.withSize(defaultFontSize)

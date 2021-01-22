@@ -21,22 +21,20 @@ class WelcomeViewController: VidaPetMainViewController {
     var userName: String?
     
     // MARK: - Life Cicle
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        userNameLabel.text = userName
-        userWelcomeLabel.text = R.string.main.welcomeBack()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-            self.performSegue(withIdentifier: R.segue.welcomeViewController.segueToNavigation, sender: self)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.userNameLabel.text = self.userName
+            self.userWelcomeLabel.text = R.string.main.welcomeBack()
         }
     }
     
-   
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
+            self.performSegue(withIdentifier: R.segue.welcomeViewController.segueToNavigation, sender: self)
+        }
     }
-    
 
 }

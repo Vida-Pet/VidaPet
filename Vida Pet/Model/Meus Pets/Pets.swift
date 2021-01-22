@@ -41,23 +41,23 @@ struct MedicalData: Codable {
 
 // MARK: - Surgery
 struct Surgery: Codable {
-    var nome, data: String?
+    var name, data: String?
     var id, petId: Int?
 }
 
 // MARK: - Vaccine
 struct Vaccine: Codable {
-    var nome, data: String?
+    var name, data: String?
     var id, petId: Int?
 }
 
 // MARK: - User
 struct PetUser: Codable {
     var id: Int
-    let bio: String? = nil
-    let isPublicProfile: Bool? = nil
-    let image: String? = nil
-    let name: String? = nil
+    var bio: String? = nil
+    var isPublicProfile: Bool? = nil
+    var image: String? = nil
+    var name: String? = nil
 }
 
 typealias Pets = [Pet]

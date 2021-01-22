@@ -182,7 +182,6 @@
 		3B265D932537EFE3009F1EE9 /* Navigation Bar */ = {
 			isa = PBXGroup;
 			children = (
-				3B695D2D2537E92200CE15AF /* Login */,
 				3B265D8D2537ECBA009F1EE9 /* Navigation.storyboard */,
 			);
 			path = "Navigation Bar";
@@ -313,6 +312,7 @@
 			children = (
 				3B695D122537E71500CE15AF /* LaunchScreen.storyboard */,
 				3B265D932537EFE3009F1EE9 /* Navigation Bar */,
+				3B695D2D2537E92200CE15AF /* Login */,
 				3B695D272537E8EE00CE15AF /* Meus Pets */,
 				3B695D2A2537E91000CE15AF /* Recem Chegados */,
 				3B695D282537E90700CE15AF /* Adote */,

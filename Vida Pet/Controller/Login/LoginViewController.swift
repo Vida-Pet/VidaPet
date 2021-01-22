@@ -203,8 +203,6 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                        
                     } else {
                         self.loadingIndicator(.stop)
-                       
-                        
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 case .failure(let error):
@@ -230,13 +228,14 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                     } else {
                         guard
                             let data = response.data,
-                            let responseUsers = try? JSONDecoder().decode(UserData.self, from: data)
+                            let responseUser = try? JSONDecoder().decode(UserData.self, from: data)
                         else {
                             self.displayError("", withTryAgain: { self.getUser() })
                             return
                         }
 
-                        self.userData = responseUsers
+                        self.userData = responseUser
+                        GlobalSession.setUser(withId: responseUser.id)
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                       
                     }

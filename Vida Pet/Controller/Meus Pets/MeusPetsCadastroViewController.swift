@@ -216,14 +216,14 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             for s in medicalData.surgerys {
                 var surgery: [String: Any] = [:]
                 surgery["data"] = s.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
-                surgery["name"] = s.nome
+                surgery["name"] = s.name
                 surgeries.append(surgery)
             }
             
             for v in medicalData.vaccines {
                 var vaccine: [String: Any] = [:]
                 vaccine["data"] = v.data?.getDate(fromFormatter: Date.Formatter.defaultDate)?.iso8601
-                vaccine["name"] = v.nome
+                vaccine["name"] = v.name
                 vaccines.append(vaccine)
             }
         }
@@ -248,7 +248,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             ],
             "name": pet.name as Any,
             "user": [
-                "id": VidaPetMainViewController.globalUserId,
+                "id": GlobalSession.getUserId() ?? 1,
             ]
         ]
         
@@ -371,11 +371,11 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             if let text = textFieldNome.text, let data = textFieldData.text {
                 switch type {
                 case .SURGERYS:
-                    self.medicalData.surgerys.append(Surgery(nome: text, data: data, petId: self.pet?.id))
+                    self.medicalData.surgerys.append(Surgery(name: text, data: data, petId: self.pet?.id))
                     self.tableViewCirurgias.reloadData()
                     return
                 case .VACCINES:
-                    self.medicalData.vaccines.append(Vaccine(nome: text, data: data, petId: self.pet?.id))
+                    self.medicalData.vaccines.append(Vaccine(name: text, data: data, petId: self.pet?.id))
                     self.tableViewVacinas.reloadData()
                     return
                 }
@@ -413,13 +413,13 @@ extension MeusPetsCadastroViewController: UITableViewDataSource {
         switch tableView {
         case tableViewVacinas:
             guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = medicalData.vaccines[indexPath.row].nome
+            cell.textLabel?.text = medicalData.vaccines[indexPath.row].name
             cell.detailTextLabel?.text = medicalData.vaccines[indexPath.row].data
             return cell
             
         case tableViewCirurgias:
             guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias.identifier) else { return UITableViewCell() }
-            cell.textLabel?.text = medicalData.surgerys[indexPath.row].nome
+            cell.textLabel?.text = medicalData.surgerys[indexPath.row].name
             cell.detailTextLabel?.text = medicalData.surgerys[indexPath.row].data
             return cell
             

@@ -53,9 +53,9 @@ class AdoteListaViewController: VidaPetMainViewController {
         cvPets.register(nibCell, forCellWithReuseIdentifier: R.nib.vpCardCollectionViewCell.identifier)
         cvPets.dataSource = self
         
-        for _ in 0...mockCellCountMultiplier*MeusPetsListaViewController.pets.count {
-            mockCellIndex.append(Int.random(in: 0...2))
-        }
+//        for _ in 0...mockCellCountMultiplier*MeusPetsListaViewController.pets.count {
+//            mockCellIndex.append(Int.random(in: 0...2))
+//        }
     }
     
     func requestMeusPets() {

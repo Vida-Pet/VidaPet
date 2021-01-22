@@ -11,17 +11,13 @@ import Foundation
 
 class GlobalSession{
     
-    static let userKey = "user"
+    static let userKey = "userId"
     
-    public static func getUser() -> UserData? {
-        if let userData = UserDefaults.standard.data(forKey: userKey),
-            let user = try? JSONDecoder().decode(UserData.self, from: userData) {
-            return user
-        }
-        return nil
+    public static func getUserId() -> Int? {
+        return UserDefaults.standard.integer(forKey: userKey)
     }
     
-    public static func setUser(user: Data) {
-        UserDefaults.standard.set(user, forKey: userKey)
+    public static func setUser(withId userId: Int?) {
+        UserDefaults.standard.set(userId, forKey: userKey)
     }
 }

@@ -12,6 +12,7 @@ import SCLAlertView
 typealias EmptyClosure = () -> Void
 class VidaPetMainViewController: UIViewController {
     
+    static var globalUserId: Int = 1
     let colorStyle = 0x26BABA
     let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     

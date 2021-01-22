@@ -248,7 +248,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             ],
             "name": pet.name as Any,
             "user": [
-                "id": 1,
+                "id": VidaPetMainViewController.globalUserId,
             ]
         ]
         

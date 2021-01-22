@@ -80,7 +80,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             setupEditMode()
         }
         configureTapGesture()
-        imgView.image = defaultCameraIcon()
+        imgView.image = pet?.image?.decodeBase64ToImage() ?? defaultCameraIcon()
     }
     
     
@@ -278,6 +278,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         segmentPorte.selectSegment(thatMatches: pet?.info.size)
         switchAdocao.isOn = pet?.adoption ?? false
         medicalData = pet?.medicalData ?? MedicalData(surgerys: [], vaccines: [])
+        imgView.image = pet?.image?.decodeBase64ToImage() ?? defaultCameraIcon()
         tableViewVacinas.reloadData()
         tableViewCirurgias.reloadData()
     }
@@ -413,14 +414,16 @@ extension MeusPetsCadastroViewController: UITableViewDataSource {
         switch tableView {
         case tableViewVacinas:
             guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_vacinas.identifier) else { return UITableViewCell() }
+            
+            
             cell.textLabel?.text = medicalData.vaccines[indexPath.row].name
-            cell.detailTextLabel?.text = medicalData.vaccines[indexPath.row].data
+            cell.detailTextLabel?.text = Date.Formatter.defaultDate.string(from: medicalData.vaccines[indexPath.row].data?.getDate(fromFormatter: Date.Formatter.iso8601) ?? Date())
             return cell
             
         case tableViewCirurgias:
             guard let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cell_cirurgias.identifier) else { return UITableViewCell() }
             cell.textLabel?.text = medicalData.surgerys[indexPath.row].name
-            cell.detailTextLabel?.text = medicalData.surgerys[indexPath.row].data
+            cell.detailTextLabel?.text = Date.Formatter.defaultDate.string(from: medicalData.surgerys[indexPath.row].data?.getDate(fromFormatter: Date.Formatter.iso8601) ?? Date())
             return cell
             
         default:

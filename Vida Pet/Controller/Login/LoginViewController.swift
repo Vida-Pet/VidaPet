@@ -164,7 +164,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        
+        self.cleanAllInfo()
         if segue.identifier == R.segue.loginViewController.welcomeVC.identifier {
             let destinationVC = segue.destination as! WelcomeViewController
             destinationVC.userName = userData?.name
@@ -202,7 +202,6 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         
                     } else {
                         self.loadingIndicator(.stop)
-                        self.cleanAllInfo()
                         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
                     }
                 case .failure(let error):

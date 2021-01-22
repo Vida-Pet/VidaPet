@@ -25,7 +25,7 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setupLoad()
+        // setupLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,31 +40,31 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
         recemChegadosTableView.register(UINib(nibName: R.nib.vpLargeRoundedTableViewCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.vpLargeRoundedTableViewCell.identifier)
         
         requestMeusPets()
-//        addNewPet(id: 3) {
-//            DispatchQueue.main.async {
-//                self.recemChegadosTableView.reloadData()
-//            }
-//        }
+        //        addNewPet(id: 3) {
+        //            DispatchQueue.main.async {
+        //                self.recemChegadosTableView.reloadData()
+        //            }
+        //        }
     }
     
-//    private func setupLoad() {
-//        let spinner = UIActivityIndicatorView()
-//        spinner.startAnimating()
-//        recemChegadosTableView.backgroundView = spinner
-//    }
+    //    private func setupLoad() {
+    //        let spinner = UIActivityIndicatorView()
+    //        spinner.startAnimating()
+    //        recemChegadosTableView.backgroundView = spinner
+    //    }
     
-//    func addNewPet(id: Int, completion : @escaping () -> Void) {
-//        if(id < 1) {
-//            return
-//        }
-//        DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1000..<1500))), execute: {
-//            RandomPet.shared().generateRandomPet(id: id) { pet in
-//                self.pets.append(pet)
-//                completion()
-//            }
-//        })
-//        self.addNewPet(id: id - 1, completion: completion)
-//    }
+    //    func addNewPet(id: Int, completion : @escaping () -> Void) {
+    //        if(id < 1) {
+    //            return
+    //        }
+    //        DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1000..<1500))), execute: {
+    //            RandomPet.shared().generateRandomPet(id: id) { pet in
+    //                self.pets.append(pet)
+    //                completion()
+    //            }
+    //        })
+    //        self.addNewPet(id: id - 1, completion: completion)
+    //    }
     
     func requestMeusPets() {
         
@@ -95,7 +95,7 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
                 }
             }
     }
-
+    
     private func updateTableView() {
         DispatchQueue.main.async { self.recemChegadosTableView.reloadData() }
     }
@@ -105,7 +105,7 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
         switch segue.identifier {
         case R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes.identifier:
             if let destinationVC = segue.destination as? RecemChegadosDetalheViewController,
-                let indexPath = sender as? IndexPath{
+               let indexPath = sender as? IndexPath{
                 destinationVC.pet = self.pets[indexPath.row]
                 destinationVC.selectedPetIndex = indexPath.row
             }
@@ -141,7 +141,7 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.width
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -156,7 +156,7 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
         cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)?.formatAge() ?? "")"
         cell.petImage.contentMode = .scaleAspectFit
         cell.petImage.image = self.pets[indexPath.row].image?.decodeBase64ToImage() ?? R.image.avataDog()!
-
+        
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 1.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 0.5)

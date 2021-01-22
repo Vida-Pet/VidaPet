@@ -30,7 +30,7 @@ class PerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var bioLabel: UILabel!
     
     
-
+    
     // MARK: - IBActions
     
     @IBAction func logOutButton(_ sender: UIButton) {
@@ -98,12 +98,8 @@ class PerfilViewController: VidaPetMainViewController {
     func requestMyUser() {
         
         self.loadingIndicator(.start)
-       
-            
         
-        let mockUid = "/9L1cEYZ3hJYAbG4sKlFle4sqhL32"
-        
-        APIHelper.request(url: .user, aditionalUrl: mockUid, method: .get)
+        APIHelper.request(url: .user, aditionalUrl: "/\(GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22")", method: .get)
             .responseJSON { response in
                 self.loadingIndicator(.stop)
                 switch response.result {
@@ -119,17 +115,17 @@ class PerfilViewController: VidaPetMainViewController {
                             self.displayError("", withTryAgain: { self.requestMyUser() })
                             return
                         }
-
+                        
                         self.userData = responseUsers
-                      
+                        
                         self.upDateUserInfo()
                     }
                     
                 case .failure(let error):
-                  
+                    
                     self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
                 }
             }
-        }}
+    }}
 
 

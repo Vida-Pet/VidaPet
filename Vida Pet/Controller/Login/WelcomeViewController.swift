@@ -10,12 +10,12 @@ import UIKit
 import GoogleSignIn
 
 class WelcomeViewController: VidaPetMainViewController {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var userWelcomeLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-
+    
     // MARK: - Properties
     
     var userName: String?
@@ -36,5 +36,5 @@ class WelcomeViewController: VidaPetMainViewController {
             self.performSegue(withIdentifier: R.segue.welcomeViewController.segueToNavigation, sender: self)
         }
     }
-
+    
 }

@@ -130,13 +130,13 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         
         if let newPet = pet {
             if editMode {
-//                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
-//                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
-//                        petDetalhesVC.pet = safePet
-//                        MeusPetsListaViewController.pets[safeIndex] = safePet
-//                    }
-//                    showSuccessPetEdited()
-//                }
+                //                if let petDetalhesVC = delegate as? MeusPetsDetalheViewController {
+                //                    if let safePet = pet, let safeIndex = petDetalhesVC.selectedPetIndex {
+                //                        petDetalhesVC.pet = safePet
+                //                        MeusPetsListaViewController.pets[safeIndex] = safePet
+                //                    }
+                //                    showSuccessPetEdited()
+                //                }
                 requestEditPet(newPet)
             } else {
                 requestAddPet(newPet)
@@ -310,7 +310,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
             self.navigationController?.popViewController(animated: true)
         })
         alertView.showSuccess(R.string.meusPetsCadastro.success_alert_title_add(), subTitle: R.string.meusPetsCadastro.success_alert_subtitle_add(), colorStyle: UInt(self.colorStyle))
-
+        
     }
     
     private func showSuccessPetEdited(){

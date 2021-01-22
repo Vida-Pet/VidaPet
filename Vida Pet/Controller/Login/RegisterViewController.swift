@@ -78,7 +78,7 @@ class RegisterViewController: VidaPetMainViewController {
             self.navigationController?.popViewController(animated: true)
         })
         alertView.showSuccess(R.string.login.cancel(), subTitle: R.string.login.cancel(), colorStyle: UInt(self.colorStyle))
-
+        
     }
     
     
@@ -87,26 +87,26 @@ class RegisterViewController: VidaPetMainViewController {
     @IBAction func registerPressed(_ sender: Any) {
         let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
         
-            
-            if let email = emailTextField.text, let password = passwordTextField.text {
-                Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                    
-                    if let _error = error {
-                        self.showError(message: R.string.login.invalid_email_format())
-                        
-                    } else {
-                        print("Login Successful.")
-                        let user = Auth.auth().currentUser
-                        if let _user = user {
-                            let uida = _user.uid
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 
-                            self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, name: self.nameTextField.text, state: nil)
-                           
-                        }
+                if let _error = error {
+                    self.showError(message: R.string.login.invalid_email_format())
+                    
+                } else {
+                    print("Login Successful.")
+                    let user = Auth.auth().currentUser
+                    if let _user = user {
+                        let uida = _user.uid
                         
-                        if let newUser = self.userDataa {
-                            self.requestAddUser(newUser)
-                        }
+                        self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, name: self.nameTextField.text, state: nil)
+                        
+                    }
+                    
+                    if let newUser = self.userDataa {
+                        self.requestAddUser(newUser)
+                    }
                     
                 }
             }
@@ -118,17 +118,17 @@ class RegisterViewController: VidaPetMainViewController {
     
     private func getParamsToApi(from user: UserData) -> [String: Any] {
         
-    let finalUser: [String: Any] = [
-        
-        "name" : userDataa?.name as Any,
-        "image" : userDataa?.image as Any,
-        "bio" : userDataa?.bio as Any,
-        "isPublicProfile" : userDataa?.isPublicProfile as Any,
-        "state" : userDataa?.state as Any,
-        "uid" : userDataa?.uid as Any ]
+        let finalUser: [String: Any] = [
+            
+            "name" : userDataa?.name as Any,
+            "image" : userDataa?.image as Any,
+            "bio" : userDataa?.bio as Any,
+            "isPublicProfile" : userDataa?.isPublicProfile as Any,
+            "state" : userDataa?.state as Any,
+            "uid" : userDataa?.uid as Any ]
         
         return finalUser
-        }
+    }
     
     
     func requestAddUser(_ user: UserData) {
@@ -139,9 +139,12 @@ class RegisterViewController: VidaPetMainViewController {
                 case .success:
                     if let error = response.error {
                         self.displayError(error.localizedDescription, withTryAgain: { self.requestAddUser(user) })
-                      
+                        
                     } else {
-                      
+                        guard
+                            let data = response.data,
+                            let responseUser = try? JSONDecoder().decode(UserData.self, from: data) else { return; }
+                        GlobalSession.setUser(withId: responseUser.id, andUid: responseUser.uid)
                         self.showSuccessUserAdded()
                         self.mockSignIn(self)
                     }
@@ -157,7 +160,7 @@ class RegisterViewController: VidaPetMainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == R.segue.registerViewController.registerWelcomeVC.identifier  {
-           let destinationVC = segue.destination as! WelcomeViewController
+            let destinationVC = segue.destination as! WelcomeViewController
             destinationVC.userName = nameTextField.text
         }
     }

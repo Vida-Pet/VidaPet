@@ -602,7 +602,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
-    /// This `R.string.editarPerfil` struct is generated, and contains static references to 12 localization keys.
+    /// This `R.string.editarPerfil` struct is generated, and contains static references to 15 localization keys.
     struct editarPerfil {
       /// Value: Alterar foto do perfil
       static let image_title = Rswift.StringResource(key: "image_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -620,6 +620,10 @@ struct R: Rswift.Validatable {
       static let ok = Rswift.StringResource(key: "ok", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Salvar
       static let bar_button_title = Rswift.StringResource(key: "bar_button_title", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Salvar
+      static let save = Rswift.StringResource(key: "save", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Tem certeza de que não faltou nada?
+      static let update_user = Rswift.StringResource(key: "update_user", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Tirar foto
       static let image_option_camera = Rswift.StringResource(key: "image_option_camera", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Usuário atualizado com sucesso
@@ -628,6 +632,8 @@ struct R: Rswift.Validatable {
       static let camera_access = Rswift.StringResource(key: "camera_access", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Você não tem acesso a galeria
       static let galery_access = Rswift.StringResource(key: "galery_access", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Voltar
+      static let back = Rswift.StringResource(key: "back", tableName: "EditarPerfil", bundle: R.hostingBundle, locales: [], comment: nil)
 
       /// Value: Alterar foto do perfil
       static func image_title(preferredLanguages: [String]? = nil) -> String {
@@ -733,6 +739,32 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("bar_button_title", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
+      /// Value: Salvar
+      static func save(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("save", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "save"
+        }
+
+        return NSLocalizedString("save", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Tem certeza de que não faltou nada?
+      static func update_user(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("update_user", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "update_user"
+        }
+
+        return NSLocalizedString("update_user", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
       /// Value: Tirar foto
       static func image_option_camera(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -783,6 +815,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("galery_access", tableName: "EditarPerfil", bundle: bundle, comment: "")
+      }
+
+      /// Value: Voltar
+      static func back(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("back", tableName: "EditarPerfil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "EditarPerfil", preferredLanguages: preferredLanguages) else {
+          return "back"
+        }
+
+        return NSLocalizedString("back", tableName: "EditarPerfil", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -1584,7 +1629,7 @@ struct _R: Rswift.Validatable {
       let name = "Perfil"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "userImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'userImage' is used in storyboard 'Perfil', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'Perfil', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Perfil', but couldn't be loaded.") }
         }

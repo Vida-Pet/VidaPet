@@ -159,7 +159,7 @@ extension MeusPetsDetalheViewController: UITableViewDataSource, UITableViewDeleg
         switch tableView {
         case tableViewVacinas:
             return pet.medicalData?.vaccines.count ?? 0
-    
+            
         case tableViewCirurgias:
             return pet.medicalData?.surgerys.count ?? 0
             

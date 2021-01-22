@@ -100,14 +100,14 @@ class MeusPetsListaViewController: VidaPetMainViewController {
     
     // MARK: Private Functions
     
-//    private func getHeadersToApi() -> HTTPHeaders {
-//
-//        return
-//            HTTPHeaders(
-//                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
-//                HTTPHeader.init(name: "userId", value: "1")
-//            )
-//    }
+    //    private func getHeadersToApi() -> HTTPHeaders {
+    //
+    //        return
+    //            HTTPHeaders(
+    //                arrayLiteral: HTTPHeader.init(name: "informationType", value: InformationType.myPets.rawValue),
+    //                HTTPHeader.init(name: "userId", value: "1")
+    //            )
+    //    }
     
     private func updateTableView() {
         DispatchQueue.main.async { self.tableView.reloadData() }

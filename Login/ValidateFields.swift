@@ -49,7 +49,7 @@ class ValidateFields {
         let cleanedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let cleanedConfirmPassword = confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines)
+        //        let cleanedConfirmPassword = confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if let nameError = validateName(cleanedName) {
             return nameError
@@ -96,16 +96,16 @@ class ValidateFields {
         
         if(!isPasswordSizeValid(password)) {
             return Errors.invalidPasswordSize.rawValue
-        
+            
         } else if(!isPasswordFormatValid(password)) {
             return Errors.invalidPasswordFormat.rawValue
             
         } else {
             return nil
-    
+            
         }
     }
-
+    
     fileprivate static func validateConfirmPassword(_ password: String, _ confirmPassword: String) -> String? {
         
         if(password != confirmPassword ) {
@@ -113,13 +113,13 @@ class ValidateFields {
         } else {
             return nil
         }
-    
+        
     }
     
     fileprivate static func isPasswordSizeValid(_ password: String) -> Bool {
         return !(password.count < 6)
     }
-
+    
     fileprivate static func isPasswordFormatValid(_ password : String) -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{6,}")
         return passwordTest.evaluate(with: password)

@@ -40,7 +40,7 @@ class RecemChegadosDetalheViewController: VidaPetMainViewController {
     
     
     // MARK: Methods
-
+    
     private func setupView() {
         detailPetImage.contentMode = .scaleAspectFit
         detailPetImage.clipsToBounds = true

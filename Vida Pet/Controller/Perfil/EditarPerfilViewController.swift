@@ -15,15 +15,11 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     final let numberOfComponents = 1
     var selectedState: String?
- 
-    
     var bioUser: String?
     var isPublicProfile: Bool = false
     var image: UIImage?
     var name: String?
     var state: String?
-    
-    
     var userModel = UserModel()
     var userData : UserData?
     
@@ -33,33 +29,23 @@ class EditarPerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var userNameTextField: VPRoundPlaceholderTextField!
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: VPMultilineRoundPlaceholderTextField!
-
+    
     
     // MARK: - IBActions
     
     @IBAction func perfilPublico(_ sender: UISwitch) {
-        if (sender.isOn == true){
-             isPublicProfile = true
-          }
-          else{
-            isPublicProfile = false
-          }
+        isPublicProfile = sender.isOn
     }
-    
     
     @IBAction func imagePressed(_ sender: UIButton) {
         selectImage()
-  
     }
     
     // MARK: - Life Cycles
     
     override func viewDidLayoutSubviews() {
-        
         super.viewDidLayoutSubviews()
-        
-        userImage.setupImage(image: userImage)
-        
+        userImage.image = image
     }
     
     override func viewDidLoad() {
@@ -70,39 +56,42 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.createAndSetupPickerView()
         self.dismissAndClosePickerView()
         setupFields()
-        
         userNameTextField.delegate = self
     }
     
     // MARK: - Networking
     
-    func pathUser(_ user: UserData) {
+    func patchUser(_ user: UserData) {
         
         self.loadingIndicator(.start)
-       
         APIHelper.request(url: .user, method: .patch, parameters: getParamsToApi(from: user))
             .responseJSON { response in
-                
+                self.loadingIndicator(.stop)
                 switch response.result {
                 case .success:
+                    
                     if let error = response.error {
+                        self.displayError(error.localizedDescription, withTryAgain: { self.patchUser(user) })
                         
-                        self.displayError(error.localizedDescription, withTryAgain: { self.pathUser(user) })
-                       
                     } else {
+                        let appearance = SCLAlertView.SCLAppearance(
+                            showCloseButton: false
+                        )
+                        let alertView = SCLAlertView(appearance: appearance)
+                        alertView.addButton(R.string.editarPerfil.ok(), action: {
+                            self.navigationController?.popViewController(animated: true)
+                        })
+                        alertView.showSuccess(R.string.editarPerfil.ok(), subTitle: R.string.editarPerfil.user_updated(), colorStyle: UInt(self.colorStyle))
                         
-                        _ = self.navigationController?.popViewController(animated: true)
                     }
                 case .failure(let error):
-                    self.displayError(error.localizedDescription, withTryAgain: { self.pathUser(user) })
+                    self.displayError(error.localizedDescription, withTryAgain: { self.patchUser(user) })
                 }
             }
     }
     
     private func getParamsToApi(from user: UserData) -> [String: Any] {
-        
         let finalUser: [String: Any] = [
-            
             "name" : userData?.name as Any,
             "image" : userData?.image as Any,
             "bio" : userData?.bio as Any,
@@ -116,9 +105,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     // MARK: - Methods
     
     func saveButton(){
-
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
-    
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.editarPerfil.bar_button_title(), style: .done, target: self, action: #selector(rightHandAction))
     }
     
     @objc func rightHandAction() {
@@ -128,11 +115,12 @@ class EditarPerfilViewController: VidaPetMainViewController {
             )
             let alertView = SCLAlertView(appearance: appearance)
             alertView.addButton(R.string.editarPerfil.ok(), action: {
-                self.navigationController?.popViewController(animated: true)
                 self.updateProfile()
             })
-            alertView.showSuccess(R.string.editarPerfil.ok(), subTitle: R.string.editarPerfil.user_updated(), colorStyle: UInt(self.colorStyle))
-        
+            alertView.addButton(R.string.editarPerfil.back(), action: {
+                alertView.dismiss(animated: true, completion: nil)
+            })
+            alertView.showEdit(R.string.editarPerfil.save(), subTitle: R.string.editarPerfil.update_user(), colorStyle: UInt(self.colorStyle))
         }
         else {
             let appearance = SCLAlertView.SCLAppearance(
@@ -155,23 +143,21 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     func updateProfile(){
-//        image = decodeBase64ToImage()
-        
         image = userImage.image
         let encodedImage = image
-        print("encodedImage \(encodedImage)")
+        print("encodedImage \(encodedImage ?? UIImage.init())")
         bioUser = bio.text
         name = userNameTextField.text
-        var mockUid = "9L1cEYZ3hJYAbG4sKlFle4sqhL32"
-        if let _bio = bioUser, let _state = state, let _name = name, let _encodedImage = image?.encodeImageToBase64() {
-            
-            userData = UserData(uid: mockUid , id: 12, bio: _bio, isPublicProfile: isPublicProfile ?? false, image: _encodedImage, name: _name, state: _state)}
+        if let _bio = bioUser,
+           let _state = state,
+           let _name = name,
+           let _encodedImage = image?.encodeImageToBase64() {
+            userData = UserData(uid: GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22" , id: GlobalSession.getUserId() ?? 1, bio: _bio, isPublicProfile: isPublicProfile , image: _encodedImage, name: _name, state: _state)}
         print ("userdata")
-        print(userData)
-
+        print(userData as Any)
+        
         if let _userData = userData {
-//            pathUser(_userData)
-        saveButton()
+            patchUser(_userData)
         }}
     
     
@@ -185,7 +171,6 @@ class EditarPerfilViewController: VidaPetMainViewController {
         self.userNameTextField.text = name
         self.estadoTextField.text = state
         self.bio.text = bioUser
-      
     }
     
     
@@ -222,7 +207,6 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     func createAndSetupPickerView() {
-        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -231,7 +215,6 @@ class EditarPerfilViewController: VidaPetMainViewController {
     
     
     func dismissAndClosePickerView() {
-        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
@@ -256,7 +239,7 @@ extension EditarPerfilViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
             userImage.image = pickedImage
-            print(userImage.image)
+            print(userImage.image as Any)
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -284,7 +267,7 @@ extension EditarPerfilViewController: UIPickerViewDelegate, UIPickerViewDataSour
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         estadoTextField.text = userModel.stateArray[row]
-       state = estadoTextField.text
+        state = estadoTextField.text
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

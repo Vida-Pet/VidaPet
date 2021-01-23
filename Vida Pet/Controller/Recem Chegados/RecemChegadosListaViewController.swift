@@ -154,7 +154,7 @@ extension RecemChegadosListaViewController : UITableViewDataSource {
         cell.petImage.clipsToBounds = true
         cell.imageView?.contentMode = .scaleAspectFit
         cell.petDesc.text = "\(selectedPet.name!), \n\(selectedPet.info.breed!), \(selectedPet.info.birth?.ageFromDate(withFormatter: Date.Formatter.iso8601)?.formatAge() ?? "")"
-        cell.petImage.contentMode = .scaleAspectFit
+        cell.petImage.contentMode = .scaleToFill
         cell.petImage.image = self.pets[indexPath.row].image?.decodeBase64ToImage() ?? R.image.avataDog()!
         
         let gradient = CAGradientLayer()

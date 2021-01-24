@@ -10,7 +10,13 @@ import UIKit
 
 class AdoteDetalheViewController: VidaPetMainViewController {
     
+    @IBOutlet weak var lbName: UILabel!
+    var name = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lbName.text = self.name
     }
+    
+    
 }

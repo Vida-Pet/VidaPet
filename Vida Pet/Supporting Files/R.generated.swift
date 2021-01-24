@@ -368,22 +368,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `VPCardCollectionViewCell.XIB`.
-    static let vpCardCollectionViewCellXIB = Rswift.FileResource(bundle: R.hostingBundle, name: "VPCardCollectionViewCell", pathExtension: "XIB")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "VPCardCollectionViewCell", withExtension: "XIB")`
-    static func vpCardCollectionViewCellXIB(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.vpCardCollectionViewCellXIB
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1546,13 +1538,19 @@ struct _R: Rswift.Validatable {
     struct adote: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = AdoteListaViewController
 
+      let adoteDetalheViewController = StoryboardViewControllerResource<AdoteDetalheViewController>(identifier: "AdoteDetalheViewController")
       let bundle = R.hostingBundle
       let name = "Adote"
+
+      func adoteDetalheViewController(_: Void = ()) -> AdoteDetalheViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: adoteDetalheViewController)
+      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Adote', but couldn't be loaded.") }
         }
+        if _R.storyboard.adote().adoteDetalheViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'adoteDetalheViewController' could not be loaded from storyboard 'Adote' as 'AdoteDetalheViewController'.") }
       }
 
       fileprivate init() {}

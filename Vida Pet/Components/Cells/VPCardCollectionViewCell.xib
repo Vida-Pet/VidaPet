@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_adote" id="gTV-IL-0wX" customClass="VPCardCollectionViewCell" customModule="Vida_Pet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-6F-MZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ZX-hL-VzS">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullDog" translatesAutoresizingMaskIntoConstraints="NO" id="Hmk-qV-oz3">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-qz-PCc">
+                                        <rect key="frame" x="0.0" y="150" width="150" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cZT-Mv-Kmm">
+                                                <rect key="frame" x="5" y="5" width="140" height="40"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gas-jj-5v8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-Px-ujR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="20"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" name="Vida Pet: White"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="XvD-mf-Psn">
+                                                                <rect key="frame" x="120" y="0.0" width="20" height="20"/>
+                                                                <color key="tintColor" name="Vida Pet: White"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="XvD-mf-Psn" secondAttribute="height" multiplier="1:1" id="35v-CJ-ZQI"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JYG-rs-veo">
+                                                        <rect key="frame" x="0.0" y="20" width="140" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="Vida Pet: White"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cZT-Mv-Kmm" firstAttribute="top" secondItem="Rho-qz-PCc" secondAttribute="top" constant="5" id="2wX-yk-RHA"/>
+                                            <constraint firstAttribute="trailing" secondItem="cZT-Mv-Kmm" secondAttribute="trailing" constant="5" id="Gs5-C6-1nr"/>
+                                            <constraint firstItem="cZT-Mv-Kmm" firstAttribute="leading" secondItem="Rho-qz-PCc" secondAttribute="leading" constant="5" id="TiM-0c-50E"/>
+                                            <constraint firstAttribute="bottom" secondItem="cZT-Mv-Kmm" secondAttribute="bottom" constant="5" id="kHi-Z1-59x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhE-1w-qPk">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                <connections>
+                                    <action selector="showDetail:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ytt-fY-6eC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Vida Pet: Blue"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zhE-1w-qPk" secondAttribute="bottom" id="4TU-QY-71Y"/>
+                            <constraint firstAttribute="width" constant="150" id="83P-Ra-hiC"/>
+                            <constraint firstAttribute="bottom" secondItem="8ZX-hL-VzS" secondAttribute="bottom" id="9Et-hG-MJR"/>
+                            <constraint firstAttribute="width" secondItem="y7x-6F-MZJ" secondAttribute="height" multiplier="3:4" id="BEs-sW-i5t"/>
+                            <constraint firstItem="8ZX-hL-VzS" firstAttribute="leading" secondItem="y7x-6F-MZJ" secondAttribute="leading" id="CFc-Ky-X30"/>
+                            <constraint firstAttribute="trailing" secondItem="8ZX-hL-VzS" secondAttribute="trailing" id="E7d-Zk-Fj4"/>
+                            <constraint firstAttribute="trailing" secondItem="zhE-1w-qPk" secondAttribute="trailing" id="MbR-xq-iLb"/>
+                            <constraint firstItem="Hmk-qV-oz3" firstAttribute="height" secondItem="y7x-6F-MZJ" secondAttribute="height" multiplier="0.75" id="P2R-mv-2Zp"/>
+                            <constraint firstItem="zhE-1w-qPk" firstAttribute="leading" secondItem="y7x-6F-MZJ" secondAttribute="leading" id="UZ5-5w-huF"/>
+                            <constraint firstItem="zhE-1w-qPk" firstAttribute="top" secondItem="y7x-6F-MZJ" secondAttribute="top" id="VlP-Fb-ZBf"/>
+                            <constraint firstItem="8ZX-hL-VzS" firstAttribute="top" secondItem="y7x-6F-MZJ" secondAttribute="top" id="jAU-GD-8oS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="y7x-6F-MZJ" secondAttribute="bottom" id="cqf-sf-FBv"/>
+                <constraint firstAttribute="trailing" secondItem="y7x-6F-MZJ" secondAttribute="trailing" id="hep-PK-2r9"/>
+                <constraint firstItem="y7x-6F-MZJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sA5-86-yN5"/>
+                <constraint firstItem="y7x-6F-MZJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wjf-F3-buK"/>
+            </constraints>
+            <size key="customSize" width="193" height="229"/>
+            <connections>
+                <outlet property="imgGender" destination="XvD-mf-Psn" id="h6C-Y0-Qmi"/>
+                <outlet property="imgPet" destination="Hmk-qV-oz3" id="AAh-IE-LDQ"/>
+                <outlet property="lbAddress" destination="JYG-rs-veo" id="Txm-XH-3Eg"/>
+                <outlet property="lbName" destination="ul1-Px-ujR" id="8ac-0q-irV"/>
+                <outlet property="widthConstant" destination="83P-Ra-hiC" id="vSz-I9-9I4"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="57.589285714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bullDog" width="315" height="331"/>
+        <image name="claw_icon" width="48" height="48"/>
+        <namedColor name="Vida Pet: Blue">
+            <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Vida Pet: White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

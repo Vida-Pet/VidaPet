@@ -15,16 +15,6 @@ class AdoteListaViewController: VidaPetMainViewController {
     
     var pets: Pets = []
     
-    final let defaultCornerRadius: CGFloat = 5
-    final let defaultNumberOfCollumns: CGFloat = 2
-    final let defaultCardSpaces: CGFloat = 15
-    final let mockCellCountMultiplier: Int = 5
-    var mockCellIndex: [Int] = []
-    var cellWidth: CGFloat {
-        return (UIScreen.main.bounds.width / defaultNumberOfCollumns) - (((defaultNumberOfCollumns+1) * defaultCardSpaces)/defaultNumberOfCollumns)
-    }
-    
-    
     // MARK: IBActions
     
     @IBOutlet weak var cvPets: UICollectionView!
@@ -52,10 +42,6 @@ class AdoteListaViewController: VidaPetMainViewController {
         let nibCell  = UINib(nibName: R.nib.vpCardCollectionViewCell.name, bundle: nil)
         cvPets.register(nibCell, forCellWithReuseIdentifier: R.nib.vpCardCollectionViewCell.identifier)
         cvPets.dataSource = self
-        
-        //        for _ in 0...mockCellCountMultiplier*MeusPetsListaViewController.pets.count {
-        //            mockCellIndex.append(Int.random(in: 0...2))
-        //        }
     }
     
     func requestMeusPets() {
@@ -98,7 +84,7 @@ class AdoteListaViewController: VidaPetMainViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension AdoteListaViewController: UICollectionViewDataSource {
+extension AdoteListaViewController: UICollectionViewDataSource , UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.pets.count
@@ -108,12 +94,28 @@ extension AdoteListaViewController: UICollectionViewDataSource {
         
         let cell = cvPets.dequeueReusableCell(withReuseIdentifier: R.nib.vpCardCollectionViewCell.identifier, for: indexPath) as! VPCardCollectionViewCell
         
-        cell.imgPet.image = self.pets[indexPath.row].image?.decodeBase64ToImage()  ?? R.image.avataDog()!
-        cell.lbName.text = self.pets[indexPath.row].name
-        cell.lbAddress.text = self.pets[indexPath.row].info.size
-        cell.layer.cornerRadius = defaultCornerRadius
+        cell.pet = self.pets[indexPath.row]
+        cell.setup()
+//        cell.imgPet.image = self.pets[indexPath.row].image?.decodeBase64ToImage()  ?? R.image.avataDog()!
+//        cell.lbName.text = self.pets[indexPath.row].name
+//        cell.lbAddress.text = self.pets[indexPath.row].info.size
+//        cell.layer.cornerRadius = defaultCornerRadius
+//        
+//        cell.widthConstant.constant = cellWidth
         
-        cell.widthConstant.constant = cellWidth
+        cell.showDetailDelegate = self
         return cell
     }
+    
+}
+
+
+extension AdoteListaViewController : ShowDetailProtocol {
+    
+    func showDetail(pet: Pet) {
+        let vc = storyboard?.instantiateViewController(identifier: "AdoteDetalheViewController") as? AdoteDetalheViewController
+        vc?.name = pet.name ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }

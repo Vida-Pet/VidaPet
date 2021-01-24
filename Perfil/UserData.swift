@@ -30,6 +30,7 @@ struct UserData: Codable {
     var image: String? = nil
     var name: String?
     var state: String?
+    var phone: String?
 }
 
 struct SimpleUser: Codable {

@@ -20,6 +20,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     var image: UIImage?
     var name: String?
     var state: String?
+    var phone: String?
     var userModel = UserModel()
     var userData : UserData?
     
@@ -30,6 +31,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var bio: VPMultilineRoundPlaceholderTextField!
     
+    @IBOutlet weak var userPhoneTextField: VPRoundPlaceholderTextField!
     
     // MARK: - IBActions
     
@@ -96,6 +98,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
             "name" : userData?.name as Any,
             "image" : userData?.image as Any,
             "bio" : userData?.bio as Any,
+            "phone" : userData?.phone as Any,
             "isPublicProfile" : userData?.isPublicProfile as Any,
             "state" : userData?.state as Any,
             "uid" : userData?.uid as Any,
@@ -150,11 +153,13 @@ class EditarPerfilViewController: VidaPetMainViewController {
         print("encodedImage \(encodedImage ?? UIImage.init())")
         bioUser = bio.text
         name = userNameTextField.text
+        phone = userPhoneTextField.text
         if let _bio = bioUser,
            let _state = state,
            let _name = name,
+           let _phone = phone,
            let _encodedImage = image?.encodeImageToBase64() {
-            userData = UserData(uid: GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22" , id: GlobalSession.getUserId() ?? 1, bio: _bio, isPublicProfile: isPublicProfile , image: _encodedImage, name: _name, state: _state)}
+            userData = UserData(uid: GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22" , id: GlobalSession.getUserId() ?? 1, bio: _bio, isPublicProfile: isPublicProfile , image: _encodedImage, name: _name, state: _state , phone: _phone)}
         print ("userdata")
         print(userData as Any)
         
@@ -172,6 +177,7 @@ class EditarPerfilViewController: VidaPetMainViewController {
     func setupFields(){
         self.userNameTextField.text = name
         self.estadoTextField.text = state
+        self.userPhoneTextField.text = phone
         self.bio.text = bioUser
     }
     

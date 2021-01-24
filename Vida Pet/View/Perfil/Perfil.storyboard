@@ -138,35 +138,6 @@
                                     <action selector="imagePressed:" destination="K3p-2f-Eku" eventType="touchUpInside" id="gjb-mR-LbC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-32-PAg" customClass="VPMultilineRoundPlaceholderTextField" customModule="Vida_Pet">
-                                <rect key="frame" x="20" y="327" width="374" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="63q-lX-vjT"/>
-                                    <constraint firstAttribute="height" constant="250" id="bh9-Zc-MYc"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descrição"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-Uu-87y">
-                                <rect key="frame" x="20" y="607" width="374" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tornar perfil público" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-Ba-RdL">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-hr-pVl">
-                                        <rect key="frame" x="325" y="0.0" width="51" height="31"/>
-                                        <color key="onTintColor" name="Vida Pet: Blue"/>
-                                        <connections>
-                                            <action selector="perfilPublico:" destination="K3p-2f-Eku" eventType="valueChanged" id="yQa-EG-LEZ"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uts-KU-m76" customClass="VPRoundPlaceholderTextField" customModule="Vida_Pet">
                                 <rect key="frame" x="20" y="177" width="374" height="35"/>
                                 <constraints>
@@ -175,6 +146,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-Bx-wQk" customClass="VPRoundPlaceholderTextField" customModule="Vida_Pet" customModuleProvider="target">
+                                <rect key="frame" x="20" y="327" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="UUD-UL-g4j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-hr-pVl">
+                                <rect key="frame" x="345" y="664" width="51" height="31"/>
+                                <color key="onTintColor" name="Vida Pet: Blue"/>
+                                <connections>
+                                    <action selector="perfilPublico:" destination="K3p-2f-Eku" eventType="valueChanged" id="yQa-EG-LEZ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tornar perfil público" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-Ba-RdL">
+                                <rect key="frame" x="20" y="664" width="259" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-32-PAg" customClass="VPMultilineRoundPlaceholderTextField" customModule="Vida_Pet">
+                                <rect key="frame" x="20" y="402" width="374" height="197"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" id="pj4-X3-Epn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descrição"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8iS-Nt-WWf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -182,19 +184,24 @@
                             <constraint firstItem="8iS-Nt-WWf" firstAttribute="trailing" secondItem="4yy-32-PAg" secondAttribute="trailing" constant="20" id="1EL-Jd-tQb"/>
                             <constraint firstItem="Now-6U-eV3" firstAttribute="top" secondItem="ExU-xe-d7L" secondAttribute="bottom" constant="7" id="2Nd-dV-wu5"/>
                             <constraint firstItem="Now-6U-eV3" firstAttribute="centerX" secondItem="N4h-uc-utv" secondAttribute="centerX" id="8nm-5G-74k"/>
-                            <constraint firstItem="4yy-32-PAg" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="40" id="Bn0-C4-Z5G"/>
                             <constraint firstItem="8iS-Nt-WWf" firstAttribute="trailing" secondItem="Uts-KU-m76" secondAttribute="trailing" constant="20" id="FPW-gX-tEp"/>
+                            <constraint firstItem="ak4-Bx-wQk" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="G3b-G7-jLc"/>
                             <constraint firstItem="K9B-fF-eDS" firstAttribute="top" secondItem="Uts-KU-m76" secondAttribute="bottom" constant="40" id="HU8-9J-abY"/>
-                            <constraint firstItem="wQl-Uu-87y" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="QsX-kc-xiv"/>
+                            <constraint firstItem="GUP-hr-pVl" firstAttribute="leading" secondItem="4yy-32-PAg" secondAttribute="trailing" constant="-49" id="Kmf-vr-c0Q"/>
+                            <constraint firstItem="GUP-hr-pVl" firstAttribute="leading" secondItem="mq1-Ba-RdL" secondAttribute="trailing" constant="66" id="MIJ-D8-sLM"/>
                             <constraint firstItem="ExU-xe-d7L" firstAttribute="centerX" secondItem="N4h-uc-utv" secondAttribute="centerX" id="Sgf-hx-tXq"/>
+                            <constraint firstItem="mq1-Ba-RdL" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" constant="65" id="W4U-k0-Xa1"/>
+                            <constraint firstItem="ak4-Bx-wQk" firstAttribute="top" secondItem="K9B-fF-eDS" secondAttribute="bottom" constant="40" id="XcH-1J-dhP"/>
                             <constraint firstItem="Uts-KU-m76" firstAttribute="top" secondItem="Now-6U-eV3" secondAttribute="bottom" constant="15" id="crP-JG-y7V"/>
+                            <constraint firstItem="4yy-32-PAg" firstAttribute="top" secondItem="ak4-Bx-wQk" secondAttribute="bottom" constant="40" id="dZo-zt-ec0"/>
+                            <constraint firstItem="8iS-Nt-WWf" firstAttribute="trailing" secondItem="ak4-Bx-wQk" secondAttribute="trailing" constant="20" id="edj-nm-qqc"/>
+                            <constraint firstItem="mq1-Ba-RdL" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="njx-jo-EK5"/>
                             <constraint firstItem="ExU-xe-d7L" firstAttribute="top" secondItem="8iS-Nt-WWf" secondAttribute="top" constant="25" id="orC-fn-EzI"/>
                             <constraint firstItem="8iS-Nt-WWf" firstAttribute="trailing" secondItem="K9B-fF-eDS" secondAttribute="trailing" constant="20" id="s03-8n-oFo"/>
                             <constraint firstItem="4yy-32-PAg" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="sLk-ME-914"/>
-                            <constraint firstItem="8iS-Nt-WWf" firstAttribute="trailing" secondItem="wQl-Uu-87y" secondAttribute="trailing" constant="20" id="smH-hA-rUj"/>
                             <constraint firstItem="K9B-fF-eDS" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="tXl-tq-Zbl"/>
+                            <constraint firstItem="GUP-hr-pVl" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" constant="65" id="uUj-ZU-A77"/>
                             <constraint firstItem="Uts-KU-m76" firstAttribute="leading" secondItem="8iS-Nt-WWf" secondAttribute="leading" constant="20" id="vK8-6T-duE"/>
-                            <constraint firstItem="wQl-Uu-87y" firstAttribute="top" secondItem="4yy-32-PAg" secondAttribute="bottom" constant="30" id="yHM-lJ-RG8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oOc-6o-ROK"/>
@@ -203,11 +210,12 @@
                         <outlet property="estadoTextField" destination="K9B-fF-eDS" id="GmU-Dd-5gO"/>
                         <outlet property="userImage" destination="ExU-xe-d7L" id="86e-kp-Vic"/>
                         <outlet property="userNameTextField" destination="Uts-KU-m76" id="7Au-o2-KeG"/>
+                        <outlet property="userPhoneTextField" destination="ak4-Bx-wQk" id="i9a-xV-2DM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faA-J7-ePV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="141"/>
+            <point key="canvasLocation" x="1601.449275362319" y="140.625"/>
         </scene>
     </scenes>
     <resources>

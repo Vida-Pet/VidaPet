@@ -81,6 +81,7 @@ class PerfilViewController: VidaPetMainViewController {
             destinationVC.image = userImage.image
             destinationVC.state = userData?.state
             destinationVC.bioUser = userData?.bio
+            destinationVC.phone = userData?.phone
         }
     }
     

@@ -536,12 +536,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `VPCardCollectionViewCell`.
     static let vpCardCollectionViewCell = _R.nib._VPCardCollectionViewCell()
-    /// Nib `VPDetailPet`.
-    static let vpDetailPet = _R.nib._VPDetailPet()
     /// Nib `VPLargeRoundedTableViewCell`.
     static let vpLargeRoundedTableViewCell = _R.nib._VPLargeRoundedTableViewCell()
 
@@ -550,14 +548,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.vpCardCollectionViewCell) instead")
     static func vpCardCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.vpCardCollectionViewCell)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "VPDetailPet", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.vpDetailPet) instead")
-    static func vpDetailPet(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.vpDetailPet)
     }
     #endif
 
@@ -571,10 +561,6 @@ struct R: Rswift.Validatable {
 
     static func vpCardCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPCardCollectionViewCell? {
       return R.nib.vpCardCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VPCardCollectionViewCell
-    }
-
-    static func vpDetailPet(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.vpDetailPet.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func vpLargeRoundedTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VPLargeRoundedTableViewCell? {
@@ -1493,17 +1479,6 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'VPCardCollectionViewCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Vida Pet: White", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: White' is used in storyboard 'VPCardCollectionViewCell', but couldn't be loaded.") }
         }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _VPDetailPet: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "VPDetailPet"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

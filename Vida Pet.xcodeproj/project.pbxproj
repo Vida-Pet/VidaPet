@@ -50,8 +50,6 @@
 		3BFE13B3255622BA003627C3 /* UISegmentControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */; };
 		411B165725BDAC0900082A65 /* VPCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */; };
 		411B166D25BDD32400082A65 /* ShowDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B166C25BDD32400082A65 /* ShowDetailProtocol.swift */; };
-		411B16E125BDDF5100082A65 /* VPDetailPet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411B16E025BDDF5100082A65 /* VPDetailPet.xib */; };
-		411B16E425BDDF7400082A65 /* VPDetailPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B16E325BDDF7400082A65 /* VPDetailPet.swift */; };
 		4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */; };
 		41D5D20C25BA1A6D00E8596B /* GlobalSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */; };
 		65E1B252AD84E982B5BE09E0 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */; };
@@ -116,8 +114,6 @@
 		3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControl+.swift"; sourceTree = "<group>"; };
 		411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		411B166C25BDD32400082A65 /* ShowDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailProtocol.swift; sourceTree = "<group>"; };
-		411B16E025BDDF5100082A65 /* VPDetailPet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPDetailPet.xib; sourceTree = "<group>"; };
-		411B16E325BDDF7400082A65 /* VPDetailPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPDetailPet.swift; sourceTree = "<group>"; };
 		4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSession.swift; sourceTree = "<group>"; };
 		67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,8 +404,6 @@
 				7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */,
 				4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */,
 				411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */,
-				411B16E025BDDF5100082A65 /* VPDetailPet.xib */,
-				411B16E325BDDF7400082A65 /* VPDetailPet.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -573,7 +567,6 @@
 			files = (
 				FEB29B002576914B00EEBF75 /* GoogleService-Info.plist in Resources */,
 				3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */,
-				411B16E125BDDF5100082A65 /* VPDetailPet.xib in Resources */,
 				3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */,
 				411B165725BDAC0900082A65 /* VPCardCollectionViewCell.xib in Resources */,
 				FEB674B125782C0B009B129C /* Login.strings in Resources */,
@@ -685,7 +678,6 @@
 				FE82FC002555E940007B396E /* UserModel.swift in Sources */,
 				3B0B8A2B2554FC8C00033297 /* UITextField+.swift in Sources */,
 				4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */,
-				411B16E425BDDF7400082A65 /* VPDetailPet.swift in Sources */,
 				3B581ADC2544F2E4003E2A68 /* Pets.swift in Sources */,
 				3B584BD92538129A0090A779 /* RegisterViewController.swift in Sources */,
 				FE352AEB2554E49000D4E680 /* UserData.swift in Sources */,

@@ -52,7 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="cvPets" destination="X3D-vK-BDM" id="f8s-Gx-8sD"/>
-                        <segue destination="IPX-bO-DIM" kind="presentation" id="mV4-A4-BhD"/>
+                        <segue destination="IPX-bO-DIM" kind="modal" id="mV4-A4-BhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Of-ja-Kk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,39 +63,74 @@
         <scene sceneID="Mbu-Gi-l4M">
             <objects>
                 <viewController storyboardIdentifier="AdoteDetalheViewController" id="IPX-bO-DIM" customClass="AdoteDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1nD-Ln-0st">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="1nD-Ln-0st">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7O-P6-VVp">
-                                <rect key="frame" x="186" y="438" width="71" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p3k-iH-sDS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="Cak-K4-RGW"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hk-FN-1Ch">
+                                <rect key="frame" x="0.0" y="349" width="414" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-CD-Ztc">
+                                        <rect key="frame" x="21" y="17.5" width="313" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rTG-b6-eb3">
+                                        <rect key="frame" x="354" y="12.5" width="40" height="40"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Rs1-8b-g6B"/>
+                                            <constraint firstAttribute="width" constant="40" id="mC3-A9-Dl4"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="Vida Pet: Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rTG-b6-eb3" secondAttribute="trailing" constant="20" id="D1y-qe-BtE"/>
+                                    <constraint firstItem="Zqo-CD-Ztc" firstAttribute="leading" secondItem="8hk-FN-1Ch" secondAttribute="leading" constant="21" id="Lkh-6S-ohK"/>
+                                    <constraint firstItem="rTG-b6-eb3" firstAttribute="leading" secondItem="Zqo-CD-Ztc" secondAttribute="trailing" constant="20" id="Mfe-hi-ljy"/>
+                                    <constraint firstItem="Zqo-CD-Ztc" firstAttribute="centerY" secondItem="8hk-FN-1Ch" secondAttribute="centerY" id="NMz-FJ-iBv"/>
+                                    <constraint firstAttribute="height" constant="65" id="Tjr-bD-ALO"/>
+                                    <constraint firstItem="rTG-b6-eb3" firstAttribute="centerY" secondItem="8hk-FN-1Ch" secondAttribute="centerY" id="cFk-8x-a92"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yJh-6j-nIz"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8hk-FN-1Ch" firstAttribute="top" secondItem="p3k-iH-sDS" secondAttribute="bottom" constant="-1" id="9c1-48-W8a"/>
+                            <constraint firstItem="p3k-iH-sDS" firstAttribute="leading" secondItem="yJh-6j-nIz" secondAttribute="leading" id="IVZ-Ro-vdt"/>
+                            <constraint firstItem="yJh-6j-nIz" firstAttribute="trailing" secondItem="8hk-FN-1Ch" secondAttribute="trailing" id="JZr-1D-1VZ"/>
+                            <constraint firstItem="8hk-FN-1Ch" firstAttribute="leading" secondItem="yJh-6j-nIz" secondAttribute="leading" id="ZE8-Ib-DGB"/>
+                            <constraint firstItem="p3k-iH-sDS" firstAttribute="centerX" secondItem="yJh-6j-nIz" secondAttribute="centerX" id="i3d-Tr-TiY"/>
+                            <constraint firstItem="p3k-iH-sDS" firstAttribute="top" secondItem="yJh-6j-nIz" secondAttribute="top" id="v8P-2W-MWd"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbName" destination="b7O-P6-VVp" id="Hjm-bL-2x6"/>
+                        <outlet property="ivFavorito" destination="rTG-b6-eb3" id="9Y9-uH-hDm"/>
+                        <outlet property="ivPetImage" destination="p3k-iH-sDS" id="FaQ-6X-Crm"/>
+                        <outlet property="lbName" destination="Zqo-CD-Ztc" id="qbS-8K-e0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGf-55-xdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="-212"/>
+            <point key="canvasLocation" x="1031.8840579710145" y="-212.27678571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="claw_icon" width="48" height="48"/>
         <namedColor name="Vida Pet: Blue">
             <color red="0.14900000393390656" green="0.72899997234344482" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -179,7 +179,7 @@
         <!--Detalhes do Pet-->
         <scene sceneID="kK3-c5-UCO">
             <objects>
-                <viewController title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" customClass="MeusPetsDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsStoryBoard" title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" customClass="MeusPetsDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3M-y7-K8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

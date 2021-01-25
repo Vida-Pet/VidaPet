@@ -114,8 +114,9 @@ extension AdoteListaViewController : ShowDetailProtocol {
     
     func showDetail(pet: Pet) {
         let vc = storyboard?.instantiateViewController(identifier: "AdoteDetalheViewController") as? AdoteDetalheViewController
-        vc?.name = pet.name ?? ""
-        self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.pet = pet
+        vc!.modalPresentationStyle = .popover
+        present(vc!, animated: true)
     }
     
 }

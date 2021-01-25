@@ -10,13 +10,43 @@ import UIKit
 
 class AdoteDetalheViewController: VidaPetMainViewController {
     
+    var pet: Pet?
     @IBOutlet weak var lbName: UILabel!
-    var name = ""
+    @IBOutlet weak var ivPetImage: UIImageView!
+    @IBOutlet weak var ivFavorito: UIImageView!
+    
+    final let defaultButtonCornerRadius: CGFloat = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbName.text = self.name
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.clickFavorito))
+        ivFavorito.addGestureRecognizer(tapGR)
+        ivFavorito.isUserInteractionEnabled = true
+        
+        setup()
     }
     
+    @objc func clickFavorito(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            let refreshAlert = UIAlertController(title: "Favorito", message: "Gostaria de favoritar?", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { (action: UIAlertAction!) in
+                self.ivFavorito.tintColor = .yellow
+
+            }))
+
+            refreshAlert.addAction(UIAlertAction(title: "Não", style: .cancel, handler: { (action: UIAlertAction!) in
+            }))
+
+            present(refreshAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func setup(){
+        ivPetImage.image = self.pet?.image?.decodeBase64ToImage() ?? R.image.avataDog()!
+        
+        lbName.text = pet?.name
+    }
     
 }

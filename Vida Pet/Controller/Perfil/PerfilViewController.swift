@@ -100,34 +100,35 @@ class PerfilViewController: VidaPetMainViewController {
     func requestMyUser() {
         
         self.loadingIndicator(.start)
-        
-        APIHelper.request(url: .user, aditionalUrl: "/\(GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22")", method: .get)
-            .responseJSON { response in
-                self.loadingIndicator(.stop)
-                switch response.result {
-                case .success:
-                    if let error = response.error {
-                        
-                        self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
-                    } else {
-                        guard
-                            let data = response.data,
-                            let responseUsers = try? JSONDecoder().decode(UserData.self, from: data)
-                        else {
-                            self.displayError("", withTryAgain: { self.requestMyUser() })
-                            return
+                
+                APIHelper.request(url: .user, aditionalUrl:  "/\(GlobalSession.getUserUid() ?? "5A6Q4O7Vj5QSUjNfIxYMIWuOXB22")", method: .get)
+                    .responseJSON { response in
+                        self.loadingIndicator(.stop)
+                        switch response.result {
+                        case .success:
+                            if let error = response.error {
+                                
+                                self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
+                            } else {
+                                guard
+                                    let data = response.data,
+                                    let responseUsers = try? JSONDecoder().decode(UserData.self, from: data)
+                                else {
+                                    self.displayError("", withTryAgain: { self.requestMyUser() })
+                                    return
+                                }
+                                
+                                self.userData = responseUsers
+                              
+                                self.upDateUserInfo()
+                            }
+                            
+                        case .failure(let error):
+                            
+                            self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
                         }
-                        
-                        self.userData = responseUsers
-                        
-                        self.upDateUserInfo()
                     }
-                    
-                case .failure(let error):
-                    
-                    self.displayError(error.localizedDescription, withTryAgain: { self.requestMyUser() })
-                }
-            }
-    }}
+            }}
+
 
 

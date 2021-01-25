@@ -191,24 +191,29 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     
     func postUser(_ user: UserData) {
-        self.loadingIndicator(.start)
-        APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
-            .responseJSON { response in
-                
-                switch response.result {
-                case .success:
-                    if let error = response.error {
-                        self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
-                        
-                    } else {
-                        self.loadingIndicator(.stop)
-                        self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
-                    }
-                case .failure(let error):
-                    self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
-                }
-            }
-    }
+           self.loadingIndicator(.start)
+           APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
+               .responseJSON { response in
+                   
+                   switch response.result {
+                   case .success:
+                       if let error = response.error {
+                           self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
+                           
+                       } else {
+                           guard
+                               let data = response.data,
+                               let responseUser = try? JSONDecoder().decode(UserData.self, from: data) else { return; }
+                           GlobalSession.setUser(withId: responseUser.id, andUid: responseUser.uid)
+                           self.loadingIndicator(.stop)
+                           self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+                       }
+                   case .failure(let error):
+                       self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
+                   }
+               }
+       }
+
     
     func cleanAllInfo() {
         DispatchQueue.main.async {

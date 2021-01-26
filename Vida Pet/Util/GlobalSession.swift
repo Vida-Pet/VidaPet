@@ -45,4 +45,9 @@ class GlobalSession{
         return UserDefaults.standard.string(forKey: pwdKey)
     }
     
+    public static func clearEmailPwd() {
+        UserDefaults.standard.removeObject(forKey: pwdKey)
+        UserDefaults.standard.removeObject(forKey: emailKey)
+    }
+    
 }

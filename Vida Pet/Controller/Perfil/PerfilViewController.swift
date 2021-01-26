@@ -37,6 +37,7 @@ class PerfilViewController: VidaPetMainViewController {
     @IBAction func logOutButton(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signOut()
         GlobalSession.setUser(withId: nil, andUid: nil)
+        GlobalSession.clearEmailPwd()
         do {
             try Auth.auth().signOut()
             self.navigationController?.popToRootViewController(animated: true)

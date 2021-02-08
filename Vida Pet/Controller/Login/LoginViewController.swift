@@ -33,6 +33,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var googleButton: UIButton!
     
     // MARK: - Life Cycles
     
@@ -165,6 +166,7 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         emailTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
         passwordTextField.setStyleRounded(withRadius: defaultButtonCornerRadius)
         loginButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
+        googleButton.setStyleRounded(withRadius: defaultButtonCornerRadius)
         self.errorLabel.isHidden = true
     }
     

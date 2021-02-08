@@ -369,7 +369,7 @@ class MeusPetsCadastroViewController: VidaPetMainViewController {
         textFieldData.delegate = self
         textFieldData.tag = dateTag
         self.addButton = alertView.addButton(R.string.meusPetsCadastro.nova_adicionar(), action: {
-            if let text = textFieldNome.text, let data = textFieldData.text {
+            if let text = textFieldNome.text, let data = Date.Formatter.iso8601.string(for: textFieldData.text?.getDate(fromFormatter: Date.Formatter.defaultDate)) {
                 switch type {
                 case .SURGERYS:
                     self.medicalData.surgerys.append(Surgery(name: text, data: data, petId: self.pet?.id))

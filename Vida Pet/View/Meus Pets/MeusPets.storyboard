@@ -32,11 +32,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGR-P8-IfT" customClass="ShadowView" customModule="Vida_Pet" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="10" width="414" height="142"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="142"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJA-D8-jDM">
-                                                    <rect key="frame" x="0.0" y="10" width="414" height="142"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="142"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet3" translatesAutoresizingMaskIntoConstraints="NO" id="1aZ-9Y-F5C">
                                                             <rect key="frame" x="0.0" y="0.0" width="153" height="142"/>
@@ -44,8 +44,8 @@
                                                                 <constraint firstAttribute="width" secondItem="1aZ-9Y-F5C" secondAttribute="height" multiplier="14:13" id="TRf-UA-3oG"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8J-b7-Zh4">
-                                                            <rect key="frame" x="178" y="51" width="145" height="40"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n8J-b7-Zh4">
+                                                            <rect key="frame" x="163" y="51" width="221" height="40"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vks-QK-LY2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -56,16 +56,16 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oI8-pr-J4A">
-                                                                    <rect key="frame" x="60" y="0.0" width="85" height="40"/>
+                                                                    <rect key="frame" x="50" y="0.0" width="171" height="40"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-7O-g3P">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-7O-g3P">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="25.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                             <color key="textColor" name="Vida Pet: Blue"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-8a-RNW">
-                                                                            <rect key="frame" x="0.0" y="40" width="85" height="0.0"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Descrição Cachorro" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-8a-RNW">
+                                                                            <rect key="frame" x="0.0" y="25.5" width="171" height="14.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" name="Vida Pet: Blue"/>
                                                                             <nil key="highlightedColor"/>
@@ -78,23 +78,25 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="1aZ-9Y-F5C" secondAttribute="bottom" id="86K-k2-IZd"/>
-                                                        <constraint firstItem="n8J-b7-Zh4" firstAttribute="leading" secondItem="1aZ-9Y-F5C" secondAttribute="trailing" constant="25" id="Cjh-Yt-X1m"/>
+                                                        <constraint firstItem="n8J-b7-Zh4" firstAttribute="leading" secondItem="1aZ-9Y-F5C" secondAttribute="trailing" constant="10" id="Cjh-Yt-X1m"/>
                                                         <constraint firstItem="1aZ-9Y-F5C" firstAttribute="top" secondItem="eJA-D8-jDM" secondAttribute="top" id="Eim-Bi-Chg"/>
                                                         <constraint firstItem="1aZ-9Y-F5C" firstAttribute="leading" secondItem="eJA-D8-jDM" secondAttribute="leading" id="hpM-eQ-WGI"/>
                                                         <constraint firstItem="n8J-b7-Zh4" firstAttribute="centerY" secondItem="eJA-D8-jDM" secondAttribute="centerY" id="qBV-De-vSo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3kb-8a-RNW" secondAttribute="trailing" constant="10" id="s5g-ky-8Od"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yKo-7O-g3P" secondAttribute="trailing" constant="10" id="u0q-Pj-T8Q"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" name="Vida Pet: White"/>
                                             <constraints>
-                                                <constraint firstItem="eJA-D8-jDM" firstAttribute="leading" secondItem="zBq-kA-Jt0" secondAttribute="leading" id="LzA-KH-XLE"/>
+                                                <constraint firstItem="eJA-D8-jDM" firstAttribute="leading" secondItem="zBq-kA-Jt0" secondAttribute="leading" constant="10" id="15p-i6-TFT"/>
                                                 <constraint firstAttribute="bottom" secondItem="eJA-D8-jDM" secondAttribute="bottom" constant="10" id="R6V-GF-hIp"/>
-                                                <constraint firstItem="fGR-P8-IfT" firstAttribute="leading" secondItem="zBq-kA-Jt0" secondAttribute="leading" id="f9V-Na-4RE"/>
-                                                <constraint firstAttribute="trailing" secondItem="eJA-D8-jDM" secondAttribute="trailing" id="gdd-8o-QmW"/>
+                                                <constraint firstAttribute="trailing" secondItem="eJA-D8-jDM" secondAttribute="trailing" constant="10" id="Vfr-HU-NLI"/>
                                                 <constraint firstItem="eJA-D8-jDM" firstAttribute="top" secondItem="zBq-kA-Jt0" secondAttribute="top" constant="10" id="haT-N9-yrP"/>
                                                 <constraint firstAttribute="bottom" secondItem="fGR-P8-IfT" secondAttribute="bottom" constant="10" id="k6W-CB-0bh"/>
-                                                <constraint firstAttribute="trailing" secondItem="fGR-P8-IfT" secondAttribute="trailing" id="lcD-Gm-kY4"/>
+                                                <constraint firstItem="fGR-P8-IfT" firstAttribute="leading" secondItem="zBq-kA-Jt0" secondAttribute="leading" constant="10" id="rhP-uc-FDV"/>
                                                 <constraint firstItem="fGR-P8-IfT" firstAttribute="top" secondItem="zBq-kA-Jt0" secondAttribute="top" constant="10" id="vRn-d9-77X"/>
+                                                <constraint firstAttribute="trailing" secondItem="fGR-P8-IfT" secondAttribute="trailing" constant="10" id="wa7-Mx-Ejm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Vida Pet: White"/>
@@ -177,7 +179,7 @@
         <!--Detalhes do Pet-->
         <scene sceneID="kK3-c5-UCO">
             <objects>
-                <viewController title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" customClass="MeusPetsDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsStoryBoard" title="Detalhes do Pet" hidesBottomBarWhenPushed="YES" id="PDa-ey-lcH" customClass="MeusPetsDetalheViewController" customModule="Vida_Pet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3M-y7-K8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +188,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jr6-Q2-wRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1070"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1055.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet3" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-pf-SC9" userLabel="ImgPrincipal">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -198,10 +200,10 @@
                                                 <rect key="frame" x="0.0" y="414" width="414" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="iyO-nD-qGA">
-                                                        <rect key="frame" x="25" y="10" width="364" height="40"/>
+                                                        <rect key="frame" x="10" y="10" width="394" height="40"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-cx-yBi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="269" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="40"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claw_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y3D-Re-Nfe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -212,16 +214,16 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-0q-rbt">
-                                                                        <rect key="frame" x="60" y="0.0" width="209" height="40"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="239" height="40"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="akj-fq-EzS">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="209" height="40"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME TESTE NOME TESTE NOME TESTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="akj-fq-EzS">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="239" height="24"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                 <color key="textColor" name="Vida Pet: Blue"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-Uy-TEj">
-                                                                                <rect key="frame" x="0.0" y="40" width="209" height="0.0"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="NOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTENOME TESTE" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.94999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-Uy-TEj">
+                                                                                <rect key="frame" x="0.0" y="24" width="239" height="16"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" name="Vida Pet: Blue"/>
                                                                                 <nil key="highlightedColor"/>
@@ -231,7 +233,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rud-3t-hlm">
-                                                                <rect key="frame" x="324" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="354" y="0.0" width="40" height="40"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwE-os-TIo">
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -251,18 +253,18 @@
                                                 </subviews>
                                                 <color key="backgroundColor" name="Vida Pet: White"/>
                                                 <constraints>
-                                                    <constraint firstItem="iyO-nD-qGA" firstAttribute="leading" secondItem="14S-Zx-Tv0" secondAttribute="leading" constant="25" id="Sj2-H6-yb1"/>
+                                                    <constraint firstItem="iyO-nD-qGA" firstAttribute="leading" secondItem="14S-Zx-Tv0" secondAttribute="leading" constant="10" id="Sj2-H6-yb1"/>
                                                     <constraint firstItem="iyO-nD-qGA" firstAttribute="centerY" secondItem="14S-Zx-Tv0" secondAttribute="centerY" id="dDs-Ah-fBP"/>
                                                     <constraint firstAttribute="height" constant="60" id="oMY-0t-1jS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iyO-nD-qGA" secondAttribute="trailing" constant="25" id="tlu-l1-KJc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iyO-nD-qGA" secondAttribute="trailing" constant="10" id="tlu-l1-KJc"/>
                                                     <constraint firstItem="iyO-nD-qGA" firstAttribute="centerX" secondItem="14S-Zx-Tv0" secondAttribute="centerX" id="weY-Xv-yld"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEs-GB-Dqh" userLabel="ViewDescricao">
-                                                <rect key="frame" x="15" y="489" width="384" height="57.5"/>
+                                                <rect key="frame" x="10" y="489" width="394" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmn-wn-PZh" userLabel="LblDescricao">
-                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="57.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="43"/>
                                                         <string key="text">Sou um cachorrinho fofo, sapeca, que adora morder o pé do sofá. Tenho problemas renais e ronco muito a noite. Minha comidinha favorita é da Purina e meu brinquedo predileto é o osso de borracha.</string>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <color key="textColor" name="Vida Pet: Blue"/>
@@ -278,7 +280,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEM-p7-kRB" userLabel="ViewInfo">
-                                                <rect key="frame" x="15" y="561.5" width="384" height="83"/>
+                                                <rect key="frame" x="15" y="547" width="384" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NCw-eI-fb0">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="19.5"/>
@@ -416,7 +418,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8T-tX-mUa" userLabel="ViewDadosMedicos">
-                                                <rect key="frame" x="15" y="659.5" width="384" height="370.5"/>
+                                                <rect key="frame" x="15" y="645" width="384" height="370.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados Médicos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-Ej-6Ys">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="19.5"/>
@@ -537,7 +539,7 @@
                                             <constraint firstAttribute="trailing" secondItem="JEM-p7-kRB" secondAttribute="trailing" constant="15" id="0EI-IV-G4e"/>
                                             <constraint firstItem="Z8T-tX-mUa" firstAttribute="top" secondItem="JEM-p7-kRB" secondAttribute="bottom" constant="15" id="3VJ-8S-qIy"/>
                                             <constraint firstItem="zAP-Pt-Nn7" firstAttribute="trailing" secondItem="Z8T-tX-mUa" secondAttribute="trailing" constant="15" id="GE5-w3-6Oc"/>
-                                            <constraint firstItem="zAP-Pt-Nn7" firstAttribute="trailing" secondItem="ZEs-GB-Dqh" secondAttribute="trailing" constant="15" id="GJL-0v-ppp"/>
+                                            <constraint firstItem="zAP-Pt-Nn7" firstAttribute="trailing" secondItem="ZEs-GB-Dqh" secondAttribute="trailing" constant="10" id="GJL-0v-ppp"/>
                                             <constraint firstItem="14S-Zx-Tv0" firstAttribute="leading" secondItem="zAP-Pt-Nn7" secondAttribute="leading" id="Nuc-Lh-UsQ"/>
                                             <constraint firstItem="14S-Zx-Tv0" firstAttribute="trailing" secondItem="zAP-Pt-Nn7" secondAttribute="trailing" id="RS7-6s-IGf"/>
                                             <constraint firstItem="JEM-p7-kRB" firstAttribute="leading" secondItem="Jr6-Q2-wRN" secondAttribute="leading" constant="15" id="W1p-7a-nxd"/>
@@ -548,7 +550,7 @@
                                             <constraint firstItem="14S-Zx-Tv0" firstAttribute="top" secondItem="dxh-pf-SC9" secondAttribute="bottom" id="gnA-Z6-XCE"/>
                                             <constraint firstItem="JEM-p7-kRB" firstAttribute="top" secondItem="ZEs-GB-Dqh" secondAttribute="bottom" constant="15" id="jnD-I9-GL7"/>
                                             <constraint firstItem="ZEs-GB-Dqh" firstAttribute="top" secondItem="14S-Zx-Tv0" secondAttribute="bottom" constant="15" id="qbi-Cv-B3s"/>
-                                            <constraint firstItem="ZEs-GB-Dqh" firstAttribute="leading" secondItem="zAP-Pt-Nn7" secondAttribute="leading" constant="15" id="rHy-4F-j2r"/>
+                                            <constraint firstItem="ZEs-GB-Dqh" firstAttribute="leading" secondItem="zAP-Pt-Nn7" secondAttribute="leading" constant="10" id="rHy-4F-j2r"/>
                                             <constraint firstItem="dxh-pf-SC9" firstAttribute="top" secondItem="zAP-Pt-Nn7" secondAttribute="top" id="xzy-pg-WHL"/>
                                         </constraints>
                                     </view>

@@ -48,8 +48,9 @@
 		3BF230E825B4E0E80044F3C6 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF230E725B4E0E80044F3C6 /* InformationType.swift */; };
 		3BF230EB25B4E0ED0044F3C6 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF230EA25B4E0ED0044F3C6 /* Encodable+.swift */; };
 		3BFE13B3255622BA003627C3 /* UISegmentControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */; };
+		411B165725BDAC0900082A65 /* VPCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */; };
+		411B166D25BDD32400082A65 /* ShowDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B166C25BDD32400082A65 /* ShowDetailProtocol.swift */; };
 		4176AF54255CBBA300562BE6 /* VPCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */; };
-		4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */ = {isa = PBXBuildFile; fileRef = 4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */; };
 		41D5D20C25BA1A6D00E8596B /* GlobalSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */; };
 		65E1B252AD84E982B5BE09E0 /* Pods_Vida_Pet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */; };
 		7E0C593E255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */; };
@@ -111,8 +112,9 @@
 		3BF230E725B4E0E80044F3C6 /* InformationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
 		3BF230EA25B4E0ED0044F3C6 /* Encodable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		3BFE13B2255622BA003627C3 /* UISegmentControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControl+.swift"; sourceTree = "<group>"; };
+		411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		411B166C25BDD32400082A65 /* ShowDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailProtocol.swift; sourceTree = "<group>"; };
 		4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPCardCollectionViewCell.XIB; sourceTree = "<group>"; };
 		41D5D20B25BA1A6D00E8596B /* GlobalSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSession.swift; sourceTree = "<group>"; };
 		67FDF50050B384BE0D284612 /* Pods_Vida_Pet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vida_Pet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VPLargeRoundedTableViewCell.xib; sourceTree = "<group>"; };
@@ -401,7 +403,7 @@
 				7E0C593D255D60C1009D68A1 /* VPLargeRoundedTableViewCell.xib */,
 				7E0C5941255D64F3009D68A1 /* VPLargeRoundedTableViewCell.swift */,
 				4176AF52255CBBA300562BE6 /* VPCardCollectionViewCell.swift */,
-				4176AF53255CBBA300562BE6 /* VPCardCollectionViewCell.XIB */,
+				411B165625BDAC0900082A65 /* VPCardCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -459,6 +461,7 @@
 		3BD5A002253D4CB0005A5BB2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				411B166B25BDD30500082A65 /* Protocols */,
 				3B6A639D25537D0F003FE2A9 /* TextFields */,
 				3B9401E1255F59C0003AD1EA /* Cells */,
 				3BD5A007253D4CDB005A5BB2 /* Views */,
@@ -474,6 +477,14 @@
 				7E0C593F255D62B9009D68A1 /* GradientView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		411B166B25BDD30500082A65 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				411B166C25BDD32400082A65 /* ShowDetailProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		41D5D20A25BA1A5A00E8596B /* Util */ = {
@@ -557,7 +568,7 @@
 				FEB29B002576914B00EEBF75 /* GoogleService-Info.plist in Resources */,
 				3B695D2C2537E91F00CE15AF /* Login.storyboard in Resources */,
 				3B695D202537E8A500CE15AF /* MeusPets.storyboard in Resources */,
-				4176AF55255CBBA300562BE6 /* VPCardCollectionViewCell.XIB in Resources */,
+				411B165725BDAC0900082A65 /* VPCardCollectionViewCell.xib in Resources */,
 				FEB674B125782C0B009B129C /* Login.strings in Resources */,
 				3B0B897225543A6C00033297 /* MeusPetsCadastro.strings in Resources */,
 				3B695D142537E71500CE15AF /* LaunchScreen.storyboard in Resources */,
@@ -697,6 +708,7 @@
 				3B695D0A2537E71300CE15AF /* SceneDelegate.swift in Sources */,
 				3B6A63A025537D40003FE2A9 /* VPRoundPlaceholderTextField.swift in Sources */,
 				7E64FD93255AB80C009B2092 /* RandomPet.swift in Sources */,
+				411B166D25BDD32400082A65 /* ShowDetailProtocol.swift in Sources */,
 				3B584BD7253812900090A779 /* LoginViewController.swift in Sources */,
 				3B581ADF2544F478003E2A68 /* UIImage+.swift in Sources */,
 			);

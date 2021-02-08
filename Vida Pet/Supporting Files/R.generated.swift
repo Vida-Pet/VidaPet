@@ -368,22 +368,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `VPCardCollectionViewCell.XIB`.
-    static let vpCardCollectionViewCellXIB = Rswift.FileResource(bundle: R.hostingBundle, name: "VPCardCollectionViewCell", pathExtension: "XIB")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "VPCardCollectionViewCell", withExtension: "XIB")`
-    static func vpCardCollectionViewCellXIB(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.vpCardCollectionViewCellXIB
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1546,13 +1538,20 @@ struct _R: Rswift.Validatable {
     struct adote: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = AdoteListaViewController
 
+      let adoteDetalheViewController = StoryboardViewControllerResource<AdoteDetalheViewController>(identifier: "AdoteDetalheViewController")
       let bundle = R.hostingBundle
       let name = "Adote"
 
+      func adoteDetalheViewController(_: Void = ()) -> AdoteDetalheViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: adoteDetalheViewController)
+      }
+
       static func validate() throws {
+        if UIKit.UIImage(named: "claw_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'claw_icon' is used in storyboard 'Adote', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Vida Pet: Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Blue' is used in storyboard 'Adote', but couldn't be loaded.") }
         }
+        if _R.storyboard.adote().adoteDetalheViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'adoteDetalheViewController' could not be loaded from storyboard 'Adote' as 'AdoteDetalheViewController'.") }
       }
 
       fileprivate init() {}
@@ -1609,7 +1608,12 @@ struct _R: Rswift.Validatable {
       typealias InitialController = MeusPetsListaViewController
 
       let bundle = R.hostingBundle
+      let detailsStoryBoard = StoryboardViewControllerResource<MeusPetsDetalheViewController>(identifier: "DetailsStoryBoard")
       let name = "MeusPets"
+
+      func detailsStoryBoard(_: Void = ()) -> MeusPetsDetalheViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: detailsStoryBoard)
+      }
 
       static func validate() throws {
         if UIKit.UIImage(named: "camera.viewfinder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'camera.viewfinder' is used in storyboard 'MeusPets', but couldn't be loaded.") }
@@ -1622,6 +1626,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "Vida Pet: Dark Blue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: Dark Blue' is used in storyboard 'MeusPets', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Vida Pet: White", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Vida Pet: White' is used in storyboard 'MeusPets', but couldn't be loaded.") }
         }
+        if _R.storyboard.meusPets().detailsStoryBoard() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'detailsStoryBoard' could not be loaded from storyboard 'MeusPets' as 'MeusPetsDetalheViewController'.") }
       }
 
       fileprivate init() {}

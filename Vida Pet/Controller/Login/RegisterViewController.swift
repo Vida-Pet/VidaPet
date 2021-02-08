@@ -74,35 +74,37 @@ class RegisterViewController: VidaPetMainViewController {
     @IBAction func registerPressed(_ sender: Any) {
         
         self.loadingIndicator(.start)
-        
-        let error = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
-        
-        
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 
-                if let _error = error {
-                    //TODO: Mostrar erro formatado.
-                    self.showError(message: R.string.login.invalid_email_format())
+                let errorMessage = ValidateFields.validateFieldsRegister(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "")
+                if let _errorMessage = errorMessage {
+                    
+                    self.showError(message:_errorMessage )
                     self.loadingIndicator(.stop)
-                    
                 } else {
-                    print("Login Successful.")
-                    let user = Auth.auth().currentUser
-                    if let _user = user {
-                        let uida = _user.uid
-                        self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, name: self.nameTextField.text, state: nil)
-                    }
                     
-                    if let newUser = self.userDataa {
-                        self.requestAddUser(newUser)
-                    }
-                    
-                }
-            }
-        } else {
-            self.loadingIndicator(.stop)
-        }
+                    if let email = emailTextField.text, let password = passwordTextField.text {
+                        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+                            if let _error = error {
+                                
+                                print("erro ao registrar user")
+                            } else {
+                                print("Login Successful.")
+                                let user = Auth.auth().currentUser
+                                if let _user = user {
+                                    let uida = _user.uid
+                                    self.userDataa = UserData(uid: uida,  bio: "", isPublicProfile: false, name: self.nameTextField.text, state: nil)
+                                }
+                                
+                                if let newUser = self.userDataa {
+                                    self.requestAddUser(newUser)
+                                }
+                            }
+                            self.loadingIndicator(.stop)
+                        }
+                        
+                    }}
+                
+
     }
     
     

@@ -12,6 +12,7 @@ import Firebase
 import GoogleSignIn
 import Alamofire
 import SCLAlertView
+import LocalAuthentication
 
 // MARK: - VidaPetMainViewController
 
@@ -23,6 +24,8 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     final let defaultButtonCornerRadius: CGFloat = 5
     var userData : UserData?
     var getUID : String?
+    let context = LAContext()
+    var error: NSError?
     
     // MARK: - IBOutlets
     
@@ -31,10 +34,33 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    // MARK: - Life Cycles
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpElements()
+        configureTapGesture()
+        configureTextFields()
+        passwordTextField.enablePasswordToggle()
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if GlobalSession.getEmail() != nil && GlobalSession.getPwd() != nil{
+            faceId()
+        }
+    }
     
     // MARK: - IBAction LOGIN
     
     @IBAction func loginPressed(_ sender: Any) {
+        login()
+    }
+    
+    func login(){
         self.loadingIndicator(.start)
         let error = ValidateFields.validateFieldsLogin(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         
@@ -51,14 +77,46 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
                         self?.showError(message: R.string.login.invalid_email_pasword())
                     } else {
                         print("Login Successful.")
+                        GlobalSession.setEmail(email: email)
+                        GlobalSession.setPwd(pwd: password)
                         let user = Auth.auth().currentUser
                         if let _user = user {
                             self?.getUID = _user.uid
                         }
                         self?.getUser()
                     }
-                }}}}
+                }
+            }
+        }
+    }
     
+    func faceId(){
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Identify yourself!"
+
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                    [weak self] success, authenticationError in
+
+                    DispatchQueue.main.async {
+                        if success {
+                            self?.emailTextField.text = GlobalSession.getEmail()!
+                            self?.passwordTextField.text = GlobalSession.getPwd()!
+                            self?.login()
+                        } else {
+                            print("ELSE ALERT FALHOU")
+//                            let ac = UIAlertController(title: "Autenticação Falhou" , message: "Você não esta verificado! Tente novamente.", preferredStyle: .alert)
+//                            ac.addAction(UIAlertAction(title: "OK", style: .default))
+//                            self?.present(ac , animated: true)
+                        }
+                    }
+                }
+                } else {
+                    print("ELSE VALIDACAO DESATIVADA")
+                let ac = UIAlertController(title: "Dispositivo com validação desativada" , message: "Você não esta verificado! Tente novamente.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac , animated: true)
+            }
+        }
     
     @IBAction func mockSignIn(_ sender: Any) {
         self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
@@ -100,21 +158,6 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
         
     }
-    
-    
-    // MARK: - Life Cycles
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpElements()
-        configureTapGesture()
-        configureTextFields()
-        passwordTextField.enablePasswordToggle()
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().delegate = self
-    }
-    
     
     // MARK: - Setup
     
@@ -191,24 +234,29 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
     
     
     func postUser(_ user: UserData) {
-        self.loadingIndicator(.start)
-        APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
-            .responseJSON { response in
-                
-                switch response.result {
-                case .success:
-                    if let error = response.error {
-                        self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
-                        
-                    } else {
-                        self.loadingIndicator(.stop)
-                        self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
-                    }
-                case .failure(let error):
-                    self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
-                }
-            }
-    }
+           self.loadingIndicator(.start)
+           APIHelper.request(url: .user, method: .post, parameters: getParamsToApi(from: user))
+               .responseJSON { response in
+                   
+                   switch response.result {
+                   case .success:
+                       if let error = response.error {
+                           self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
+                           
+                       } else {
+                           guard
+                               let data = response.data,
+                               let responseUser = try? JSONDecoder().decode(UserData.self, from: data) else { return; }
+                           GlobalSession.setUser(withId: responseUser.id, andUid: responseUser.uid)
+                           self.loadingIndicator(.stop)
+                           self.performSegue(withIdentifier: R.segue.loginViewController.welcomeVC, sender: self)
+                       }
+                   case .failure(let error):
+                       self.displayError(error.localizedDescription, withTryAgain: { self.postUser(user) })
+                   }
+               }
+       }
+
     
     func cleanAllInfo() {
         DispatchQueue.main.async {

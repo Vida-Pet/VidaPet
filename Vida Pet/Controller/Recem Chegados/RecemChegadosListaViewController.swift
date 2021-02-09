@@ -123,7 +123,7 @@ class RecemChegadosListaViewController: VidaPetMainViewController {
 extension RecemChegadosListaViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(pets[indexPath.row])
-        performSegue(withIdentifier: R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes.identifier, sender: indexPath)
+//        performSegue(withIdentifier: R.segue.recemChegadosListaViewController.recemChegadosListaToPetsDetalhes.identifier, sender: indexPath)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

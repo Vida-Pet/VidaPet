@@ -190,10 +190,13 @@ class LoginViewController: VidaPetMainViewController, GIDSignInDelegate {
         }
         guard let auth = user.authentication else { return }
         let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        self.loadingIndicator(.start)
         Auth.auth().signIn(with: credentials) { (authResult, error) in
             if let error = error {
+                self.loadingIndicator(.stop)
                 print(error.localizedDescription)
             } else {
+                self.loadingIndicator(.stop)
                 print("Login Successful.")
                 let user = Auth.auth().currentUser
                 if let _user = user {

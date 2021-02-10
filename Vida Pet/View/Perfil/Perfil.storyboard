@@ -32,15 +32,15 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-XB-hKh">
-                                <rect key="frame" x="30" y="104" width="50" height="110"/>
+                                <rect key="frame" x="30" y="104" width="244" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-O4-XCy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-O4-XCy">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <color key="textColor" name="Vida Pet: Blue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-nX-pbS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-nX-pbS">
                                         <rect key="frame" x="0.0" y="60" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" name="Vida Pet: Blue"/>
@@ -89,6 +89,7 @@
                             <constraint firstItem="8Cw-ya-aS1" firstAttribute="top" secondItem="ycb-XB-hKh" secondAttribute="bottom" constant="50" id="lfX-TD-aAw"/>
                             <constraint firstItem="gK2-oe-NQE" firstAttribute="top" secondItem="f2v-Gs-Ybz" secondAttribute="top" constant="46" id="pC9-B8-ugt"/>
                             <constraint firstItem="f2v-Gs-Ybz" firstAttribute="trailing" secondItem="gK2-oe-NQE" secondAttribute="trailing" constant="20" id="swM-gy-YOv"/>
+                            <constraint firstItem="gK2-oe-NQE" firstAttribute="leading" secondItem="ycb-XB-hKh" secondAttribute="trailing" constant="30" id="tyc-bf-eQP"/>
                         </constraints>
                     </view>
                     <connections>

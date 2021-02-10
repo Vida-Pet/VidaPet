@@ -387,14 +387,14 @@
                                     <constraint firstAttribute="width" constant="196" id="c8I-XQ-rkf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-Zb-LBV">
-                                <rect key="frame" x="40" y="224" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-Zb-LBV">
+                                <rect key="frame" x="40" y="224" width="310" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEH-yu-WkX">
-                                <rect key="frame" x="40" y="234" width="145" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JEH-yu-WkX">
+                                <rect key="frame" x="40" y="234" width="310" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -405,9 +405,11 @@
                         <constraints>
                             <constraint firstItem="OwI-Zb-LBV" firstAttribute="top" secondItem="nZH-Gm-08T" secondAttribute="top" constant="180" id="32e-yR-aZN"/>
                             <constraint firstItem="JEH-yu-WkX" firstAttribute="top" secondItem="OwI-Zb-LBV" secondAttribute="bottom" constant="10" id="5wJ-2E-hXB"/>
+                            <constraint firstAttribute="trailing" secondItem="OwI-Zb-LBV" secondAttribute="trailing" constant="40" id="M6z-uu-hAg"/>
                             <constraint firstItem="JEH-yu-WkX" firstAttribute="leading" secondItem="nZH-Gm-08T" secondAttribute="leading" constant="40" id="P7H-Qg-9l1"/>
                             <constraint firstItem="LXG-vm-2q2" firstAttribute="centerY" secondItem="zyW-kB-9bT" secondAttribute="centerY" multiplier="1.2" id="Z2T-5R-8nj"/>
                             <constraint firstItem="OwI-Zb-LBV" firstAttribute="leading" secondItem="nZH-Gm-08T" secondAttribute="leading" constant="40" id="kWT-wh-fgG"/>
+                            <constraint firstItem="nZH-Gm-08T" firstAttribute="trailing" secondItem="JEH-yu-WkX" secondAttribute="trailing" constant="40" id="te7-qN-59J"/>
                             <constraint firstItem="LXG-vm-2q2" firstAttribute="centerX" secondItem="zyW-kB-9bT" secondAttribute="centerX" id="zJO-OW-PyU"/>
                         </constraints>
                     </view>
